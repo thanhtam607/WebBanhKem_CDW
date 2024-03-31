@@ -8,14 +8,6 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      // viết dùm tối cái này
-      email: DataTypes.STRING,
-      pass: DataTypes.STRING,
-      name: DataTypes.STRING,
-      address: DataTypes.STRING,
-      phone: DataTypes.STRING,
-      role: DataTypes.INTEGER,
-      status: DataTypes.INTEGER,
 
       email: {
         type: Sequelize.STRING
@@ -44,7 +36,7 @@ module.exports = {
       status: {
         type: Sequelize.INTEGER
       },
-      
+
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

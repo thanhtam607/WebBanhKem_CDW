@@ -28,13 +28,13 @@ module.exports = {
         type: Sequelize.STRING
       },
       weight: {
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER
       },
       description: {
-        type: Sequelize.LONGTEXT
+        type: Sequelize.TEXT
       },
       introduction: {
-        type: Sequelize.LONGTEXT
+        type: Sequelize.TEXT
       },
       price: {
         type: Sequelize.FLOAT

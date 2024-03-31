@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Comments', {
+    await queryInterface.createTable('Carts', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -9,24 +9,18 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       // viết dùm tối cái này
-      // id_user: DataTypes.INTEGER,
-      // export_date: DataTypes.DATE,
+      // id_product: DataTypes.INTEGER,
+      // amount: DataTypes.INTEGER,
       // notes: DataTypes.TEXT,
-      // pro_bill: DataTypes.FLOAT,
-      // fee_bill: DataTypes.FLOAT,
-      // status: DataTypes.INTEGER,
-
+      // price: DataTypes.INTEGER
       id_user: {
         type: Sequelize.INTEGER
       },
       id_product: {
         type: Sequelize.INTEGER
       },
-      comment: {
-        type: Sequelize.TEXT
-      },
-      date: {
-        type: Sequelize.DATE
+      quantity: {
+        type: Sequelize.INTEGER
       },
       status: {
         type: Sequelize.INTEGER
@@ -42,6 +36,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Comments');
+    await queryInterface.dropTable('Carts');
   }
 };
