@@ -2,7 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import viewEngine from "./config/viewEngine";
 import initWebRoutes from "./route/web";
-// import connectDB from './config/conectDB';
+import connectDB from './config/conectDB';
 // import cors from 'cors';
 
 require('dotenv').config();   // giup chayj dc dong process.env
@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 viewEngine(app);
 initWebRoutes(app);
 
-// connectDB();
+connectDB();
 
 let port = process.env.PORT || 8080;  //Port === undefined => Port = 6060
 
