@@ -733,5 +733,11 @@ CREATE table COMMENTS(ID INT PRIMARY KEY AUTO_INCREMENT,ID_PRODUCT int not null,
 ALTER TABLE COMMENTS
 ADD CONSTRAINT fk_product FOREIGN KEY (ID_PRODUCT) REFERENCES products(ID),
 ADD CONSTRAINT fk_user FOREIGN KEY (USER_ID) REFERENCES USERS(ID);
+/*=========================================cartItems=========================================*/
+create table cartItems(ID INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+                       USER_ID INT,
+                       PRODUCT_ID INT, STATUS INT,
+                       QUANTITY int ,FOREIGN KEY (USER_ID)REFERENCES USERS(ID),
+                       FOREIGN KEY (PRODUCT_ID)REFERENCES products(ID));
 
 
