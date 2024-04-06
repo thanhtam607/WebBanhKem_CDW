@@ -219,7 +219,7 @@
 
 .page-header {
     position: relative;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/cart-page-header-img.png);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../../assets/users/img/cart-page-header-img.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -280,8 +280,11 @@
 .fruite .tab-class .nav-item a.active {
     background: var(--bs-secondary) !important;
 }
+.fruite .tab-class .nav-item a.active, .nav .nav-item a.active {
+    background: var(--bs-secondary) !important;
+}
 
-.fruite .tab-class .nav-item a.active span {
+.fruite .tab-class .nav-item a.active span, .nav .nav-item a.active span{
     color: var(--bs-white) !important; 
 }
 
