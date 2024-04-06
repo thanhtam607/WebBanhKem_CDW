@@ -3,10 +3,10 @@ import Spinner from "./spinner";
 import Navigation from "./navigation";
 import SearchModel from "./searchModel";
 
-const Header = () => {
+const Header = ({pageActive}) => {
     return (<>
             <Spinner/>
-            <Navigation/>
+            <Navigation pageActive={pageActive}/>
             <SearchModel/>
         </>
     );

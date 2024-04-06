@@ -1,5 +1,5 @@
 import React from "react";
-const  Navigation = () =>{
+const  Navigation = ({pageActive}) =>{
     return (
         <div className="container-fluid fixed-top">
             <div className="container topbar bg-primary d-none d-lg-block">
@@ -23,10 +23,10 @@ const  Navigation = () =>{
                     </button>
                     <div className="collapse navbar-collapse bg-white" id="navbarCollapse">
                         <div className="navbar-nav mx-auto">
-                            <a href="users/theme#" className="nav-item nav-link active">Trang chủ</a>
-                            <a href="users/theme#" className="nav-item nav-link">Giới thiệu</a>
-                            <a href="users/theme#" className="nav-item nav-link">Sản phẩm</a>
-                            <a href="users/theme#" className="nav-item nav-link">Liên hệ</a>
+                            <a href="/" className={`nav-item nav-link ${pageActive === "Trang chủ" ? "active" : ""}`}>Trang chủ</a>
+                            <a href="/about" className={`nav-item nav-link ${pageActive === "Giới thiệu" ? "active" : ""}`}>Giới thiệu</a>
+                            <a href="/shop" className={`nav-item nav-link ${pageActive === "Sản phẩm" ? "active" : ""}`}>Sản phẩm</a>
+                            <a href="/contact" className={`nav-item nav-link ${pageActive === "Liên hệ" ? "active" : ""}`}>Liên hệ</a>
                         </div>
                         <div className="d-flex m-3 me-0">
                             <button className="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4" data-bs-toggle="modal" data-bs-target="#searchModal"><i className="fas fa-search text-primary"></i></button>

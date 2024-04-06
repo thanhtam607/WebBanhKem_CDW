@@ -1,6 +1,6 @@
 import React from "react";
 import ShopHead from "./shopHead";
-const Shop = ()=>{
+const ShopInHome = ()=>{
     return <ShopHead/>
 }
-export default Shop;
+export default ShopInHome;

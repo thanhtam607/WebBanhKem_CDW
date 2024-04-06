@@ -3,16 +3,16 @@ import Header from "../theme/header/header";
 import Footer from "../theme/footer";
 import Banner1 from "./banner1";
 import Featurs from "./featurs";
-import Shop from "./shop";
+import ShopInHome from "./shopInHome";
 import Banner2 from "./banner2";
 
 const HomePage = () => {
     return (
         <>
-            <Header />
+            <Header pageActive={"Trang chủ"}/>
             <Banner1/>
             <Featurs/>
-            <Shop/>
+            <ShopInHome/>
             <Banner2/>
             <Footer />
         </>
