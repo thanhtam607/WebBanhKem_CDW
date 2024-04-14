@@ -80,8 +80,8 @@ class Card extends Component {
                       <p className="mb-0 mt-4">2.99 $</p>
                     </td>
                     <td>
-                      <button className="btn btn-md rounded-circle bg-light border mt-4">
-                        <i className="fa fa-times text-danger" />
+                      <button className="btn btn-md bg-light border mt-4 handle_delete" >
+                      <i className="fas fa-trash"></i>
                       </button>
                     </td>
                   </tr>
@@ -119,17 +119,13 @@ class Card extends Component {
                       <p className="mb-0 mt-4">2.99 $</p>
                     </td>
                     <td>
-                      <button className="btn btn-md rounded-circle bg-light border mt-4">
-                        <i className="fa fa-times text-danger" />
+                      <button className="btn btn-md bg-light border mt-4 handle_delete" >
+                      <i className="fas fa-trash"></i>
                       </button>
                     </td>
                   </tr>
                 </tbody>
               </table>
-            </div>
-            <div className="mt-5">
-              <input type="text" className="border-0 border-bottom rounded me-5 py-3 mb-4" placeholder="Coupon Code" />
-              <button className="btn border-secondary rounded-pill px-4 py-3 text-primary" type="button">Apply Coupon</button>
             </div>
             <div className="row g-4 justify-content-end">
               <div className="col-8" />
@@ -153,7 +149,7 @@ class Card extends Component {
                     <h5 className="mb-0 ps-4 me-4">Tổng thanh toán</h5>
                     <p className="mb-0 pe-4">$99.00</p>
                   </div>
-                  <button className="btn border-secondary rounded-pill px-4 py-3 text-primary text-uppercase mb-4 ms-4" type="button">Đặt hàng</button>
+                  <button className="btn border-secondary btn_checkout" type="button">Đặt hàng</button>
                 </div>
               </div>
             </div>
