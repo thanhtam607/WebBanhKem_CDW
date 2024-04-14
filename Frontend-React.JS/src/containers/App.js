@@ -17,6 +17,7 @@ import Card from './User/Card/Card';
 import ProductDetail from './User/ProductDetail/ProductDetail';
 import CheckOut from './User/CheckOut/CheckOut';
 import SHOP from './User/Shop/Shop';
+import Contact from './User/Contact/Contact';
 
 class App extends Component {
 
@@ -54,6 +55,7 @@ class App extends Component {
                                 <Route path={path.PRODUCTDETAIL}  component={(ProductDetail)} />
                                 <Route path={path.SHOP}  component={(SHOP)} />
                                 <Route path={path.CHECKOUT}  component={(CheckOut)} />
+                                <Route path={path.CONTACT}  component={(Contact)} />
                                 <Route path={path.HOME}  component={(Home)} />
                               </Switch>
                             </CustomScrollbars>

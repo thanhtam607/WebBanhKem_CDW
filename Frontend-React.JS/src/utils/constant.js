@@ -3,6 +3,8 @@ export const path = {
     LOGIN: '/login',
     CARD: '/card',
     CHECKOUT: '/checkout',
+    SHOP: '/shop',
+    CONTACT: '/contact',
     PRODUCTDETAIL: '/product-detail',
     SYSTEM: '/system'
 };
