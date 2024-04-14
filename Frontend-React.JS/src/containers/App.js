@@ -15,6 +15,7 @@ import { CustomToastCloseButton } from '../components/CustomToast';
 import ConfirmModal from '../components/ConfirmModal';
 import Card from './User/Card/Card';
 import ProductDetail from './User/ProductDetail/ProductDetail';
+import CheckOut from './User/CheckOut/CheckOut';
 
 class App extends Component {
 
@@ -50,6 +51,7 @@ class App extends Component {
                                 <Route path={path.LOGIN}  component={(Login)} />
                                 <Route path={path.CARD}  component={(Card)} />
                                 <Route path={path.PRODUCTDETAIL}  component={(ProductDetail)} />
+                                <Route path={path.CHECKOUT}  component={(CheckOut)} />
                                 <Route path={path.HOME}  component={(Home)} />
                               </Switch>
                             </CustomScrollbars>
