@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import "./Home.scss"
 import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 class HOME extends Component {
 
     constructor(props){
@@ -510,6 +511,7 @@ class HOME extends Component {
             </div>
           </div>
         </div>
+        <Footer/>
         {/* Featurs End */}
             </div>
         )
