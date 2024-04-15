@@ -15,7 +15,7 @@ const Breadcrumb = ({ items }) => {
                         {item.active ? (
                             item.title
                         ) : (
-                            <a href={item.link}>{item.title}</a>
+                            <a className="text-yellow" href={item.link}>{item.title}</a>
                         )}
                     </li>
                 ))}

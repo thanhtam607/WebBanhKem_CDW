@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import "./Shop.scss"
+import Breadcrumb from "../breadcrumb";
+import Header from "../Header/Header";
 class Shop extends Component {
 
     constructor(props){
@@ -14,16 +16,16 @@ class Shop extends Component {
     componentDidMount() {
     }
     render() {
+      const breadcrumbItems = [
+        { title: "Trang chủ", link: "/", active: false },
+        { title: "Sản phẩm", link: "/shop", active: true }
+      ];
+
         return (
             <div>
+              <Header pageActive={"Sản phẩm"}> </Header>
             {/* Single Page Header start */}
-            <div className="container-fluid page-header py-5">
-              <h1 className="text-center text-white display-6">Sản phẩm</h1>
-              <ol className="breadcrumb justify-content-center mb-0">
-                <li className="breadcrumb-item"><a href="#">Trang chủ</a></li>
-                <li className="breadcrumb-item active text-white">Sản phẩm</li>
-              </ol>
-            </div>
+            <Breadcrumb items={breadcrumbItems}/>
             {/* Single Page Header End */}
             {/* Fruits Shop Start*/}
             <div className="container-fluid fruite py-5">
@@ -190,7 +192,7 @@ class Shop extends Component {
                             <div className="position-relative">
                               <img src="img/banner-fruits.jpg" className="img-fluid w-100 rounded" alt="" />
                               <div className="position-absolute" style={{top: '50%', right: '10px', transform: 'translateY(-50%)'}}>
-                                <h3 className="text-secondary text-center fw-bold">Tạo nên<br />sự ngọt ngào<br /> cho mỗi dịp đặc biệt</h3>
+                                <h3 className="text-yellow text-center fw-bold">Tạo nên<br />sự ngọt ngào<br /> cho mỗi dịp đặc biệt</h3>
                               </div>
                             </div>
                           </div>

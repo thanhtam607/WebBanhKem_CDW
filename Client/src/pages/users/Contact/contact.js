@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../theme/header/header";
-import Breadcrumb from "../theme/breadcrumb";
+import Breadcrumb from "../../../../../Frontend-React.JS/src/containers/User/breadcrumb";
 import Footer from "../theme/footer";
 const Contact = ()=>{
     const breadcrumbItems = [

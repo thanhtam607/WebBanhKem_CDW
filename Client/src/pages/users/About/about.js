@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../theme/header/header";
-import Breadcrumb from "../theme/breadcrumb";
+import Breadcrumb from "../../../../../Frontend-React.JS/src/containers/User/breadcrumb";
 import Footer from "../theme/footer";
 import Img1 from "../../../assets/users/img/about/anh1.jpg";
 import Img2 from "../../../assets/users/img/about/anh2.jpg";

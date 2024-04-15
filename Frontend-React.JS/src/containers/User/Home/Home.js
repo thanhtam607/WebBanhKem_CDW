@@ -22,7 +22,7 @@ class HOME extends Component {
     render() {
         return (
             <div>
-        <Header> </Header>
+        <Header pageActive={"Trang chủ"}> </Header>
 
          {/* Hero Start */}
          <div className="container-fluid py-5 mb-5 hero-header">
@@ -30,10 +30,10 @@ class HOME extends Component {
             <div className="row g-5 align-items-center">
               <div className="col-md-12 col-lg-7">
                 <h4 className="mb-3 text-secondary">Trao bánh - Trao yêu thương</h4>
-                <h1 className="mb-5 display-3 text-primary">Nơi vị ngọt kết hợp với bình yên</h1>
+                <h1 className="mb-5 display-3 text-primary-cake">Nơi vị ngọt kết hợp với bình yên</h1>
                 <div className="position-relative mx-auto">
                   <input className="form-control border-2 border-secondary w-75 py-3 px-4 rounded-pill" type="number" placeholder="Nhập vào tên bánh..." />
-                  <button type="submit" className="btn btn-primary border-2 border-secondary py-3 px-4 position-absolute rounded-pill text-white h-100" style={{top: 0, right: '25%'}}>Tìm kiếm ngay</button>
+                  <button type="submit" className="btn  btn-cake border-2 border-secondary py-3 px-4 position-absolute rounded-pill text-white h-100" style={{top: 0, right: '25%'}}>Tìm kiếm ngay</button>
                 </div>
               </div>
               <div className="col-md-12 col-lg-5">
@@ -155,7 +155,7 @@ class HOME extends Component {
                               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
                               <div className="d-flex justify-content-between flex-lg-wrap">
                                 <p className="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
-                                <a href="#" className="btn border border-secondary rounded-pill px-3 text-primary"><i className="fa fa-shopping-bag me-2 text-primary" /> Add to cart</a>
+                                <a href="#" className="btn border border-secondary rounded-pill px-3 text-primary-cake"><i className="fa fa-shopping-bag me-2 text-primary-cake" /> Add to cart</a>
                               </div>
                             </div>
                           </div>
@@ -171,7 +171,7 @@ class HOME extends Component {
                               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
                               <div className="d-flex justify-content-between flex-lg-wrap">
                                 <p className="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
-                                <a href="#" className="btn border border-secondary rounded-pill px-3 text-primary"><i className="fa fa-shopping-bag me-2 text-primary" /> Add to cart</a>
+                                <a href="#" className="btn border border-secondary rounded-pill px-3 text-primary-cake"><i className="fa fa-shopping-bag me-2 text-primary-cake" /> Add to cart</a>
                               </div>
                             </div>
                           </div>
@@ -196,7 +196,7 @@ class HOME extends Component {
                               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
                               <div className="d-flex justify-content-between flex-lg-wrap">
                                 <p className="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
-                                <a href="#" className="btn border border-secondary rounded-pill px-3 text-primary"><i className="fa fa-shopping-bag me-2 text-primary" /> Add to cart</a>
+                                <a href="#" className="btn border border-secondary rounded-pill px-3 text-primary-cake"><i className="fa fa-shopping-bag me-2 text-primary-cake" /> Add to cart</a>
                               </div>
                             </div>
                           </div>
@@ -212,7 +212,7 @@ class HOME extends Component {
                               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
                               <div className="d-flex justify-content-between flex-lg-wrap">
                                 <p className="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
-                                <a href="#" className="btn border border-secondary rounded-pill px-3 text-primary"><i className="fa fa-shopping-bag me-2 text-primary" /> Add to cart</a>
+                                <a href="#" className="btn border border-secondary rounded-pill px-3 text-primary-cake"><i className="fa fa-shopping-bag me-2 text-primary-cake" /> Add to cart</a>
                               </div>
                             </div>
                           </div>
@@ -236,7 +236,7 @@ class HOME extends Component {
                               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
                               <div className="d-flex justify-content-between flex-lg-wrap">
                                 <p className="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
-                                <a href="#" className="btn border border-secondary rounded-pill px-3 text-primary"><i className="fa fa-shopping-bag me-2 text-primary" /> Add to cart</a>
+                                <a href="#" className="btn border border-secondary rounded-pill px-3 text-primary-cake"><i className="fa fa-shopping-bag me-2 text-primary-cake" /> Add to cart</a>
                               </div>
                             </div>
                           </div>
@@ -252,7 +252,7 @@ class HOME extends Component {
                               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
                               <div className="d-flex justify-content-between flex-lg-wrap">
                                 <p className="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
-                                <a href="#" className="btn border border-secondary rounded-pill px-3 text-primary"><i className="fa fa-shopping-bag me-2 text-primary" /> Add to cart</a>
+                                <a href="#" className="btn border border-secondary rounded-pill px-3 text-primary-cake"><i className="fa fa-shopping-bag me-2 text-primary-cake" /> Add to cart</a>
                               </div>
                             </div>
                           </div>
@@ -276,7 +276,7 @@ class HOME extends Component {
                               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
                               <div className="d-flex justify-content-between flex-lg-wrap">
                                 <p className="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
-                                <a href="#" className="btn border border-secondary rounded-pill px-3 text-primary"><i className="fa fa-shopping-bag me-2 text-primary" /> Add to cart</a>
+                                <a href="#" className="btn border border-secondary rounded-pill px-3 text-primary-cake"><i className="fa fa-shopping-bag me-2 text-primary-cake" /> Add to cart</a>
                               </div>
                             </div>
                           </div>
@@ -292,7 +292,7 @@ class HOME extends Component {
                               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
                               <div className="d-flex justify-content-between flex-lg-wrap">
                                 <p className="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
-                                <a href="#" className="btn border border-secondary rounded-pill px-3 text-primary"><i className="fa fa-shopping-bag me-2 text-primary" /> Add to cart</a>
+                                <a href="#" className="btn border border-secondary rounded-pill px-3 text-primary-cake"><i className="fa fa-shopping-bag me-2 text-primary-cake" /> Add to cart</a>
                               </div>
                             </div>
                           </div>
@@ -308,7 +308,7 @@ class HOME extends Component {
                               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
                               <div className="d-flex justify-content-between flex-lg-wrap">
                                 <p className="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
-                                <a href="#" className="btn border border-secondary rounded-pill px-3 text-primary"><i className="fa fa-shopping-bag me-2 text-primary" /> Add to cart</a>
+                                <a href="#" className="btn border border-secondary rounded-pill px-3 text-primary-cake"><i className="fa fa-shopping-bag me-2 text-primary-cake" /> Add to cart</a>
                               </div>
                             </div>
                           </div>
@@ -331,7 +331,7 @@ class HOME extends Component {
                   <div className="service-item bg-secondary rounded border border-secondary">
                     <img src="img/featur-1.jpg" className="img-fluid rounded-top w-100" alt="" />
                     <div className="px-4 rounded-bottom">
-                      <div className="service-content bg-primary text-center p-4 rounded">
+                      <div className="service-content bg-primary-cake text-center p-4 rounded">
                         <h5 className="text-white">Fresh Apples</h5>
                         <h3 className="mb-0">20% OFF</h3>
                       </div>
@@ -345,7 +345,7 @@ class HOME extends Component {
                     <img src="img/featur-2.jpg" className="img-fluid rounded-top w-100" alt="" />
                     <div className="px-4 rounded-bottom">
                       <div className="service-content bg-light text-center p-4 rounded">
-                        <h5 className="text-primary">Tasty Fruits</h5>
+                        <h5 className="text-primary-cake">Tasty Fruits</h5>
                         <h3 className="mb-0">Free delivery</h3>
                       </div>
                     </div>
@@ -354,7 +354,7 @@ class HOME extends Component {
               </div>
               <div className="col-md-6 col-lg-4">
                 <a href="#">
-                  <div className="service-item bg-primary rounded border border-primary">
+                  <div className="service-item bg-primary-cake rounded border border-primary">
                     <img src="img/featur-3.jpg" className="img-fluid rounded-top w-100" alt="" />
                     <div className="px-4 rounded-bottom">
                       <div className="service-content bg-secondary text-center p-4 rounded">
@@ -414,14 +414,14 @@ class HOME extends Component {
                   <div className="col-6">
                     <a href="#" className="h5">Organic Tomato</a>
                     <div className="d-flex my-3">
-                      <i className="fas fa-star text-primary" />
-                      <i className="fas fa-star text-primary" />
-                      <i className="fas fa-star text-primary" />
-                      <i className="fas fa-star text-primary" />
+                      <i className="fas fa-star text-primary-cake" />
+                      <i className="fas fa-star text-primary-cake" />
+                      <i className="fas fa-star text-primary-cake" />
+                      <i className="fas fa-star text-primary-cake" />
                       <i className="fas fa-star" />
                     </div>
                     <h4 className="mb-3">3.12 $</h4>
-                    <a href="#" className="btn border border-secondary rounded-pill px-3 text-primary"><i className="fa fa-shopping-bag me-2 text-primary" /> Add to cart</a>
+                    <a href="#" className="btn border border-secondary rounded-pill px-3 text-primary-cake"><i className="fa fa-shopping-bag me-2 text-primary-cake" /> Add to cart</a>
                   </div>
                 </div>
               </div>
@@ -435,14 +435,14 @@ class HOME extends Component {
                   <div className="col-6">
                     <a href="#" className="h5">Organic Tomato</a>
                     <div className="d-flex my-3">
-                      <i className="fas fa-star text-primary" />
-                      <i className="fas fa-star text-primary" />
-                      <i className="fas fa-star text-primary" />
-                      <i className="fas fa-star text-primary" />
+                      <i className="fas fa-star text-primary-cake" />
+                      <i className="fas fa-star text-primary-cake" />
+                      <i className="fas fa-star text-primary-cake" />
+                      <i className="fas fa-star text-primary-cake" />
                       <i className="fas fa-star" />
                     </div>
                     <h4 className="mb-3">3.12 $</h4>
-                    <a href="#" className="btn border border-secondary rounded-pill px-3 text-primary"><i className="fa fa-shopping-bag me-2 text-primary" /> Add to cart</a>
+                    <a href="#" className="btn border border-secondary rounded-pill px-3 text-primary-cake"><i className="fa fa-shopping-bag me-2 text-primary-cake" /> Add to cart</a>
                   </div>
                 </div>
               </div>
@@ -456,14 +456,14 @@ class HOME extends Component {
                   <div className="col-6">
                     <a href="#" className="h5">Organic Tomato</a>
                     <div className="d-flex my-3">
-                      <i className="fas fa-star text-primary" />
-                      <i className="fas fa-star text-primary" />
-                      <i className="fas fa-star text-primary" />
-                      <i className="fas fa-star text-primary" />
+                      <i className="fas fa-star text-primary-cake" />
+                      <i className="fas fa-star text-primary-cake" />
+                      <i className="fas fa-star text-primary-cake" />
+                      <i className="fas fa-star text-primary-cake" />
                       <i className="fas fa-star" />
                     </div>
                     <h4 className="mb-3">3.12 $</h4>
-                    <a href="#" className="btn border border-secondary rounded-pill px-3 text-primary"><i className="fa fa-shopping-bag me-2 text-primary" /> Add to cart</a>
+                    <a href="#" className="btn border border-secondary rounded-pill px-3 text-primary-cake"><i className="fa fa-shopping-bag me-2 text-primary-cake" /> Add to cart</a>
                   </div>
                 </div>
               </div>
@@ -477,14 +477,14 @@ class HOME extends Component {
                   <div className="col-6">
                     <a href="#" className="h5">Organic Tomato</a>
                     <div className="d-flex my-3">
-                      <i className="fas fa-star text-primary" />
-                      <i className="fas fa-star text-primary" />
-                      <i className="fas fa-star text-primary" />
-                      <i className="fas fa-star text-primary" />
+                      <i className="fas fa-star text-primary-cake" />
+                      <i className="fas fa-star text-primary-cake" />
+                      <i className="fas fa-star text-primary-cake" />
+                      <i className="fas fa-star text-primary-cake" />
                       <i className="fas fa-star" />
                     </div>
                     <h4 className="mb-3">3.12 $</h4>
-                    <a href="#" className="btn border border-secondary rounded-pill px-3 text-primary"><i className="fa fa-shopping-bag me-2 text-primary" /> Add to cart</a>
+                    <a href="#" className="btn border border-secondary rounded-pill px-3 text-primary-cake"><i className="fa fa-shopping-bag me-2 text-primary-cake" /> Add to cart</a>
                   </div>
                 </div>
               </div>
@@ -495,14 +495,14 @@ class HOME extends Component {
                 <div className="py-4">
                   <a href="#" className="h5">Organic Tomato</a>
                   <div className="d-flex my-3 justify-content-center">
-                    <i className="fas fa-star text-primary" />
-                    <i className="fas fa-star text-primary" />
-                    <i className="fas fa-star text-primary" />
-                    <i className="fas fa-star text-primary" />
+                    <i className="fas fa-star text-primary-cake" />
+                    <i className="fas fa-star text-primary-cake" />
+                    <i className="fas fa-star text-primary-cake" />
+                    <i className="fas fa-star text-primary-cake" />
                     <i className="fas fa-star" />
                   </div>
                   <h4 className="mb-3">3.12 $</h4>
-                  <a href="#" className="btn border border-secondary rounded-pill px-3 text-primary"><i className="fa fa-shopping-bag me-2 text-primary" /> Add to cart</a>
+                  <a href="#" className="btn border border-secondary rounded-pill px-3 text-primary-cake"><i className="fa fa-shopping-bag me-2 text-primary-cake" /> Add to cart</a>
                 </div>
               </div>
             </div>
@@ -512,14 +512,14 @@ class HOME extends Component {
                 <div className="py-4">
                   <a href="#" className="h5">Organic Tomato</a>
                   <div className="d-flex my-3 justify-content-center">
-                    <i className="fas fa-star text-primary" />
-                    <i className="fas fa-star text-primary" />
-                    <i className="fas fa-star text-primary" />
-                    <i className="fas fa-star text-primary" />
+                    <i className="fas fa-star text-primary-cake" />
+                    <i className="fas fa-star text-primary-cake" />
+                    <i className="fas fa-star text-primary-cake" />
+                    <i className="fas fa-star text-primary-cake" />
                     <i className="fas fa-star" />
                   </div>
                   <h4 className="mb-3">3.12 $</h4>
-                  <a href="#" className="btn border border-secondary rounded-pill px-3 text-primary"><i className="fa fa-shopping-bag me-2 text-primary" /> Add to cart</a>
+                  <a href="#" className="btn border border-secondary rounded-pill px-3 text-primary-cake"><i className="fa fa-shopping-bag me-2 text-primary-cake" /> Add to cart</a>
                 </div>
               </div>
             </div>
@@ -529,14 +529,14 @@ class HOME extends Component {
                 <div className="py-4">
                   <a href="#" className="h5">Organic Tomato</a>
                   <div className="d-flex my-3 justify-content-center">
-                    <i className="fas fa-star text-primary" />
-                    <i className="fas fa-star text-primary" />
-                    <i className="fas fa-star text-primary" />
-                    <i className="fas fa-star text-primary" />
+                    <i className="fas fa-star text-primary-cake" />
+                    <i className="fas fa-star text-primary-cake" />
+                    <i className="fas fa-star text-primary-cake" />
+                    <i className="fas fa-star text-primary-cake" />
                     <i className="fas fa-star" />
                   </div>
                   <h4 className="mb-3">3.12 $</h4>
-                  <a href="#" className="btn border border-secondary rounded-pill px-3 text-primary"><i className="fa fa-shopping-bag me-2 text-primary" /> Add to cart</a>
+                  <a href="#" className="btn border border-secondary rounded-pill px-3 text-primary-cake"><i className="fa fa-shopping-bag me-2 text-primary-cake" /> Add to cart</a>
                 </div>
               </div>
             </div>
@@ -546,14 +546,14 @@ class HOME extends Component {
                 <div className="py-2">
                   <a href="#" className="h5">Organic Tomato</a>
                   <div className="d-flex my-3 justify-content-center">
-                    <i className="fas fa-star text-primary" />
-                    <i className="fas fa-star text-primary" />
-                    <i className="fas fa-star text-primary" />
-                    <i className="fas fa-star text-primary" />
+                    <i className="fas fa-star text-primary-cake" />
+                    <i className="fas fa-star text-primary-cake" />
+                    <i className="fas fa-star text-primary-cake" />
+                    <i className="fas fa-star text-primary-cake" />
                     <i className="fas fa-star" />
                   </div>
                   <h4 className="mb-3">3.12 $</h4>
-                  <a href="#" className="btn border border-secondary rounded-pill px-3 text-primary"><i className="fa fa-shopping-bag me-2 text-primary" /> Add to cart</a>
+                  <a href="#" className="btn border border-secondary rounded-pill px-3 text-primary-cake"><i className="fa fa-shopping-bag me-2 text-primary-cake" /> Add to cart</a>
                 </div>
               </div>
             </div>
