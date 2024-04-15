@@ -516,6 +516,9 @@
 .text-yellow{
     color: #ffff0a;
 }
+.product-name h4{
+    min-height: 50px;
+}
 
 
 /*** Footer End ***/

@@ -6,24 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="53da44d9-fc7e-49bf-8e08-acf967a9ff86" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/pages/users/About/about.js" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/pages/users/About/about.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/pages/users/Contact/contact.js" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/pages/users/Contact/contact.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/pages/users/Shop/shop.js" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/pages/users/Shop/shop.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/pages/users/theme/breadcrumb.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/breadcrumb.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/pages/users/theme/header/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/pages/users/theme/header/header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/pages/users/theme/header/navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Header/navigation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap.scss" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/css/bootstrap.min.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/components/Product/Product.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/components/Product/Product.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Contact/Contact.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Contact/Contact.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Footer/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Footer/Footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Header/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Home/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/containers/System/ProductManage.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/System/ProductManage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Shop/Shop.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Shop/Shop.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Server/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/migrations/create-discount-migration .js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/migrations/create-discount-migration .js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/migrations/create-product-img-migration copy.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/migrations/create-product-img-migration copy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/migrations/create-product-migration.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/migrations/create-product-migration.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/models/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/models/product.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/models/product_img.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/models/product_img.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/route/web.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/route/web.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,12 +98,16 @@
       <workItem from="1712451596238" duration="2758000" />
       <workItem from="1712455554716" duration="2201000" />
       <workItem from="1713103157994" duration="597000" />
-      <workItem from="1713145166433" duration="10380000" />
+      <workItem from="1713145166433" duration="10566000" />
+      <workItem from="1713171503512" duration="19349000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

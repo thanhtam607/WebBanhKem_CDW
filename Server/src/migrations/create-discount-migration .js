@@ -14,7 +14,7 @@ module.exports = {
       // startDate: DataTypes.DATE,
       // expiryDate: DataTypes.DATE
 
-      id_product: {
+      id_: {
         type: Sequelize.INTEGER
       },
       discount: {
@@ -24,15 +24,6 @@ module.exports = {
         type: Sequelize.DATE
       },
       expiryDate: {
-        type: Sequelize.DATE
-      },
-
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      },
-      updatedAt: {
-        allowNull: false,
         type: Sequelize.DATE
       }
     });
