@@ -6,18 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="53da44d9-fc7e-49bf-8e08-acf967a9ff86" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSDL_CDW.sql" beforeDir="false" afterPath="$PROJECT_DIR$/CSDL_CDW.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/components/Product/Product.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/components/Product/Product.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/containers/System/ProductManage.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/System/ProductManage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Shop/Shop.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Shop/Shop.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Server/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Server/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/migrations/create-discount-migration .js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/migrations/create-discount-migration .js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/migrations/create-product-img-migration copy.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/migrations/create-product-img-migration copy.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/migrations/create-product-migration.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/migrations/create-product-migration.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/models/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/models/product.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/models/product_img.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/models/product_img.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Home/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/services/productService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/services/productService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/Service/productService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/Service/productService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/controller/productController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/controller/productController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/src/route/web.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/route/web.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,29 +42,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Documents/WebBanhKem_CDW/Client/src/assets/users/img&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/Documents/WebBanhKem_CDW/Frontend-React.JS/public/img",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Documents\WebBanhKem_CDW\Frontend-React.JS\public\img" />
       <recent name="D:\Documents\WebBanhKem_CDW\Client\src\assets\users\img" />
       <recent name="D:\Documents\WebBanhKem_CDW\Client\src\assets\users\lib" />
       <recent name="D:\Documents\WebBanhKem_CDW\Client\src\assets" />
       <recent name="D:\Documents\WebBanhKem_CDW\Client\src\assets\users" />
-      <recent name="D:\Documents\WebBanhKem_CDW\Client\src\style\users" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Documents\WebBanhKem_CDW\Frontend-React.JS\src\containers\User\Header" />
@@ -99,7 +94,9 @@
       <workItem from="1712455554716" duration="2201000" />
       <workItem from="1713103157994" duration="597000" />
       <workItem from="1713145166433" duration="10566000" />
-      <workItem from="1713171503512" duration="19349000" />
+      <workItem from="1713171503512" duration="19614000" />
+      <workItem from="1713260064664" duration="2561000" />
+      <workItem from="1713270905773" duration="6198000" />
     </task>
     <servers />
   </component>

@@ -125,15 +125,15 @@ class HOME extends Component {
                       <div className="row g-4">
                       
                         <div className="col-md-6 col-lg-4 col-xl-3">
-                           <Product></Product>
+                           {/*<Product></Product>*/}
                         </div>
 
                         <div className="col-md-6 col-lg-4 col-xl-3">
-                           <Product></Product>
+                           {/*<Product></Product>*/}
                         </div>
 
                         <div className="col-md-6 col-lg-4 col-xl-3">
-                           <Product></Product>
+                           {/*<Product></Product>*/}
                         </div>
                            
                       </div>

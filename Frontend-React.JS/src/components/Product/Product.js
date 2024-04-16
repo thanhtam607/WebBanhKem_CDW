@@ -15,22 +15,24 @@ class Product extends Component {
     }
     render() {
         const product  = this.props.product;
+        console.log("img"+product.imgs[0].img)
         return (
             <div className="col-md-6 col-lg-6 col-xl-4">
                 <div className="rounded position-relative fruite-item">
                     <div className="fruite-img">
-                        <img src="img/fruite-item-1.jpg" className="img-fluid w-100 rounded-top" alt=""/>
+                        <img src={product.imgs[0].img} className="img-fluid w-100 rounded-top" alt=""/>
                     </div>
                     <div className="text-white bg-secondary px-3 py-1 rounded position-absolute"
-                         style={{ top: '10px', left: '10px' }}>Fruits
+                         style={{ top: '10px', left: '10px' }}>{product.type}
                     </div>
                     <div className="p-4 border border-secondary border-top-0 rounded-bottom product-name">
                         <h4 className="text-center ">{product.name}</h4>
-
                         <div className="d-flex justify-content-between flex-lg-wrap">
-                            <p className="text-dark fs-5 fw-bold mb-0">{product.price} <span>vnđ</span></p>
+                            <p className="text-dark text-center fs-5 fw-bold mb-0 col-12">{product.price} <span>vnđ</span></p>
+                        </div>
+                        <div className="d-flex justify-content-between flex-lg-wrap">
                             <a href="#" className="btn border border-secondary rounded-pill px-3 text-primary"><i
-                                className="fa fa-shopping-bag me-2 text-primary"></i> </a>
+                                className="fa fa-shopping-bag me-2 text-primary-cake"></i> Thêm vào giỏ hàng</a>
                         </div>
                     </div>
                 </div>

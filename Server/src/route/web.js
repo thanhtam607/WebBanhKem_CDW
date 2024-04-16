@@ -6,7 +6,7 @@ let router = express.Router();
 let initWebRoutes = (app) => {
     router.get("/", homeController.getHomePage);
     router.get("/api/getListProducts", productController.getListProducts)
-    // router.get("/getProductById", productController.getProductById);
+    router.get("/api/getProductById", productController.getProductById);
     return app.use("/", router);
 }
 

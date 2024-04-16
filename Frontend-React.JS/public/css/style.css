@@ -519,7 +519,9 @@
 .product-name h4{
     min-height: 50px;
 }
-
+.justify-content-between{
+    margin-left: 20px;
+}
 
 /*** Footer End ***/
 

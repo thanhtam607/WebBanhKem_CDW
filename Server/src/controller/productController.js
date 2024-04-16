@@ -10,23 +10,24 @@ let getListProducts = async (req, res) => {
 
     })
 }
-// let getProductById = async (req, res) => {
-//         let id = req.body.id;
-//         if(!id){
-//             return res.status(200).json({
-//                 errCode: 0,
-//                 errMessage:"ok",
-//                 product:''
-//             });
-//         }
-//         let product = await productService.getProductById(id);
-//         return res.status(200).json({
-//             errCode: 0,
-//             errMessage:"ok",
-//             product
-//         });
-// }
+let getProductById = async (req, res) => {
+    let id = req.query.id;
+    if(!id){
+        return res.status(200).json({
+            errCode: 0,
+            errMessage:"ok",
+            product:''
+        });
+    }
+    let product = await productService.getProductById(id);
+    return res.status(200).json({
+        errCode: 0,
+        errMessage:"ok",
+        product
+    });
+}
+
 module.exports = {
-    getListProducts: getListProducts
-    // getProductById: getProductById
+    getListProducts: getListProducts,
+    getProductById: getProductById
 };
