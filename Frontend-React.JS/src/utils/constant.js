@@ -5,7 +5,7 @@ export const path = {
     CHECKOUT: '/checkout',
     SHOP: '/shop',
     CONTACT: '/contact',
-    PRODUCTDETAIL: '/product-detail',
+    PRODUCTDETAIL: '/product-detail/:id',
     SYSTEM: '/system',
     ABOUT: '/about',
 };

@@ -1,4 +1,13 @@
-
+p{
+    font-size: 18px;
+}
+h4{
+    font-size: 39px;
+}
+a h4:hover{
+    color: #c11ee8 ;
+    text-decoration: underline;
+}
 /*** Spinner Start ***/
 #spinner {
     opacity: 0;

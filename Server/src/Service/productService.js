@@ -22,7 +22,6 @@ let getListProducts = () => {
 let getProductById = (id) => {
     return new Promise(async (resolve, reject) => {
             try {
-
                 let query = "SELECT distinct products.id, products.name, TYPEOFCAKE.name as type, " +
                     "products.size, products.weight, products.description, products.introduction, products.price, " +
                     "products.STATUS FROM products, TYPEOFCAKE WHERE products.id_Type = TYPEOFCAKE.id AND products.ID = ?";
@@ -30,8 +29,10 @@ let getProductById = (id) => {
                     replacements: [id],
                     type: db.sequelize.QueryTypes.SELECT
                 });
-
-                resolve(product);
+                let productData = product[0];
+                let listImgs = await getImgsByProduct(productData.id);
+                productData.imgs = listImgs;
+                resolve(productData);
             } catch (e) {
                 reject(e);
             }

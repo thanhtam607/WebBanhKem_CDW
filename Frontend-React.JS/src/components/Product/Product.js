@@ -26,7 +26,7 @@ class Product extends Component {
                          style={{ top: '10px', left: '10px' }}>{product.type}
                     </div>
                     <div className="p-4 border border-secondary border-top-0 rounded-bottom product-name">
-                        <h4 className="text-center ">{product.name}</h4>
+                        <a className="text-center "  href={`/product-detail/${product.id}`}><h4>{product.name}</h4></a>
 
                         <div className="d-flex justify-content-between flex-lg-wrap">
                             <p className="text-dark fs-5 fw-bold mb-0">{product.price} <span>vnđ</span></p>

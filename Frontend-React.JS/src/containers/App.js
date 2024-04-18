@@ -50,6 +50,7 @@ class App extends Component {
                         <div className="content-container">
                             <CustomScrollbars style={{height:'100vh',width:'100%'}}>
                                 <Switch>
+                                    <Route path={path.ABOUT}  component={(About)} />
                                     <Route path={path.LOGIN}  component={(Login)} />
                                     <Route path={path.CARD}  component={(Card)} />
                                     <Route path={path.PRODUCTDETAIL}  component={(ProductDetail)} />
@@ -57,7 +58,7 @@ class App extends Component {
                                     <Route path={path.CHECKOUT}  component={(CheckOut)} />
                                     <Route path={path.CONTACT}  component={(Contact)} />
                                     <Route path={path.HOME}  component={(Home)} />
-                                    <Route path={path.ABOUT}  component={(About)} />
+
                                 </Switch>
                             </CustomScrollbars>
                         </div>

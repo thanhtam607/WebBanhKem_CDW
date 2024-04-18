@@ -26,7 +26,6 @@ let getProductById = async (req, res) => {
         product
     });
 }
-
 module.exports = {
     getListProducts: getListProducts,
     getProductById: getProductById

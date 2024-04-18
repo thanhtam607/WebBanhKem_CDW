@@ -22,7 +22,7 @@ class About extends Component{
 
         return (
             <div>
-                <Header pageActive={"Giới thiệu "}/>
+                <Header pageActive={"Giới thiệu"}/>
                 <Breadcrumb items={breadcrumbItems}/>
                 <div className="container-fluid py-5">
                     <div className="container py-5">
@@ -41,7 +41,7 @@ class About extends Component{
                                     <p> Với thợ bếp đam mê và giàu kinh nghiệm, chúng tôi cũng đáp ứng những yêu cầu đặc biệt của khách hàng để tạo nên những chiếc bánh đặc biệt cho mỗi sự kiện quan trọng.
                                         Sản phẩm của Tiệm bánh hạnh phúc thích hợp cho mọi dịp đặc biệt như sinh nhật, khai trương, kỉ niệm, lễ cầu hôn, tiệc cưới,
                                         lễ đầy tháng, và cả những ngày thường bỗng dưng thèm một chút ngọt ngào và tươi tắn.</p>
-                                    <img src="img/about/anh2.jpg"/>
+                                    <img src="img/about/anh1.jpg"/>
                                     <h4>3. Trải nghiệm online và tại cửa hàng</h4>
                                     <p className="text-justify"> Website của chúng tôi luôn được cập nhật các mẫu bánh mới nhất và phù hợp với nhiều khách hàng.
                                         Chúng tôi mang đến trải nghiệm mua sắm và chọn bán tuyệt vời dù là bạn đang liên hệ với chúng tôi qua website.</p>

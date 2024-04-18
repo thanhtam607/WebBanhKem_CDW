@@ -3,31 +3,42 @@ import { connect } from 'react-redux';
 import "./ProductDetail.scss"
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
+import {getProductById} from "../../../services/productService";
+import Breadcrumb from "../breadcrumb";
 class ProductDetail extends Component {
 
     constructor(props){
         super(props);
+
         this.state = {
-        
+          product: {}, imgs:[]
         }
 
     }
 
-    componentDidMount() {
+    async componentDidMount() {
+      const id = this.props.match.params.id;
+      let response = await getProductById(id);
+      if (response && response.errCode === 0) {
+        this.setState({
+          product: response.product
+        })
+        console.log(this.state.product.imgs[0].img)
+      }
+
     }
     render() {
+      let p = this.state.product;
+      const breadcrumbItems = [
+        { title: "Trang chủ", link: "/", active: false },
+        { title: "Sản phẩm", link: "/shop", active: false },
+        { title: "Chi tiết sản phẩm", link: "/product-detail", active: true }
+      ];
         return (
             <div>
-                <Header/>
+              <Header pageActive={"Sản phẩm"}> </Header>
             {/* Single Page Header start */}
-            <div className="container-fluid page-header py-5">
-              <h1 className="text-center text-white display-6">Chi tiết sản phẩm</h1>
-              <ol className="breadcrumb justify-content-center mb-0">
-                <li className="breadcrumb-item"><a href="#">Trang chủ</a></li>
-                <li className="breadcrumb-item"><a href="#">Sản phẩm</a></li>
-                <li className="breadcrumb-item active text-white">Chi tiết sản phẩm</li>
-              </ol>
-            </div>
+              <Breadcrumb items={breadcrumbItems}/>
             {/* Single Page Header End */}
             {/* Single Product Start */}
             <div className="container-fluid py-5 mt-5">
@@ -38,14 +49,17 @@ class ProductDetail extends Component {
                       <div className="col-lg-6">
                         <div className="border rounded">
                           <a href="#">
-                            <img src="img/single-item.jpg" className="img-fluid rounded" alt="Image" />
+                            {this.state.product.imgs && this.state.product.imgs.length > 0 &&
+                                <img src={"../" + this.state.product.imgs[0].img} className="img-fluid rounded" alt="Image" />
+                            }
                           </a>
                         </div>
                       </div>
                       <div className="col-lg-6">
-                        <h4 className="fw-bold mb-3">Brocoli</h4>
-                        <p className="mb-3">Category: Vegetables</p>
-                        <h5 className="fw-bold mb-3">3,35 $</h5>
+                        <h4 className="fw-bold mb-3">{p.name}</h4>
+                        <p className="mb-3">Loại bánh: {p.type}</p>
+
+                        <h5 className="fw-bold mb-3">{p.price} VND</h5>
                         <div className="d-flex mb-4">
                           <i className="fa fa-star text-secondary" />
                           <i className="fa fa-star text-secondary" />
@@ -53,8 +67,8 @@ class ProductDetail extends Component {
                           <i className="fa fa-star text-secondary" />
                           <i className="fa fa-star" />
                         </div>
-                        <p className="mb-4">The generated Lorem Ipsum is therefore always free from repetition injected humour, or non-characteristic words etc.</p>
-                        <p className="mb-4">Susp endisse ultricies nisi vel quam suscipit. Sabertooth peacock flounder; chain pickerel hatchetfish, pencilfish snailfish</p>
+                        <p className="mb-4">{p.introduction}</p>
+                        {/*<p className="mb-4">Susp endisse ultricies nisi vel quam suscipit. Sabertooth peacock flounder; chain pickerel hatchetfish, pencilfish snailfish</p>*/}
                         <div className="input-group quantity mb-5" style={{width: '100px'}}>
                           <div className="input-group-btn">
                             <button className="btn btn-sm btn-minus rounded-circle bg-light border">
@@ -79,10 +93,7 @@ class ProductDetail extends Component {
                         </nav>
                         <div className="tab-content mb-5">
                           <div className="tab-pane active" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
-                            <p>The generated Lorem Ipsum is therefore always free from repetition injected humour, or non-characteristic words etc. 
-                              Susp endisse ultricies nisi vel quam suscipit </p>
-                            <p>Sabertooth peacock flounder; chain pickerel hatchetfish, pencilfish snailfish filefish Antarctic 
-                              icefish goldeye aholehole trumpetfish pilot fish airbreathing catfish, electric ray sweeper.</p>
+                            <p>{p.description}</p>
                             <div className="px-2">
                               <div className="row g-4">
                                 <div className="col-6">
@@ -145,7 +156,7 @@ class ProductDetail extends Component {
                                     <i className="fa fa-star" />
                                   </div>
                                 </div>
-                                <p>The generated Lorem Ipsum is therefore always free from repetition injected humour, or non-characteristic 
+                                <p>The generated Lorem Ipsum is therefore always free from repetition injected humour, or non-characteristic
                                   words etc. Susp endisse ultricies nisi vel quam suscipit </p>
                               </div>
                             </div>
@@ -163,7 +174,7 @@ class ProductDetail extends Component {
                                     <i className="fa fa-star" />
                                   </div>
                                 </div>
-                                <p className="text-dark">The generated Lorem Ipsum is therefore always free from repetition injected humour, or non-characteristic 
+                                <p className="text-dark">The generated Lorem Ipsum is therefore always free from repetition injected humour, or non-characteristic
                                   words etc. Susp endisse ultricies nisi vel quam suscipit </p>
                               </div>
                             </div>
@@ -372,7 +383,7 @@ class ProductDetail extends Component {
                             </div>
                           </div>
                         </div>
-                       
+
                       </div>
                       <div className="col-lg-12">
                         <div className="position-relative">
