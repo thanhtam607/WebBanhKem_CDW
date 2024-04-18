@@ -21,11 +21,20 @@ let getAllUsers = async (req, res) => {
   return res.status(200).json({
     errCode: data.errCode,
     message: data.message,
-    data: data.users ? data.users : [],
+    data: data,
+  });
+};
+
+let handleCreateNewUser = async (req, res) => {
+  const data = await userServicer.createUser(req.body);
+  return res.status(200).json({
+    errCode: data.errCode,
+    message: data.message,
   });
 };
 
 module.exports = {
   userLogin: userLogin,
   getAllUsers: getAllUsers,
+  handleCreateNewUser: handleCreateNewUser,
 };
