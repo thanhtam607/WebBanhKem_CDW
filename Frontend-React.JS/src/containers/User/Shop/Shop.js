@@ -4,6 +4,7 @@ import "./Shop.scss"
 import Breadcrumb from "../breadcrumb";
 import Header from "../Header/Header";
 import ListProduct from "./listProducts";
+import Footer from "../Footer/Footer";
 class Shop extends Component {
 
     constructor(props){
@@ -199,28 +200,13 @@ class Shop extends Component {
                           </div>
                         </div>
                       </div>
-                      <div className="col-lg-9">
-                        <div className="row g-4 justify-content-center">
-                          <ListProduct/>
-                          <div className="col-12">
-                            <div className="pagination d-flex justify-content-center mt-5">
-                              <a href="#" className="rounded">«</a>
-                              <a href="#" className="active rounded">1</a>
-                              <a href="#" className="rounded">2</a>
-                              <a href="#" className="rounded">3</a>
-                              <a href="#" className="rounded">4</a>
-                              <a href="#" className="rounded">5</a>
-                              <a href="#" className="rounded">6</a>
-                              <a href="#" className="rounded">»</a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                      <ListProduct/>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+                <Footer/>
             {/* Fruits Shop End*/}
           </div>
         )

@@ -1,50 +1,100 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect, useState, useRef } from 'react';
 import { connect } from 'react-redux';
 import Product from "../../../components/Product/Product";
-import {getListProducts} from "../../../services/productService";
+import { getListProducts, getPageCount } from "../../../services/productService";
+import ReactPaginate from 'react-paginate';
 
 class ListProduct extends Component {
-
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
-            listProducts:[]
-
+            listProducts: []
         }
-
     }
 
     async componentDidMount() {
         let response = await getListProducts();
-        console.log("dhdfuy"+response)
+        console.log("dhdfuy" + response)
         if (response && response.errCode === 0) {
             this.setState({
-                listProducts : response.listProducts
+                listProducts: response.listProducts
             })
         }
     }
+
     render() {
-        return (<>
-            {this.state.listProducts && this.state.listProducts.map((item, index)=>{
-              return(
-                  <Product key={index} product={item}/>
-              )
-          })}</>
+        return (
+            <div className="col-lg-9">
+                <PaginatedItems items={this.state.listProducts} itemsPerPage={12} />
+            </div>
         )
     }
+}
 
+function Items({ currentItems }) {
+    return (
+     <>
+            {currentItems && currentItems.map((item) => (
+                <Product key={item.id} product={item} />
+            ))}
+     </>
+    );
+}
+
+function PaginatedItems({ itemsPerPage, items}) {
+    const [itemOffset, setItemOffset] = useState(0);
+    const endOffset = itemOffset + itemsPerPage;
+    console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+    const currentItems = items.slice(itemOffset, endOffset);
+    const pageCount = Math.ceil(items.length / itemsPerPage);
+
+    const handlePageClick = (event) => {
+        const newOffset = (event.selected * itemsPerPage) % items.length;
+        console.log(
+            `User requested page number ${event.selected}, which is offset ${newOffset}`
+        );
+        setItemOffset(newOffset);
+    };
+
+    return (
+        <>
+            <div className="row g-4 justify-content-center" >
+            <Items currentItems={currentItems} />
+            <div className="col-12">
+                <div className="pagination d-flex justify-content-center mt-5">
+            <ReactPaginate
+                nextLabel=">>"
+                onPageChange={handlePageClick}
+                pageRangeDisplayed={3}
+                marginPagesDisplayed={2}
+                pageCount={pageCount}
+                previousLabel="<<"
+                pageClassName="page-item"
+                pageLinkClassName="page-link"
+                previousClassName="page-item"
+                previousLinkClassName="page-link"
+                nextClassName="page-item"
+                nextLinkClassName="page-link"
+                breakLabel="..."
+                breakClassName="page-item"
+                breakLinkClassName="page-link"
+                containerClassName="pagination"
+                activeClassName="active"
+                renderOnZeroPageCount={null}
+            />
+                </div>
+                </div>
+            </div>
+        </>
+    );
 }
 
 const mapStateToProps = state => {
-    return {
-
-    };
+    return {};
 };
 
 const mapDispatchToProps = dispatch => {
-    return {
-
-    };
+    return {};
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ListProduct);

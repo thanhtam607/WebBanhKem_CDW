@@ -6,5 +6,8 @@ const getListProducts = ()=>{
 const getProductById = (id)=>{
     return axios.get("/api/getProductById?id=", {id:id})
 }
+const getPageCount = (totalItem, limit)=>{
+    return Math.ceil(totalItem/limit)
+}
 
-export {getListProducts, getProductById}
+export {getListProducts, getProductById, getPageCount}
