@@ -1,14 +1,14 @@
 import userServicer from "../services/userServicer";
 let userLogin = async (req, res) => {
   const email = req.body.email;
-  const password = req.body.password;
-  if (!email || !password) {
+  const pass = req.body.pass;
+  if (!email || !pass) {
     return res.status(500).json({
       errCode: 1,
       message: "Xin nhập 2 trường email va password",
     });
   }
-  const data = await userServicer.userLoginServicer(email, password);
+  const data = await userServicer.userLoginServicer(email, pass);
   return res.status(200).json({
     errCode: data.errCode,
     message: data.message,

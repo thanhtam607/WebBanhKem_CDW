@@ -2,19 +2,20 @@ import db from "../models/index.js";
 import bcrypt from "bcryptjs";
 
 var salt = bcrypt.genSaltSync(10);
-let userLoginServicer = (email, password) => {
+let userLoginServicer = (email, pass) => {
   return new Promise(async (resolve, reject) => {
     try {
       const isUser = await checkEmail(email);
       const data = {};
       if (isUser) {
         const user = await db.User.findOne({
-          attributes: ["email", "password", "roleId", "firstName", "lastName"],
+          attributes: ["email", "pass", "role", "name", "address", "phone"],
           where: { email: email },
         });
         if (user) {
-          const isPassword = checkPassword(user.password, password);
+          const isPassword = checkPassword(user.pass, pass);
           if (isPassword) {
+            user.pass = undefined;
             data.errCode = 0;
             data.message = "OK";
             data.user = user;
