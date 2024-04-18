@@ -15,6 +15,11 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Product_Img.init({
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true, // Đây là khóa chính
+      autoIncrement: true // Đây là một khóa tự động tăng
+    },
     id_product: DataTypes.INTEGER,
     img: DataTypes.TEXT,
     status: DataTypes.INTEGER,

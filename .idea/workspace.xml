@@ -6,14 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="53da44d9-fc7e-49bf-8e08-acf967a9ff86" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/pages/users/HomePage/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/pages/users/HomePage/home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/pages/users/HomePage/shop.js" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/pages/users/HomePage/shopInHome.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/pages/users/theme/header/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/pages/users/theme/header/header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/pages/users/theme/header/navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/pages/users/theme/header/navigation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/style/users/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/style/users/css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/components/Product/Product.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/components/Product/Product.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/containers/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/About/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/About/About.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/ProductDetail/ProductDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/ProductDetail/ProductDetail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/services/productService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/services/productService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/utils/constant.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/utils/constant.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/Service/productService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/Service/productService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/controller/productController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/controller/productController.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +25,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -41,34 +44,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/AppChatReact&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/Documents/WebBanhKem_CDW/Frontend-React.JS/src/containers/User/About",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "D:\\Documents\\WebBanhKem_CDW\\Frontend-React.JS\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Documents\WebBanhKem_CDW\Frontend-React.JS\src\containers\User\About" />
+      <recent name="D:\Documents\WebBanhKem_CDW\Frontend-React.JS\public\img" />
+      <recent name="D:\Documents\WebBanhKem_CDW\Client\src\assets\users\img" />
       <recent name="D:\Documents\WebBanhKem_CDW\Client\src\assets\users\lib" />
       <recent name="D:\Documents\WebBanhKem_CDW\Client\src\assets" />
-      <recent name="D:\Documents\WebBanhKem_CDW\Client\src\assets\users" />
-      <recent name="D:\Documents\WebBanhKem_CDW\Client\src\style\users" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Documents\WebBanhKem_CDW\Frontend-React.JS\src\containers\User\Header" />
+      <recent name="D:\Documents\WebBanhKem_CDW\Frontend-React.JS\src\containers\User" />
       <recent name="D:\Documents\WebBanhKem_CDW\Client\src\pages\users\theme\header" />
       <recent name="D:\Documents\WebBanhKem_CDW\Client\src\assets\users" />
       <recent name="D:\Documents\WebBanhKem_CDW\Client\src\assets" />
-      <recent name="D:\Documents\WebBanhKem_CDW\Client\pages\assets" />
-      <recent name="D:\Documents\WebBanhKem_CDW\Client\src" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -86,12 +92,26 @@
       <workItem from="1712132882015" duration="5840000" />
       <workItem from="1712140617015" duration="3000" />
       <workItem from="1712394966187" duration="2984000" />
-      <workItem from="1712407133082" duration="4313000" />
+      <workItem from="1712407133082" duration="7075000" />
+      <workItem from="1712451596238" duration="2758000" />
+      <workItem from="1712455554716" duration="2201000" />
+      <workItem from="1713103157994" duration="597000" />
+      <workItem from="1713145166433" duration="10566000" />
+      <workItem from="1713171503512" duration="19614000" />
+      <workItem from="1713260064664" duration="2561000" />
+      <workItem from="1713270905773" duration="6396000" />
+      <workItem from="1713404498954" duration="592000" />
+      <workItem from="1713428837574" duration="757000" />
+      <workItem from="1713429630774" duration="8240000" />
+      <workItem from="1713441466845" duration="11002000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -109,8 +129,12 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/Client/src/pages/users/Shop/shop.js</url>
           <line>42</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Frontend-React.JS/src/containers/User/About/About.js</url>
+          <line>66</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -20,6 +20,11 @@ module.exports = (sequelize, DataTypes) => {
   };
   Product.init({
     // INSERT INTO PRODUCTS(ID_TYPE, NAME, SIZE, WEIGHT, DESCRIPTION, INTRODUCTION, PRICE, STATUS)
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true, // Đây là khóa chính
+      autoIncrement: true // Đây là một khóa tự động tăng
+    },
     id_type: DataTypes.INTEGER,
     name: DataTypes.STRING,
     size: DataTypes.STRING,
