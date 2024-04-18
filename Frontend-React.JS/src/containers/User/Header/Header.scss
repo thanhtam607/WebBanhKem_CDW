@@ -2,14 +2,22 @@ a {
   text-decoration: none;
 }
 
-.container.topbar.bg-primary.d-none.d-lg-block {
-  background: #9b59b6 !important;
+.text-primary {
+  color: #9b59b6 !important;
 }
 
-.text-primary {
+.my-auto i {
   color: #9b59b6 !important;
 }
 
 .text-secondary {
   color: #ffe226 !important;
+}
+
+.btn-primary {
+  background: #9b59b6 !important;
+}
+
+.bg-primary {
+  background-color: #9b59b6 !important;
 }
