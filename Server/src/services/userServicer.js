@@ -1,0 +1,81 @@
+import db from "../models/index.js";
+import bcrypt from "bcryptjs";
+
+var salt = bcrypt.genSaltSync(10);
+let userLoginServicer = (email, password) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const isUser = await checkEmail(email);
+      const data = {};
+      if (isUser) {
+        const user = await db.User.findOne({
+          attributes: ["email", "password", "roleId", "firstName", "lastName"],
+          where: { email: email },
+        });
+        if (user) {
+          const isPassword = checkPassword(user.password, password);
+          if (isPassword) {
+            data.errCode = 0;
+            data.message = "OK";
+            data.user = user;
+          } else {
+            data.errCode = 3;
+            data.message = "Mật khẩu không đúng";
+          }
+        } else {
+          data.errCode = 2;
+          data.message = "Người dùng không tồn tại";
+        }
+      } else {
+        data.errCode = 1;
+        data.message = "Nhập email không đúng";
+      }
+
+      resolve(data);
+    } catch (error) {
+      reject(error);
+    }
+  });
+};
+
+let getAllUsers = () => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const users = await db.User.findAll({ raw: true });
+      if (users) {
+        const data = {
+          errCode: 0,
+          message: "OK",
+          users,
+        };
+      }
+    } catch (error) {
+      reject(error);
+    }
+  });
+};
+
+let checkEmail = (email) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const user = await db.User.findOne({
+        where: { email: email },
+        raw: true,
+      });
+      if (user) {
+        resolve(true);
+      }
+      resolve(false);
+    } catch (error) {
+      reject(error);
+    }
+  });
+};
+let checkPassword = (hash, password) => {
+  return bcrypt.compareSync(password, hash);
+};
+
+module.exports = {
+  userLoginServicer: userLoginServicer,
+  getAllUsers: getAllUsers,
+};

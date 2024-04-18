@@ -1,0 +1,31 @@
+import userServicer from "../services/userServicer";
+let userLogin = async (req, res) => {
+  const email = req.body.email;
+  const password = req.body.password;
+  if (!email || !password) {
+    return res.status(500).json({
+      errCode: 1,
+      message: "Xin nhập 2 trường email va password",
+    });
+  }
+  const data = await userServicer.userLoginServicer(email, password);
+  return res.status(200).json({
+    errCode: data.errCode,
+    message: data.message,
+    data: data.user ? data.user : {},
+  });
+};
+
+let getAllUsers = async (req, res) => {
+  const data = await userServicer.getAllUsers();
+  return res.status(200).json({
+    errCode: data.errCode,
+    message: data.message,
+    data: data.users ? data.users : [],
+  });
+};
+
+module.exports = {
+  userLogin: userLogin,
+  getAllUsers: getAllUsers,
+};
