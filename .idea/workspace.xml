@@ -7,15 +7,11 @@
     <list default="true" id="53da44d9-fc7e-49bf-8e08-acf967a9ff86" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/components/Product/Product.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/components/Product/Product.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/containers/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/About/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/About/About.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/ProductDetail/ProductDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/ProductDetail/ProductDetail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/services/productService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/services/productService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/utils/constant.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/utils/constant.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/src/Service/productService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/Service/productService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/controller/productController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/controller/productController.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +47,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Documents/WebBanhKem_CDW/Frontend-React.JS/src/containers/User/About",
+    "last_opened_file_path": "D:/Documents/WebBanhKem_CDW/Frontend-React.JS/src/containers",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -63,11 +59,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Documents\WebBanhKem_CDW\Frontend-React.JS\src\containers" />
       <recent name="D:\Documents\WebBanhKem_CDW\Frontend-React.JS\src\containers\User\About" />
       <recent name="D:\Documents\WebBanhKem_CDW\Frontend-React.JS\public\img" />
       <recent name="D:\Documents\WebBanhKem_CDW\Client\src\assets\users\img" />
       <recent name="D:\Documents\WebBanhKem_CDW\Client\src\assets\users\lib" />
-      <recent name="D:\Documents\WebBanhKem_CDW\Client\src\assets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Documents\WebBanhKem_CDW\Frontend-React.JS\src\containers\User\Header" />
@@ -103,7 +99,8 @@
       <workItem from="1713404498954" duration="592000" />
       <workItem from="1713428837574" duration="757000" />
       <workItem from="1713429630774" duration="8240000" />
-      <workItem from="1713441466845" duration="11002000" />
+      <workItem from="1713441466845" duration="11074000" />
+      <workItem from="1713494707042" duration="4845000" />
     </task>
     <servers />
   </component>
@@ -135,6 +132,12 @@
           <url>file://$PROJECT_DIR$/Frontend-React.JS/src/containers/User/About/About.js</url>
           <line>66</line>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Frontend-React.JS/public/js/main.js</url>
+          <line>33</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

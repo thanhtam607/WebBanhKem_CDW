@@ -19,6 +19,7 @@ import CheckOut from './User/CheckOut/CheckOut';
 import SHOP from './User/Shop/Shop';
 import Contact from './User/Contact/Contact';
 import About from './User/About/About';
+import Error from './404er';
 class App extends Component {
 
     handlePersistorState = () => {
@@ -50,6 +51,7 @@ class App extends Component {
                         <div className="content-container">
                             <CustomScrollbars style={{height:'100vh',width:'100%'}}>
                                 <Switch>
+                                    <Route path={path.ERROR}  component={(Error)} />
                                     <Route path={path.ABOUT}  component={(About)} />
                                     <Route path={path.LOGIN}  component={(Login)} />
                                     <Route path={path.CARD}  component={(Card)} />

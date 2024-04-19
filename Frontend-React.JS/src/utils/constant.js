@@ -8,6 +8,7 @@ export const path = {
     PRODUCTDETAIL: '/product-detail/:id',
     SYSTEM: '/system',
     ABOUT: '/about',
+    ERROR: '/error',
 };
 
 export const languages = {

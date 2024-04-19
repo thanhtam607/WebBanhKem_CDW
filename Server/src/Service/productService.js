@@ -29,10 +29,15 @@ let getProductById = (id) => {
                     replacements: [id],
                     type: db.sequelize.QueryTypes.SELECT
                 });
-                let productData = product[0];
-                let listImgs = await getImgsByProduct(productData.id);
-                productData.imgs = listImgs;
-                resolve(productData);
+                if (product.length === 0) {
+                    // Nếu không có sản phẩm nào được trả về, bạn có thể trả về một giá trị mặc định
+                    resolve(null); // hoặc resolve({})
+                } else {
+                    let productData = product[0];
+                    let listImgs = await getImgsByProduct(productData.id);
+                    productData.imgs = listImgs;
+                    resolve(productData);
+                }
             } catch (e) {
                 reject(e);
             }

@@ -16,19 +16,24 @@ class ProductDetail extends Component {
 
     }
 
-    async componentDidMount() {
+  async componentDidMount() {
+    try {
       const id = this.props.match.params.id;
       let response = await getProductById(id);
       if (response && response.errCode === 0) {
+        if (response.product === null) {
+          this.props.history.push('/error');
+        }else
         this.setState({
           product: response.product
-        })
-        console.log(this.state.product.imgs[0].img)
+        });
       }
-
+    } catch (error) {
+      console.error("Error fetching data:", error);
     }
+  }
     render() {
-      let p = this.state.product;
+      const p = this.state.product;
       const breadcrumbItems = [
         { title: "Trang chủ", link: "/", active: false },
         { title: "Sản phẩm", link: "/shop", active: false },
@@ -46,13 +51,24 @@ class ProductDetail extends Component {
                 <div className="row g-4 mb-5">
                   <div className="col-lg-8 col-xl-9">
                     <div className="row g-4">
-                      <div className="col-lg-6">
-                        <div className="border rounded">
-                          <a href="#">
-                            {this.state.product.imgs && this.state.product.imgs.length > 0 &&
-                                <img src={"../" + this.state.product.imgs[0].img} className="img-fluid rounded" alt="Image" />
+                      <div className="col-lg-6 col-md-6">
+                        <div className="product__details__pic">
+                          <div className="product__details__pic__item">
+                            {p.imgs && p.imgs.length > 0 && // Kiểm tra nếu mảng tồn tại và không rỗng
+                                <img className="product__details__pic__item--large"
+                                     src={"../"+p.imgs[0].img} alt=""/>
                             }
-                          </a>
+                          </div>
+                          <div className="product__details__pic__slider owl-carousel">
+                            {p.imgs && p.imgs.map((image, index) => (
+                                <img
+                                    key={index}
+                                    data-imgbigurl={"../" + image.img}
+                                    src={"../" + image.img}
+                                    alt=""
+                                />
+                            ))}
+                          </div>
                         </div>
                       </div>
                       <div className="col-lg-6">
