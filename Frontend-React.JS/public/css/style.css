@@ -128,8 +128,9 @@ a h4:hover{
 /*** Navbar Start ***/
 .navbar .navbar-nav .nav-link {
     padding: 10px 15px;
-    font-size: 16px;
-    transition: .5s;
+    font-size: 18px;
+    transition: 0.5s;
+    font-weight: 500;
 }
 
 .navbar {
@@ -140,6 +141,7 @@ a h4:hover{
 .navbar .navbar-nav .nav-link:hover,
 .fixed-top.bg-white .navbar .navbar-nav .nav-link:hover
  {
+    text-decoration: underline!important;
     color: #f291a3 !important;
 }
 .fixed-top.bg-white .navbar .navbar-nav .nav-link.active,
@@ -289,7 +291,7 @@ a h4:hover{
 
 /*** Fruits Start ***/
 .fruite .tab-class .nav-item a.active {
-    background: var(--bs-secondary) !important;
+    background: #f291a3 !important;
 }
 
 .fruite .tab-class .nav-item a.active span {
@@ -548,13 +550,12 @@ a h4:hover{
 
 .product__details__pic__slider img {
     cursor: pointer;
-    width: 100px;
-    height: 70px;
-    margin-left: 10px;
+    max-height: 80px!important;
+    max-width: 100px;
 }
 
 .product__details__pic__slider.owl-carousel .owl-item img {
-
+    width: auto;
 }
 .product__details__pic {
     margin-bottom: 40px;
@@ -582,6 +583,9 @@ a h4:hover{
 }
 .breadcrumb-item{
     font-size: 18px;
+}
+.rounded-pill-atc{
+    height: 45px!important;
 }
 
 /*** Footer End ***/

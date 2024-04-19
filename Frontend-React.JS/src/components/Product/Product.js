@@ -17,7 +17,7 @@ class Product extends Component {
         const product  = this.props.product;
         console.log("img"+product.imgs[0].img)
         return (
-            <div className="col-md-6 col-lg-6 col-xl-4">
+
                 <div className="rounded position-relative fruite-item">
                     <div className="fruite-img">
                         <img src={product.imgs[0].img} className="img-fluid w-100 rounded-top" alt=""/>
@@ -35,7 +35,7 @@ class Product extends Component {
                         </div>
                     </div>
                 </div>
-            </div>
+
         )
     }
 

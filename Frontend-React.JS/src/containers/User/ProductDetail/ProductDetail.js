@@ -7,12 +7,12 @@ import {getProductById} from "../../../services/productService";
 import Breadcrumb from "../breadcrumb";
 class ProductDetail extends Component {
 
-    constructor(props){
-        super(props);
+    constructor(props) {
+      super(props);
 
-        this.state = {
-          product: {}, imgs:[]
-        }
+      this.state = {
+        product: {}, imgs: []
+      }
 
     }
 
@@ -32,6 +32,7 @@ class ProductDetail extends Component {
       console.error("Error fetching data:", error);
     }
   }
+
     render() {
       const p = this.state.product;
       const breadcrumbItems = [
@@ -60,6 +61,7 @@ class ProductDetail extends Component {
                             }
                           </div>
                           <div className="product__details__pic__slider owl-carousel">
+
                             {p.imgs && p.imgs.map((image, index) => (
                                 <img
                                     key={index}
@@ -68,6 +70,7 @@ class ProductDetail extends Component {
                                     alt=""
                                 />
                             ))}
+
                           </div>
                         </div>
                       </div>
@@ -98,7 +101,7 @@ class ProductDetail extends Component {
                             </button>
                           </div>
                         </div>
-                        <a href="#" className="btn border border-secondary rounded-pill px-4 py-2 mb-4 text-primary"><i className="fa fa-shopping-bag me-2 text-primary" /> Thêm vào giỏ hàng</a>
+                        <a href="#" className="btn border-secondary border rounded-pill rounded-pill-atc  px-4 py-2 mb-4 text-primary-cake"><i className="fa fa-shopping-bag me-2 text-primary-cake" /> Thêm vào giỏ hàng</a>
                       </div>
                       <div className="col-lg-12">
                         <nav>
@@ -115,45 +118,21 @@ class ProductDetail extends Component {
                                 <div className="col-6">
                                   <div className="row bg-light align-items-center text-center justify-content-center py-2">
                                     <div className="col-6">
-                                      <p className="mb-0">Weight</p>
+                                      <p className="mb-0">Khối lượng</p>
                                     </div>
                                     <div className="col-6">
-                                      <p className="mb-0">1 kg</p>
+                                      <p className="mb-0">{p.weight}</p>
                                     </div>
                                   </div>
                                   <div className="row text-center align-items-center justify-content-center py-2">
                                     <div className="col-6">
-                                      <p className="mb-0">Country of Origin</p>
+                                      <p className="mb-0">Kích thước</p>
                                     </div>
                                     <div className="col-6">
-                                      <p className="mb-0">Agro Farm</p>
+                                      <p className="mb-0">{p.size}</p>
                                     </div>
                                   </div>
-                                  <div className="row bg-light text-center align-items-center justify-content-center py-2">
-                                    <div className="col-6">
-                                      <p className="mb-0">Quality</p>
-                                    </div>
-                                    <div className="col-6">
-                                      <p className="mb-0">Organic</p>
-                                    </div>
                                   </div>
-                                  <div className="row text-center align-items-center justify-content-center py-2">
-                                    <div className="col-6">
-                                      <p className="mb-0">Сheck</p>
-                                    </div>
-                                    <div className="col-6">
-                                      <p className="mb-0">Healthy</p>
-                                    </div>
-                                  </div>
-                                  <div className="row bg-light text-center align-items-center justify-content-center py-2">
-                                    <div className="col-6">
-                                      <p className="mb-0">Min Weight</p>
-                                    </div>
-                                    <div className="col-6">
-                                      <p className="mb-0">250 Kg</p>
-                                    </div>
-                                  </div>
-                                </div>
                               </div>
                             </div>
                           </div>
@@ -190,8 +169,7 @@ class ProductDetail extends Component {
                                     <i className="fa fa-star" />
                                   </div>
                                 </div>
-                                <p className="text-dark">The generated Lorem Ipsum is therefore always free from repetition injected humour, or non-characteristic
-                                  words etc. Susp endisse ultricies nisi vel quam suscipit </p>
+
                               </div>
                             </div>
                           </div>

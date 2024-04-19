@@ -14,7 +14,6 @@ class ListProduct extends Component {
 
     async componentDidMount() {
         let response = await getListProducts();
-        console.log("dhdfuy" + response)
         if (response && response.errCode === 0) {
             this.setState({
                 listProducts: response.listProducts
@@ -35,7 +34,9 @@ function Items({ currentItems }) {
     return (
      <>
             {currentItems && currentItems.map((item) => (
+                <div className="col-md-6 col-lg-6 col-xl-4 ">
                 <Product key={item.id} product={item} />
+                </div>
             ))}
      </>
     );

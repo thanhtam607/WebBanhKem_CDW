@@ -6,12 +6,534 @@
   <component name="ChangeListManager">
     <list default="true" id="53da44d9-fc7e-49bf-8e08-acf967a9ff86" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/public/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B001/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B001/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B001/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B001/banh4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B002/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B002/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B002/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B002/banh4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B003/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B003/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B003/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B003/banh4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B004/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B004/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B004/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B005/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B005/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B005/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B006/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B006/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B006/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B007/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B007/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B007/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B008/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B008/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B008/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B009/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B009/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B009/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B009/banh4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B010/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B010/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B010/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B010/banh4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B011/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B011/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B011/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B011/banh4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B012/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B012/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B012/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B013/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B013/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B014/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B014/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B014/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B015/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B015/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B015/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B016/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B016/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B016/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B016/banh4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B017/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B017/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B017/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B017/banh4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B018/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B018/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B018/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B018/banh4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B019/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B019/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B019/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B020/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B020/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B020/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B020/banh4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B021/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B021/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B021/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B022/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B022/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B022/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B022/banh4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B023/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B023/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B023/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B023/banh4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B024/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B024/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B024/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B025/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B025/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B025/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B026/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B026/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B026/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B026/banh4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B027/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B027/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B027/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B027/banh4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B028/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B028/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B028/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B029/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B029/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B029/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B030/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B030/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B030/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B031/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B031/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B031/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B031/banh4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B032/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B032/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B032/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B032/banh4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B033/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B033/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B033/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B034/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B034/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B034/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B035/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B035/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B035/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B035/banh4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B036/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B036/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B036/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B036/banh4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B037/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B037/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B037/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B037/banh4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B038/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B038/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B038/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B038/banh4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B039/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B039/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B039/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B039/banh4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B040/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B040/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B040/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B040/banh4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B041/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B041/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B041/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B041/banh4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B042/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B042/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B042/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B043/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B043/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B043/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B044/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B044/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B044/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B045/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B045/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B045/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B046/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B046/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B046/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B047/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B047/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B047/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B047/banh4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B048/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B048/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B048/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B049/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B049/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B049/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B050/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B050/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B050/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B051/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B051/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B051/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B052/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B052/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B052/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B052/banh4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B053/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B053/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B053/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B053/banh4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B054/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B054/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B054/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B054/banh4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B055/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B055/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B055/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B055/banh4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B056/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B056/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B056/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B057/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B057/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B057/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B058/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B058/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B058/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B058/banh4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B059/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B059/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B059/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B059/banh4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B060/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B060/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B060/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B060/banh4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B061/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B061/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B061/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B062/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B062/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B062/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B062/banh4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B062/desktop.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B063/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B063/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B063/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B063/banh4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B064/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B064/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B064/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B064/banh4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B065/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B065/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B065/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B066/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B066/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B066/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B067/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B067/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B067/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B067/banh4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B068/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B068/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B068/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B069/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B069/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B069/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B069/banh4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B070/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B070/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B070/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B071/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B071/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B071/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B072/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B072/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B072/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B073/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B073/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B073/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B074/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B074/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B074/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B075/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B075/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B075/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B075/banh4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B076/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B076/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B076/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B077/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B077/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B077/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B078/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B078/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B078/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B078/banh4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B079/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B079/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B079/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B079/banh4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B080/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B080/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B080/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B080/banh4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B081/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B081/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B081/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B081/banh4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B082/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B082/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B082/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B082/banh4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B083/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B083/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B083/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B084/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B084/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B084/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B085/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B085/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B085/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B086/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B086/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B086/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B087/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B087/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B087/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B088/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B088/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B088/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B089/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B089/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B089/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B090/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B090/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B090/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B091/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B091/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B091/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B091/banh4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B092/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B092/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B092/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B092/banh4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B093/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B093/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B093/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B093/banh4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B094/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B094/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B094/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B095/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B095/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B095/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B095/banh4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B096/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B096/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B096/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B096/banh4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B097/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B097/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B097/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B097/banh4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B098/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B098/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B098/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B099/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B099/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B099/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B100/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B100/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B100/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B101/banh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B101/banh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B101/banh3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B101/banhbonglan-1_EQUO.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B99/bg-011.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B99/icon-256x256.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/product_img/product/B99/user2-160x160.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/img/about/anh1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/img/about/anh2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/img/avatar.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/img/baner-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/img/banner-fruits.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/img/best-product-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/img/best-product-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/img/best-product-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/img/best-product-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/img/best-product-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/img/best-product-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/img/cart-page-header-img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/img/featur-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/img/featur-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/img/featur-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/img/fruite-item-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/img/fruite-item-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/img/fruite-item-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/img/fruite-item-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/img/fruite-item-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/img/fruite-item-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/img/hero-img-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/img/hero-img-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/img/payment.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/img/single-item.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/img/testimonial-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/img/vegetable-item-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/img/vegetable-item-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/img/vegetable-item-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/img/vegetable-item-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/img/vegetable-item-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/img/vegetable-item-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/js/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/lib/easing/easing.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/lib/easing/easing.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/lib/lightbox/css/lightbox.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/lib/lightbox/images/close.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/lib/lightbox/images/loading.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/lib/lightbox/images/next.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/lib/lightbox/images/prev.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/lib/lightbox/js/lightbox.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/lib/owlcarousel/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/lib/owlcarousel/assets/ajax-loader.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/lib/owlcarousel/assets/owl.carousel.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/lib/owlcarousel/assets/owl.carousel.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/lib/owlcarousel/assets/owl.theme.default.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/lib/owlcarousel/assets/owl.theme.default.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/lib/owlcarousel/assets/owl.theme.green.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/lib/owlcarousel/assets/owl.theme.green.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/lib/owlcarousel/assets/owl.video.play.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/lib/owlcarousel/owl.carousel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/lib/owlcarousel/owl.carousel.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/lib/waypoints/links.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/assets/users/lib/waypoints/waypoints.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/pages/404er.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/pages/users/About/about.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/pages/users/Contact/contact.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/pages/users/HomePage/banner1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/pages/users/HomePage/banner2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/pages/users/HomePage/featurs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/pages/users/HomePage/home.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/pages/users/HomePage/product.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/pages/users/HomePage/shopHead.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/pages/users/HomePage/shopInHome.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/pages/users/HomePage/topSeller.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/pages/users/Shop/pagination.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/pages/users/Shop/products.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/pages/users/Shop/shop.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/pages/users/theme/footer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/pages/users/theme/header/header.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/pages/users/theme/header/searchModel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/pages/users/theme/header/spinner.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/pages/users/theme/productItem.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/_accordion.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/_alert.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/_badge.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/_breadcrumb.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/_button-group.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/_buttons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/_card.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/_carousel.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/_close.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/_containers.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/_dropdown.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/_forms.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/_functions.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/_grid.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/_helpers.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/_images.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/_list-group.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/_mixins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/_modal.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/_nav.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/_navbar.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/_offcanvas.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/_pagination.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/_popover.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/_progress.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/_reboot.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/_root.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/_spinners.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/_tables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/_toasts.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/_tooltip.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/_transitions.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/_type.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/_utilities.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/bootstrap-grid.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/bootstrap-reboot.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/bootstrap-utilities.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/bootstrap.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/forms/_floating-labels.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/forms/_form-check.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/forms/_form-control.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/forms/_form-range.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/forms/_form-select.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/forms/_form-text.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/forms/_input-group.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/forms/_labels.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/forms/_validation.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/helpers/_clearfix.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/helpers/_colored-links.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/helpers/_position.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/helpers/_ratio.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/helpers/_stretched-link.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/helpers/_text-truncation.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/helpers/_visually-hidden.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/mixins/_alert.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/mixins/_border-radius.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/mixins/_box-shadow.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/mixins/_breakpoints.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/mixins/_buttons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/mixins/_caret.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/mixins/_clearfix.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/mixins/_color-scheme.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/mixins/_container.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/mixins/_deprecate.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/mixins/_forms.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/mixins/_gradients.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/mixins/_grid.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/mixins/_image.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/mixins/_list-group.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/mixins/_lists.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/mixins/_pagination.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/mixins/_reset-text.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/mixins/_resize.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/mixins/_table-variants.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/mixins/_text-truncate.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/mixins/_transition.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/mixins/_utilities.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/mixins/_visually-hidden.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/utilities/_api.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/style/users/scss/bootstrap/scss/vendor/_rfs.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/css/bootstrap.min.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/containers/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/components/Product/Product.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/components/Product/Product.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Home/Home.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/ProductDetail/ProductDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/ProductDetail/ProductDetail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/utils/constant.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/utils/constant.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/Service/productService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/Service/productService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Shop/listProducts.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Shop/listProducts.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +569,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Documents/WebBanhKem_CDW/Frontend-React.JS/src/containers",
+    "last_opened_file_path": "D:/Documents/WebBanhKem_CDW/Frontend-React.JS/public/js",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -59,11 +581,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Documents\WebBanhKem_CDW\Frontend-React.JS\public\js" />
       <recent name="D:\Documents\WebBanhKem_CDW\Frontend-React.JS\src\containers" />
       <recent name="D:\Documents\WebBanhKem_CDW\Frontend-React.JS\src\containers\User\About" />
       <recent name="D:\Documents\WebBanhKem_CDW\Frontend-React.JS\public\img" />
       <recent name="D:\Documents\WebBanhKem_CDW\Client\src\assets\users\img" />
-      <recent name="D:\Documents\WebBanhKem_CDW\Client\src\assets\users\lib" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Documents\WebBanhKem_CDW\Frontend-React.JS\src\containers\User\Header" />
@@ -100,7 +622,7 @@
       <workItem from="1713428837574" duration="757000" />
       <workItem from="1713429630774" duration="8240000" />
       <workItem from="1713441466845" duration="11074000" />
-      <workItem from="1713494707042" duration="4845000" />
+      <workItem from="1713494707042" duration="12069000" />
     </task>
     <servers />
   </component>
@@ -135,9 +657,33 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/Frontend-React.JS/public/js/main.js</url>
-          <line>33</line>
+          <line>55</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Home/Home.js</url>
+          <line>150</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Home/Home.js</url>
+          <line>580</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Home/Home.js</url>
+          <line>585</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Home/Home.js</url>
+          <line>105</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

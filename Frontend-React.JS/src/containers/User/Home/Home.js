@@ -6,17 +6,36 @@ import Footer from '../Footer/Footer';
 import Product from '../../../components/Product/Product';
 import Featurs from '../../../components/ComponentsHome/Featurs/Featurs';
 import HorizontalProduct from '../../../components/ComponentsHome/HorizontalProduct/HorizontalProduct';
+import {getListProducts} from "../../../services/productService";
 class HOME extends Component {
 
     constructor(props){
         super(props);
         this.state = {
+          getAllProducts:[]
         
         }
 
     }
+    shuffleArray(array) {
+    // Xáo trộn mảng sử dụng thuật toán Fisher-Yates
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
 
-    componentDidMount() {
+    async componentDidMount() {
+      let response = await getListProducts();
+      const allProducts = response.listProducts;
+      const shuffledProducts = this.shuffleArray(allProducts);
+      const firstFourProducts = shuffledProducts.slice(0, 8); // Chỉ lấy 4 sản phẩm đầu tiên
+      this.setState({
+        getAllProducts: firstFourProducts
+      });
+      console.log(firstFourProducts);
+
     }
 
     render() {
@@ -92,27 +111,27 @@ class HOME extends Component {
                   <ul className="nav nav-pills d-inline-flex text-center mb-5">
                     <li className="nav-item">
                       <a className="d-flex m-2 py-2 bg-light rounded-pill active" data-bs-toggle="pill" href="#tab-1">
-                        <span className="text-dark" style={{width: '130px'}}>Tất cả</span>
+                        <span className="text-dark" style={{width: '130px'}}>Ngẫu nhiên</span>
                       </a>
                     </li>
                     <li className="nav-item">
                       <a className="d-flex py-2 m-2 bg-light rounded-pill" data-bs-toggle="pill" href="#tab-2">
-                        <span className="text-dark" style={{width: '130px'}}>Vegetables</span>
+                        <span className="text-dark" style={{width: '130px'}}>Bánh hoa</span>
                       </a>
                     </li>
                     <li className="nav-item">
                       <a className="d-flex m-2 py-2 bg-light rounded-pill" data-bs-toggle="pill" href="#tab-3">
-                        <span className="text-dark" style={{width: '130px'}}>Fruits</span>
+                        <span className="text-dark" style={{width: '130px'}}>Bánh trái cây</span>
                       </a>
                     </li>
                     <li className="nav-item">
                       <a className="d-flex m-2 py-2 bg-light rounded-pill" data-bs-toggle="pill" href="#tab-4">
-                        <span className="text-dark" style={{width: '130px'}}>Bread</span>
+                        <span className="text-dark" style={{width: '130px'}}>Bánh socola</span>
                       </a>
                     </li>
                     <li className="nav-item">
                       <a className="d-flex m-2 py-2 bg-light rounded-pill" data-bs-toggle="pill" href="#tab-5">
-                        <span className="text-dark" style={{width: '130px'}}>Meat</span>
+                        <span className="text-dark" style={{width: '130px'}}>Tất cả</span>
                       </a>
                     </li>
                   </ul>
@@ -123,18 +142,23 @@ class HOME extends Component {
                   <div className="row g-4">
                     <div className="col-lg-12">
                       <div className="row g-4">
-                      
-                        <div className="col-md-6 col-lg-4 col-xl-3">
-                           {/*<Product></Product>*/}
-                        </div>
 
-                        <div className="col-md-6 col-lg-4 col-xl-3">
-                           {/*<Product></Product>*/}
-                        </div>
+                        {this.state.getAllProducts && this.state.getAllProducts.map((item) => (
+                            <div className="col-md-6 col-lg-4 col-xl-3">
+                            <Product key={item.id} product={item} />
+                            </div>
+                        ))}
+                        {/**/}
+                        {/*   /!*<Product></Product>*!/*/}
 
-                        <div className="col-md-6 col-lg-4 col-xl-3">
-                           {/*<Product></Product>*/}
-                        </div>
+
+                        {/*<div className="col-md-6 col-lg-4 col-xl-3">*/}
+                        {/*   /!*<Product></Product>*!/*/}
+                        {/*</div>*/}
+
+                        {/*<div className="col-md-6 col-lg-4 col-xl-3">*/}
+                        {/*   /!*<Product></Product>*!/*/}
+                        {/*</div>*/}
                            
                       </div>
                     </div>
