@@ -11,7 +11,7 @@ class ProductDetail extends Component {
       super(props);
 
       this.state = {
-        product: {}, imgs: []
+        product: {}
       }
 
     }
@@ -20,6 +20,7 @@ class ProductDetail extends Component {
     try {
       const id = this.props.match.params.id;
       let response = await getProductById(id);
+
       if (response && response.errCode === 0) {
         if (response.product === null) {
           this.props.history.push('/error');
@@ -27,6 +28,7 @@ class ProductDetail extends Component {
         this.setState({
           product: response.product
         });
+
       }
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -35,6 +37,7 @@ class ProductDetail extends Component {
 
     render() {
       const p = this.state.product;
+
       const breadcrumbItems = [
         { title: "Trang chủ", link: "/", active: false },
         { title: "Sản phẩm", link: "/shop", active: false },
@@ -55,14 +58,14 @@ class ProductDetail extends Component {
                       <div className="col-lg-6 col-md-6">
                         <div className="product__details__pic">
                           <div className="product__details__pic__item">
-                            {p.imgs && p.imgs.length > 0 && // Kiểm tra nếu mảng tồn tại và không rỗng
+                            {p.Images && p.Images.length > 0 && // Kiểm tra nếu mảng tồn tại và không rỗng
                                 <img className="product__details__pic__item--large"
-                                     src={"../"+p.imgs[0].img} alt=""/>
+                                     src={"../"+p.Images[0].img} alt=""/>
                             }
                           </div>
                           <div className="product__details__pic__slider owl-carousel">
 
-                            {p.imgs && p.imgs.map((image, index) => (
+                            {p.Images && p.Images.map((image, index) => (
                                 <img
                                     key={index}
                                     data-imgbigurl={"../" + image.img}
@@ -76,7 +79,9 @@ class ProductDetail extends Component {
                       </div>
                       <div className="col-lg-6">
                         <h4 className="fw-bold mb-3">{p.name}</h4>
-                        <p className="mb-3">Loại bánh: {p.type}</p>
+                        {p.category && (
+                          <p className="mb-3">Loại bánh: {p.category.name}</p>
+                      )}
 
                         <h5 className="fw-bold mb-3">{p.price} VND</h5>
                         <div className="d-flex mb-4">
