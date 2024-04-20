@@ -10,21 +10,16 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Product.hasMany(models.Product_Img,{foreignKey:'id_product',as:'productImageData'})
-      Product.hasMany(models.Comment,{foreignKey:'id_product',as:'CommentImageData'})
+      Product.hasMany(models.Product_Img,{foreignKey:'id_product',as:'Images'})
+      Product.hasMany(models.Comment,{foreignKey:'id_product',as:'Comments'})
       Product.hasMany(models.Cart,{foreignKey:'id_product',as:'cartData'})
       Product.hasMany(models.Bill_Detail,{foreignKey:'id_product',as:'BillDetailData'})
       Product.belongsTo(models.Discount,{foreignKey:'id_product',as:'discountImageData'})
-      Product.belongsTo(models.Category,{foreignKey:'id_type',as:'categoryData'})
+      Product.belongsTo(models.Category,{foreignKey:'id_type',as:'category'})
     }
   };
   Product.init({
     // INSERT INTO PRODUCTS(ID_TYPE, NAME, SIZE, WEIGHT, DESCRIPTION, INTRODUCTION, PRICE, STATUS)
-    id: {
-      type: DataTypes.INTEGER,
-      primaryKey: true, // Đây là khóa chính
-      autoIncrement: true // Đây là một khóa tự động tăng
-    },
     id_type: DataTypes.INTEGER,
     name: DataTypes.STRING,
     size: DataTypes.STRING,
