@@ -26,7 +26,34 @@ let getProductById = async (req, res) => {
         product
     });
 }
+let getProductsByCategory = async (req, res) => {
+    let cat = req.query.category;
+    if(!cat){
+        return res.status(200).json({
+            errCode: 0,
+            errMessage:"ok",
+            product:''
+        });
+    }
+    let products = await productService.getProductsByCategory(cat);
+    return res.status(200).json({
+        errCode: 0,
+        errMessage:"ok",
+        products
+    });
+}
+let getAllCategories = async (req, res) => {
+    let categories = await productService.getAllCategoies;
+    return res.status(200).json({
+        errCode: 0,
+        errMessage:"ok",
+        categories
+    });
+}
+
 module.exports = {
     getListProducts: getListProducts,
-    getProductById: getProductById
+    getProductById: getProductById,
+    getProductsByCategory:getProductsByCategory,
+    getAllCategories: getAllCategories
 };
