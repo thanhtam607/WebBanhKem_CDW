@@ -116,6 +116,31 @@ let updateCart = (data) => {
   });
 };
 
+let updateStatusCart = (data) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      if (!data.id_cart || !data.status) {
+        resolve("Missing required parameter");
+      }
+
+      let cart = await db.Cart.findOne({
+        where: { id: data.id_cart },
+      });
+
+      if (!cart) {
+        resolve("Cart not found");
+      }
+
+      cart.status = data.status;
+      await cart.save();
+
+      resolve("Update status cart successfully");
+    } catch (e) {
+      reject(e);
+    }
+  });
+};
+
 module.exports = {
   createCart: createCart,
   getAllCartsByIdUser: getAllCartsByIdUser,
