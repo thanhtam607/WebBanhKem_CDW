@@ -6,21 +6,32 @@ let createCart = (data) => {
       resolve("Missing required parameter");
     }
 
-    try {
-      let cart = await db.Cart.create({
-        id_user: data.id_user,
-        id_product: data.id_product,
-        quantity: data.quantity,
-        status: 0,
+    if (checkCartExist(data.id_user, data.id_product)) {
+      let cart = await db.Cart.findOne({
+        where: { id_user: data.id_user, id_product: data.id_product },
       });
 
-      if (cart) {
-        resolve("Create cart successfully");
-      } else {
-        resolve("Create cart failed");
+      cart.quantity += data.quantity;
+      await cart.save();
+
+      resolve("Update cart successfully");
+    } else {
+      try {
+        let cart = await db.Cart.create({
+          id_user: data.id_user,
+          id_product: data.id_product,
+          quantity: data.quantity,
+          status: 0,
+        });
+
+        if (cart) {
+          resolve("Create cart successfully");
+        } else {
+          resolve("Create cart failed");
+        }
+      } catch (e) {
+        reject(e);
       }
-    } catch (e) {
-      reject(e);
     }
   });
 };
@@ -135,6 +146,24 @@ let updateStatusCart = (data) => {
       await cart.save();
 
       resolve("Update status cart successfully");
+    } catch (e) {
+      reject(e);
+    }
+  });
+};
+
+let checkCartExist = (id_user, id_product) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      let cart = await db.Cart.findOne({
+        where: { id_user: id_user, id_product: id_product },
+      });
+
+      if (!cart) {
+        resolve(false);
+      } else {
+        resolve(true);
+      }
     } catch (e) {
       reject(e);
     }

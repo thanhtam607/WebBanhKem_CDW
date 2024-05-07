@@ -3,6 +3,7 @@ import homeController from "../controller/homeController";
 import productController from "../controller/productController";
 import cartController from "../controller/cartController";
 import categoryController from "../controller/categoryController";
+import billController from "../controller/billController";
 
 let router = express.Router();
 
@@ -23,6 +24,11 @@ let initWebRoutes = (app) => {
   router.post("/api/createCategory", categoryController.createCategory);
   router.post("/api/updateCategory", categoryController.updateCategory);
   router.post("/api/deleteCategory", categoryController.deleteCategory);
+
+  // get bills by id user
+  router.get("/api/getAllBillsByIdUser", billController.getAllBillsByIdUser);
+  // get bill by id
+  router.get("/api/getBillById", billController.getBillById);
 
   return app.use("/", router);
 };
