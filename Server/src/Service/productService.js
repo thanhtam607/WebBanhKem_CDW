@@ -21,7 +21,7 @@ let getListProducts = () => {
           {
             model: db.Category,
             as: "category",
-            attributes: ["name"],
+            attributes: ["id", "name"],
             required: true,
           },
           {
@@ -58,7 +58,7 @@ let getProductById = (id) => {
           {
             model: db.Category,
             as: "category",
-            attributes: ["name"],
+            attributes: ["id", "name"],
             required: true,
           },
           {
@@ -76,7 +76,47 @@ let getProductById = (id) => {
   });
 };
 
+let getAllProductsByIdCategory = (idCategory) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const listProducts = await db.Product.findAll({
+        where: {
+          id_type: idCategory,
+        },
+        attributes: [
+          "id",
+          "name",
+          "introduction",
+          "description",
+          "size",
+          "weight",
+          "price",
+        ],
+        include: [
+          {
+            model: db.Category,
+            as: "category",
+            attributes: ["id", "name"],
+            required: true,
+          },
+          {
+            model: db.Product_Img,
+            as: "Images",
+            attributes: ["img"],
+            required: true,
+          },
+        ],
+      });
+
+      resolve(listProducts);
+    } catch (e) {
+      reject(e);
+    }
+  });
+};
+
 module.exports = {
   getListProducts: getListProducts,
   getProductById: getProductById,
+  getAllProductsByIdCategory: getAllProductsByIdCategory,
 };

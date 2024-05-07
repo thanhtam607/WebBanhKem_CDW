@@ -12,6 +12,10 @@ let initWebRoutes = (app) => {
 
   router.get("/api/getListProducts", productController.getListProducts);
   router.get("/api/getProductById", productController.getProductById);
+  router.get(
+    "/api/getAllProductsByIdCategory",
+    productController.getAllProductsByIdCategory
+  );
 
   router.post("/api/createCart", cartController.createCart);
   router.get("/api/getAllCartsByIdUser", cartController.getAllCartsByIdUser);

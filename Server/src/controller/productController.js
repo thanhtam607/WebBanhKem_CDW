@@ -25,7 +25,26 @@ let getProductById = async (req, res) => {
     product,
   });
 };
+
+let getAllProductsByIdCategory = async (req, res) => {
+  let id = req.query.id;
+  if (!id) {
+    return res.status(200).json({
+      errCode: 0,
+      errMessage: "empty category",
+      data: [],
+    });
+  }
+  let listProducts = await productService.getAllProductsByIdCategory(id);
+  return res.status(200).json({
+    errCode: 0,
+    errMessage: "ok",
+    data: listProducts,
+  });
+};
+
 module.exports = {
   getListProducts: getListProducts,
   getProductById: getProductById,
+  getAllProductsByIdCategory: getAllProductsByIdCategory,
 };
