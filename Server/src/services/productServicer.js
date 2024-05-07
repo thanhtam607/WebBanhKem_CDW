@@ -7,6 +7,13 @@ let getProductById = (id) => {
         attributes: { exclude: ["id_product"] },
         where: { id: id },
         raw: true,
+        include: [
+          {
+            model: db.Product_Img,
+            as: "productImageData",
+            attributes: ["img"],
+          },
+        ],
       });
       const data = {
         errCode: 0,
