@@ -27,8 +27,9 @@ let initWebRoutes = (app) => {
 
   // get bills by id user
   router.get("/api/getAllBillsByIdUser", billController.getAllBillsByIdUser);
-  // get bill by id
   router.get("/api/getBillById", billController.getBillById);
+  // update status bill
+  router.post("/api/updateStatusBill", billController.updateStatusBill);
 
   return app.use("/", router);
 };

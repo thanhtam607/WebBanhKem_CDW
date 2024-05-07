@@ -1,3 +1,4 @@
+import { INTEGER } from "sequelize";
 import db from "../models";
 
 let createCart = (data) => {
@@ -5,13 +6,14 @@ let createCart = (data) => {
     if (!data.id_user || !data.id_product || !data.quantity) {
       resolve("Missing required parameter");
     }
-
-    if (checkCartExist(data.id_user, data.id_product)) {
+    let checkCart = await checkCartExist(data.id_user, data.id_product);
+    if (checkCart) {
       let cart = await db.Cart.findOne({
         where: { id_user: data.id_user, id_product: data.id_product },
       });
 
-      cart.quantity += data.quantity;
+      let quantity = parseInt(cart.quantity) + parseInt(data.quantity);
+      cart.quantity = quantity;
       await cart.save();
 
       resolve("Update cart successfully");

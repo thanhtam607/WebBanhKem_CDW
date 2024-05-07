@@ -67,7 +67,31 @@ let getBillById = (id) => {
   });
 };
 
+let updateStatusBill = (data) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      if (!data) {
+        resolve("Missing required parameter");
+      }
+
+      let bill = await db.Bill.update(
+        {
+          status: data.status,
+        },
+        {
+          where: { id: data.id },
+        }
+      );
+
+      resolve("Update status bill successfully");
+    } catch (e) {
+      reject(e);
+    }
+  });
+};
+
 module.exports = {
   getAllBillsByIdUser: getAllBillsByIdUser,
   getBillById: getBillById,
+  updateStatusBill: updateStatusBill,
 };

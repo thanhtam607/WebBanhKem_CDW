@@ -32,7 +32,24 @@ let getBillById = async (req, res) => {
   });
 };
 
+let updateStatusBill = async (req, res) => {
+  let data = req.body;
+  if (!data.id || !data.status) {
+    return res.status(200).json({
+      errCode: 1,
+      message: "Missing required parameter",
+    });
+  }
+
+  let message = await billService.updateStatusBill(data);
+  return res.status(200).json({
+    errCode: 0,
+    message: message,
+  });
+};
+
 module.exports = {
   getAllBillsByIdUser: getAllBillsByIdUser,
   getBillById: getBillById,
+  updateStatusBill: updateStatusBill,
 };
