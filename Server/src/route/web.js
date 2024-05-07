@@ -9,6 +9,7 @@ let initWebRoutes = (app) => {
     router.get("/api/getProductById", productController.getProductById);
     router.get("/api/getProductsByCategory", productController.getProductsByCategory);
     router.get("/api/getAllCategories", productController.getAllCategories);
+    router.get("/api/getHotProducts", productController.getHotProducts);
     return app.use("/", router);
 }
 

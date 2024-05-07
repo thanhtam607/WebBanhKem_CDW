@@ -50,10 +50,19 @@ let getAllCategories = async (req, res) => {
         categories
     });
 }
+let getHotProducts= async (req, res) => {
+    let listProducts = await productService.getHotProducts();
+    return res.status(200).json({
+        errCode: 0,
+        errMessage:"ok",
+        listProducts
+    });
+}
 
 module.exports = {
     getListProducts: getListProducts,
     getProductById: getProductById,
     getProductsByCategory:getProductsByCategory,
-    getAllCategories: getAllCategories
+    getAllCategories: getAllCategories,
+    getHotProducts: getHotProducts
 };
