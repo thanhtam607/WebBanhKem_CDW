@@ -74,7 +74,7 @@ class Login extends Component {
 
                                 <p className="text-center">
                                     <span>Bạn chưa có tài khoản?</span>
-                                    <a href="auth-register-basic.html">
+                                    <a href="/register">
                                         <span className="text-primary-cake"> Đăng ký ngay</span>
                                     </a>
                                 </p>

@@ -8,6 +8,7 @@ import { ToastContainer } from 'react-toastify';
 import { userIsAuthenticated, userIsNotAuthenticated } from '../hoc/authentication';
 import CustomScrollbars from '../components/CustomScrollbars.js';
 import Login from './User/Login/Login';
+import Register from './User/Register/Register';
 import Home from './User/Home/Home';
 import { path } from '../utils'
 
@@ -54,6 +55,7 @@ class App extends Component {
                                     <Route path={path.ERROR}  component={(Error)} />
                                     <Route path={path.ABOUT}  component={(About)} />
                                     <Route path={path.LOGIN}  component={(Login)} />
+                                    <Route path={path.REGISTER}  component={(Register)} />
                                     <Route path={path.CARD}  component={(Card)} />
                                     <Route path={path.PRODUCTDETAIL}  component={(ProductDetail)} />
                                     <Route path={path.SHOP}  component={(SHOP)} />
