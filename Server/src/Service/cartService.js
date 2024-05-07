@@ -91,8 +91,34 @@ let deleteCart = (data) => {
   });
 };
 
+let updateCart = (data) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      if (!data.id_cart || !data.quantity) {
+        resolve("Missing required parameter");
+      }
+
+      let cart = await db.Cart.findOne({
+        where: { id: data.id_cart },
+      });
+
+      if (!cart) {
+        resolve("Cart not found");
+      }
+
+      cart.quantity = data.quantity;
+      await cart.save();
+
+      resolve("Update cart successfully");
+    } catch (e) {
+      reject(e);
+    }
+  });
+};
+
 module.exports = {
   createCart: createCart,
   getAllCartsByIdUser: getAllCartsByIdUser,
   deleteCart: deleteCart,
+  updateCart: updateCart,
 };

@@ -13,6 +13,7 @@ let initWebRoutes = (app) => {
   router.post("/api/createCart", cartController.createCart);
   router.get("/api/getAllCartsByIdUser", cartController.getAllCartsByIdUser);
   router.post("/api/deleteCart", cartController.deleteCart);
+  router.post("/api/updateCart", cartController.updateCart);
 
   return app.use("/", router);
 };

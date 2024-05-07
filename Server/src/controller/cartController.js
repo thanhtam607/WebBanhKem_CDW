@@ -32,8 +32,17 @@ let deleteCart = async (req, res) => {
   });
 };
 
+let updateCart = async (req, res) => {
+  let message = await cartService.updateCart(req.body);
+  return res.status(200).json({
+    errCode: 0,
+    message: message,
+  });
+};
+
 module.exports = {
   createCart: createCart,
   getAllCartsByIdUser: getAllCartsByIdUser,
   deleteCart: deleteCart,
+  updateCart: updateCart,
 };
