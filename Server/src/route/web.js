@@ -2,6 +2,8 @@ import express from "express";
 import homeController from "../controller/homeController";
 import productController from "../controller/productController";
 import cartController from "../controller/cartController";
+import categoryController from "../controller/categoryController";
+
 let router = express.Router();
 
 let initWebRoutes = (app) => {
@@ -15,6 +17,9 @@ let initWebRoutes = (app) => {
   router.post("/api/deleteCart", cartController.deleteCart);
   router.post("/api/updateCart", cartController.updateCart);
   router.post("/api/updateStatusCart", cartController.updateStatusCart);
+
+  // Caterory
+  router.get("/api/getAllCategories", categoryController.getAllCategories);
 
   return app.use("/", router);
 };
