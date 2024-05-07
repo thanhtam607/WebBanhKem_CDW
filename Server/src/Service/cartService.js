@@ -70,12 +70,12 @@ let getAllCartsByIdUser = (id_user) => {
 let deleteCart = (data) => {
   return new Promise(async (resolve, reject) => {
     try {
-      if (!data.id_cart) {
+      if (!data.id) {
         resolve("Missing required parameter");
       }
 
       let cart = await db.Cart.findOne({
-        where: { id: data.id_cart },
+        where: { id: data.id },
       });
 
       if (!cart) {
@@ -94,12 +94,12 @@ let deleteCart = (data) => {
 let updateCart = (data) => {
   return new Promise(async (resolve, reject) => {
     try {
-      if (!data.id_cart || !data.quantity) {
+      if (!data.id || !data.quantity) {
         resolve("Missing required parameter");
       }
 
       let cart = await db.Cart.findOne({
-        where: { id: data.id_cart },
+        where: { id: data.id },
       });
 
       if (!cart) {
@@ -119,12 +119,12 @@ let updateCart = (data) => {
 let updateStatusCart = (data) => {
   return new Promise(async (resolve, reject) => {
     try {
-      if (!data.id_cart || !data.status) {
+      if (!data.id || !data.status) {
         resolve("Missing required parameter");
       }
 
       let cart = await db.Cart.findOne({
-        where: { id: data.id_cart },
+        where: { id: data.id },
       });
 
       if (!cart) {

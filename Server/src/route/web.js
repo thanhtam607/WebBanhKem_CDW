@@ -20,6 +20,9 @@ let initWebRoutes = (app) => {
 
   // Caterory
   router.get("/api/getAllCategories", categoryController.getAllCategories);
+  router.post("/api/createCategory", categoryController.createCategory);
+  router.post("/api/updateCategory", categoryController.updateCategory);
+  router.post("/api/deleteCategory", categoryController.deleteCategory);
 
   return app.use("/", router);
 };
