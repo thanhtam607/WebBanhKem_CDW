@@ -18,8 +18,8 @@ import ProductDetail from './User/ProductDetail/ProductDetail';
 import CheckOut from './User/CheckOut/CheckOut';
 import SHOP from './User/Shop/Shop';
 import Contact from './User/Contact/Contact';
-import SignUp from './User/SignUp/SignUp';
-
+import About from './User/About/About';
+import Error from './404er';
 class App extends Component {
 
     handlePersistorState = () => {
@@ -50,16 +50,18 @@ class App extends Component {
 
                         <div className="content-container">
                             <CustomScrollbars style={{height:'100vh',width:'100%'}}>
-                            <Switch>
-                                <Route path={path.LOGIN}  component={(Login)} />
-                                <Route path={path.SIGNUP}  component={(SignUp)} />
-                                <Route path={path.CARD}  component={(Card)} />
-                                <Route path={path.PRODUCTDETAIL}  component={(ProductDetail)} />
-                                <Route path={path.SHOP}  component={(SHOP)} />
-                                <Route path={path.CHECKOUT}  component={(CheckOut)} />
-                                <Route path={path.CONTACT}  component={(Contact)} />
-                                <Route path={path.HOME}  component={(Home)} />
-                              </Switch>
+                                <Switch>
+                                    <Route path={path.ERROR}  component={(Error)} />
+                                    <Route path={path.ABOUT}  component={(About)} />
+                                    <Route path={path.LOGIN}  component={(Login)} />
+                                    <Route path={path.CARD}  component={(Card)} />
+                                    <Route path={path.PRODUCTDETAIL}  component={(ProductDetail)} />
+                                    <Route path={path.SHOP}  component={(SHOP)} />
+                                    <Route path={path.CHECKOUT}  component={(CheckOut)} />
+                                    <Route path={path.CONTACT}  component={(Contact)} />
+                                    <Route path={path.HOME}  component={(Home)} />
+
+                                </Switch>
                             </CustomScrollbars>
                         </div>
 

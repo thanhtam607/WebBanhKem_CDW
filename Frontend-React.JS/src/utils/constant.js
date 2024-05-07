@@ -6,8 +6,10 @@ export const path = {
     CHECKOUT: '/checkout',
     SHOP: '/shop',
     CONTACT: '/contact',
-    PRODUCTDETAIL: '/product-detail',
-    SYSTEM: '/system'
+    PRODUCTDETAIL: '/product-detail/:id',
+    SYSTEM: '/system',
+    ABOUT: '/about',
+    ERROR: '/error',
 };
 
 export const languages = {

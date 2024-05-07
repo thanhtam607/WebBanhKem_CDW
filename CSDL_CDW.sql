@@ -1,5 +1,5 @@
-CREATE DATABASE banbanhkem_cdw;
-use banbanhkem_cdw;
+CREATE DATABASE cake_shop;
+use cake_shop;
 -- --
 /*==============================typeOfCake=====================================*/
 create table TYPEOFCAKE(ID INT NOT NULL AUTO_INCREMENT PRIMARY key, NAME varchar(40), STATUS int);

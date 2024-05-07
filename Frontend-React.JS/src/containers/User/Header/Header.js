@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import "./Header.scss"
+import Navigation from "./navigation";
 class Header extends Component {
 
     constructor(props){
@@ -16,11 +17,11 @@ class Header extends Component {
             <div>
         {/* Navbar start */}
         <div className="container-fluid fixed-top">
-          <div className="container topbar bg-primary d-none d-lg-block">
+          <div className="container topbar bg-primary-cake d-none d-lg-block">
             <div className="d-flex justify-content-between">
               <div className="top-info ps-2">
-                <small className="me-3"><i className="fas fa-map-marker-alt me-2 text-secondary" /> <span  className="text-white">Thủ Đức, Thành phố Hồ Chí Minh</span></small>
-                <small className="me-3"><i className="fas fa-envelope me-2 text-secondary" /><span className="text-white">tiembanhbinhyen@gmail.com</span></small>
+                <small className="me-3"><i className="fas fa-map-marker-alt me-2 text-secondary-cake" /> <span  className="text-white">Thủ Đức, Thành phố Hồ Chí Minh</span></small>
+                <small className="me-3"><i className="fas fa-envelope me-2 text-secondary-cake" /><span className="text-white">tiembanhbinhyen@gmail.com</span></small>
               </div>
               <div className="top-link pe-2">
                 <a href="#" className="text-white"><small className="text-white mx-2">Privacy Policy</small>/</a>
@@ -30,40 +31,7 @@ class Header extends Component {
             </div>
           </div>
           <div className="container px-0">
-            <nav className="navbar navbar-light bg-white navbar-expand-xl">
-              <a href="index.html" className="navbar-brand"><h1 className="text-primary display-6">Peace Bakery</h1></a>
-              <button className="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span className="fa fa-bars text-primary" />
-              </button>
-              <div className="collapse navbar-collapse bg-white" id="navbarCollapse">
-                <div className="navbar-nav mx-auto">
-                  <a href="index.html" className="nav-item nav-link active">Trang chủ</a>
-                  <a href="shop.html" className="nav-item nav-link">Giới thiệu</a>
-                  <a href="shop.html" className="nav-item nav-link">Sản phẩm</a>
-                  {/*                            <a href="shop-detail.html" class="nav-item nav-link">Shop Detail</a>*/}
-                  {/*                            <div class="nav-item dropdown">*/}
-                  {/*                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>*/}
-                  {/*                                <div class="dropdown-menu m-0 bg-secondary rounded-0">*/}
-                  {/*                                    <a href="cart.html" class="dropdown-item">Cart</a>*/}
-                  {/*                                    <a href="chackout.html" class="dropdown-item">Chackout</a>*/}
-                  {/*                                    <a href="testimonial.html" class="dropdown-item">Testimonial</a>*/}
-                  {/*                                    <a href="404.html" class="dropdown-item">404 Page</a>*/}
-                  {/*                                </div>*/}
-                  {/*                            </div>*/}
-                  <a href="contact.html" className="nav-item nav-link">Liên hệ</a>
-                </div>
-                <div className="d-flex m-3 me-0">
-                  <button className="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4" data-bs-toggle="modal" data-bs-target="#searchModal"><i className="fas fa-search text-primary" /></button>
-                  <a href="#" className="position-relative me-4 my-auto">
-                    <i className="fa fa-shopping-bag fa-2x" />
-                    <span className="position-absolute bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center px-1" style={{top: '-5px', left: '15px', height: '20px', minWidth: '20px'}}>3</span>
-                  </a>
-                  <a href="#" className="my-auto">
-                    <i className="fas fa-user fa-2x" />
-                  </a>
-                </div>
-              </div>
-            </nav>
+            <Navigation pageActive={this.props.pageActive}/>
           </div>
         </div>
         {/* Navbar End */}

@@ -1,20 +1,18 @@
 import express from "express";
 import homeController from "../controller/homeController";
-import userController from "../controller/userController";
 import productController from "../controller/productController";
-
+import cartController from "../controller/cartController";
 let router = express.Router();
 
 let initWebRoutes = (app) => {
   router.get("/", homeController.getHomePage);
 
-  // user
-  router.get("/api/get-all-users", userController.getAllUsers);
-  router.post("/api/create-user", userController.handleCreateNewUser);
-  router.post("/api/login", userController.userLogin);
+  router.get("/api/getListProducts", productController.getListProducts);
+  router.get("/api/getProductById", productController.getProductById);
 
-  // product
-  router.get("/api/get-product-by-id", productController.getProductDetailById);
+  router.post("/api/createCart", cartController.createCart);
+  router.get("/api/getAllCartsByIdUser", cartController.getAllCartsByIdUser);
+  router.post("/api/deleteCart", cartController.deleteCart);
 
   return app.use("/", router);
 };

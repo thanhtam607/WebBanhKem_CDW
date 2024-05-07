@@ -3,13 +3,16 @@ import bodyParser from "body-parser";
 import viewEngine from "./config/viewEngine";
 import initWebRoutes from "./route/web";
 import connectDB from './config/conectDB';
-// import cors from 'cors';
+import cors from 'cors';
 
 require('dotenv').config();   // giup chayj dc dong process.env
 
 
 let app = express();
-// app.use(cors({ origin: true }));
+app.use(cors({
+    origin: 'http://localhost:3000',
+    credentials: true // Cho phép sử dụng credentials
+}));
 
 
 app.use(bodyParser.json());

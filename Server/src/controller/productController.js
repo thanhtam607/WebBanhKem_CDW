@@ -1,21 +1,31 @@
-import productServicer from "../services/productServicer";
+import productService from "../Service/productService";
+let getListProducts = async (req, res) => {
+  // ID_TYPE, NAME, SIZE, WEIGHT, DESCRIPTION, INTRODUCTION, PRICE, STATUS
+  let listProducts = await productService.getListProducts();
 
-let getProductDetailById = async (req, res) => {
-  const id = req.query.id;
-  if (!id) {
-    return res.status(500).json({
-      errCode: 1,
-      message: "Thiếu thông số id",
-    });
-  }
-  const data = await productServicer.getProductById(id);
   return res.status(200).json({
-    errCode: data.errCode,
-    message: data.message,
-    data: data.product ? data.product : {},
+    errCode: 0,
+    errMessage: "ok",
+    listProducts,
   });
 };
-
+let getProductById = async (req, res) => {
+  let id = req.query.id;
+  if (!id) {
+    return res.status(200).json({
+      errCode: 0,
+      errMessage: "ok",
+      product: "",
+    });
+  }
+  let product = await productService.getProductById(id);
+  return res.status(200).json({
+    errCode: 0,
+    errMessage: "ok",
+    product,
+  });
+};
 module.exports = {
-  getProductDetailById: getProductDetailById,
+  getListProducts: getListProducts,
+  getProductById: getProductById,
 };
