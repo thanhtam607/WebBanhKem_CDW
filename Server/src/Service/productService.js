@@ -56,8 +56,91 @@ let getProductById = (id) => {
             }
     });
 };
+let getProductsByCategory = (category) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            const listProducts = await db.Product.findAll({
+                where: {
+                    STATUS: 0,
+                },
+                attributes: ['id', 'name', 'introduction', 'description', 'size', 'weight', 'price'],
+                include: [
+                    {
+                        model: db.Category,
+                        as: 'category',
+                        attributes: ['name'],
+                        where: {
+                            name: category
+                        },
+                        required: true
+                    },{
+                        model: db.Product_Img,
+                        as: 'Images',
+                        attributes: ['img'],
+                        required: true
+                    }
+                ]
+            });
+            resolve(listProducts);
+        } catch (e) {
+            reject(e);
+        }
+    });
+}
+let getAllCategoies=()=>{
+    return new Promise(async (resolve, reject) => {
+        try {
+            const categories = await db.Category.findAll({
+                attributes:['id', 'name']
+            })
+            resolve(categories)
+        } catch (e) {
+            reject(e)
+        }
+    })
+}
+let getHotProducts = async () => {
+    // try {
+    //     const hotProducts = await db.Product.findAll({
+    //         attributes: ['id', 'name', 'introduction', 'description', 'size', 'weight', 'price'],
+    //         where: { STATUS: 0 },
+    //         include: [
+    //             {
+    //                 model: db.Category,
+    //                 as: 'category',
+    //                 attributes: ['name'],
+    //                 required: true
+    //             }, {
+    //                 model: db.Product_Img,
+    //                 as: 'Images',
+    //                 attributes: ['img'],
+    //                 required: true
+    //             },
+    //             {
+    //                 model: db.Bill_Detail,
+    //                 as: 'BillDetailData',
+    //                 attributes: [
+    //                     [db.fn('SUM', db.col('amount')), 'total'] // Chỉ định alias là 'total' cho kết quả
+    //                 ]
+    //             }
+    //         ],
+    //         group: ['id'],
+    //         order: [[db.literal('total'), 'DESC']]
+    //     });
+    //     return hotProducts;
+    // } catch (error) {
+    //     throw new Error('Lỗi khi lấy sản phẩm hot:', error);
+    // }
+};
+
+// Sử dụng phương thức
+
+
 
 module.exports = {
     getListProducts: getListProducts(),
-    getProductById: getProductById
+    getProductById: getProductById,
+    getProductsByCategory: getProductsByCategory,
+    getAllCategoies: getAllCategoies(),
+    getHotProducts: getHotProducts()
 }

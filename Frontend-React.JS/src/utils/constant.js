@@ -9,6 +9,7 @@ export const path = {
     SYSTEM: '/system',
     ABOUT: '/about',
     ERROR: '/error',
+    REGISTER: '/register',
 };
 
 export const languages = {

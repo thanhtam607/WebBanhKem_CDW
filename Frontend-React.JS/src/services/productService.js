@@ -9,5 +9,12 @@ const getProductById = (id)=>{
 const getPageCount = (totalItem, limit)=>{
     return Math.ceil(totalItem/limit)
 }
+const getProductsByCategory = (category)=>{
+    return axios.get(`/api/getProductsByCategory?category=${category}`)
+}
+const getAllCategoris = (id)=>{
+    return axios.get(`/api/getAllCategories`)
+}
 
-export {getListProducts, getProductById, getPageCount}
+export {getListProducts, getProductById, getPageCount
+, getAllCategoris, getProductsByCategory}

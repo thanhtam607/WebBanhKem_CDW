@@ -3,19 +3,22 @@ import { connect } from 'react-redux';
 import "./Home.scss"
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-import Product from '../../../components/Product/Product';
+import ProductList from "../../../components/ComponentsHome/ProductList/productsList";
 import Featurs from '../../../components/ComponentsHome/Featurs/Featurs';
 import HorizontalProduct from '../../../components/ComponentsHome/HorizontalProduct/HorizontalProduct';
-import {getListProducts} from "../../../services/productService";
+import {getListProducts, getProductsByCategory} from "../../../services/productService";
+import Banner1 from "../../../components/ComponentsHome/Banner/banner1";
+import Banner2 from "../../../components/ComponentsHome/Banner/banner2";
 class HOME extends Component {
-
     constructor(props){
         super(props);
         this.state = {
-          getAllProducts:[]
+          getShuffledProducts:[],
+          getProducts1:[],
+          getProducts2:[],
+          getProducts3:[],
         
         }
-
     }
     shuffleArray(array) {
     // Xáo trộn mảng sử dụng thuật toán Fisher-Yates
@@ -26,58 +29,37 @@ class HOME extends Component {
     return array;
   }
 
-    async componentDidMount() {
-      let response = await getListProducts();
-      const allProducts = response.listProducts;
-      const shuffledProducts = this.shuffleArray(allProducts);
-      const firstFourProducts = shuffledProducts.slice(0, 8); // Chỉ lấy 4 sản phẩm đầu tiên
-      this.setState({
-        getAllProducts: firstFourProducts
-      });
-      console.log(firstFourProducts);
 
-    }
+  async componentDidMount() {
+    const [response1, response2, response3, response4] = await Promise.all([
+      getListProducts(),
+      getProductsByCategory("Bánh hoa"),
+      getProductsByCategory("Bánh trái cây"),
+      getProductsByCategory("Bánh maccaron và socola")
+    ]);
 
-    render() {
+    const allProducts = response1.listProducts;
+    const firstEightProducts = this.getFirstEightProducts([this.shuffleArray(allProducts),response2.products, response3.products, response4.products]);
+
+    this.setState({
+      getShuffledProducts: firstEightProducts[0],
+      getProducts1: firstEightProducts[1],
+      getProducts2: firstEightProducts[2],
+      getProducts3: firstEightProducts[3],
+    });
+  }
+
+  getFirstEightProducts(productLists) {
+    return productLists.map(products => products.slice(0, 8));
+  }
+
+  render() {
         return (
             <div>
         <Header pageActive={"Trang chủ"}> </Header>
 
          {/* Hero Start */}
-         <div className="container-fluid py-5 mb-5 hero-header">
-          <div className="container py-5">
-            <div className="row g-5 align-items-center">
-              <div className="col-md-12 col-lg-7">
-                <h4 className="mb-3 text-secondary">Trao bánh - Trao yêu thương</h4>
-                <h1 className="mb-5 display-3 text-primary-cake">Nơi vị ngọt kết hợp với bình yên</h1>
-                <div className="position-relative mx-auto">
-                  <input className="form-control border-2 border-secondary w-75 py-3 px-4 rounded-pill" type="number" placeholder="Nhập vào tên bánh..." />
-                  <button type="submit" className="btn  btn-cake border-2 border-secondary py-3 px-4 position-absolute rounded-pill text-white h-100" style={{top: 0, right: '25%'}}>Tìm kiếm ngay</button>
-                </div>
-              </div>
-              <div className="col-md-12 col-lg-5">
-                <div id="carouselId" className="carousel slide position-relative" data-bs-ride="carousel">
-                  <div className="carousel-inner" role="listbox">
-                    <div className="carousel-item active rounded">
-                      <img src="img/hero-img-1.png" className="img-fluid w-100 h-100 bg-secondary rounded" alt="First slide" />
-                    </div>
-                    <div className="carousel-item rounded">
-                      <img src="img/hero-img-2.jpg" className="img-fluid w-100 h-100 rounded" alt="Second slide" />
-                    </div>
-                  </div>
-                  <button className="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
-                    <span className="carousel-control-prev-icon" aria-hidden="true" />
-                    <span className="visually-hidden">Previous</span>
-                  </button>
-                  <button className="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
-                    <span className="carousel-control-next-icon" aria-hidden="true" />
-                    <span className="visually-hidden">Next</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <Banner1/>
         {/* Hero End */}
         {/* Featurs Section Start */}
         <div className="container-fluid featurs py-5">
@@ -130,7 +112,7 @@ class HOME extends Component {
                       </a>
                     </li>
                     <li className="nav-item">
-                      <a className="d-flex m-2 py-2 bg-light rounded-pill" data-bs-toggle="pill" href="#tab-5">
+                      <a className="d-flex m-2 py-2 bg-light rounded-pill" data-bs-toggle="pill" href="/shop">
                         <span className="text-dark" style={{width: '130px'}}>Tất cả</span>
                       </a>
                     </li>
@@ -139,207 +121,16 @@ class HOME extends Component {
               </div>
               <div className="tab-content">
                 <div id="tab-1" className="tab-pane fade show p-0 active">
-                  <div className="row g-4">
-                    <div className="col-lg-12">
-                      <div className="row g-4">
-
-                        {this.state.getAllProducts && this.state.getAllProducts.map((item) => (
-                            <div className="col-md-6 col-lg-4 col-xl-3">
-                            <Product key={item.id} product={item} />
-                            </div>
-                        ))}
-                        {/**/}
-                        {/*   /!*<Product></Product>*!/*/}
-
-
-                        {/*<div className="col-md-6 col-lg-4 col-xl-3">*/}
-                        {/*   /!*<Product></Product>*!/*/}
-                        {/*</div>*/}
-
-                        {/*<div className="col-md-6 col-lg-4 col-xl-3">*/}
-                        {/*   /!*<Product></Product>*!/*/}
-                        {/*</div>*/}
-                           
-                      </div>
-                    </div>
-                  </div>
+                  <ProductList products={this.state.getShuffledProducts}/>
                 </div>
                 <div id="tab-2" className="tab-pane fade show p-0">
-                  <div className="row g-4">
-                    <div className="col-lg-12">
-                      <div className="row g-4">
-                        <div className="col-md-6 col-lg-4 col-xl-3">
-                          <div className="rounded position-relative fruite-item">
-                            <div className="fruite-img">
-                              <img src="img/fruite-item-5.jpg" className="img-fluid w-100 rounded-top" alt="" />
-                            </div>
-                            <div className="text-white bg-secondary px-3 py-1 rounded position-absolute" style={{top: '10px', left: '10px'}}>Fruits</div>
-                            <div className="p-4 border border-secondary border-top-0 rounded-bottom">
-                              <h4>Grapes</h4>
-                              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
-                              <div className="d-flex justify-content-between flex-lg-wrap">
-                                <p className="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
-                                <a href="#" className="btn border border-secondary rounded-pill px-3 text-primary-cake"><i className="fa fa-shopping-bag me-2 text-primary-cake" /> Add to cart</a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-6 col-lg-4 col-xl-3">
-                          <div className="rounded position-relative fruite-item">
-                            <div className="fruite-img">
-                              <img src="img/fruite-item-2.jpg" className="img-fluid w-100 rounded-top" alt="" />
-                            </div>
-                            <div className="text-white bg-secondary px-3 py-1 rounded position-absolute" style={{top: '10px', left: '10px'}}>Fruits</div>
-                            <div className="p-4 border border-secondary border-top-0 rounded-bottom">
-                              <h4>Raspberries</h4>
-                              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
-                              <div className="d-flex justify-content-between flex-lg-wrap">
-                                <p className="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
-                                <a href="#" className="btn border border-secondary rounded-pill px-3 text-primary-cake"><i className="fa fa-shopping-bag me-2 text-primary-cake" /> Add to cart</a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        
-                      </div>
-                    </div>
-                  </div>
+                  <ProductList products={this.state.getProducts1}/>
                 </div>
                 <div id="tab-3" className="tab-pane fade show p-0">
-                  <div className="row g-4">
-                    <div className="col-lg-12">
-                      <div className="row g-4">
-                        <div className="col-md-6 col-lg-4 col-xl-3">
-                          <div className="rounded position-relative fruite-item">
-                            <div className="fruite-img">
-                              <img src="img/fruite-item-1.jpg" className="img-fluid w-100 rounded-top" alt="" />
-                            </div>
-                            <div className="text-white bg-secondary px-3 py-1 rounded position-absolute" style={{top: '10px', left: '10px'}}>Fruits</div>
-                            <div className="p-4 border border-secondary border-top-0 rounded-bottom">
-                              <h4>Oranges</h4>
-                              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
-                              <div className="d-flex justify-content-between flex-lg-wrap">
-                                <p className="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
-                                <a href="#" className="btn border border-secondary rounded-pill px-3 text-primary-cake"><i className="fa fa-shopping-bag me-2 text-primary-cake" /> Add to cart</a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-6 col-lg-4 col-xl-3">
-                          <div className="rounded position-relative fruite-item">
-                            <div className="fruite-img">
-                              <img src="img/fruite-item-6.jpg" className="img-fluid w-100 rounded-top" alt="" />
-                            </div>
-                            <div className="text-white bg-secondary px-3 py-1 rounded position-absolute" style={{top: '10px', left: '10px'}}>Fruits</div>
-                            <div className="p-4 border border-secondary border-top-0 rounded-bottom">
-                              <h4>Apple</h4>
-                              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
-                              <div className="d-flex justify-content-between flex-lg-wrap">
-                                <p className="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
-                                <a href="#" className="btn border border-secondary rounded-pill px-3 text-primary-cake"><i className="fa fa-shopping-bag me-2 text-primary-cake" /> Add to cart</a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <ProductList products={this.state.getProducts2}/>
                 </div>
                 <div id="tab-4" className="tab-pane fade show p-0">
-                  <div className="row g-4">
-                    <div className="col-lg-12">
-                      <div className="row g-4">
-                        <div className="col-md-6 col-lg-4 col-xl-3">
-                          <div className="rounded position-relative fruite-item">
-                            <div className="fruite-img">
-                              <img src="img/fruite-item-5.jpg" className="img-fluid w-100 rounded-top" alt="" />
-                            </div>
-                            <div className="text-white bg-secondary px-3 py-1 rounded position-absolute" style={{top: '10px', left: '10px'}}>Fruits</div>
-                            <div className="p-4 border border-secondary border-top-0 rounded-bottom">
-                              <h4>Grapes</h4>
-                              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
-                              <div className="d-flex justify-content-between flex-lg-wrap">
-                                <p className="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
-                                <a href="#" className="btn border border-secondary rounded-pill px-3 text-primary-cake"><i className="fa fa-shopping-bag me-2 text-primary-cake" /> Add to cart</a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-6 col-lg-4 col-xl-3">
-                          <div className="rounded position-relative fruite-item">
-                            <div className="fruite-img">
-                              <img src="img/fruite-item-4.jpg" className="img-fluid w-100 rounded-top" alt="" />
-                            </div>
-                            <div className="text-white bg-secondary px-3 py-1 rounded position-absolute" style={{top: '10px', left: '10px'}}>Fruits</div>
-                            <div className="p-4 border border-secondary border-top-0 rounded-bottom">
-                              <h4>Apricots</h4>
-                              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
-                              <div className="d-flex justify-content-between flex-lg-wrap">
-                                <p className="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
-                                <a href="#" className="btn border border-secondary rounded-pill px-3 text-primary-cake"><i className="fa fa-shopping-bag me-2 text-primary-cake" /> Add to cart</a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div id="tab-5" className="tab-pane fade show p-0">
-                  <div className="row g-4">
-                    <div className="col-lg-12">
-                      <div className="row g-4">
-                        <div className="col-md-6 col-lg-4 col-xl-3">
-                          <div className="rounded position-relative fruite-item">
-                            <div className="fruite-img">
-                              <img src="img/fruite-item-3.jpg" className="img-fluid w-100 rounded-top" alt="" />
-                            </div>
-                            <div className="text-white bg-secondary px-3 py-1 rounded position-absolute" style={{top: '10px', left: '10px'}}>Fruits</div>
-                            <div className="p-4 border border-secondary border-top-0 rounded-bottom">
-                              <h4>Banana</h4>
-                              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
-                              <div className="d-flex justify-content-between flex-lg-wrap">
-                                <p className="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
-                                <a href="#" className="btn border border-secondary rounded-pill px-3 text-primary-cake"><i className="fa fa-shopping-bag me-2 text-primary-cake" /> Add to cart</a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-6 col-lg-4 col-xl-3">
-                          <div className="rounded position-relative fruite-item">
-                            <div className="fruite-img">
-                              <img src="img/fruite-item-2.jpg" className="img-fluid w-100 rounded-top" alt="" />
-                            </div>
-                            <div className="text-white bg-secondary px-3 py-1 rounded position-absolute" style={{top: '10px', left: '10px'}}>Fruits</div>
-                            <div className="p-4 border border-secondary border-top-0 rounded-bottom">
-                              <h4>Raspberries</h4>
-                              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
-                              <div className="d-flex justify-content-between flex-lg-wrap">
-                                <p className="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
-                                <a href="#" className="btn border border-secondary rounded-pill px-3 text-primary-cake"><i className="fa fa-shopping-bag me-2 text-primary-cake" /> Add to cart</a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-md-6 col-lg-4 col-xl-3">
-                          <div className="rounded position-relative fruite-item">
-                            <div className="fruite-img">
-                              <img src="img/fruite-item-1.jpg" className="img-fluid w-100 rounded-top" alt="" />
-                            </div>
-                            <div className="text-white bg-secondary px-3 py-1 rounded position-absolute" style={{top: '10px', left: '10px'}}>Fruits</div>
-                            <div className="p-4 border border-secondary border-top-0 rounded-bottom">
-                              <h4>Oranges</h4>
-                              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
-                              <div className="d-flex justify-content-between flex-lg-wrap">
-                                <p className="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
-                                <a href="#" className="btn border border-secondary rounded-pill px-3 text-primary-cake"><i className="fa fa-shopping-bag me-2 text-primary-cake" /> Add to cart</a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <ProductList products={this.state.getProducts3}/>
                 </div>
               </div>
             </div>      
@@ -395,25 +186,7 @@ class HOME extends Component {
 
 
              {/* Banner Section  */}
-        <div className="container-fluid banner bg-secondary my-5">
-          <div className="container py-5">
-            <div className="row g-4 align-items-center">
-              <div className="col-lg-6">
-                <div className="py-4">
-                  <h1 className="display-3 text-white">Thăng hoa trong vị ngọt</h1>
-                  <p className="fw-normal display-3 text-dark mb-4">cùng chúng tôi</p>
-                  <p className="mb-4 text-dark">Khám phá bộ sưu tập bánh kem đa dạng và phong phú của chúng tôi để làm cho mọi dịp đặc biệt hơn.</p>
-                  <a href="#" className="banner-btn btn border-2 border-white rounded-pill text-dark py-3 px-5">Mua ngay</a>
-                </div>
-              </div>
-              <div className="col-lg-6">
-                <div className="position-relative">
-                  <img src="img/baner-1.png" className="img-fluid w-100 rounded" alt="" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <Banner2/>
         {/* Banner Section End */}
 
          {/* Bestsaler Product Start */}
