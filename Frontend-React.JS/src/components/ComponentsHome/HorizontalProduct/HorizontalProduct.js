@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import "./HorizontalProduct.scss";
+import { addCart, getAllCartsByIdUser } from "../../../services/cartService";
+import * as actions from "../../../store/actions";
+import { Link } from "react-router-dom";
 class HorizontalProduct extends Component {
   constructor(props) {
     super(props);
@@ -8,6 +11,23 @@ class HorizontalProduct extends Component {
   }
 
   componentDidMount() {}
+
+  handleAddToCart = async () => {
+    if (!this.props.user.isLoggedIn) {
+      this.props.history.push("/login");
+      return;
+    }
+
+    const { product } = this.props;
+    const res = await addCart(this.props.user.userInfo.id, product.id, 1);
+    if (res.errCode === 0) {
+      const resCart = await getAllCartsByIdUser(this.props.user.userInfo.id);
+      this.props.addCartSuccess(resCart.data);
+    } else {
+      alert("Add to cart failed");
+    }
+  };
+
   render() {
     const product = this.props.product;
     return (
@@ -22,9 +42,9 @@ class HorizontalProduct extends Component {
           </div>
           <div className="col-6">
             <div style={{ height: "42px" }}>
-              <a href={`/product-detail/${product.id}`} className="h5">
+              <Link to={`/product-detail/${product.id}`} className="h5">
                 {product.name}
-              </a>
+              </Link>
             </div>
             <div className="d-flex my-3">
               <i className="fas fa-star text-primary" />
@@ -37,12 +57,12 @@ class HorizontalProduct extends Component {
               {product.price}
               <span>vnđ</span>
             </h4>
-            <a
-              href="#"
+            <div
+              onClick={() => this.handleAddToCart()}
               className="btn border border-secondary rounded-pill px-3 text-primary"
             >
               <i className="fa fa-shopping-bag me-2 text-primary" /> Add to cart
-            </a>
+            </div>
           </div>
         </div>
       </div>
@@ -51,11 +71,17 @@ class HorizontalProduct extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return {};
+  return {
+    user: state.user,
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return {};
+  return {
+    addCartSuccess: (carts) => {
+      dispatch(actions.addCartSuccess(carts));
+    },
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(HorizontalProduct);

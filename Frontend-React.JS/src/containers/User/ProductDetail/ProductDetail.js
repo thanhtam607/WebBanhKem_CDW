@@ -7,7 +7,9 @@ import {
   getProductById,
   getAllProductsByIdCategory,
 } from "../../../services/productService";
+import { addCart, getAllCartsByIdUser } from "../../../services/cartService";
 import { getAllCategories } from "../../../services/categorySerive";
+import * as actions from "../../../store/actions";
 import Breadcrumb from "../breadcrumb";
 class ProductDetail extends Component {
   constructor(props) {
@@ -17,8 +19,29 @@ class ProductDetail extends Component {
       product: {},
       categories: [], // Thêm mảng category
       listProduct: [],
+      quantity: 1,
     };
   }
+
+  handleAddToCart = async () => {
+    if (!this.props.user.isLoggedIn) {
+      this.props.history.push("/login");
+      return;
+    }
+
+    const { product } = this.state;
+    const res = await addCart(
+      this.props.user.userInfo.id,
+      product.id,
+      this.state.quantity
+    );
+    if (res.errCode === 0) {
+      const resCart = await getAllCartsByIdUser(this.props.user.userInfo.id);
+      this.props.addCartSuccess(resCart.data);
+    } else {
+      alert("Add to cart failed");
+    }
+  };
 
   async componentDidMount() {
     try {
@@ -56,8 +79,17 @@ class ProductDetail extends Component {
     }
   }
 
+  handleChangeQuantity = (quantity) => {
+    if (quantity > 0) {
+      this.setState({
+        quantity: quantity,
+      });
+    }
+  };
+
   render() {
     const p = this.state.product;
+    console.log("user", this.props.user);
 
     const breadcrumbItems = [
       { title: "Trang chủ", link: "/", active: false },
@@ -122,28 +154,40 @@ class ProductDetail extends Component {
                       style={{ width: "100px" }}
                     >
                       <div className="input-group-btn">
-                        <button className="btn btn-sm btn-minus rounded-circle bg-light border">
+                        <button
+                          style={{ height: "32px", width: "32px" }}
+                          className="btn btn-sm btn-minus rounded-circle bg-light border"
+                          onClick={() =>
+                            this.handleChangeQuantity(this.state.quantity - 1)
+                          }
+                        >
                           <i className="fa fa-minus" />
                         </button>
                       </div>
                       <input
                         type="text"
                         className="form-control form-control-sm text-center border-0"
-                        defaultValue={1}
+                        value={this.state.quantity}
                       />
                       <div className="input-group-btn">
-                        <button className="btn btn-sm btn-plus rounded-circle bg-light border">
+                        <button
+                          style={{ height: "32px", width: "32px" }}
+                          className="btn btn-sm btn-plus rounded-circle bg-light border"
+                          onClick={() =>
+                            this.handleChangeQuantity(this.state.quantity + 1)
+                          }
+                        >
                           <i className="fa fa-plus" />
                         </button>
                       </div>
                     </div>
-                    <a
-                      href="#"
+                    <div
+                      onClick={() => this.handleAddToCart()}
                       className="btn border-secondary border rounded-pill rounded-pill-atc  px-4 py-2 mb-4 text-primary-cake"
                     >
                       <i className="fa fa-shopping-bag me-2 text-primary-cake" />{" "}
                       Thêm vào giỏ hàng
-                    </a>
+                    </div>
                   </div>
                   <div className="col-lg-12">
                     <nav>
@@ -684,11 +728,17 @@ class ProductDetail extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return {};
+  return {
+    user: state.user,
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return {};
+  return {
+    addCartSuccess: (carts) => {
+      dispatch(actions.addCartSuccess(carts));
+    },
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductDetail);

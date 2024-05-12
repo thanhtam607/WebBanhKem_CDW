@@ -1,11 +1,29 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { addCart, getAllCartsByIdUser } from "../../services/cartService";
 import "./Product.scss";
+import * as actions from "../../store/actions";
 class Product extends Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
+
+  handleAddToCart = async () => {
+    if (!this.props.user.isLoggedIn) {
+      this.props.history.push("/login");
+      return;
+    }
+
+    const { product } = this.props;
+    const res = await addCart(this.props.user.userInfo.id, product.id, 1);
+    if (res.errCode === 0) {
+      const resCart = await getAllCartsByIdUser(this.props.user.userInfo.id);
+      this.props.addCartSuccess(resCart.data);
+    } else {
+      alert("Add to cart failed");
+    }
+  };
 
   componentDidMount() {}
   render() {
@@ -35,12 +53,12 @@ class Product extends Component {
             <p className="text-dark fs-5 fw-bold mb-0">
               {product.price} <span>vnđ</span>
             </p>
-            <a
-              href="#"
+            <div
+              onClick={() => this.handleAddToCart()}
               className="btn border border-secondary rounded-pill px-3 text-primary"
             >
               <i className="fa fa-shopping-bag me-2 text-primary-cake"></i>{" "}
-            </a>
+            </div>
           </div>
         </div>
       </div>
@@ -49,11 +67,17 @@ class Product extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return {};
+  return {
+    user: state.user,
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return {};
+  return {
+    addCartSuccess: (carts) => {
+      dispatch(actions.addCartSuccess(carts));
+    },
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Product);

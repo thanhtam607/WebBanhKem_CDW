@@ -4,11 +4,16 @@ import productController from "../controller/productController";
 import cartController from "../controller/cartController";
 import categoryController from "../controller/categoryController";
 import billController from "../controller/billController";
+import userController from "../controller/userController";
 
 let router = express.Router();
 
 let initWebRoutes = (app) => {
   router.get("/", homeController.getHomePage);
+
+  // User
+  router.post("/api/register", userController.handleCreateNewUser);
+  router.post("/api/login", userController.userLogin);
 
   router.get("/api/getListProducts", productController.getListProducts);
   router.get("/api/getProductById", productController.getProductById);

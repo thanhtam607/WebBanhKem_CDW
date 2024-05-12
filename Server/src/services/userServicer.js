@@ -9,7 +9,15 @@ let userLoginServicer = (email, pass) => {
       const data = {};
       if (isUser) {
         const user = await db.User.findOne({
-          attributes: ["email", "pass", "role", "name", "address", "phone"],
+          attributes: [
+            "id",
+            "email",
+            "pass",
+            "role",
+            "name",
+            "address",
+            "phone",
+          ],
           where: { email: email },
         });
         if (user) {

@@ -177,4 +177,5 @@ module.exports = {
   getAllCartsByIdUser: getAllCartsByIdUser,
   deleteCart: deleteCart,
   updateCart: updateCart,
+  updateStatusCart: updateStatusCart,
 };

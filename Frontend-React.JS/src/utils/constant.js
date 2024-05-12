@@ -1,33 +1,34 @@
 export const path = {
-    HOME: '/',
-    LOGIN: '/login',
-    SIGNUP: '/signup',
-    CARD: '/card',
-    CHECKOUT: '/checkout',
-    SHOP: '/shop',
-    CONTACT: '/contact',
-    PRODUCTDETAIL: '/product-detail/:id',
-    SYSTEM: '/system',
-    ABOUT: '/about',
-    ERROR: '/error',
+  HOME: "/",
+  LOGIN: "/login",
+  SIGNUP: "/signup",
+  CART: "/cart",
+  CHECKOUT: "/checkout",
+  SHOP: "/shop",
+  CONTACT: "/contact",
+  PRODUCTDETAIL: "/product-detail/:id",
+  SYSTEM: "/system",
+  ABOUT: "/about",
+  ERROR: "/error",
+  REGISTER: "/register",
 };
 
 export const languages = {
-    VI: 'vi',
-    EN: 'en'
+  VI: "vi",
+  EN: "en",
 };
- 
+
 export const manageActions = {
-    ADD: "ADD",
-    EDIT: "EDIT",
-    DELETE: "DELETE"
+  ADD: "ADD",
+  EDIT: "EDIT",
+  DELETE: "DELETE",
 };
 
 export const dateFormat = {
-    SEND_TO_SERVER: 'DD/MM/YYYY'
+  SEND_TO_SERVER: "DD/MM/YYYY",
 };
 
 export const YesNoObj = {
-    YES: 'Y',
-    NO: 'N'
-}
+  YES: "Y",
+  NO: "N",
+};
