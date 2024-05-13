@@ -6,402 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="53da44d9-fc7e-49bf-8e08-acf967a9ff86" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/css/demo.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/css/demo.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/about/anh1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/img/about/anh1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/about/anh2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/img/about/anh2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/avatar.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/img/avatar.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/baner-1.png" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/img/baner-1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/banner-fruits.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/img/banner-fruits.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/best-product-1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/img/best-product-1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/best-product-2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/img/best-product-2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/best-product-3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/img/best-product-3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/best-product-4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/img/best-product-4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/best-product-5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/img/best-product-5.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/best-product-6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/img/best-product-6.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/cart-page-header-img.png" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/img/cart-page-header-img.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/featur-1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/img/featur-1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/featur-2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/img/featur-2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/featur-3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/img/featur-3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/fruite-item-1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/img/fruite-item-1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/fruite-item-2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/img/fruite-item-2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/fruite-item-3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/img/fruite-item-3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/fruite-item-4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/img/fruite-item-4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/fruite-item-5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/img/fruite-item-5.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/fruite-item-6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/img/fruite-item-6.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/hero-img-1.png" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/img/hero-img-1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/hero-img-2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/img/hero-img-2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/payment.png" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/img/payment.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B001/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B001/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B001/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B001/banh4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B002/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B002/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B002/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B002/banh4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B003/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B003/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B003/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B003/banh4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B004/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B004/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B004/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B005/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B005/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B005/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B006/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B006/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B006/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B007/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B007/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B007/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B008/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B008/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B008/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B009/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B009/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B009/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B009/banh4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B010/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B010/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B010/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B010/banh4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B011/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B011/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B011/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B011/banh4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B012/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B012/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B012/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B013/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B013/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B014/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B014/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B014/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B015/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B015/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B015/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B016/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B016/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B016/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B016/banh4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B017/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B017/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B017/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B017/banh4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B018/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B018/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B018/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B018/banh4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B019/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B019/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B019/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B020/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B020/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B020/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B020/banh4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B021/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B021/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B021/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B022/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B022/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B022/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B022/banh4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B023/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B023/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B023/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B023/banh4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B024/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B024/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B024/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B025/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B025/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B025/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B026/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B026/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B026/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B026/banh4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B027/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B027/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B027/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B027/banh4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B028/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B028/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B028/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B029/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B029/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B029/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B030/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B030/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B030/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B031/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B031/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B031/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B031/banh4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B032/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B032/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B032/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B032/banh4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B033/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B033/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B033/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B034/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B034/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B034/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B035/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B035/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B035/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B035/banh4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B036/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B036/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B036/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B036/banh4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B037/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B037/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B037/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B037/banh4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B038/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B038/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B038/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B038/banh4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B039/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B039/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B039/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B039/banh4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B040/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B040/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B040/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B040/banh4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B041/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B041/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B041/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B041/banh4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B042/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B042/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B042/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B043/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B043/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B043/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B044/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B044/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B044/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B045/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B045/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B045/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B046/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B046/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B046/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B047/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B047/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B047/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B047/banh4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B048/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B048/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B048/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B049/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B049/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B049/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B050/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B050/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B050/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B051/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B051/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B051/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B052/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B052/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B052/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B052/banh4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B053/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B053/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B053/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B053/banh4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B054/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B054/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B054/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B054/banh4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B055/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B055/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B055/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B055/banh4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B056/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B056/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B056/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B057/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B057/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B057/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B058/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B058/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B058/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B058/banh4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B059/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B059/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B059/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B059/banh4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B060/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B060/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B060/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B060/banh4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B061/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B061/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B061/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B062/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B062/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B062/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B062/banh4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B062/desktop.ini" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B063/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B063/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B063/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B063/banh4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B064/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B064/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B064/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B064/banh4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B065/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B065/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B065/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B066/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B066/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B066/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B067/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B067/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B067/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B067/banh4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B068/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B068/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B068/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B069/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B069/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B069/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B069/banh4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B070/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B070/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B070/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B071/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B071/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B071/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B072/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B072/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B072/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B073/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B073/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B073/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B074/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B074/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B074/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B075/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B075/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B075/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B075/banh4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B076/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B076/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B076/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B077/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B077/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B077/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B078/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B078/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B078/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B078/banh4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B079/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B079/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B079/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B079/banh4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B080/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B080/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B080/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B080/banh4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B081/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B081/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B081/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B081/banh4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B082/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B082/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B082/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B082/banh4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B083/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B083/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B083/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B084/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B084/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B084/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B085/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B085/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B085/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B086/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B086/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B086/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B087/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B087/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B087/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B088/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B088/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B088/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B089/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B089/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B089/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B090/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B090/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B090/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B091/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B091/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B091/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B091/banh4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B092/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B092/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B092/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B092/banh4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B093/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B093/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B093/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B093/banh4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B094/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B094/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B094/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B095/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B095/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B095/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B095/banh4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B096/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B096/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B096/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B096/banh4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B097/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B097/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B097/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B097/banh4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B098/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B098/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B098/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B099/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B099/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B099/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B100/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B100/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B100/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B101/banh1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B101/banh2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B101/banh3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B101/banhbonglan-1_EQUO.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B99/bg-011.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B99/icon-256x256.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/product/B99/user2-160x160.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/single-item.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/img/single-item.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/testimonial-1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/img/testimonial-1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/vegetable-item-1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/img/vegetable-item-1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/vegetable-item-2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/img/vegetable-item-2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/vegetable-item-3.png" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/img/vegetable-item-3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/vegetable-item-4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/img/vegetable-item-4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/vegetable-item-5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/img/vegetable-item-5.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/img/vegetable-item-6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/img/vegetable-item-6.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/containers/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Card/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Card/Card.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Header/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Header/navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Header/navigation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Login/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Register/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Register/Register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/utils/constant.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/utils/constant.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/components/ComponentOrder/Order.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/components/ComponentOrder/Order.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Order/Orders.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Order/Orders.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -431,29 +37,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Documents/WebBanhKem_CDW&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\Documents\\WebBanhKem_CDW\\Frontend-React.JS\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/Documents/WebBanhKem_CDW/Frontend-React.JS/public/img",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "D:\\Documents\\WebBanhKem_CDW\\Frontend-React.JS\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Documents\WebBanhKem_CDW\Frontend-React.JS\public\img" />
       <recent name="D:\Documents\WebBanhKem_CDW\Frontend-React.JS\public" />
       <recent name="D:\Documents\WebBanhKem_CDW\Frontend-React.JS\public\js" />
-      <recent name="D:\Documents\WebBanhKem_CDW\Frontend-React.JS\public\img" />
       <recent name="D:\Documents\WebBanhKem_CDW\Frontend-React.JS\public\css" />
       <recent name="D:\Documents\WebBanhKem_CDW\Frontend-React.JS\src\containers\User\Login" />
     </key>
@@ -508,7 +114,7 @@
       <workItem from="1715072357358" duration="1899000" />
       <workItem from="1715083222638" duration="2372000" />
       <workItem from="1715309199448" duration="2441000" />
-      <workItem from="1715566483447" duration="3391000" />
+      <workItem from="1715566483447" duration="4050000" />
     </task>
     <servers />
   </component>

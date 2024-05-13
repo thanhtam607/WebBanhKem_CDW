@@ -4,6 +4,7 @@ import Order from "../../../components/ComponentOrder/Order";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Breadcrumb from "../breadcrumb";
+import Empty from "../../../components/Empty";
 
 
 class Orders extends Component {
@@ -30,16 +31,7 @@ class Orders extends Component {
                 <div className="row">
                     <div className="tab-content flex-sm-row mt-2">
 
-                        {/*<div class="cartEmpty" name="cartEmpty">*/}
-                        {/*<img src="./img/null.png" alt="Giỏ hàng của bạn đang trống" class="d-block m-auto" width="250" />*/}
-                        {/*<p class="text-center font-weight-bold" style="opacity: .6;">Không có đơn hàng nào</p>*/}
-                        {/*</div>*/}
-                        {/*<div class="col-lg-12">*/}
-                        {/*<div class="shoping__cart__btns" style="text-align: center">*/}
-                        {/*<a href="./ListProduct" class="primary-btn cart-btn" >Xem thêm sản phẩm </a>*/}
-                        {/*</div>*/}
-                        {/*</div>*/}
-
+                        {/*<Empty message={"Không có đơn hàng nào"}/>*/}
 
                         <Order/>
                         <Order/>
