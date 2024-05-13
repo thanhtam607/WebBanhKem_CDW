@@ -315,6 +315,7 @@ a h4:hover{
     transition: 0.5s;
 }
 .fruite .fruite-item:hover {
+    height: 100%;
     box-shadow: 0 0 55px rgba(0, 0, 0, 0.4);
 }
 
@@ -326,9 +327,10 @@ a h4:hover{
 
 .fruite .fruite-item .fruite-img img {
     transition: 0.5s;
-    max-height: 210px;
+    height: 210px;
     object-fit: cover;
     width: 280px;
+
 }
 
 .fruite .fruite-item .fruite-img img:hover {
@@ -521,10 +523,10 @@ a h4:hover{
     color: #c11ee8 !important;
 }
 .text-yellow{
-    color: #ffff0a;
+    color: #ffff0a!important;
 }
 .product-name h4{
-    min-height: 50px;
+    min-height: 65px;
 }
 .page-item.active .page-link{
     background: #c11ee8 !important ;
@@ -587,7 +589,64 @@ a h4:hover{
 .rounded-pill-atc{
     height: 45px!important;
 }
-
+.text-pink{
+    color: #d63384;
+}
+.text-pink:hover{
+    color: #f291a3;
+    text-decoration: underline;
+}
 /*** Footer End ***/
 
 /*** Login ***/
+/*****Order ****/
+.tab-content{
+    width: 70%!important;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+.text-secondary{
+    margin-left: 30px;
+}
+.d-inline{
+    margin-right: 30px;
+}
+.text-left{
+    margin-left: 30px;
+}
+.text-bolder{
+    font-weight: bolder;
+}
+.container-91{
+    min-height: 50%;
+    background: #f2edf3;
+}
+.text-dark{
+    font-size:16px;
+}
+.my-2{
+    background-color: white;
+}
+.btn-cancel-order{
+    font-size: 15px!important;
+    padding: 2px!important;
+    height: 40px!important;
+    border: 1px solid #ccc!important;
+    font-weight: 500!important;
+    padding-left: .5rem !important;
+    padding-right: .5rem !important;
+}
+.btn-cancel-order:hover{
+    font-size: 15px!important;
+    padding: 2px!important;
+    height: 40px!important;
+    border: 1px solid #ccc!important;
+    font-weight: 500!important;
+    padding-left: .5rem !important;
+    padding-right: .5rem !important;
+    background: #f291a3;
+    text-decoration: underline;
+}
+
+
+/*=============*/

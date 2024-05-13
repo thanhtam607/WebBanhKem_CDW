@@ -10,6 +10,8 @@ export const path = {
     ABOUT: '/about',
     ERROR: '/error',
     REGISTER: '/register',
+    PROFILE: '/profile',
+    ORDER: '/orders',
 };
 
 export const languages = {

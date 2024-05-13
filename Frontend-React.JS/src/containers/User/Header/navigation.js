@@ -15,7 +15,7 @@ const  Navigation = ({pageActive}) =>{
                         </div>
                         <div className="d-flex m-3 me-0">
                             <button className="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4" data-bs-toggle="modal" data-bs-target="#searchModal"><i className="fas fa-search text-primary"></i></button>
-                            <a href="/cart" className="position-relative me-4 my-auto">
+                            <a href="/card" className="position-relative me-4 my-auto">
                                 <i className="fa fa-shopping-bag fa-2x"></i>
                                 <span className="position-absolute bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center px-1" style={{ top: '-5px', left: '15px', height: '20px', minWidth: '20px' }}>3</span>
                             </a>

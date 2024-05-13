@@ -24,9 +24,9 @@ class Header extends Component {
                 <small className="me-3"><i className="fas fa-envelope me-2 text-secondary-cake" /><span className="text-white">tiembanhbinhyen@gmail.com</span></small>
               </div>
               <div className="top-link pe-2">
-                <a href="#" className="text-white"><small className="text-white mx-2">Privacy Policy</small>/</a>
-                <a href="#" className="text-white"><small className="text-white mx-2">Terms of Use</small>/</a>
-                <a href="#" className="text-white"><small className="text-white ms-2">Sales and Refunds</small></a>
+                <a href="/register" className="text-white"><small className="text-white mx-2">Đăng ký</small>/</a>
+                <a href="/login" className="text-white"><small className="text-white mx-2">Đăng nhập</small></a>
+
               </div>
             </div>
           </div>

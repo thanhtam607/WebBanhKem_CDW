@@ -42,7 +42,7 @@ class Login extends Component {
                                             autoFocus
                                         />
                                     </div>
-                                    <div className="mb-3 form-password-toggle">
+                                       <div className="mb-3 form-password-toggle">
                                         <div className="d-flex justify-content-between">
                                             <label className="form-label" htmlFor="password">Mật khẩu</label>
                                             <a href="auth-forgot-password-basic.html">
@@ -65,7 +65,7 @@ class Login extends Component {
                                         <div className="form-check">
                                             <input className="form-check-input" type="checkbox" id="remember-me"/>
                                             <label className="form-check-label" htmlFor="remember-me"> Nhớ mật khẩu </label>
-                                        </div>
+                                     </div>
                                     </div>
                                     <div className="mb-3">
                                         <button className="btn btn-primary-cake text-white w-100" type="submit">Đăng nhập</button>
@@ -75,7 +75,7 @@ class Login extends Component {
                                 <p className="text-center">
                                     <span>Bạn chưa có tài khoản?</span>
                                     <a href="/register">
-                                        <span className="text-primary-cake"> Đăng ký ngay</span>
+                                        <span className="text-pink"> Đăng ký ngay</span>
                                     </a>
                                 </p>
                             </div>

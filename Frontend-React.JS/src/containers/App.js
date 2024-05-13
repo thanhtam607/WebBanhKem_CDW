@@ -13,6 +13,7 @@ import Home from './User/Home/Home';
 import { path } from '../utils'
 
 import { CustomToastCloseButton } from '../components/CustomToast';
+import Profile from "../containers/User/Profile/Profile"
 import ConfirmModal from '../components/ConfirmModal';
 import Card from './User/Card/Card';
 import ProductDetail from './User/ProductDetail/ProductDetail';
@@ -21,6 +22,7 @@ import SHOP from './User/Shop/Shop';
 import Contact from './User/Contact/Contact';
 import About from './User/About/About';
 import Error from './404er';
+import Orders from "./User/Order/Orders";
 class App extends Component {
 
     handlePersistorState = () => {
@@ -55,6 +57,8 @@ class App extends Component {
                                     <Route path={path.ERROR}  component={(Error)} />
                                     <Route path={path.ABOUT}  component={(About)} />
                                     <Route path={path.LOGIN}  component={(Login)} />
+                                    <Route path={path.PROFILE}  component={(Profile)} />
+                                    <Route path={path.ORDER}  component={(Orders)} />
                                     <Route path={path.REGISTER}  component={(Register)} />
                                     <Route path={path.CARD}  component={(Card)} />
                                     <Route path={path.PRODUCTDETAIL}  component={(ProductDetail)} />
