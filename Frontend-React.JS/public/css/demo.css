@@ -108,6 +108,8 @@
   background: #f2edf3;
 }
 .card{
-  margin-left: 100px;
-
+  margin-left: 20px;
+}
+.card-profile{
+  margin-left: 100px!important;
 }

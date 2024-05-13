@@ -25,7 +25,7 @@ class Orders extends Component {
 
         return (
             <>
-            <Header/>
+            <Header pageActive={"Trang chủ"}/>
             <Breadcrumb items={breadcrumbItems}/>
             <div className="container-91 mx-auto">
                 <div className="row">

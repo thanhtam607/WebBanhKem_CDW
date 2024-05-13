@@ -598,7 +598,6 @@ a h4:hover{
 }
 /*** Footer End ***/
 
-/*** Login ***/
 /*****Order ****/
 .tab-content{
     width: 70%!important;
@@ -648,5 +647,10 @@ a h4:hover{
     text-decoration: underline;
 }
 
-
 /*=============*/
+.login-error{
+    margin-top: -7px;
+    margin-left: 12px;
+    font-size: 12px;
+    margin-bottom: 15px;
+}

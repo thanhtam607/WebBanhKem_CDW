@@ -17,14 +17,14 @@ class Profile extends Component {
     render() {
         const breadcrumbItems = [
             { title: "Trang chủ", link: "/", active: false },
-            { title: "Thông tin tài khoản", link: "/profile", active: true }
+            { title: "Tài khoản của tôi", link: "/profile", active: true }
         ];
         return (
 <div>
-                <Header pageActive={"profile"}> </Header>
+                <Header pageActive={"Trang chủ"}> </Header>
                 <Breadcrumb items={breadcrumbItems}/>
         <div className="container-xxl flex-grow-1 container-p-y">
-            <div className="card col-10 mb-4">
+            <div className="card card-profile col-10 mb-4">
                 <h5 className="card-header">Thông tin chi tiết</h5>
 
                 <div className="card-body">

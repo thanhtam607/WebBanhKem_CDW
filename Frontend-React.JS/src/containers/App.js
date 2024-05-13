@@ -7,7 +7,7 @@ import { ToastContainer } from 'react-toastify';
 
 import { userIsAuthenticated, userIsNotAuthenticated } from '../hoc/authentication';
 import CustomScrollbars from '../components/CustomScrollbars.js';
-import Login from './User/Login/Login';
+import Login from '../routes/Login';
 import Register from './User/Register/Register';
 import Home from './User/Home/Home';
 import { path } from '../utils'

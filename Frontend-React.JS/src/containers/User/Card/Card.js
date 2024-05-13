@@ -23,7 +23,7 @@ class Card extends Component {
       ];
         return (
             <div>
-            <Header/>
+            <Header pageActive={"Sản phẩm"}/>
             <Breadcrumb items={breadcrumbItems}/>
         {/* Cart Page Start */}
         <div className="container-fluid py-5">
