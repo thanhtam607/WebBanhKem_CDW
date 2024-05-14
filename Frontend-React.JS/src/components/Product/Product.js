@@ -11,7 +11,6 @@ class Product extends Component {
 
   handleAddToCart = async () => {
     if (!this.props.user.isLoggedIn) {
-      this.props.history.push("/login");
       return;
     }
 

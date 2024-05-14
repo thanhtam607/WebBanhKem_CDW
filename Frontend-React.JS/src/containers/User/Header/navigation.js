@@ -110,7 +110,14 @@ class Navigation extends Component {
                     </a>
                   </div>
                 ) : (
-                  <div>{/* dung link */}</div>
+                  <div>
+                    <a href="/login" className="dropdown-item">
+                      Đăng nhập
+                    </a>
+                    <a href="/register" className="dropdown-item">
+                      Đăng ký
+                    </a>
+                  </div>
                 )}
               </div>
             </div>
