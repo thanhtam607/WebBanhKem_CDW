@@ -14,17 +14,16 @@ let initWebRoutes = (app) => {
     router.get("/api/getListProducts", productController.getListProducts)
     router.get("/api/getProductById", productController.getProductById);
     router.get("/api/getProductsByCategory", productController.getProductsByCategory);
-    router.get("/api/getAllCategories", productController.getAllCategories);
-    router.get("/api/getHotProducts", productController.getHotProducts);
+
 
     router.post("/api/login", userController.handleLogin);
     return app.use("/", router);
-}
+
   router.get("/", homeController.getHomePage);
 
   // User
   router.post("/api/register", userController.handleCreateNewUser);
-  router.post("/api/login", userController.handleLogin;
+  router.post("/api/login", userController.handleLogin);
 
   router.get("/api/getListProducts", productController.getListProducts);
   router.get("/api/getProductById", productController.getProductById);

@@ -1,7 +1,7 @@
 export const path = {
     HOME: '/',
     LOGIN: '/login',
-    CARD: '/card',
+    CART: '/cart',
     CHECKOUT: '/checkout',
     SHOP: '/shop',
     CONTACT: '/contact',

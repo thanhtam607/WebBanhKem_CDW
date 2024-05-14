@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import "./Card.scss"
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import Breadcrumb from "../breadcrumb";

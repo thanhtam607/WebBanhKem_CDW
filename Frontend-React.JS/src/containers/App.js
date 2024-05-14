@@ -7,20 +7,22 @@ import { ToastContainer } from 'react-toastify';
 
 import { userIsAuthenticated, userIsNotAuthenticated } from '../hoc/authentication';
 import CustomScrollbars from '../components/CustomScrollbars.js';
-import Login from './User/Login/Login';
+import Login from '../routes/Login';
 import Register from './User/Register/Register';
 import Home from './User/Home/Home';
 import { path } from '../utils'
 
 import { CustomToastCloseButton } from '../components/CustomToast';
 import ConfirmModal from '../components/ConfirmModal';
-import Card from './User/Card/Card';
+import Cart from './User/Cart/Cart';
 import ProductDetail from './User/ProductDetail/ProductDetail';
 import CheckOut from './User/CheckOut/CheckOut';
 import SHOP from './User/Shop/Shop';
 import Contact from './User/Contact/Contact';
 import About from './User/About/About';
 import Error from './404er';
+import Profile from './User/Profile/Profile';
+import Orders from './User/Order/Orders';
 class App extends Component {
 
     handlePersistorState = () => {
@@ -58,7 +60,7 @@ class App extends Component {
                                     <Route path={path.PROFILE}  component={(Profile)} />
                                     <Route path={path.ORDER}  component={(Orders)} />
                                     <Route path={path.REGISTER}  component={(Register)} />
-                                    <Route path={path.CARD}  component={(Card)} />
+                                    <Route path={path.CART}  component={(Cart)} />
                                     <Route path={path.PRODUCTDETAIL}  component={(ProductDetail)} />
                                     <Route path={path.SHOP}  component={(SHOP)} />
                                     <Route path={path.CHECKOUT}  component={(CheckOut)} />

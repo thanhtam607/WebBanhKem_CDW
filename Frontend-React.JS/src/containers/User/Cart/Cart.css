@@ -3,8 +3,8 @@
 }
 
 .input-group-btn .btn {
-  height: 30px;
-  width: 30px;
+  height: 30px !important;
+  width: 30px !important;
 }
 
 .handle_delete {
@@ -17,11 +17,11 @@
 }
 
 .btn_checkout {
-  background-color: red;
+  background-color: #9b59b6 !important;
   color: white;
   width: 200px;
   height: 50px;
   border-radius: 20px;
 }
 
-/*# sourceMappingURL=Card.css.map */
+/*# sourceMappingURL=Cart.css.map */
