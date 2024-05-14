@@ -11,6 +11,25 @@ let handleLogin = async (req, res) => {
     })
 }
 
-module.exports={
+let getAllUsers = async (req, res) => {
+    const data = await userServicer.getAllUsers();
+    return res.status(200).json({
+        errCode: data.errCode,
+        message: data.message,
+        data: data,
+    });
+};
+
+let handleCreateNewUser = async (req, res) => {
+    const data = await userServicer.createUser(req.body);
+    return res.status(200).json({
+        errCode: data.errCode,
+        message: data.message,
+    });
+};
+
+module.exports = {
+    handleCreateNewUser: handleCreateNewUser,
+    getAllUsers: getAllUsers,
     handleLogin: handleLogin
 }

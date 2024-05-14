@@ -327,10 +327,9 @@ a h4:hover{
 
 .fruite .fruite-item .fruite-img img {
     transition: 0.5s;
-    height: 210px;
+    max-height: 210px;
     object-fit: cover;
     width: 280px;
-
 }
 
 .fruite .fruite-item .fruite-img img:hover {

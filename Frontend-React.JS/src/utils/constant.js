@@ -15,14 +15,14 @@ export const path = {
 };
 
 export const languages = {
-    VI: 'vi',
-    EN: 'en'
+  VI: "vi",
+  EN: "en",
 };
  
 export const manageActions = {
-    ADD: "ADD",
-    EDIT: "EDIT",
-    DELETE: "DELETE"
+  ADD: "ADD",
+  EDIT: "EDIT",
+  DELETE: "DELETE",
 };
 
 export const dateFormat = {

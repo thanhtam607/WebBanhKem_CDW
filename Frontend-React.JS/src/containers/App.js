@@ -7,13 +7,12 @@ import { ToastContainer } from 'react-toastify';
 
 import { userIsAuthenticated, userIsNotAuthenticated } from '../hoc/authentication';
 import CustomScrollbars from '../components/CustomScrollbars.js';
-import Login from '../routes/Login';
+import Login from './User/Login/Login';
 import Register from './User/Register/Register';
 import Home from './User/Home/Home';
 import { path } from '../utils'
 
 import { CustomToastCloseButton } from '../components/CustomToast';
-import Profile from "../containers/User/Profile/Profile"
 import ConfirmModal from '../components/ConfirmModal';
 import Card from './User/Card/Card';
 import ProductDetail from './User/ProductDetail/ProductDetail';
@@ -22,7 +21,6 @@ import SHOP from './User/Shop/Shop';
 import Contact from './User/Contact/Contact';
 import About from './User/About/About';
 import Error from './404er';
-import Orders from "./User/Order/Orders";
 class App extends Component {
 
     handlePersistorState = () => {
@@ -71,17 +69,23 @@ class App extends Component {
                             </CustomScrollbars>
                         </div>
 
-                        <ToastContainer
-                            className="toast-container" toastClassName="toast-item" bodyClassName="toast-item-body"
-                            autoClose={false} hideProgressBar={true} pauseOnHover={false}
-                            pauseOnFocusLoss={true} closeOnClick={false} draggable={false}
-                            closeButton={<CustomToastCloseButton />}
-                        />
-                    </div>
-                </Router>
-            </Fragment>
-        )
-    }
+            <ToastContainer
+              className="toast-container"
+              toastClassName="toast-item"
+              bodyClassName="toast-item-body"
+              autoClose={false}
+              hideProgressBar={true}
+              pauseOnHover={false}
+              pauseOnFocusLoss={true}
+              closeOnClick={false}
+              draggable={false}
+              closeButton={<CustomToastCloseButton />}
+            />
+          </div>
+        </Router>
+      </Fragment>
+    );
+  }
 }
 
 const mapStateToProps = state => {
