@@ -6,9 +6,42 @@
   <component name="ChangeListManager">
     <list default="true" id="53da44d9-fc7e-49bf-8e08-acf967a9ff86" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Server/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Server/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/controller/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/controller/userController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/scss/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/scss/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/components/ComponentOrder/Order.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/components/ComponentOrder/Order.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/components/ComponentsHome/ProductList/productsList.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/components/ComponentsHome/ProductList/productsList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/components/Empty.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/components/Empty.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Card/Card.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Card/Card.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Card/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Card/Card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Header/Header.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Header/Header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Header/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Header/navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Header/navigation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Order/Orders.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Order/Orders.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Profile/Profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Register/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Register/Register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Shop/listProducts.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Shop/listProducts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/store/actions/actionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/store/actions/actionTypes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/store/actions/adminActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/store/actions/adminActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/store/actions/userActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/store/actions/userActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/store/reducers/rootReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/store/reducers/rootReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/styles/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/Service/userService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/Service/userService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/config/conectDB.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/config/conectDB.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/config/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/config/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/config/viewEngine.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/config/viewEngine.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/controller/homeController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/controller/homeController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/migrations/create-bill-migration.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/migrations/create-bill-migration.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/migrations/create-cart-migration.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/migrations/create-cart-migration.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/migrations/create-comment-migration.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/migrations/create-comment-migration.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/migrations/create-discount-migration .js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/migrations/create-discount-migration .js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/migrations/create-product-img-migration copy.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/migrations/create-product-img-migration copy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/migrations/create-user-migration.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/migrations/create-user-migration.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/models/bill.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/models/bill.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/models/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/models/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/models/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/seeders/20240331103653-demo-user.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/seeders/20240331103653-demo-user.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +58,13 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="3f5eec1a87e56678ea6195dbd24e9685a7eb7eb6" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -72,6 +111,37 @@
       <recent name="D:\Documents\WebBanhKem_CDW\Frontend-React.JS\src" />
     </key>
   </component>
+  <component name="RunManager" selected="npm.start">
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/Server/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/Server/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="test" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.test" />
+        <item itemvalue="npm.start" />
+        <item itemvalue="npm.test" />
+        <item itemvalue="npm.start" />
+        <item itemvalue="npm.test" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -116,7 +186,10 @@
       <workItem from="1715083222638" duration="2372000" />
       <workItem from="1715309199448" duration="2441000" />
       <workItem from="1715566483447" duration="6649000" />
-      <workItem from="1715590004733" duration="10177000" />
+      <workItem from="1715590004733" duration="14011000" />
+      <workItem from="1715668662754" duration="843000" />
+      <workItem from="1715669553070" duration="249000" />
+      <workItem from="1715669911646" duration="608000" />
     </task>
     <servers />
   </component>
@@ -125,6 +198,29 @@
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/Tam" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -151,38 +247,33 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/Frontend-React.JS/public/js/main.js</url>
-          <line>136</line>
+          <line>137</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Home/Home.js</url>
-          <line>353</line>
+          <line>358</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Home/Home.js</url>
-          <line>358</line>
+          <line>362</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Home/Home.js</url>
-          <line>87</line>
+          <line>210</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Home/Home.js</url>
-          <line>98</line>
+          <line>224</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/Frontend-React.JS/public/js/main.js</url>
-          <line>218</line>
+          <line>250</line>
           <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Login/Login.js</url>
-          <line>15</line>
-          <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Register/Register.js</url>

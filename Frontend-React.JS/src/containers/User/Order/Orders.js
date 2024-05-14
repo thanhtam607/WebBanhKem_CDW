@@ -29,7 +29,7 @@ class Orders extends Component {
             <Breadcrumb items={breadcrumbItems}/>
             <div className="container-91 mx-auto">
                 <div className="row">
-                    <div className="tab-content flex-sm-row mt-2">
+                    <div className="tab-content-order flex-sm-row mt-2">
 
                         {/*<Empty message={"Không có đơn hàng nào"}/>*/}
 
