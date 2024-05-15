@@ -9,21 +9,11 @@ import userController from "../controller/userController";
 let router = express.Router();
 
 let initWebRoutes = (app) => {
-    router.get("/", homeController.getHomePage);
-
-    router.get("/api/getListProducts", productController.getListProducts)
-    router.get("/api/getProductById", productController.getProductById);
-    router.get("/api/getProductsByCategory", productController.getProductsByCategory);
-
-
-    router.post("/api/login", userController.handleLogin);
-    return app.use("/", router);
-
   router.get("/", homeController.getHomePage);
 
   // User
   router.post("/api/register", userController.handleCreateNewUser);
-  router.post("/api/login", userController.handleLogin);
+  router.post("/api/login", userController.userLogin);
 
   router.get("/api/getListProducts", productController.getListProducts);
   router.get("/api/getProductById", productController.getProductById);

@@ -87,11 +87,12 @@ class Register extends Component {
                                 <p className="text-center">
                                     <span>Bạn đã có tài khoản?</span>
                                     <a href="/login">
-                                        <span className=" text-pink"> Đăng nhập tại đây.</span>
+                                        <span className=" text-primary-cake">Đăng nhập tại đây.</span>
                                     </a>
                                 </p>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import "./Home.scss";
+
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Product from "../../../components/Product/Product";

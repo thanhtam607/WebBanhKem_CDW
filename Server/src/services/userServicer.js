@@ -64,7 +64,6 @@ let getAllUsers = () => {
     }
   });
 };
-
 let createUser = (data) => {
   return new Promise(async (resolve, reject) => {
     try {
@@ -127,7 +126,6 @@ let hashPassword = (password) => {
     }
   });
 };
-
 module.exports = {
   userLoginServicer: userLoginServicer,
   getAllUsers: getAllUsers,

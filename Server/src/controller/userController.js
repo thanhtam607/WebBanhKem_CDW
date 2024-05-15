@@ -1,35 +1,40 @@
-import userService from "../Service/userService"
-let handleLogin = async (req, res) => {
-    let email = req.body.email
-    let pass = req.body.pass
-    console.log(email)
-    let userData = await userService.handleLogin(email, pass)
-    return res.status(200).json({
-        errCode: userData.errCode,
-        message: userData.errMessage,
-        userData
-    })
-}
+import userServicer from "../services/userServicer";
+let userLogin = async (req, res) => {
+  const email = req.body.email;
+  const pass = req.body.pass;
+  if (!email || !pass) {
+    return res.status(500).json({
+      errCode: 1,
+      message: "Xin nhập 2 trường email va password",
+    });
+  }
+  const data = await userServicer.userLoginServicer(email, pass);
+  return res.status(200).json({
+    errCode: data.errCode,
+    message: data.message,
+    data: data.user ? data.user : {},
+  });
+};
 
 let getAllUsers = async (req, res) => {
-    const data = await userServicer.getAllUsers();
-    return res.status(200).json({
-        errCode: data.errCode,
-        message: data.message,
-        data: data,
-    });
+  const data = await userServicer.getAllUsers();
+  return res.status(200).json({
+    errCode: data.errCode,
+    message: data.message,
+    data: data,
+  });
 };
 
 let handleCreateNewUser = async (req, res) => {
-    const data = await userServicer.createUser(req.body);
-    return res.status(200).json({
-        errCode: data.errCode,
-        message: data.message,
-    });
+  const data = await userServicer.createUser(req.body);
+  return res.status(200).json({
+    errCode: data.errCode,
+    message: data.message,
+  });
 };
 
 module.exports = {
-    handleCreateNewUser: handleCreateNewUser,
-    getAllUsers: getAllUsers,
-    handleLogin: handleLogin
-}
+  userLogin: userLogin,
+  getAllUsers: getAllUsers,
+  handleCreateNewUser: handleCreateNewUser,
+};
