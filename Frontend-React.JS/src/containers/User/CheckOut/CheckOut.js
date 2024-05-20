@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import "./CheckOut.scss"
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
+import Breadcrumb from "../breadcrumb";
 class CheckOut extends Component {
 
     constructor(props){
@@ -16,17 +17,16 @@ class CheckOut extends Component {
     componentDidMount() {
     }
     render() {
-        return (
-            <div>
-                <Header/>
-            {/* Single Page Header start */}
-            <div className="container-fluid page-header py-5">
-              <h1 className="text-center text-white display-6">Thông tin đặt hàng</h1>
-              <ol className="breadcrumb justify-content-center mb-0">
-                <li className="breadcrumb-item"><a href="#">Trang chủ</a></li>
-                <li className="breadcrumb-item active text-white">Thông tin đặt hàng</li>
-              </ol>
-            </div>
+
+      const breadcrumbItems = [
+        {title: "Trang chủ", link: "/", active: false},
+        {title: "Thanh toán", link: "/checkout", active: true}
+      ];
+
+
+      return (<div>
+          <Header pageActive={"Trang chủ"}/>
+          <Breadcrumb items={breadcrumbItems}/>
             {/* Single Page Header End */}
             {/* Checkout Page Start */}
             <div className="container-fluid py-5">

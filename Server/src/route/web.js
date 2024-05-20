@@ -39,8 +39,7 @@ let initWebRoutes = (app) => {
   router.get("/api/getBillById", billController.getBillById);
   // update status bill
   router.post("/api/updateStatusBill", billController.updateStatusBill);
-
+  router.post("/api/creatBill", billController.createBill)
   return app.use("/", router);
 };
-
 module.exports = initWebRoutes;
