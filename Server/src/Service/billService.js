@@ -91,37 +91,33 @@ let updateStatusBill = (data) => {
 };
 let createBill=(data)=>{
   return new Promise(async (resolve, reject) => {
-    try {
-      if (data) {
-        const currentDate = new Date();
-// Chuyển đổi sang định dạng có thể chèn vào MySQL (YYYY-MM-DD HH:MM:SS)
-        const now = currentDate.toISOString().slice(0, 19).replace('T', ' ');
-
-        await db.Bill.create({
+    if (data) {
+      try {
+        const bill =await db.Bill.create({
           id_user: data.id_user,
           //     export_date: ,
           notes: data.notes,
           pro_bill: data.pro_bill,
           fee_bill: data.fee_bill,
-          createAt: now,
           status:0,
         })
-        let id = getIdBill(now, data.id_user )
-        if (Array.isArray(data.billDetail)) {
-          for (let item of data.billDetail) {
-            await createBillDetail(item, id);
-          }
-        }
+        let id = bill.id
+        console.log('billDetail is an array and has length:', data.billDetail.length);
+        data.billDetail.map(async (item) => {
+          await createBillDetail(item, id);
+        })
+        resolve("Update successfully");
       }
-    } catch (e) {
+    catch (e) {
       reject(e)
+    }
     }
   })
 }
 let createBillDetail= (data, id_bill)=>{
   return new Promise(async (resolve, reject) => {
     try {
-      if (data) {
+      if (data && id_bill) {
         await db.Bill_Detail.create({
           id_product: data.id_product ,
           id_bill: id_bill,
@@ -135,21 +131,6 @@ let createBillDetail= (data, id_bill)=>{
     }
   })
 }
-let getIdBill= (createAt, id_user)=>{
-  return new Promise(async (resolve, reject) => {
-    try {
-      let id = await db.Bill.findOne({
-        attributes:['id'],
-        where: { createAt: createAt, id_user: id_user },
-      })
-      resolve(id)
-    } catch (e) {
-      reject(e)
-    }
-  })
-
-}
-
 module.exports = {
   getAllBillsByIdUser: getAllBillsByIdUser,
   getBillById: getBillById,

@@ -5,7 +5,7 @@ module.exports = {
       id: {
         allowNull: false,
         autoIncrement: true,
-        primaryKey: true,
+        primaryKey: true, //không phải khóa chính mới đúng
         type: Sequelize.INTEGER,
       },
       // viết dùm tối cái này
