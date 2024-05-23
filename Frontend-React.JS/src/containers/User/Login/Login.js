@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import * as actions from "../../../store/actions";
 import { userLogin } from "../../../services/userService";
 import { getAllCartsByIdUser } from "../../../services/cartService";
+import { FormattedMessage } from "react-intl";
 
 class Login extends Component {
   constructor(props) {
@@ -55,7 +56,9 @@ class Login extends Component {
                   </a>
                 </div>
 
-                <h4 className="mb-2 text-black">Đăng nhập</h4>
+                <h4 className="mb-2 text-black">
+                  <FormattedMessage id="login.login" />
+                </h4>
 
                 <div id="formAuthentication" className="mb-3">
                   <div className="mb-3">
@@ -78,10 +81,12 @@ class Login extends Component {
                   <div className="mb-3 form-password-toggle">
                     <div className="d-flex justify-content-between">
                       <label className="form-label" htmlFor="password">
-                        Mật khẩu
+                        <FormattedMessage id="login.password" />
                       </label>
                       <a href="auth-forgot-password-basic.html">
-                        <small>Quên mật khẩu?</small>
+                        <small>
+                          <FormattedMessage id="login.forgot_password" />
+                        </small>
                       </a>
                     </div>
                     <div className="input-group input-group-merge">
@@ -120,15 +125,19 @@ class Login extends Component {
                       className="btn btn-primary-cake text-white w-100"
                       onClick={() => this.handleSubmit()}
                     >
-                      Đăng nhập
+                      <FormattedMessage id="login.login" />
                     </button>
                   </div>
                 </div>
 
                 <p className="text-center">
-                  <span>Bạn chưa có tài khoản?</span>
+                  <span>
+                    <FormattedMessage id="login.text_signin" />
+                  </span>
                   <a href="/register">
-                    <span className="text-primary-cake"> Đăng ký ngay</span>
+                    <span className="text-primary-cake">
+                      <FormattedMessage id="login.signin" />
+                    </span>
                   </a>
                 </p>
               </div>

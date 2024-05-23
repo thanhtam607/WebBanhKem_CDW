@@ -1,23 +1,7 @@
-a {
-  text-decoration: none;
-}
-
-.text-primary {
-  color: #9b59b6 !important;
-}
-
-.my-auto i {
-  color: #9b59b6 !important;
-}
-
-.text-secondary {
-  color: #ffe226 !important;
-}
-
-.btn-primary {
-  background: #9b59b6 !important;
-}
-
-.bg-primary {
-  background-color: #9b59b6 !important;
+// .flag có magin left right 10px .action red
+.flag {
+  margin: 0px 10px;
+  &.action {
+    color: #ffc107 !important;
+  }
 }

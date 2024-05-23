@@ -24,6 +24,8 @@ import SHOP from "./User/Shop/Shop";
 import Contact from "./User/Contact/Contact";
 import About from "./User/About/About";
 import Error from "./404er";
+import Orders from './User/Order/Orders';
+import Profile from './User/Profile/Profile';
 class App extends Component {
   handlePersistorState = () => {
     const { persistor } = this.props;
@@ -64,6 +66,8 @@ class App extends Component {
                   <Route path={path.CHECKOUT} component={CheckOut} />
                   <Route path={path.CONTACT} component={Contact} />
                   <Route path={path.HOME} component={Home} />
+                  <Route path={path.ORDER}  component={(Orders)} />
+                  <Route path={path.PROFILE}  component={(Profile)} />
                 </Switch>
               </CustomScrollbars>
             </div>

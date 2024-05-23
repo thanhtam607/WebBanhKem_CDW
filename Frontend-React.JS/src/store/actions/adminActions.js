@@ -13,4 +13,8 @@ export const processLogout = () => ({
   type: actionTypes.PROCESS_LOGOUT,
 });
 
-// user login success
+// change language
+export const changeLanguage = (language) => ({
+  type: actionTypes.CHANGE_LANGUAGE,
+  language: language,
+});

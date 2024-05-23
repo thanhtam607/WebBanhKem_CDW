@@ -4,6 +4,7 @@ import "./HorizontalProduct.scss";
 import { addCart, getAllCartsByIdUser } from "../../../services/cartService";
 import * as actions from "../../../store/actions";
 import { Link } from "react-router-dom";
+import { FormattedMessage } from "react-intl";
 class HorizontalProduct extends Component {
   constructor(props) {
     super(props);
@@ -61,7 +62,8 @@ class HorizontalProduct extends Component {
               onClick={() => this.handleAddToCart()}
               className="btn border border-secondary rounded-pill px-3 text-primary"
             >
-              <i className="fa fa-shopping-bag me-2 text-primary" /> Add to cart
+              <i className="fa fa-shopping-bag me-2 text-primary" />
+              <FormattedMessage id="text.add_cart" />
             </div>
           </div>
         </div>

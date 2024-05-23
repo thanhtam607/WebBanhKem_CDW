@@ -14,9 +14,15 @@ const getPageCount = (totalItem, limit) => {
   return Math.ceil(totalItem / limit);
 };
 
+// get product by keyword
+let getProductsByKeyword = (keyword) => {
+  return axios.get(`/api/getProductsByKeyword?keyword=${keyword}`);
+};
+
 export {
   getListProducts,
   getProductById,
   getPageCount,
   getAllProductsByIdCategory,
+  getProductsByKeyword,
 };

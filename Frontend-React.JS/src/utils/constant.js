@@ -11,6 +11,8 @@ export const path = {
   ABOUT: "/about",
   ERROR: "/error",
   REGISTER: "/register",
+  ORDER: '/orders',
+  PROFILE: '/profile',
 };
 
 export const languages = {

@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { path } from "../../../utils";
 import { Link } from "react-router-dom";
+import { FormattedMessage } from "react-intl";
+import { head } from "lodash";
 
 class Navigation extends Component {
   constructor(props) {
@@ -19,12 +21,12 @@ class Navigation extends Component {
   };
 
   render() {
-    const { pageActive } = this.props.pageActive;
+    const pageActive = this.props.pageActive;
     return (
       <nav className="navbar navbar-light bg-white navbar-expand-xl">
-        <a href="users/theme#" className="navbar-brand">
+        <Link to={"/"} className="navbar-brand">
           <h1 className="text-primary-cake display-6">Peace Bakery</h1>
-        </a>
+        </Link>
         <button
           className="navbar-toggler py-2 px-3"
           type="button"
@@ -35,38 +37,38 @@ class Navigation extends Component {
         </button>
         <div className="collapse navbar-collapse bg-white" id="navbarCollapse">
           <div className="navbar-nav mx-auto">
-            <a
-              href="/"
+            <Link
+              to="/"
               className={`nav-item nav-link ${
                 pageActive === "Trang chủ" ? "active" : ""
               }`}
             >
-              Trang chủ
-            </a>
-            <a
-              href="/about"
+              <FormattedMessage id="header.page_home" />
+            </Link>
+            <Link
+              to="/about"
               className={`nav-item nav-link ${
                 pageActive === "Giới thiệu" ? "active" : ""
               }`}
             >
-              Giới thiệu
-            </a>
-            <a
-              href="/shop"
+              <FormattedMessage id="header.page_about_us" />
+            </Link>
+            <Link
+              to="/shop"
               className={`nav-item nav-link ${
                 pageActive === "Sản phẩm" ? "active" : ""
               }`}
             >
-              Sản phẩm
-            </a>
-            <a
+              <FormattedMessage id="header.page_product" />
+            </Link>
+            <Link
               href="/contact"
               className={`nav-item nav-link ${
                 pageActive === "Liên hệ" ? "active" : ""
               }`}
             >
-              Liên hệ
-            </a>
+              <FormattedMessage id="header.page_contact" />
+            </Link>
           </div>
           <div className="d-flex m-3 me-0">
             <button
@@ -102,20 +104,20 @@ class Navigation extends Component {
               >
                 {this.props.user.isLoggedIn ? (
                   <div>
-                    <a href="/profile" className="dropdown-item">
-                      Thông tin cá nhân
-                    </a>
+                    <Link to="/profile" className="dropdown-item">
+                      <FormattedMessage id="header.profile" />
+                    </Link>
                     <a href="/logout" className="dropdown-item">
-                      Đăng xuất
+                      <FormattedMessage id="header.logout" />
                     </a>
                   </div>
                 ) : (
                   <div>
                     <a href="/login" className="dropdown-item">
-                      Đăng nhập
+                      <FormattedMessage id="header.login" />
                     </a>
                     <a href="/register" className="dropdown-item">
-                      Đăng ký
+                      <FormattedMessage id="header.signin" />
                     </a>
                   </div>
                 )}
