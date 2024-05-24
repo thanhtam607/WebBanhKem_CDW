@@ -11,6 +11,8 @@ import { addCart, getAllCartsByIdUser } from "../../../services/cartService";
 import { getAllCategories } from "../../../services/categorySerive";
 import * as actions from "../../../store/actions";
 import Breadcrumb from "../breadcrumb";
+import { Link } from "react-router-dom";
+import { FormattedMessage } from "react-intl";
 class ProductDetail extends Component {
   constructor(props) {
     super(props);
@@ -92,9 +94,17 @@ class ProductDetail extends Component {
     console.log("user", this.props.user);
 
     const breadcrumbItems = [
-      { title: "Trang chủ", link: "/", active: false },
-      { title: "Sản phẩm", link: "/shop", active: false },
-      { title: "Chi tiết sản phẩm", link: "/product-detail", active: true },
+      { title: <FormattedMessage id="page.home" />, link: "/", active: false },
+      {
+        title: <FormattedMessage id="page.product" />,
+        link: "/shop",
+        active: false,
+      },
+      {
+        title: <FormattedMessage id="page.product_detail" />,
+        link: "/product-detail",
+        active: true,
+      },
     ];
     return (
       <div>
@@ -136,15 +146,18 @@ class ProductDetail extends Component {
                   <div className="col-lg-6">
                     <h4 className="fw-bold mb-3">{p.name}</h4>
                     {p.category && (
-                      <p className="mb-3">Loại bánh: {p.category.name}</p>
+                      <p className="mb-3">
+                        <FormattedMessage id="product_detail.category" />:{" "}
+                        {p.category.name}
+                      </p>
                     )}
 
                     <h5 className="fw-bold mb-3">{p.price} VND</h5>
                     <div className="d-flex mb-4">
-                      <i className="fa fa-star text-secondary" />
-                      <i className="fa fa-star text-secondary" />
-                      <i className="fa fa-star text-secondary" />
-                      <i className="fa fa-star text-secondary" />
+                      <i className="fa fa-star " />
+                      <i className="fa fa-star " />
+                      <i className="fa fa-star " />
+                      <i className="fa fa-star " />
                       <i className="fa fa-star" />
                     </div>
                     <p className="mb-4">{p.introduction}</p>
@@ -186,7 +199,7 @@ class ProductDetail extends Component {
                       className="btn border-secondary border rounded-pill rounded-pill-atc  px-4 py-2 mb-4 text-primary-cake"
                     >
                       <i className="fa fa-shopping-bag me-2 text-primary-cake" />{" "}
-                      Thêm vào giỏ hàng
+                      <FormattedMessage id="product_detail.add_cart" />
                     </div>
                   </div>
                   <div className="col-lg-12">
@@ -269,10 +282,10 @@ class ProductDetail extends Component {
                             <div className="d-flex justify-content-between">
                               <h5>Jason Smith</h5>
                               <div className="d-flex mb-3">
-                                <i className="fa fa-star text-secondary" />
-                                <i className="fa fa-star text-secondary" />
-                                <i className="fa fa-star text-secondary" />
-                                <i className="fa fa-star text-secondary" />
+                                <i className="fa fa-star " />
+                                <i className="fa fa-star " />
+                                <i className="fa fa-star " />
+                                <i className="fa fa-star " />
                                 <i className="fa fa-star" />
                               </div>
                             </div>
@@ -298,9 +311,9 @@ class ProductDetail extends Component {
                             <div className="d-flex justify-content-between">
                               <h5>Sam Peters</h5>
                               <div className="d-flex mb-3">
-                                <i className="fa fa-star text-secondary" />
-                                <i className="fa fa-star text-secondary" />
-                                <i className="fa fa-star text-secondary" />
+                                <i className="fa fa-star " />
+                                <i className="fa fa-star " />
+                                <i className="fa fa-star " />
                                 <i className="fa fa-star" />
                                 <i className="fa fa-star" />
                               </div>
@@ -371,13 +384,13 @@ class ProductDetail extends Component {
                               <i className="fa fa-star" />
                             </div>
                           </div>
-                          <a
-                            href="#"
+                          <Link
+                            to="#"
                             className="btn border border-secondary text-primary rounded-pill px-4 "
                           >
                             {" "}
                             Gửi đánh giá
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -391,7 +404,6 @@ class ProductDetail extends Component {
                       <input
                         type="search"
                         className="form-control p-3"
-                        placeholder="Tìm kiếm"
                         aria-describedby="search-icon-1"
                       />
                       <span id="search-icon-1" className="input-group-text p-3">
@@ -399,13 +411,15 @@ class ProductDetail extends Component {
                       </span>
                     </div>
                     <div className="mb-4">
-                      <h4>Thể Loại</h4>
+                      <h4>
+                        <FormattedMessage id="text.categories" />
+                      </h4>
                       <ul className="list-unstyled fruite-categorie">
                         {this.state.categories &&
                           this.state.categories.map((item, index) => (
                             <li key={index}>
                               <div className="d-flex justify-content-between fruite-name">
-                                <a href="#">{item.name}</a>
+                                <Link to="#">{item.name}</Link>
                               </div>
                             </li>
                           ))}
@@ -413,7 +427,9 @@ class ProductDetail extends Component {
                     </div>
                   </div>
                   <div className="col-lg-12">
-                    <h4 className="mb-4">Sản Phẩm nổi bật</h4>
+                    <h4 className="mb-4">
+                      <FormattedMessage id="text.outstanding_product" />
+                    </h4>
                     {this.state.listProduct &&
                       this.state.listProduct.slice(0, 5).map((item, index) => (
                         <div
@@ -432,17 +448,17 @@ class ProductDetail extends Component {
                             />
                           </div>
                           <div>
-                            <a
-                              href={`/product-detail/${item.id}`}
+                            <Link
+                              to={`/product-detail/${item.id}`}
                               className="mb-2"
                             >
                               {item.name}
-                            </a>
+                            </Link>
                             <div className="d-flex mb-2">
-                              <i className="fa fa-star text-secondary" />
-                              <i className="fa fa-star text-secondary" />
-                              <i className="fa fa-star text-secondary" />
-                              <i className="fa fa-star text-secondary" />
+                              <i className="fa fa-star " />
+                              <i className="fa fa-star " />
+                              <i className="fa fa-star " />
+                              <i className="fa fa-star " />
                               <i className="fa fa-star" />
                             </div>
                             <div className="d-flex mb-2">
@@ -453,267 +469,6 @@ class ProductDetail extends Component {
                           </div>
                         </div>
                       ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-            <h1 className="fw-bold mb-0">Sản phẩm liên quan</h1>
-            <div className="vesitable">
-              <div className="owl-carousel vegetable-carousel justify-content-center">
-                <div className="border border-primary rounded position-relative vesitable-item">
-                  <div className="vesitable-img">
-                    <img
-                      src="img/vegetable-item-6.jpg"
-                      className="img-fluid w-100 rounded-top"
-                      alt=""
-                    />
-                  </div>
-                  <div
-                    className="text-white bg-primary px-3 py-1 rounded position-absolute"
-                    style={{ top: "10px", right: "10px" }}
-                  >
-                    Vegetable
-                  </div>
-                  <div className="p-4 pb-0 rounded-bottom">
-                    <h4>Parsely</h4>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit
-                      sed do eiusmod te incididunt
-                    </p>
-                    <div className="d-flex justify-content-between flex-lg-wrap">
-                      <p className="text-dark fs-5 fw-bold">$4.99 / kg</p>
-                      <a
-                        href="#"
-                        className="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"
-                      >
-                        <i className="fa fa-shopping-bag me-2 text-primary" />{" "}
-                        Thêm vào giỏ hàng
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div className="border border-primary rounded position-relative vesitable-item">
-                  <div className="vesitable-img">
-                    <img
-                      src="img/vegetable-item-1.jpg"
-                      className="img-fluid w-100 rounded-top"
-                      alt=""
-                    />
-                  </div>
-                  <div
-                    className="text-white bg-primary px-3 py-1 rounded position-absolute"
-                    style={{ top: "10px", right: "10px" }}
-                  >
-                    Vegetable
-                  </div>
-                  <div className="p-4 pb-0 rounded-bottom">
-                    <h4>Parsely</h4>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit
-                      sed do eiusmod te incididunt
-                    </p>
-                    <div className="d-flex justify-content-between flex-lg-wrap">
-                      <p className="text-dark fs-5 fw-bold">$4.99 / kg</p>
-                      <a
-                        href="#"
-                        className="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"
-                      >
-                        <i className="fa fa-shopping-bag me-2 text-primary" />{" "}
-                        Thêm vào giỏ hàng
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div className="border border-primary rounded position-relative vesitable-item">
-                  <div className="vesitable-img">
-                    <img
-                      src="img/vegetable-item-3.png"
-                      className="img-fluid w-100 rounded-top bg-light"
-                      alt=""
-                    />
-                  </div>
-                  <div
-                    className="text-white bg-primary px-3 py-1 rounded position-absolute"
-                    style={{ top: "10px", right: "10px" }}
-                  >
-                    Vegetable
-                  </div>
-                  <div className="p-4 pb-0 rounded-bottom">
-                    <h4>Banana</h4>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit
-                      sed do eiusmod te incididunt
-                    </p>
-                    <div className="d-flex justify-content-between flex-lg-wrap">
-                      <p className="text-dark fs-5 fw-bold">$7.99 / kg</p>
-                      <a
-                        href="#"
-                        className="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"
-                      >
-                        <i className="fa fa-shopping-bag me-2 text-primary" />{" "}
-                        Thêm vào giỏ hàng
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div className="border border-primary rounded position-relative vesitable-item">
-                  <div className="vesitable-img">
-                    <img
-                      src="img/vegetable-item-4.jpg"
-                      className="img-fluid w-100 rounded-top"
-                      alt=""
-                    />
-                  </div>
-                  <div
-                    className="text-white bg-primary px-3 py-1 rounded position-absolute"
-                    style={{ top: "10px", right: "10px" }}
-                  >
-                    Vegetable
-                  </div>
-                  <div className="p-4 pb-0 rounded-bottom">
-                    <h4>Bell Papper</h4>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit
-                      sed do eiusmod te incididunt
-                    </p>
-                    <div className="d-flex justify-content-between flex-lg-wrap">
-                      <p className="text-dark fs-5 fw-bold">$7.99 / kg</p>
-                      <a
-                        href="#"
-                        className="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"
-                      >
-                        <i className="fa fa-shopping-bag me-2 text-primary" />{" "}
-                        Thêm vào giỏ hàng
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div className="border border-primary rounded position-relative vesitable-item">
-                  <div className="vesitable-img">
-                    <img
-                      src="img/vegetable-item-5.jpg"
-                      className="img-fluid w-100 rounded-top"
-                      alt=""
-                    />
-                  </div>
-                  <div
-                    className="text-white bg-primary px-3 py-1 rounded position-absolute"
-                    style={{ top: "10px", right: "10px" }}
-                  >
-                    Vegetable
-                  </div>
-                  <div className="p-4 pb-0 rounded-bottom">
-                    <h4>Potatoes</h4>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit
-                      sed do eiusmod te incididunt
-                    </p>
-                    <div className="d-flex justify-content-between flex-lg-wrap">
-                      <p className="text-dark fs-5 fw-bold">$7.99 / kg</p>
-                      <a
-                        href="#"
-                        className="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"
-                      >
-                        <i className="fa fa-shopping-bag me-2 text-primary" />{" "}
-                        Thêm vào giỏ hàng
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div className="border border-primary rounded position-relative vesitable-item">
-                  <div className="vesitable-img">
-                    <img
-                      src="img/vegetable-item-6.jpg"
-                      className="img-fluid w-100 rounded-top"
-                      alt=""
-                    />
-                  </div>
-                  <div
-                    className="text-white bg-primary px-3 py-1 rounded position-absolute"
-                    style={{ top: "10px", right: "10px" }}
-                  >
-                    Vegetable
-                  </div>
-                  <div className="p-4 pb-0 rounded-bottom">
-                    <h4>Parsely</h4>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit
-                      sed do eiusmod te incididunt
-                    </p>
-                    <div className="d-flex justify-content-between flex-lg-wrap">
-                      <p className="text-dark fs-5 fw-bold">$7.99 / kg</p>
-                      <a
-                        href="#"
-                        className="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"
-                      >
-                        <i className="fa fa-shopping-bag me-2 text-primary" />{" "}
-                        Thêm vào giỏ hàng
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div className="border border-primary rounded position-relative vesitable-item">
-                  <div className="vesitable-img">
-                    <img
-                      src="img/vegetable-item-5.jpg"
-                      className="img-fluid w-100 rounded-top"
-                      alt=""
-                    />
-                  </div>
-                  <div
-                    className="text-white bg-primary px-3 py-1 rounded position-absolute"
-                    style={{ top: "10px", right: "10px" }}
-                  >
-                    Vegetable
-                  </div>
-                  <div className="p-4 pb-0 rounded-bottom">
-                    <h4>Potatoes</h4>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit
-                      sed do eiusmod te incididunt
-                    </p>
-                    <div className="d-flex justify-content-between flex-lg-wrap">
-                      <p className="text-dark fs-5 fw-bold">$7.99 / kg</p>
-                      <a
-                        href="#"
-                        className="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"
-                      >
-                        <i className="fa fa-shopping-bag me-2 text-primary" />{" "}
-                        Thêm vào giỏ hàng
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div className="border border-primary rounded position-relative vesitable-item">
-                  <div className="vesitable-img">
-                    <img
-                      src="img/vegetable-item-6.jpg"
-                      className="img-fluid w-100 rounded-top"
-                      alt=""
-                    />
-                  </div>
-                  <div
-                    className="text-white bg-primary px-3 py-1 rounded position-absolute"
-                    style={{ top: "10px", right: "10px" }}
-                  >
-                    Vegetable
-                  </div>
-                  <div className="p-4 pb-0 rounded-bottom">
-                    <h4>Parsely</h4>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit
-                      sed do eiusmod te incididunt
-                    </p>
-                    <div className="d-flex justify-content-between flex-lg-wrap">
-                      <p className="text-dark fs-5 fw-bold">$7.99 / kg</p>
-                      <a
-                        href="#"
-                        className="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"
-                      >
-                        <i className="fa fa-shopping-bag me-2 text-primary" />{" "}
-                        Thêm vào giỏ hàng
-                      </a>
-                    </div>
                   </div>
                 </div>
               </div>

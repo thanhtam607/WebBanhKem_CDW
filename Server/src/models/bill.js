@@ -17,10 +17,12 @@ module.exports = (sequelize, DataTypes) => {
   };
   Bill.init({
      id_user: DataTypes.INTEGER,
-     export_date: DataTypes.DATE,
+      fullname: DataTypes.TEXT,
+     phone_number: DataTypes.TEXT,
      notes: DataTypes.TEXT,
      pro_bill: DataTypes.FLOAT,
      fee_bill: DataTypes.FLOAT,
+     payment: DataTypes.INTEGER,
      status: DataTypes.INTEGER,
   }, {
     sequelize,

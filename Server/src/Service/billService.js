@@ -89,9 +89,53 @@ let updateStatusBill = (data) => {
     }
   });
 };
+let createBill=(data)=>{
+  return new Promise(async (resolve, reject) => {
+    if (data) {
+      try {
+        const bill =await db.Bill.create({
+          id_user: data.id_user,
+          fullname: data.fullname,
+          phone_number: data.phone_number,
+          notes: data.notes,
+          pro_bill: data.pro_bill,
+          fee_bill: data.fee_bill,
+          payment: data.payment,
+          status:0,
+        })
+        let id = bill.id
+        console.log('billDetail is an array and has length:', data.billDetail.length);
+        data.billDetail.map(async (item) => {
+          await createBillDetail(item, id);
+        })
+        resolve("Update successfully");
+      }
+    catch (e) {
+      reject(e)
+    }
+    }
+  })
+}
+let createBillDetail= (data, id_bill)=>{
+  return new Promise(async (resolve, reject) => {
+    try {
+      if (data && id_bill) {
+        await db.Bill_Detail.create({
+          id_product: data.id_product ,
+          id_bill: id_bill,
+          amount: data.amount,
+          notes: data.notes,
+          price: data.price})
 
+      }
+    } catch (e) {
+      reject(e)
+    }
+  })
+}
 module.exports = {
   getAllBillsByIdUser: getAllBillsByIdUser,
   getBillById: getBillById,
   updateStatusBill: updateStatusBill,
+  createBill: createBill,
 };

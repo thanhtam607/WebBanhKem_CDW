@@ -60,6 +60,7 @@ class App extends Component {
                   <Route path={path.ABOUT} component={About} />
                   <Route path={path.LOGIN} component={Login} />
                   <Route path={path.REGISTER} component={Register} />
+                  <Route path={path.PROFILE}  component={(Profile)} />
                   <Route path={path.CART} component={Cart} />
                   <Route path={path.PRODUCTDETAIL} component={ProductDetail} />
                   <Route path={path.SHOP} component={SHOP} />
@@ -67,7 +68,7 @@ class App extends Component {
                   <Route path={path.CONTACT} component={Contact} />
                   <Route path={path.HOME} component={Home} />
                   <Route path={path.ORDER}  component={(Orders)} />
-                  <Route path={path.PROFILE}  component={(Profile)} />
+
                 </Switch>
               </CustomScrollbars>
             </div>

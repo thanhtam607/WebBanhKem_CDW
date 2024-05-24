@@ -26,6 +26,7 @@ module.exports = (sequelize, DataTypes) => {
       //   CONSTRAINT f_mhdcthd FOREIGN KEY(ID_PRODUCT) REFERENCES PRODUCTS(ID),
       //   CONSTRAINT f_mspcthd FOREIGN KEY (ID) REFERENCES BILLS(ID));
       id_product: DataTypes.INTEGER,
+      id_bill: DataTypes.INTEGER,
       amount: DataTypes.INTEGER,
       notes: DataTypes.TEXT,
       price: DataTypes.INTEGER,

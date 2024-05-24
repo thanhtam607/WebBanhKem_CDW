@@ -1,13 +1,36 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Navigation from "./navigation";
+import "./Header.scss";
+import { languages } from "../../../utils";
+import * as actions from "../../../store/actions";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { getProductsByKeyword } from "../../../services/productService";
 class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
       isShow: false,
+      products: [],
     };
   }
+
+  handleChangeLanguage = (language) => {
+    this.props.changeLanguage(language);
+  };
+
+  handleChangeKeyword = async (keyword) => {
+    console.log(keyword);
+    keyword = keyword.trim();
+    if (keyword === "") {
+      this.setState({ products: [] });
+    } else {
+      const res = await getProductsByKeyword(keyword);
+      if (res.errCode === 0) {
+        this.setState({ products: res.data });
+      }
+    }
+  };
 
   render() {
     return (
@@ -29,15 +52,25 @@ class Header extends Component {
                 </small>
               </div>
               <div className="top-link pe-2">
-                <a href="#" className="text-white">
-                  <small className="text-white mx-2">Privacy Policy</small>/
-                </a>
-                <a href="#" className="text-white">
-                  <small className="text-white mx-2">Terms of Use</small>/
-                </a>
-                <a href="#" className="text-white">
-                  <small className="text-white ms-2">Sales and Refunds</small>
-                </a>
+                {/* // change language VN , En */}
+                <div
+                  className={`text-white flag  ${
+                    this.props.language === languages.VI ? "action" : ""
+                  }`}
+                >
+                  <span onClick={() => this.handleChangeLanguage(languages.VI)}>
+                    VN
+                  </span>
+                </div>
+                <div
+                  className={`text-white flag  ${
+                    this.props.language === languages.EN ? "action" : ""
+                  }`}
+                >
+                  <span onClick={() => this.handleChangeLanguage(languages.EN)}>
+                    EN
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -67,10 +100,11 @@ class Header extends Component {
                   aria-label="Close"
                 />
               </div>
-              <div className="modal-body d-flex align-items-center">
-                <div className="input-group w-75 mx-auto d-flex">
+              <div className="col-12 modal-body ">
+                <div className=" input-group w-75 mx-auto ">
                   <input
                     type="search"
+                    onChange={(e) => this.handleChangeKeyword(e.target.value)}
                     className="form-control p-3"
                     placeholder="Nhập vào từ khóa tìm kiếm..."
                     aria-describedby="search-icon-1"
@@ -78,6 +112,36 @@ class Header extends Component {
                   <span id="search-icon-1" className="input-group-text p-3">
                     <i className="fa fa-search" />
                   </span>
+                </div>
+                <div className=" col-12 w-75 mx-auto">
+                  {/* // list product search */}
+                  {this.state.products.length > 0 && (
+                    <div className="list-product-search">
+                      {this.state.products.map((item, index) => {
+                        return (
+                          <div
+                            className="d-flex justify-content-between align-items-center border-bottom py-2"
+                            key={index}
+                          >
+                            <div className="d-flex">
+                              <img
+                                style={{ width: "50px", height: "50px" }}
+                                src={`../${item.Images[0].img}`}
+                                className="img-fluid"
+                                alt=""
+                              />
+                              <div className="ms-2">
+                                <a href={`/product-detail/${item.id}`}>
+                                  <h6 className="mb-0">{item.name}</h6>
+                                </a>
+                                <p className="mb-0"> {item.price} vnđ</p>
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -90,11 +154,16 @@ class Header extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return {};
+  return {
+    language: state.app.language,
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return {};
+  return {
+    // change language
+    changeLanguage: (language) => dispatch(actions.changeLanguage(language)),
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

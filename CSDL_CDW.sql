@@ -718,6 +718,8 @@ CREATE TABLE BILLS(ID INT  PRIMARY KEY,
                    PRO_BILL FLOAT,
                    FEE_BILL FLOAT,
                    STATUS int DEFAULT 0,
+                   createAt datetime,
+                   updatedAt datetime,
                    CONSTRAINT f_kh FOREIGN KEY (USER_ID) REFERENCES USERS(ID));
 									 
 /*==============================BILL_DETAIL=====================================*/

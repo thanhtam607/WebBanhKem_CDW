@@ -22,6 +22,12 @@ let initWebRoutes = (app) => {
     productController.getAllProductsByIdCategory
   );
 
+  // get product by keyword
+  router.get(
+    "/api/getProductsByKeyword",
+    productController.getProductsByKeyword
+  );
+
   router.post("/api/createCart", cartController.createCart);
   router.get("/api/getAllCartsByIdUser", cartController.getAllCartsByIdUser);
   router.post("/api/deleteCart", cartController.deleteCart);
@@ -39,8 +45,8 @@ let initWebRoutes = (app) => {
   router.get("/api/getBillById", billController.getBillById);
   // update status bill
   router.post("/api/updateStatusBill", billController.updateStatusBill);
-
+  router.post("/api/createBill", billController.createBill)
   return app.use("/", router);
 };
-
 module.exports = initWebRoutes;
+ 
