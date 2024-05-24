@@ -7,6 +7,7 @@ import Product from "../../../components/Product/Product";
 import Featurs from "../../../components/ComponentsHome/Featurs/Featurs";
 import HorizontalProduct from "../../../components/ComponentsHome/HorizontalProduct/HorizontalProduct";
 import { getListProducts } from "../../../services/productService";
+import { FormattedMessage } from "react-intl";
 class HOME extends Component {
   constructor(props) {
     super(props);
@@ -43,23 +44,26 @@ class HOME extends Component {
             <div className="row g-5 align-items-center">
               <div className="col-md-12 col-lg-7">
                 <h4 className="mb-3 text-secondary">
-                  Trao bánh - Trao yêu thương
+                  <FormattedMessage id="barner_home.phrase1" />
                 </h4>
                 <h1 className="mb-5 display-3 text-primary-cake">
-                  Nơi vị ngọt kết hợp với bình yên
+                  <FormattedMessage id="barner_home.phrase2" />
                 </h1>
                 <div className="position-relative mx-auto">
                   <input
                     className="form-control border-2 border-secondary w-75 py-3 px-4 rounded-pill"
-                    type="number"
-                    placeholder="Nhập vào tên bánh..."
+                    placeholder={`${
+                      this.props.language == "vi"
+                        ? "Nhập từ khóa tìm kiếm..."
+                        : "Enter search keyword..."
+                    }`}
                   />
                   <button
                     type="submit"
                     className="btn  btn-cake border-2 border-secondary py-3 px-4 position-absolute rounded-pill text-white h-100"
                     style={{ top: 0, right: "25%" }}
                   >
-                    Tìm kiếm ngay
+                    <FormattedMessage id="barner_home.search_now" />
                   </button>
                 </div>
               </div>
@@ -115,35 +119,57 @@ class HOME extends Component {
           </div>
         </div>
         {/* Hero End */}
+        {/* <FormattedMessage id="support_home.free_delivery.title" />
+   
+           
+          
+            <FormattedMessage id="support_home.support_24_7.title" />
+            <FormattedMessage id="support_home.support_24_7.description" /> */}
         {/* Featurs Section Start */}
         <div className="container-fluid featurs py-5">
           <div className="container py-5">
             <div className="row g-4">
               <div className="col-md-6 col-lg-3">
                 <Featurs
-                  name={"Giao hàng miễn phí"}
-                  description="Miễn phí giao hàng tại TPHCM"
+                  name={
+                    <FormattedMessage id="support_home.free_delivery.title" />
+                  }
+                  description={
+                    <FormattedMessage id="support_home.free_delivery.description" />
+                  }
                   icon={"fas fa-car-side fa-3x text-white"}
                 ></Featurs>
               </div>
               <div className="col-md-6 col-lg-3">
                 <Featurs
-                  name={"Thanh toán bảo mật"}
-                  description="Đảm bảo thanh toán bảo mật"
+                  name={
+                    <FormattedMessage id="support_home.secure_payment.title" />
+                  }
+                  description={
+                    <FormattedMessage id="support_home.secure_payment.description" />
+                  }
                   icon={"fas fa-user-shield fa-3x text-white"}
                 ></Featurs>
               </div>
               <div className="col-md-6 col-lg-3">
                 <Featurs
-                  name={"Giao hàng miễn phí"}
-                  description="Hỗ trợ đổi trả nếu không giống mẫu hoặc lỗi"
+                  name={
+                    <FormattedMessage id="support_home.return_support.title" />
+                  }
+                  description={
+                    <FormattedMessage id="support_home.return_support.description" />
+                  }
                   icon={"fas fa-exchange-alt fa-3x text-white"}
                 ></Featurs>
               </div>
               <div className="col-md-6 col-lg-3">
                 <Featurs
-                  name={"Hỗ trợ 24/7"}
-                  description="Nhân viên tư vấn sẵn sàng hỗ trợ khách hàng mọi lú"
+                  name={
+                    <FormattedMessage id="support_home.support_24_7.title" />
+                  }
+                  description={
+                    <FormattedMessage id="support_home.support_24_7.description" />
+                  }
                   icon={"fa fa-phone-alt fa-3x text-white"}
                 ></Featurs>
               </div>
@@ -157,7 +183,10 @@ class HOME extends Component {
             <div className="tab-class text-center">
               <div className="row g-4">
                 <div className="col-lg-4 text-start">
-                  <h1>Sản phẩm</h1>
+                  <h1>
+                    {" "}
+                    <FormattedMessage id="text.product" />
+                  </h1>
                 </div>
                 <div className="col-lg-8 text-end">
                   <ul className="nav nav-pills d-inline-flex text-center mb-5">
@@ -323,14 +352,18 @@ class HOME extends Component {
                 <a href="#">
                   <div className="service-item bg-secondary rounded border border-secondary">
                     <img
-                      src="img/featur-1.jpg"
+                      src="img/hero-img-1.png"
                       className="img-fluid rounded-top w-100"
                       alt=""
                     />
                     <div className="px-4 rounded-bottom">
                       <div className="service-content bg-primary-cake text-center p-4 rounded">
-                        <h5 className="text-white">Fresh Apples</h5>
-                        <h3 className="mb-0">20% OFF</h3>
+                        <h5 className="text-white">
+                          <FormattedMessage id="barner_home.banner_3_1" />
+                        </h5>
+                        <h3 className="mb-0">
+                          <FormattedMessage id="barner_home.banner_3_2" />
+                        </h3>
                       </div>
                     </div>
                   </div>
@@ -340,14 +373,18 @@ class HOME extends Component {
                 <a href="#">
                   <div className="service-item bg-dark rounded border border-dark">
                     <img
-                      src="img/featur-2.jpg"
+                      src="img/hero-img-1.png"
                       className="img-fluid rounded-top w-100"
                       alt=""
                     />
                     <div className="px-4 rounded-bottom">
                       <div className="service-content bg-light text-center p-4 rounded">
-                        <h5 className="text-primary-cake">Tasty Fruits</h5>
-                        <h3 className="mb-0">Free delivery</h3>
+                        <h5 className="text-primary-cake">
+                          <FormattedMessage id="barner_home.banner_3_3" />
+                        </h5>
+                        <h3 className="mb-0">
+                          <FormattedMessage id="barner_home.banner_3_4" />
+                        </h3>
                       </div>
                     </div>
                   </div>
@@ -357,14 +394,18 @@ class HOME extends Component {
                 <a href="#">
                   <div className="service-item bg-primary-cake rounded border border-primary">
                     <img
-                      src="img/featur-3.jpg"
+                      src="img/hero-img-1.png"
                       className="img-fluid rounded-top w-100"
                       alt=""
                     />
                     <div className="px-4 rounded-bottom">
                       <div className="service-content bg-secondary text-center p-4 rounded">
-                        <h5 className="text-white">Thăng hoa trong vị ngọt</h5>
-                        <h3 className="mb-0">Discount 30$</h3>
+                        <h5 className="text-white">
+                          <FormattedMessage id="barner_home.banner_3_5" />
+                        </h5>
+                        <h3 className="mb-0">
+                          <FormattedMessage id="barner_home.banner_3_6" />
+                        </h3>
                       </div>
                     </div>
                   </div>
@@ -381,21 +422,14 @@ class HOME extends Component {
               <div className="col-lg-6">
                 <div className="py-4">
                   <h1 className="display-3 text-white">
-                    Thăng hoa trong vị ngọt
+                    <FormattedMessage id="barner_home.banner_2_1" />
                   </h1>
                   <p className="fw-normal display-3 text-dark mb-4">
-                    cùng chúng tôi
+                    <FormattedMessage id="barner_home.banner_2_2" />
                   </p>
                   <p className="mb-4 text-dark">
-                    Khám phá bộ sưu tập bánh kem đa dạng và phong phú của chúng
-                    tôi để làm cho mọi dịp đặc biệt hơn.
+                    <FormattedMessage id="barner_home.banner_2_3" />
                   </p>
-                  <a
-                    href="#"
-                    className="banner-btn btn border-2 border-white rounded-pill text-dark py-3 px-5"
-                  >
-                    Mua ngay
-                  </a>
                 </div>
               </div>
               <div className="col-lg-6">
@@ -419,7 +453,10 @@ class HOME extends Component {
               className="text-center mx-auto mb-5"
               style={{ maxWidth: "700px" }}
             >
-              <h1 className="display-4">Sản phẩm bán chạy</h1>
+              <h1 className="display-4">
+                {" "}
+                <FormattedMessage id="text.product_hot" />
+              </h1>
             </div>
             <div className="row g-4">
               {this.state.getAllProducts &&
@@ -446,7 +483,9 @@ class HOME extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return {};
+  return {
+    language: state.app.language,
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {

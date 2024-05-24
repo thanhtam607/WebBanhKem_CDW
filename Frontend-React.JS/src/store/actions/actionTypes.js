@@ -16,6 +16,8 @@ const actionTypes = Object.freeze({
   ADD_CART_SUCCESS: "ADD_CART_SUCCESS",
   // update cart
   UPDATE_CART_SUCCESS: "UPDATE_CART_SUCCESS",
+  // change language
+  CHANGE_LANGUAGE: "CHANGE_LANGUAGE",
 });
 
 export default actionTypes;

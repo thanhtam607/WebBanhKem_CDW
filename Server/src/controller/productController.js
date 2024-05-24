@@ -43,8 +43,27 @@ let getAllProductsByIdCategory = async (req, res) => {
   });
 };
 
+// get product by keyword
+let getProductsByKeyword = async (req, res) => {
+  let keyword = req.query.keyword;
+  if (!keyword) {
+    return res.status(200).json({
+      errCode: 0,
+      errMessage: "empty keyword",
+      data: [],
+    });
+  }
+  let listProducts = await productService.getProductsByKeyword(keyword);
+  return res.status(200).json({
+    errCode: 0,
+    errMessage: "ok",
+    data: listProducts,
+  });
+};
+
 module.exports = {
   getListProducts: getListProducts,
   getProductById: getProductById,
   getAllProductsByIdCategory: getAllProductsByIdCategory,
+  getProductsByKeyword: getProductsByKeyword,
 };
