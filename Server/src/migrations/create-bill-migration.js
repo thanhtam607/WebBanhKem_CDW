@@ -19,8 +19,11 @@ module.exports = {
       id_user: {
         type: Sequelize.INTEGER
       },
-      export_date: {
-        type: Sequelize.DATE
+      fullname: {
+        type: Sequelize.TEXT
+      },
+      phone_number: {
+        type: Sequelize.TEXT
       },
       notes: {
         type: Sequelize.TEXT
@@ -32,7 +35,9 @@ module.exports = {
       fee_bill: {
         type: Sequelize.FLOAT
       },
-
+      payment: {
+        type: Sequelize.INTEGER
+      },
       status: {
         type: Sequelize.INTEGER
       },

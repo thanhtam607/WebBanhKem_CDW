@@ -507,7 +507,7 @@ a h4:hover{
   background: #fef987;
 }
 .bg-primary-cake{
-  background: #c11ee8;
+  background: #c11ee8!important;
 }
 .text-secondary-cake{
   color: #ffff0a;
@@ -662,4 +662,7 @@ a h4:hover{
   font-style: italic!important;
   color: #d63384!important;
   text-decoration: underline!important;
+}
+.error{
+  color: red;
 }

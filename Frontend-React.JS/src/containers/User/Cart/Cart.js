@@ -59,9 +59,14 @@ class Cart extends Component {
       this.props.updateCartSuccess(carts);
     }
   };
+  handleCheckout = () => {
+    this.props.history.push("/checkout");
+  };
+
 
   render() {
     const { carts } = this.props.user;
+    const {  selectedItems } = this.state;
     const breadcrumbItems = [
       { title: <FormattedMessage id="page.home" />, link: "/", active: false },
       {
@@ -70,7 +75,7 @@ class Cart extends Component {
         active: true,
       },
     ];
-
+    let total = 0;
     return (
       <>
         <Header pageActive={"Trang chủ"} />
@@ -106,6 +111,7 @@ class Cart extends Component {
                   </thead>
                   <tbody>
                     {carts.map((item, index) => (
+
                       <tr key={index}>
                         <th scope="row">
                           <input
@@ -169,6 +175,7 @@ class Cart extends Component {
                           </div>
                         </td>
                         <td>{item.ProductData.price * item.quantity}</td>
+
                         <td>
                           <button
                             className="btn btn-danger"
@@ -179,6 +186,7 @@ class Cart extends Component {
                           </button>
                         </td>
                       </tr>
+
                     ))}
                   </tbody>
                 </table>
@@ -197,23 +205,23 @@ class Cart extends Component {
                           <FormattedMessage id="cart.total" />
                         </span>
                       </h1>
-                      <div className="d-flex justify-content-between mb-4">
-                        <h5 className="mb-0 me-4">
-                          <FormattedMessage id="cart.subtotal" />:
-                        </h5>
-                        <p className="mb-0">$96.00</p>
-                      </div>
                     </div>
                     <div className="py-4 mb-4 border-top border-bottom d-flex justify-content-between">
-                      <h5 className="mb-0 ps-4 me-4">
-                        {" "}
-                        <FormattedMessage id="cart.total_payment" />
+                      <h5 className="mb-0 me-4">
+                        <FormattedMessage id="cart.subtotal" />:
                       </h5>
-                      <p className="mb-0 pe-4">$99.00</p>
+                      <p className="mb-0">
+                        {
+                          carts
+                              .filter(item => item.status === 1)
+                              .reduce((total, item) => total + item.ProductData.price * item.quantity, 0)
+                              .toFixed(0)
+                        } VND
+                      </p>
                     </div>
                     <button
                       className="btn border-secondary btn_checkout"
-                      type="button"
+                      type="button"  onClick={this.handleCheckout}
                     >
                       <FormattedMessage id="cart.order" />
                     </button>

@@ -95,10 +95,12 @@ let createBill=(data)=>{
       try {
         const bill =await db.Bill.create({
           id_user: data.id_user,
-          //     export_date: ,
+          fullname: data.fullname,
+          phone_number: data.phone_number,
           notes: data.notes,
           pro_bill: data.pro_bill,
           fee_bill: data.fee_bill,
+          payment: data.payment,
           status:0,
         })
         let id = bill.id

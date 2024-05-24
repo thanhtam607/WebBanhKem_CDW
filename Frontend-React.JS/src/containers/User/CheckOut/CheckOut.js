@@ -9,21 +9,55 @@ class CheckOut extends Component {
     constructor(props){
         super(props);
         this.state = {
-        
+          selectedPaymentMethod: null,
+          error: '',
+          district:'',
+          city:'',
+          ward:'',
+          addDetail:'',
+          billingInfo: {
+            fullName: '',
+            email: '',
+            address: '',
+            phone_number: '',
+            notes:'',
+            pro_bill:0,
+            fee_bill:0,
+            billDetail:[],
+
+          },
         }
 
     }
 
-    componentDidMount() {
+  handlePaymentMethodChange = (method) => {
+    this.setState({ selectedPaymentMethod: method });
+    this.setState({ error: '' });
+  }
+  handlePlaceOrder = () => {
+    const { selectedPaymentMethod } = this.state;
+
+    if (!selectedPaymentMethod) {
+      this.setState({ error: 'Vui lòng chọn phương thức thanh toán.' });
+      return;
+    }
+
+    // Xử lý việc đặt hàng
+    // Ví dụ: Gửi thông tin đặt hàng đến server
+  }
+
+
+
+  componentDidMount() {
     }
     render() {
-
+      const selectedItems = this.props.user.carts.filter(item => item.status === 1)
       const breadcrumbItems = [
         {title: "Trang chủ", link: "/", active: false},
         {title: "Thanh toán", link: "/checkout", active: true}
       ];
-
-
+      const { selectedPaymentMethod, error} = this.state;
+      console.log(error)
       return (<div>
           <Header pageActive={"Trang chủ"}/>
           <Breadcrumb items={breadcrumbItems}/>
@@ -37,57 +71,56 @@ class CheckOut extends Component {
                     <div className="col-md-12 col-lg-6 col-xl-7">
                       <div className="row">
                         <div className="col-md-12 col-lg-6">
-                          <div className="form-item w-100">
+                          <div className="form-item">
                             <label className="form-label my-3">Họ tên<sup>*</sup></label>
-                            <input type="text" className="form-control" />
+                            <input type="text" className="form-control"  value={this.state.billingInfo.fullname}/>
                           </div>
                         </div>
-                        <div className="col-md-12 col-lg-6">
-                          <div className="form-item w-100">
-                            <label className="form-label my-3">Last Name<sup>*</sup></label>
-                            <input type="text" className="form-control" />
-                          </div>
-                        </div>
-                      </div>
-                      <div className="form-item">
-                        <label className="form-label my-3">Company Name<sup>*</sup></label>
-                        <input type="text" className="form-control" />
                       </div>
                       <div className="form-item">
                         <label className="form-label my-3">Địa chỉ<sup>*</sup></label>
-                        <input type="text" className="form-control" placeholder="Số nhà..." />
+                        <input type="text" className="form-control" placeholder="Số nhà..." value={this.state.addDetails}/>
                       </div>
                       <div className="form-item">
                         <label className="form-label my-3">Phường/xã<sup>*</sup></label>
-                        <input type="text" className="form-control" />
+                        <select className="form-control form-select" value={this.state.ward}>
+                          <option value="" disabled selected hidden>Chọn phường/xã</option>
+                          <option value="2">Số nhà 2</option>
+                          <option value="3">Số nhà 3</option>
+                          {/* Thêm các lựa chọn khác tùy thuộc vào nhu cầu của bạn */}
+                        </select>
                       </div>
                       <div className="form-item">
                         <label className="form-label my-3">Quận/huyện<sup>*</sup></label>
-                        <input type="text" className="form-control" />
+                        <select className="form-control form-select" value={this.state.district}>
+                          <option value="" disabled selected hidden>Chọn quận/huyện</option>
+                          <option value="1">Số nhà 1</option>
+                          <option value="2">Số nhà 2</option>
+                          <option value="3">Số nhà 3</option>
+                          {/* Thêm các lựa chọn khác tùy thuộc vào nhu cầu của bạn */}
+                        </select>
                       </div>
                       <div className="form-item">
                         <label className="form-label my-3">Tỉnh/thành phố<sup>*</sup></label>
-                        <input type="text" className="form-control" />
+                        <select className="form-control form-select" value={this.state.city}>
+                          <option value="" disabled selected hidden>Chọn tỉnh/thành phố</option>
+                          <option value="1">Số nhà 1</option>
+                          <option value="2">Số nhà 2</option>
+                          <option value="3">Số nhà 3</option>
+                          {/* Thêm các lựa chọn khác tùy thuộc vào nhu cầu của bạn */}
+                        </select>
                       </div>
                       <div className="form-item">
                         <label className="form-label my-3">Số điện thoại<sup>*</sup></label>
-                        <input type="tel" className="form-control" />
+                        <input type="tel" value={this.state.billingInfo.phone_number} className="form-control" />
                       </div>
                       <div className="form-item">
                         <label className="form-label my-3">Email<sup>*</sup></label>
-                        <input type="email" className="form-control" />
-                      </div>
-                      <div className="form-check my-3">
-                        <input type="checkbox" className="form-check-input" id="Account-1" name="Accounts" defaultValue="Accounts" />
-                        <label className="form-check-label" htmlFor="Account-1">Create an account?</label>
+                        <input type="email" className="form-control" value={this.state.billingInfo.email} />
                       </div>
                       <hr />
-                      <div className="form-check my-3">
-                        <input className="form-check-input" type="checkbox" id="Address-1" name="Address" defaultValue="Address" />
-                        <label className="form-check-label" htmlFor="Address-1">Ship to a different address?</label>
-                      </div>
                       <div className="form-item">
-                        <textarea name="text" className="form-control" spellCheck="false" cols={30} rows={11} placeholder="Oreder Notes (Optional)" defaultValue={""} />
+                        <textarea name="text" className="form-control" spellCheck="false" cols={30} rows={11} placeholder="Ghi chú cho đơn hàng..." defaultValue={""}  value={this.state.billingInfo.notes}/>
                       </div>
                     </div>
                     <div className="col-md-12 col-lg-6 col-xl-5">
@@ -95,7 +128,7 @@ class CheckOut extends Component {
                         <table className="table">
                           <thead>
                             <tr>
-                              <th scope="col">Products</th>
+                              <th scope="col">#</th>
                               <th scope="col">Tên</th>
                               <th scope="col">Giá</th>
                               <th scope="col">Số lượng</th>
@@ -103,126 +136,60 @@ class CheckOut extends Component {
                             </tr>
                           </thead>
                           <tbody>
-                            <tr>
-                              <th scope="row">
-                                <div className="d-flex align-items-center mt-2">
-                                  <img src="img/vegetable-item-2.jpg" className="img-fluid rounded-circle" style={{width: '90px', height: '90px'}} alt="" />
-                                </div>
-                              </th>
-                              <td className="py-5">Awesome Brocoli</td>
-                              <td className="py-5">$69.00</td>
-                              <td className="py-5">2</td>
-                              <td className="py-5">$138.00</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">
-                                <div className="d-flex align-items-center mt-2">
-                                  <img src="img/vegetable-item-5.jpg" className="img-fluid rounded-circle" style={{width: '90px', height: '90px'}} alt="" />
-                                </div>
-                              </th>
-                              <td className="py-5">Potatoes</td>
-                              <td className="py-5">$69.00</td>
-                              <td className="py-5">2</td>
-                              <td className="py-5">$138.00</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">
-                                <div className="d-flex align-items-center mt-2">
-                                  <img src="img/vegetable-item-3.png" className="img-fluid rounded-circle" style={{width: '90px', height: '90px'}} alt="" />
-                                </div>
-                              </th>
-                              <td className="py-5">Big Banana</td>
-                              <td className="py-5">$69.00</td>
-                              <td className="py-5">2</td>
-                              <td className="py-5">$138.00</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">
-                              </th>
-                              <td className="py-5" />
-                              <td className="py-5" />
-                              <td className="py-5">
-                                <p className="mb-0 text-dark py-3">Thành tiền</p>
-                              </td>
-                              <td className="py-5">
-                                <div className="py-3 border-bottom border-top">
-                                  <p className="mb-0 text-dark">$414.00</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <th scope="row">
-                              </th>
-                              <td className="py-5">
-                                <p className="mb-0 text-dark py-4">Phí giao hàng</p>
-                              </td>
-                              <td colSpan={3} className="py-5">
-                                <div className="form-check text-start">
-                                  <input type="checkbox" className="form-check-input bg-primary border-0" id="Shipping-1" name="Shipping-1" defaultValue="Shipping" />
-                                  <label className="form-check-label" htmlFor="Shipping-1">Free Shipping</label>
-                                </div>
-                                <div className="form-check text-start">
-                                  <input type="checkbox" className="form-check-input bg-primary border-0" id="Shipping-2" name="Shipping-1" defaultValue="Shipping" />
-                                  <label className="form-check-label" htmlFor="Shipping-2">Flat rate: $15.00</label>
-                                </div>
-                                <div className="form-check text-start">
-                                  <input type="checkbox" className="form-check-input bg-primary border-0" id="Shipping-3" name="Shipping-1" defaultValue="Shipping" />
-                                  <label className="form-check-label" htmlFor="Shipping-3">Local Pickup: $8.00</label>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <th scope="row">
-                              </th>
-                              <td className="py-5">
-                                <p className="mb-0 text-dark text-uppercase py-3">Tổng thanh toán</p>
-                              </td>
-                              <td className="py-5" />
-                              <td className="py-5" />
-                              <td className="py-5">
-                                <div className="py-3 border-bottom border-top">
-                                  <p className="mb-0 text-dark">$135.00</p>
-                                </div>
-                              </td>
-                            </tr>
+                          {selectedItems.map((item, index) => (
+                              <tr>
+                                <th scope="row">
+                                  <div className="d-flex align-items-center mt-2">
+                                    <img src={item.ProductData.Images[0].img} className="img-fluid rounded-circle" style={{width: '90px', height: '70px', marginTop:'10px'}} alt="" />
+                                  </div>
+                                </th>
+                                <td className="py-5">{item.ProductData.name}</td>
+                                <td className="py-5">{item.ProductData.price}</td>
+                                <td className="py-5">{item.quantity}</td>
+                                <td className="py-5">{item.ProductData.price * item.quantity}</td>
+                              </tr>
+                              ))}
+
+
+
                           </tbody>
                         </table>
                       </div>
+
                       <div className="row g-4 text-center align-items-center justify-content-center border-bottom py-3">
+
                         <div className="col-12">
+                          <h4 className="text-primary-cake text-left">Phương thức thanh toán</h4>
                           <div className="form-check text-start my-3">
-                            <input type="checkbox" className="form-check-input bg-primary border-0" id="Transfer-1" name="Transfer" defaultValue="Transfer" />
-                            <label className="form-check-label" htmlFor="Transfer-1">Direct Bank Transfer</label>
+                            <label className="form-check-label"  id="Payments-1">
+                              Thanh toán bằng thẻ nội địa
+                              <input className="form-check-input bg-primary border-0" htmlFor="Payments-1"
+                                     type="radio"
+                                     name="paymentMethod"
+                                     value="credit_card"
+                                     checked={selectedPaymentMethod === 'credit_card'}
+                                     onChange={() => this.handlePaymentMethodChange('credit_card')}/>
+                            </label>
+
                           </div>
-                          <p className="text-start text-dark">Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.</p>
-                        </div>
-                      </div>
-                      <div className="row g-4 text-center align-items-center justify-content-center border-bottom py-3">
-                        <div className="col-12">
                           <div className="form-check text-start my-3">
-                            <input type="checkbox" className="form-check-input bg-primary border-0" id="Payments-1" name="Payments" defaultValue="Payments" />
-                            <label className="form-check-label" htmlFor="Payments-1">Check Payments</label>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="row g-4 text-center align-items-center justify-content-center border-bottom py-3">
-                        <div className="col-12">
-                          <div className="form-check text-start my-3">
-                            <input type="checkbox" className="form-check-input bg-primary border-0" id="Delivery-1" name="Delivery" defaultValue="Delivery" />
-                            <label className="form-check-label" htmlFor="Delivery-1">Thanh toán khi nhận hàng</label>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="row g-4 text-center align-items-center justify-content-center border-bottom py-3">
-                        <div className="col-12">
-                          <div className="form-check text-start my-3">
-                            <input type="checkbox" className="form-check-input bg-primary border-0" id="Paypal-1" name="Paypal" defaultValue="Paypal" />
-                            <label className="form-check-label" htmlFor="Paypal-1">Chuyển khoản</label>
+                            <label className="form-check-label"  id="Payments-2">
+                              Thanh toán khi nhận hàng
+                              <input className="form-check-input bg-primary border-0" htmlFor="Payments-2"
+                                     type="radio"
+                                     name="paymentMethod"
+                                     value="cash_on_delivery"
+                                     checked={selectedPaymentMethod === 'cash'}
+                                     onChange={() => this.handlePaymentMethodChange('cash')}/>
+                            </label>
+
                           </div>
                         </div>
+                        {error && <span className="error text-left" >*{error}*</span>}
+
                       </div>
-                      <div className="row g-4 text-center align-items-center justify-content-center pt-4">
-                        <button type="button" className="btn border-secondary py-3 px-4 text-uppercase w-100 text-primary">Đặt hàng</button>
+                     <div className="row g-4 text-center align-items-center justify-content-center pt-4">
+                        <button type="button" onClick={this.handlePlaceOrder} className="btn bg-primary-cake border-secondary text-uppercase w-100 text-white">Đặt hàng</button>
                       </div>
                     </div>
                   </div>
@@ -237,10 +204,10 @@ class CheckOut extends Component {
 
 }
 
-const mapStateToProps = state => {
-    return {
-
-    };
+const mapStateToProps = (state) => {
+  return {
+    user: state.user,
+  };
 };
 
 const mapDispatchToProps = dispatch => {
