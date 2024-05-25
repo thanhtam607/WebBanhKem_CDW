@@ -666,3 +666,21 @@ a h4:hover{
 .error{
   color: red;
 }
+.border-black {
+  border: black!important;
+}
+.no-border{
+  border: none!important;
+}
+.bg-checkout{
+  background: rgb(253, 247, 253);
+}
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20px;
+}
+
+.flex-item {
+  margin: 0;
+}
