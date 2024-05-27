@@ -9,6 +9,38 @@ let getAllBillsByIdUser = (id_user) => {
 
       let bills = await db.Bill.findAll({
         where: { id_user: id_user },
+        include: [
+          {
+            model: db.Bill_Detail,
+            as: "billDetailData",
+            attributes: ["amount", "price","notes"],
+            include: [
+              {
+                model: db.Product,
+                as: "ProductData",
+                attributes: [
+                  "id",
+                  "name",
+                  "size",
+                  "weight",
+                  "description",
+                  "introduction",
+                  "price",
+                  "status",
+                ],
+                include: [
+                  {
+                    model: db.Product_Img,
+                    as: "Images",
+                    attributes: ["img"],
+                    required: true,
+                  },
+                ],
+              },
+            ]
+          },
+        ],
+        order: [["createdAt", "DESC"]],
       });
 
       resolve(bills);
@@ -102,6 +134,7 @@ let createBill=(data)=>{
           fee_bill: data.fee_bill,
           payment: data.payment,
           status:0,
+          address: data.address
         })
         let id = bill.id
         console.log('billDetail is an array and has length:', data.billDetail.length);
