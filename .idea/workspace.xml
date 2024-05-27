@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="53da44d9-fc7e-49bf-8e08-acf967a9ff86" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/public/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/CheckOut/CheckOut.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/CheckOut/CheckOut.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/services/billService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/services/billService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +180,8 @@
       <workItem from="1716473658360" duration="6021000" />
       <workItem from="1716550988536" duration="14302000" />
       <workItem from="1716624129971" duration="7434000" />
-      <workItem from="1716639933012" duration="6022000" />
+      <workItem from="1716639933012" duration="7796000" />
+      <workItem from="1716779523863" duration="12428000" />
     </task>
     <servers />
   </component>
@@ -275,6 +276,17 @@
           <url>file://$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Profile/Profile.js</url>
           <line>61</line>
           <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Frontend-React.JS/src/containers/User/CheckOut/CheckOut.js</url>
+          <line>33</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Frontend-React.JS/src/containers/User/CheckOut/CheckOut.js</url>
+          <line>121</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

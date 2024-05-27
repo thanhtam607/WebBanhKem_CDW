@@ -4,8 +4,9 @@ import "./CheckOut.scss"
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import Breadcrumb from "../breadcrumb";
-import {createBill} from "../../../services/billService";
+import {createBill, getCommunes, getDistricts} from "../../../services/billService";
 import {deleteCart} from "../../../services/cartService";
+import {getListProducts} from "../../../services/productService";
 
 class CheckOut extends Component {
   constructor(props) {
@@ -31,6 +32,8 @@ class CheckOut extends Component {
     }));
 
     this.state = {
+      listDistricts: [],
+      listWards:[],
       selectedPaymentMethod: null,
       error: '',
       district: '',
@@ -52,7 +55,6 @@ class CheckOut extends Component {
     };
   }
 
-
   handlePaymentMethodChange = (method, value) => {
     this.setState({ selectedPaymentMethod: method });
     this.setState({ error: '' });
@@ -64,12 +66,26 @@ class CheckOut extends Component {
     }));
   }
 
-  handleChangeInput = (value, type) => {
+  handleChangeInput = async (e, type) => {
+    const value = e.target.value
     const keys = type.split('.');
+    if (type === "district") {
+
+      const selectedDistricts = e.target.options[e.target.selectedIndex].getAttribute("data-name");
+
+      let response = await getCommunes(selectedDistricts)
+      if (response) {
+        this.setState({
+          listWards: response.results,
+        });
+      }
+
+    }
     if (keys.length === 1) {
-      this.setState({ [type]: value }, () => {
-        if (type === "addDetail" || type === "ward" || type === "city") {
+      this.setState({[type]: value}, () => {
+        if (type === "addDetail" || type === "ward" || type === "city"|| type === "district") {
           this.updateAddress();
+
         }
       });
     } else if (keys.length === 2) {
@@ -78,11 +94,7 @@ class CheckOut extends Component {
           ...prevState[keys[0]],
           [keys[1]]: value,
         },
-      }), () => {
-        if (type === "billingInfo.addDetail" || type === "billingInfo.ward" || type === "billingInfo.city") {
-          this.updateAddress();
-        }
-      });
+      }))
     } else if (keys.length === 3) {
       this.setState(prevState => ({
         [keys[0]]: {
@@ -92,22 +104,20 @@ class CheckOut extends Component {
             [keys[2]]: value,
           },
         },
-      }), () => {
-        if (type === "billingInfo.addDetail" || type === "billingInfo.ward" || type === "billingInfo.city") {
-          this.updateAddress();
-        }
-      });
+      }))
     }
   };
 
-  updateAddress = () => {
-    this.setState(prevState => ({
+  updateAddress = async (e) => {
+        this.setState(prevState => ({
       billingInfo: {
         ...prevState.billingInfo,
         address: `${this.state.addDetail}, ${this.state.ward}, ${this.state.district}, ${this.state.city}`
       }
     }));
+
   };
+
 
   updatedBillDetail = (value, productId) => {
     // Tìm sản phẩm trong mảng chi tiết hóa đơn dựa vào productId
@@ -146,16 +156,22 @@ class CheckOut extends Component {
     const promises = billingInfo.billDetail.map(item => deleteCart(item.id_product));
     await Promise.all(promises);
   }
-  componentDidMount() {
+  async componentDidMount() {
+    let response = await getDistricts(79);
+    if (response) {
+      this.setState({
+        listDistricts: response.results,
+      });
     }
+  }
     render() {
-    console.log(this.state.billingInfo)
       const selectedItems = this.state.billingInfo.billDetail
       const breadcrumbItems = [
         {title: "Trang chủ", link: "/", active: false},
         {title: "Thanh toán", link: "/checkout", active: true}
       ];
-      const { selectedPaymentMethod, error} = this.state;
+      const { selectedPaymentMethod, error, listDistricts, listWards} = this.state;
+      // console.log(listWards)
       return (<div>
           <Header pageActive={"Trang chủ"}/>
           <Breadcrumb items={breadcrumbItems}/>
@@ -171,25 +187,24 @@ class CheckOut extends Component {
                         <label className="form-label">Họ tên<sup>*</sup></label>
                         <input type="text" className="form-control"  value={this.state.billingInfo.fullname}
                                onChange={(e) =>
-                                   this.handleChangeInput(e.target.value, "billingInfo.fullname")
+                                   this.handleChangeInput(e, "billingInfo.fullname")
                         }/>
                       </div>
                       <div className="form-item">
                         <label className="form-label my-3">Địa chỉ<sup>*</sup></label>
-                        <input type="text" className="form-control" placeholder="Số nhà..." value={this.state.addDetails}
+                        <input type="text" className="form-control" placeholder="Số nhà, toà nhà, tên đường..." value={this.state.addDetails}
                                onChange={(e) =>
-                                   this.handleChangeInput(e.target.value, "addDetail")
+                                   this.handleChangeInput(e, "addDetail")
                                }/>
                       </div>
                       <div className="form-item">
-                        <label className="form-label my-3">Phường/xã<sup>*</sup></label>
-                        <select className="form-control form-select" value={this.state.ward}
+                        <label className="form-label my-3">Tỉnh/thành phố<sup>*</sup></label>
+                        <select className="form-control form-select" value={this.state.city}
                                 onChange={(e) =>
-                                    this.handleChangeInput(e.target.value, "ward")
+                                    this.handleChangeInput(e, "city")
                                 }>
-                          <option value="" disabled selected hidden>Chọn phường/xã</option>
-                          <option value="xã 1">Số nhà 2</option>
-                          <option value="xã 3">Số nhà 3</option>
+                          <option selected={true} value="TP HCM">TP HCM</option>
+
                           {/* Thêm các lựa chọn khác tùy thuộc vào nhu cầu của bạn */}
                         </select>
                       </div>
@@ -197,46 +212,52 @@ class CheckOut extends Component {
                         <label className="form-label my-3">Quận/huyện<sup>*</sup></label>
                         <select className="form-control form-select" value={this.state.district}
                                 onChange={(e) =>
-                                    this.handleChangeInput(e.target.value, "district")
+                                    this.handleChangeInput(e, "district")
                                 }>
-                          <option value="" disabled selected hidden>Chọn quận/huyện</option>
-                          <option value="huyện 1">Số nhà 1</option>
-                          <option value="huyện 2">Số nhà 2</option>
-                          <option value="huyện 3">Số nhà 3</option>
-                          {/* Thêm các lựa chọn khác tùy thuộc vào nhu cầu của bạn */}
-                        </select>
-                      </div>
-                      <div className="form-item">
-                        <label className="form-label my-3">Tỉnh/thành phố<sup>*</sup></label>
-                        <select className="form-control form-select" value={this.state.city}
-                                onChange={(e) =>
-                                    this.handleChangeInput(e.target.value, "city")
-                                }>
-                          <option value="" disabled selected hidden>Chọn tỉnh/thành phố</option>
-                          <option value="TP HCM">TP HCM</option>
+                            <option value="" disabled selected hidden>Chọn quận/huyện</option>
+                            {listDistricts.map((item) => (
+                                <option value={item.name} data-name={item.code}>{item.name}</option>
+                                ))}
+
+
 
                           {/* Thêm các lựa chọn khác tùy thuộc vào nhu cầu của bạn */}
                         </select>
                       </div>
                       <div className="form-item">
+                        <label className="form-label my-3">Phường/xã<sup>*</sup></label>
+                        <select className="form-control form-select" value={this.state.ward}
+                                onChange={(e) =>
+                                    this.handleChangeInput(e, "ward")
+                                }>
+                          <option value="" disabled selected hidden>Chọn phường/xã</option>
+                          {listWards.map((item) => (
+                              <option value={item.name} >{item.name}</option>
+                          ))}
+                          {/* Thêm các lựa chọn khác tùy thuộc vào nhu cầu của bạn */}
+                        </select>
+                      </div>
+
+
+                      <div className="form-item">
                         <label className="form-label my-3">Số điện thoại<sup>*</sup></label>
                         <input type="tel" value={this.state.billingInfo.phone_number} className="form-control"
                                onChange={(e) =>
-                            this.handleChangeInput(e.target.value, "billingInfo.phone_number")
+                            this.handleChangeInput(e, "billingInfo.phone_number")
                         }/>
                       </div>
                       <div className="form-item">
                         <label className="form-label my-3">Email<sup>*</sup></label>
                         <input type="email" className="form-control" value={this.state.billingInfo.email}
                                onChange={(e) =>
-                                   this.handleChangeInput(e.target.value, "billingInfo.email")
+                                   this.handleChangeInput(e, "billingInfo.email")
                                }/>
                       </div>
                       <hr />
                       <div className="form-item">
                         <input type="text" className="form-control"  placeholder="Ghi chú cho đơn hàng..."   value={this.state.billingInfo.notes}
                                onChange={(e) =>
-                                   this.handleChangeInput(e.target.value, "billingInfo.notes")
+                                   this.handleChangeInput(e, "billingInfo.notes")
                                }/>
                       </div>
                     </div>
