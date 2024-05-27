@@ -18,8 +18,6 @@ const getDistricts = (provinceId) => {
         })
 
 };
-
-
 const getCommunes = (districtId) => {
     return fetch(`https://api.mysupership.vn/v1/partner/areas/commune?district=${districtId}`)
         .then(async response => {
@@ -31,6 +29,9 @@ const getCommunes = (districtId) => {
             return data;
         })
 };
+let getBillByUser=(id_user)=>{
+    return axios.get(`/api/getAllBillsByIdUser?id_user=${id_user}`)
+}
 export {
-    createBill, getDistricts, getCommunes
+    createBill, getDistricts, getCommunes, getBillByUser
 };

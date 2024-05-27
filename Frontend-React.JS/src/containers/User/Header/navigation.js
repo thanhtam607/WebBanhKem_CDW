@@ -107,6 +107,9 @@ class Navigation extends Component {
                     <Link to="/profile" className="dropdown-item">
                       <FormattedMessage id="header.profile" />
                     </Link>
+                    <Link to="/orders" className="dropdown-item">
+                      Đơn hàng của tôi
+                    </Link>
                     <a href="/logout" className="dropdown-item">
                       <FormattedMessage id="header.logout" />
                     </a>

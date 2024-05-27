@@ -57,6 +57,7 @@ class App extends Component {
               <CustomScrollbars style={{ height: "100vh", width: "100%" }}>
                 <Switch>
                   <Route path={path.ERROR} component={Error} />
+                  <Route path={path.ORDER}  component={(Orders)} />
                   <Route path={path.ABOUT} component={About} />
                   <Route path={path.LOGIN} component={Login} />
                   <Route path={path.REGISTER} component={Register} />
@@ -67,7 +68,7 @@ class App extends Component {
                   <Route path={path.CHECKOUT} component={CheckOut} />
                   <Route path={path.CONTACT} component={Contact} />
                   <Route path={path.HOME} component={Home} />
-                  <Route path={path.ORDER}  component={(Orders)} />
+
 
                 </Switch>
               </CustomScrollbars>

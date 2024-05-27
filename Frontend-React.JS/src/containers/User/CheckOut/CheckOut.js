@@ -6,7 +6,6 @@ import Footer from '../Footer/Footer';
 import Breadcrumb from "../breadcrumb";
 import {createBill, getCommunes, getDistricts} from "../../../services/billService";
 import {deleteCart} from "../../../services/cartService";
-import {getListProducts} from "../../../services/productService";
 import * as actions from "../../../store/actions";
 
 class CheckOut extends Component {
@@ -148,7 +147,7 @@ class CheckOut extends Component {
     await createBill(this.state.billingInfo);
 
      this.handleDeleteCart(this.props.user.carts.filter(item => item.status === 1))
-      alert("Đặt hàng thành công");
+      alert("Đặt hàng thành công");this.props.history.push("/orders");
 
   }
   handleDeleteCart = async (cartsSelect) => {

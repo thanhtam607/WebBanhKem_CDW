@@ -6,10 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="53da44d9-fc7e-49bf-8e08-acf967a9ff86" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/components/ComponentOrder/Order.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/components/ComponentOrder/Order.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/components/ComponentOrder/OrderDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/components/ComponentOrder/OrderDetail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/containers/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/CheckOut/CheckOut.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/CheckOut/CheckOut.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Header/navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Header/navigation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Order/Orders.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Order/Orders.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/services/billService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/services/billService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/services/locationService.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/src/Service/billService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/Service/billService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/migrations/create-bill-migration.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/migrations/create-bill-migration.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/models/bill.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/models/bill.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/controller/billController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/controller/billController.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +71,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Documents/WebBanhKem_CDW&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Downloads/vnpay_nodejs&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -183,7 +189,8 @@
       <workItem from="1716550988536" duration="14302000" />
       <workItem from="1716624129971" duration="7434000" />
       <workItem from="1716639933012" duration="7796000" />
-      <workItem from="1716779523863" duration="14985000" />
+      <workItem from="1716779523863" duration="17013000" />
+      <workItem from="1716821511967" duration="6563000" />
     </task>
     <servers />
   </component>
@@ -281,14 +288,19 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/Frontend-React.JS/src/containers/User/CheckOut/CheckOut.js</url>
-          <line>34</line>
+          <line>33</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/Frontend-React.JS/src/containers/User/CheckOut/CheckOut.js</url>
-          <line>122</line>
-          <properties lambdaOrdinal="-1" />
+          <line>121</line>
           <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Server/src/Service/billService.js</url>
+          <line>80</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
