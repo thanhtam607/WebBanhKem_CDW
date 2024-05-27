@@ -7,6 +7,7 @@ import Breadcrumb from "../breadcrumb";
 import {createBill, getCommunes, getDistricts} from "../../../services/billService";
 import {deleteCart} from "../../../services/cartService";
 import {getListProducts} from "../../../services/productService";
+import * as actions from "../../../store/actions";
 
 class CheckOut extends Component {
   constructor(props) {
@@ -144,18 +145,24 @@ class CheckOut extends Component {
       this.setState({error: 'Vui lòng chọn phương thức thanh toán.'});
       return;
     }
-    const res = await createBill(this.state.billingInfo);
-    if (res.errCode === 0) {
-     this.handleDeleteCart(this.state.billingInfo.billDetail)
+    await createBill(this.state.billingInfo);
+
+     this.handleDeleteCart(this.props.user.carts.filter(item => item.status === 1))
       alert("Đặt hàng thành công");
-    } else {
-      alert("Đặt hàng không thành công");
+
+  }
+  handleDeleteCart = async (cartsSelect) => {
+    for (const item of cartsSelect) {
+      const res = await deleteCart(item.id);
+
+      if (res.errCode === 0) {
+        const carts = this.props.user.carts.filter(cart => cart.id !== item.id);
+        // console.log(carts)
+        this.props.updateCartSuccess(carts);
+      }
     }
   }
-  handleDeleteCart = async (billingInfo) => {
-    const promises = billingInfo.billDetail.map(item => deleteCart(item.id_product));
-    await Promise.all(promises);
-  }
+
   async componentDidMount() {
     let response = await getDistricts(79);
     if (response) {
@@ -380,10 +387,12 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
-    return {
-      
-    };
+const mapDispatchToProps = (dispatch) => {
+  return {
+    updateCartSuccess: (carts) => {
+      dispatch(actions.updateCartSuccess(carts));
+    },
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(CheckOut);

@@ -25,6 +25,9 @@ module.exports = {
       phone_number: {
         type: Sequelize.TEXT
       },
+      address:{
+        type: Sequelize.TEXT
+      },
       notes: {
         type: Sequelize.TEXT
       },

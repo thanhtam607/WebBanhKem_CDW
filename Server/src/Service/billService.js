@@ -102,6 +102,7 @@ let createBill=(data)=>{
           fee_bill: data.fee_bill,
           payment: data.payment,
           status:0,
+          address: data.address
         })
         let id = bill.id
         console.log('billDetail is an array and has length:', data.billDetail.length);
