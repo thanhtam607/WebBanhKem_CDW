@@ -8,6 +8,7 @@ import Error from "../../../components/Error/Error";
 import {createBill, getCommunes, getDistricts} from "../../../services/billService";
 import {deleteCart} from "../../../services/cartService";
 import * as actions from "../../../store/actions";
+import Swal from 'sweetalert2';
 
 class CheckOut extends Component {
   constructor(props) {
@@ -159,8 +160,22 @@ class CheckOut extends Component {
       await createBill(this.state.billingInfo);
 
       this.handleDeleteCart(this.props.user.carts.filter(item => item.status === 1))
-      alert("Đặt hàng thành công");
-      this.props.history.push("/orders");
+      Swal.fire({
+        title: "Đặt hàng thành công",
+        icon: "success",
+        showCancelButton: true,
+        confirmButtonText: "Xem đơn hàng",
+        cancelButtonText: "Xem thêm sản phẩm"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.props.history.push("/orders");
+        }
+        else{
+          this.props.history.push("/shop");
+        }
+      });
+
+
     }
   }
 

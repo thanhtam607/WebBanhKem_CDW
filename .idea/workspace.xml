@@ -6,13 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="53da44d9-fc7e-49bf-8e08-acf967a9ff86" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/components/ComponentOrder/Order.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/components/ComponentOrder/Order.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Header/navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Header/navigation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Shop/Shop.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Shop/Shop.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/services/billService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/services/billService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/Service/billService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/Service/billService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/CheckOut/CheckOut.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/CheckOut/CheckOut.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Order/Orders.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Order/Orders.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +186,7 @@
       <workItem from="1716862024140" duration="13358000" />
       <workItem from="1716898962194" duration="23000" />
       <workItem from="1716975166355" duration="806000" />
-      <workItem from="1716989388592" duration="4954000" />
+      <workItem from="1716989388592" duration="5626000" />
     </task>
     <servers />
   </component>
@@ -289,7 +284,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/Frontend-React.JS/src/containers/User/CheckOut/CheckOut.js</url>
-          <line>92</line>
+          <line>93</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
