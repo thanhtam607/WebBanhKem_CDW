@@ -133,7 +133,7 @@ let createBill=(data)=>{
           pro_bill: data.pro_bill,
           fee_bill: data.fee_bill,
           payment: data.payment,
-          status:0,
+          status:1,
           address: data.address
         })
         let id = bill.id

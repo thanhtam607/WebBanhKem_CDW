@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import OrderDetail from "./OrderDetail";
+import Swal from 'sweetalert2'
+import {updateStatusBill} from "../../services/billService";
+import StatusBill from "./StatusBill";
+
 
 class Order extends Component {
 
     constructor(props){
         super(props);
         this.state = {
+            status: this.props.order.status
         }
     }
     formatDate = (isoString) => {
@@ -16,15 +21,30 @@ class Order extends Component {
         const year = date.getFullYear();
         return `${day}/${month}/${year}`;
     };
-    getStatus = (status)=>{
-        if(status ==0){
-            return "Đang chờ duyệt"
-        }else if(status ==1){
-            return "Đặt hàng thành công"
-        }else{
-            return "Đã hủy"
-        }
-    }
+
+    handleCancelOrder= (id)=>{
+        Swal.fire({
+            title: "Bạn có chắc chắn muốn hủy đơn hàng?",
+            icon: "question",
+            confirmButtonText: "OK",
+            cancelButtonText: "Thoát",
+            showCancelButton: true,
+            showConfirmButton: true
+        }).then(async (result) => {
+
+            if (result.isConfirmed) {
+                const res = await updateStatusBill(id, 2);
+                if (res.errCode === 0) {
+                    this.setState({status: 2})
+                    Swal.fire({
+                        title: "Hủy đơn hàng thành công",
+                        icon: "success"
+                    });
+                }
+            }
+        })
+
+}
 
     componentDidMount() {
     }
@@ -39,13 +59,7 @@ class Order extends Component {
                             <small className="text-secondary d-inline-block pt-3 " style={{ padding: 0, margin: 0 }}
                             >{this.formatDate(order.createdAt)}</small>
                         </div>
-                        <div className="col-6 text-right  my-2 pt-2 ">
-                            <small className="d-inline text-secondary">Trạng thái |</small>
-                            <div id="statusName<%=r.getId()%>" className="d-inline pr-3 text-uppercase"
-                                 style={{ color: "#ee4d2d", fontSize: "14px" }}>
-                                <span>{this.getStatus(order.status)}</span>
-                            </div>
-                        </div>
+                       <StatusBill status={this.state.status}/>
                     </div>
                     <div className="card border-left-0 border-right-0 border-bottom-0 mx-3">
 
@@ -74,8 +88,9 @@ class Order extends Component {
 
                     <div className="row mb-2 mt-2" style={{ marginTop: "0px" }}>
                         <div className="col-6 pt-2 pb-3">
-                            <div id="<%=r.getId()%>" className="text-left mr-3">
-                                <button  type="submit" className="btn text-dark btn-cancel-order">Hủy đơn hàng</button>
+                            <div className="text-left mr-3">
+                                <button type="button" onClick={() => this.handleCancelOrder(order.id)} className="btn text-dark btn-cancel-order">Hủy đơn hàng</button>
+
                             </div>
                         </div>
                         <div className="col-6 my-2">
