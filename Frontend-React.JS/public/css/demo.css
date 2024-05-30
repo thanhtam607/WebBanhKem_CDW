@@ -107,9 +107,9 @@
 .container-xxl{
   background: #f2edf3;
 }
-.card-profile{
-  margin-left: 100px!important;
-}
 .card{
   margin-left: 20px;
+}
+.card-profile{
+  margin-left: 100px!important;
 }

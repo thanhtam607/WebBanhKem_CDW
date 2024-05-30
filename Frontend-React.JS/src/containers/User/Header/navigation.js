@@ -62,7 +62,7 @@ class Navigation extends Component {
               <FormattedMessage id="header.page_product" />
             </Link>
             <Link
-              href="/contact"
+              to="/contact"
               className={`nav-item nav-link ${
                 pageActive === "Liên hệ" ? "active" : ""
               }`}

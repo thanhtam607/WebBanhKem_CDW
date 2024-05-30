@@ -32,6 +32,9 @@ const getCommunes = (districtId) => {
 let getBillByUser=(id_user)=>{
     return axios.get(`/api/getAllBillsByIdUser?id_user=${id_user}`)
 }
+let updateStatusBill = (id, status)=>{
+    return axios.post("/api/updateStatusBill", {id: id, status: status})
+}
 export {
-    createBill, getDistricts, getCommunes, getBillByUser
+    createBill, getDistricts, getCommunes, getBillByUser, updateStatusBill
 };
