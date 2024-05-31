@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="53da44d9-fc7e-49bf-8e08-acf967a9ff86" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_5_24_2024_6_55_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_5_24_2024_6_55_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/CheckOut/CheckOut.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/CheckOut/CheckOut.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Order/Orders.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Order/Orders.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/components/ComponentsHome/Featurs/Featurs.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/components/ComponentsHome/Featurs/Featurs.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/containers/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Footer/Footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend-React.JS/src/containers/User/Footer/Footer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/Service/categoryService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/Service/categoryService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
