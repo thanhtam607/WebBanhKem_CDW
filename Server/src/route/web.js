@@ -5,6 +5,7 @@ import cartController from "../controller/cartController";
 import categoryController from "../controller/categoryController";
 import billController from "../controller/billController";
 import userController from "../controller/userController";
+import imageController from "../controller/imageController";
 
 let router = express.Router();
 
@@ -21,12 +22,15 @@ let initWebRoutes = (app) => {
     "/api/getAllProductsByIdCategory",
     productController.getAllProductsByIdCategory
   );
-
   // get product by keyword
   router.get(
     "/api/getProductsByKeyword",
     productController.getProductsByKeyword
   );
+  // create product
+  router.post("/api/createProduct", productController.createProduct);
+  // update product
+  router.post("/api/updateProduct", productController.updateProduct);
 
   router.post("/api/createCart", cartController.createCart);
   router.get("/api/getAllCartsByIdUser", cartController.getAllCartsByIdUser);
@@ -45,8 +49,14 @@ let initWebRoutes = (app) => {
   router.get("/api/getBillById", billController.getBillById);
   // update status bill
   router.post("/api/updateStatusBill", billController.updateStatusBill);
-  router.post("/api/createBill", billController.createBill)
+  router.post("/api/createBill", billController.createBill);
+  // get all bills
+  router.get("/api/getAllBills", billController.getAllBills);
+
+  // update image
+  router.post("/api/updateImage", imageController.updateImage);
+  // delete image
+  router.post("/api/deleteImage", imageController.deleteImage);
   return app.use("/", router);
 };
 module.exports = initWebRoutes;
- 

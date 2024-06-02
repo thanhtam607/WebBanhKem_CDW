@@ -53,12 +53,21 @@ let createBill = async (req, res) => {
     errCode: data.errCode,
     message: data.message,
   });
-}
+};
 
+let getAllBills = async (req, res) => {
+  let data = req.query;
+  let bills = await billService.getAllBills(data);
+  return res.status(200).json({
+    errCode: 0,
+    data: bills,
+  });
+};
 
 module.exports = {
   getAllBillsByIdUser: getAllBillsByIdUser,
   getBillById: getBillById,
   updateStatusBill: updateStatusBill,
   createBill: createBill,
+  getAllBills: getAllBills,
 };
