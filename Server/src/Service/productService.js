@@ -4,10 +4,12 @@ import db from "../models/index";
 let getListProducts = () => {
   return new Promise(async (resolve, reject) => {
     try {
+      // sort từ lớn đến nhỏ id
       const listProducts = await db.Product.findAll({
         where: {
           STATUS: 0,
         },
+        sort: [["id", "DESC"]],
         attributes: [
           "id",
           "name",
@@ -230,6 +232,7 @@ let updateProduct = (data) => {
           description: data.DESCRIPTION,
           introduction: data.INTRODUCTION,
           price: data.PRICE,
+          status: data.STATUS,
         },
         {
           where: {

@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import Menu from "../Menu/Menu";
 import NavBar from "../NavBar/NavBar";
 import TableProduct from "./TableProduct";
+import { getListProducts } from "../../../services/productService";
 class ProductManage extends Component {
   constructor(props) {
     super(props);
@@ -12,13 +13,17 @@ class ProductManage extends Component {
     };
   }
 
-  async componentDidMount() {}
+  async componentDidMount() {
+    let response = await getListProducts();
+    if (response.errCode === 0 && response.listProducts.length > 0) {
+      this.setState({
+        listProducts: response.listProducts,
+      });
+    }
+  }
 
   render() {
-    const data = [
-      { id: 1, column1: "Data 1", column2: "Data A" },
-      { id: 2, column1: "Data 2", column2: "Data B" },
-    ];
+    let data = this.state.listProducts;
     return (
       <div className="layout-wrapper layout-content-navbar">
         <div className="layout-container">
@@ -36,7 +41,7 @@ class ProductManage extends Component {
                   <span className="text-muted fw-light">Table Product</span>
                 </h4>
                 {/* Basic Bootstrap Table */}
-                <TableProduct data={data} itemsPerPage={1} />
+                <TableProduct data={data} itemsPerPage={12} />
               </div>
 
               {/* / Content */}

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import ReactPaginate from "react-paginate";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import { path } from "../../../utils";
 
 class TableProduct extends Component {
   constructor(props) {
@@ -34,11 +36,15 @@ class TableProduct extends Component {
     const { currentPage, searchKeyword } = this.state;
 
     const filteredData = data.filter((item) =>
-      item.column1.toLowerCase().includes(searchKeyword.toLowerCase())
+      item.name.toLowerCase().includes(searchKeyword.toLowerCase())
     );
+    console.log("filteredData", filteredData);
 
     const offset = currentPage * itemsPerPage;
-    const currentPageData = filteredData.slice(offset, offset + itemsPerPage);
+
+    const currentPageData = filteredData
+      .sort((a, b) => b.id - a.id)
+      .slice(offset, offset + itemsPerPage);
 
     return (
       <div className="card">
@@ -46,16 +52,13 @@ class TableProduct extends Component {
           className="d-flex justify-content-between align-items-center mb-3 "
           style={{ margin: "20px 10px" }}
         >
-          <button
-            type="button"
+          <Link
+            to={path.ADMINCREATEPRODUCT}
             className="btn btn-danger"
-            data-bs-toggle="modal"
-            data-bs-target="#addProduct"
             style={{ height: "35px", padding: "0 10px" }}
           >
-            <i className="bx bx-plus" />
             Add Product
-          </button>
+          </Link>
           <div className="d-flex align-items-center">
             <label htmlFor="search" className="me-2">
               Search
@@ -83,52 +86,61 @@ class TableProduct extends Component {
               </tr>
             </thead>
             <tbody className="table-border-bottom-0">
-              <tr>
-                <td>1</td>
-                <td>
-                  <div className="d-flex align-items-center">
-                    <img
-                      src="../assets/img/products/01.png"
-                      alt="product"
-                      className="w-px-40 h-auto rounded"
-                    />
-                    <div className="ms-3">
-                      <h6 className="mb-0">Product Name</h6>
-                      <span
-                        className="text-muted "
-                        style={{ marginRight: "10px" }}
-                      >
-                        Size: 1.5kg
+              {currentPageData.map((item, index) => {
+                return (
+                  <tr>
+                    <td>{index}</td>
+                    <td>
+                      <div className="d-flex align-items-center">
+                        <img
+                          src={`../${item.Images[0].img}`}
+                          alt="product"
+                          className="w-px-40 h-auto rounded"
+                        />
+                        <div className="ms-3">
+                          <h6 className="mb-0">{item.name}</h6>
+                          <span
+                            className="text-muted "
+                            style={{ marginRight: "10px" }}
+                          >
+                            Size: {item.size}
+                          </span>
+                          <span className="text-muted">
+                            Weight: {item.weight}
+                          </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <span className="badge bg-label-primary me-1">
+                        {item.price}VNĐ
                       </span>
-                      <span className="text-muted">Weight: 1.5kg</span>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <span className="badge bg-label-primary me-1">$25</span>
-                </td>
-                <td>
-                  <span className="badge bg-label-primary me-1">Active</span>
-                </td>
-                <td>
-                  <button
-                    type="button"
-                    className="btn btn-icon btn-icon-only btn-outline-primary"
-                    data-bs-toggle="tooltip"
-                    title="Edit"
-                  >
-                    <i className="bx bx-edit" />
-                  </button>
-                  <button
-                    type="button"
-                    className="btn btn-icon btn-icon-only btn-outline-danger"
-                    data-bs-toggle="tooltip"
-                    title="Delete"
-                  >
-                    <i className="bx bx-trash" />
-                  </button>
-                </td>
-              </tr>
+                    </td>
+                    <td>
+                      <span className="badge bg-label-primary me-1">
+                        Active
+                      </span>
+                    </td>
+                    <td>
+                      <Link
+                        to={path.ADMINEDITPRODUCT.replace(":id", item.id)}
+                        className="btn btn-icon btn-icon-only btn-outline-primary"
+                        title="Edit"
+                      >
+                        <i className="bx bx-edit" />
+                      </Link>
+                      <button
+                        type="button"
+                        className="btn btn-icon btn-icon-only btn-outline-danger"
+                        data-bs-toggle="tooltip"
+                        title="Delete"
+                      >
+                        <i className="bx bx-trash" />
+                      </button>
+                    </td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
 

@@ -72,6 +72,7 @@ let createProduct = async (req, res) => {
       DESCRIPTION: infor.description,
       INTRODUCTION: infor.introduction,
       PRICE: infor.price,
+      STATUS: infor.status,
       Images: infor.images,
     };
     let product = await productService.createProduct(data);
@@ -100,8 +101,10 @@ let updateProduct = async (req, res) => {
       WEIGHT: infor.weight,
       DESCRIPTION: infor.description,
       INTRODUCTION: infor.introduction,
+      STATUS: infor.status,
       PRICE: infor.price,
     };
+    console.log("data update: ", data);
     let product = await productService.updateProduct(data);
     return res.status(200).json({
       errCode: 0,

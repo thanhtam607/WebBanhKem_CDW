@@ -38,7 +38,6 @@ let deleteImage = (data) => {
 
       if (image) {
         image.destroy();
-
         resolve("Delete image successfully");
       } else {
         resolve("Image not found");

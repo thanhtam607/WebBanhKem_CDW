@@ -17,7 +17,7 @@ export const path = {
   ADMINHOME: "/admin",
   ADMINPRODUCTMANAGE: "/admin/product-manage",
   ADMINCREATEPRODUCT: "/admin/create-product",
-  ADMINEDITPRODUCT: "/admin/edit-product",
+  ADMINEDITPRODUCT: "/admin/edit-product/:id",
   ADMINORDERMANAGE: "/admin/order-manage",
   ADMINORDERDETAIL: "/admin/order-detail",
   ADMINUSERMANAGE: "/admin/user-manage",

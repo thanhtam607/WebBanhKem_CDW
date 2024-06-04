@@ -19,10 +19,60 @@ let getProductsByKeyword = (keyword) => {
   return axios.get(`/api/getProductsByKeyword?keyword=${keyword}`);
 };
 
+let createProduct = (
+  id_type,
+  name,
+  size,
+  weight,
+  description,
+  introduction,
+  price,
+  images,
+  status
+) => {
+  return axios.post(`/api/createProduct`, {
+    id_type,
+    name,
+    size,
+    weight,
+    description,
+    introduction,
+    price,
+    images,
+    status,
+  });
+};
+
+let updateProduct = (
+  id,
+  id_type,
+  name,
+  size,
+  weight,
+  description,
+  introduction,
+  price,
+  status
+) => {
+  return axios.post(`/api/updateProduct`, {
+    id,
+    id_type,
+    name,
+    size,
+    weight,
+    description,
+    introduction,
+    price,
+    status,
+  });
+};
+
 export {
   getListProducts,
   getProductById,
   getPageCount,
   getAllProductsByIdCategory,
   getProductsByKeyword,
+  createProduct,
+  updateProduct,
 };
