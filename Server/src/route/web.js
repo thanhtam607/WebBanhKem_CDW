@@ -7,7 +7,6 @@ import billController from "../controller/billController";
 import userController from "../controller/userController";
 
 let router = express.Router();
-
 let initWebRoutes = (app) => {
   router.get("/", homeController.getHomePage);
 
