@@ -41,7 +41,7 @@ class VNPayReturn extends Component {
                 <div className="row justify-content-center">
                     <div className="col-lg-6">
                         <h1 className="display-1">Thông báo</h1>
-                        <h1 className="mb-4">Thanh toán đơn hàng thành công</h1>
+                        <h1 className="mb-4">{this.state.mess}</h1>
                         <Link className="btn btn-primary-cake text-white rounded-pill py-3 px-5" to="/orders">Xem danh sách đơn hàng</Link>
                     </div>
                 </div>
