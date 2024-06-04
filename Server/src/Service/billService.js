@@ -1,4 +1,6 @@
 import db from "../models/index";
+import crypto from "crypto";
+import {resolve} from "sequelize-cli/lib/helpers/path-helper";
 
 let getAllBillsByIdUser = (id_user) => {
   return new Promise(async (resolve, reject) => {
@@ -141,7 +143,7 @@ let createBill=(data)=>{
         data.billDetail.map(async (item) => {
           await createBillDetail(item, id);
         })
-        resolve("Update successfully");
+        resolve(bill);
       }
     catch (e) {
       reject(e)
@@ -166,9 +168,95 @@ let createBillDetail= (data, id_bill)=>{
     }
   })
 }
+
+let create_payment_vnpayurl =  (ipAddr ,amount, orderInfo) =>{
+  var tmnCode = 'TC59NATY';
+  var secretKey = 'QUKDKKNOATQJURXAADEBNAZDBMVVOSPF';
+  var vnpUrl = 'https://sandbox.vnpayment.vn/paymentv2/vpcpay.html';
+  var returnUrl = 'http://localhost:3000/vnpayreturn';
+  var date = new Date()
+  var createDate = formatDateToYYYYMMDDHHMMSS(date);
+  var orderId = formatTimeToHHMMSS(date);
+  var expirationDate = new Date(date.getTime() + 15 * 60 * 1000);
+  var expireDate = formatDateToYYYYMMDDHHMMSS(expirationDate);
+  var currCode = 'VND';
+  var vnp_Params = {};
+  vnp_Params['vnp_Version'] = '2.1.0';
+  vnp_Params['vnp_Command'] = 'pay';
+  vnp_Params['vnp_TmnCode'] = tmnCode;
+  vnp_Params['vnp_Locale'] = 'vn';
+  vnp_Params['vnp_CurrCode'] = currCode;
+  vnp_Params['vnp_TxnRef'] = orderId;
+  vnp_Params['vnp_OrderInfo'] = orderInfo;
+  vnp_Params['vnp_OrderType'] = 100000;
+  vnp_Params['vnp_Amount'] = amount * 100;
+  vnp_Params['vnp_ReturnUrl'] = returnUrl;
+  vnp_Params['vnp_IpAddr'] = ipAddr;
+  vnp_Params['vnp_CreateDate'] = createDate;
+  vnp_Params['vnp_ExpireDate'] = expireDate;
+  vnp_Params = sortObject(vnp_Params);
+  var querystring = require('qs');
+  var signData = querystring.stringify(vnp_Params, { encode: false });
+  var crypto = require("crypto");
+  var hmac = crypto.createHmac("sha512", secretKey);
+  var signed = hmac.update(new Buffer(signData, 'utf-8')).digest("hex");
+  vnp_Params['vnp_SecureHash'] = signed;
+  vnpUrl += '?' + querystring.stringify(vnp_Params, { encode: false });
+  return vnpUrl;
+}
+function sortObject(obj) {
+  let sorted = {};
+  let str = [];
+  let key;
+  for (key in obj){
+    if (obj.hasOwnProperty(key)) {
+      str.push(encodeURIComponent(key));
+    }
+  }
+  str.sort();
+  for (key = 0; key < str.length; key++) {
+    sorted[str[key]] = encodeURIComponent(obj[str[key]]).replace(/%20/g, "+");
+  }
+  return sorted;
+}
+function formatTimeToHHMMSS(now) {
+
+
+  // Adjust to GMT+7
+  let timezoneOffset = 7 * 60; // Offset in minutes for GMT+7
+  now.setMinutes(now.getMinutes() + now.getTimezoneOffset() + timezoneOffset);
+
+  // Get the components of the time
+  let hours = String(now.getHours()).padStart(2, '0');
+  let minutes = String(now.getMinutes()).padStart(2, '0');
+  let seconds = String(now.getSeconds()).padStart(2, '0');
+
+  // Combine them into the desired format
+  return `${hours}${minutes}${seconds}`;
+}
+
+function formatDateToYYYYMMDDHHMMSS( now) {
+
+
+  // Adjust to GMT+7
+  let timezoneOffset = 7 * 60; // Offset in minutes for GMT+7
+  now.setMinutes(now.getMinutes() + now.getTimezoneOffset() + timezoneOffset);
+
+  // Get the components of the date and time
+  let year = now.getFullYear();
+  let month = String(now.getMonth() + 1).padStart(2, '0');
+  let day = String(now.getDate()).padStart(2, '0');
+  let hours = String(now.getHours()).padStart(2, '0');
+  let minutes = String(now.getMinutes()).padStart(2, '0');
+  let seconds = String(now.getSeconds()).padStart(2, '0');
+
+  // Combine them into the desired format
+  return `${year}${month}${day}${hours}${minutes}${seconds}`;
+}
 module.exports = {
   getAllBillsByIdUser: getAllBillsByIdUser,
   getBillById: getBillById,
   updateStatusBill: updateStatusBill,
   createBill: createBill,
+  create_payment_vnpayurl: create_payment_vnpayurl
 };

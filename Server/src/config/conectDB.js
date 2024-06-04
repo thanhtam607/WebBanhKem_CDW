@@ -9,6 +9,12 @@ const sequelize = new Sequelize('cake_shop', 'root', null, {
     logging: false
 });
 
+// const sequelize = new Sequelize('cake_shop', 'thuy2024', "1234567", {
+//     host: '103.9.159.202',
+//     dialect: 'mysql',
+//     logging: false
+// });
+
 let connectDB = async () => {
     try {
         await sequelize.authenticate();

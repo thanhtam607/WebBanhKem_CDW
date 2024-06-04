@@ -13,6 +13,7 @@ export const path = {
   REGISTER: "/register",
   ORDER: '/orders',
   PROFILE: '/profile',
+  VNPAYRETURN:'/vnpayreturn'
 };
 
 export const languages = {
