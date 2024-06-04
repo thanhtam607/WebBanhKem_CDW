@@ -13,7 +13,15 @@ export const path = {
   REGISTER: "/register",
   ORDER: '/orders',
   PROFILE: '/profile',
-  VNPAYRETURN:'/vnpayreturn'
+  VNPAYRETURN:'/vnpayreturn',
+  ADMINLOGIN: "/admin/login",
+  ADMINHOME: "/admin",
+  ADMINPRODUCTMANAGE: "/admin/product-manage",
+  ADMINCREATEPRODUCT: "/admin/create-product",
+  ADMINEDITPRODUCT: "/admin/edit-product/:id",
+  ADMINORDERMANAGE: "/admin/order-manage",
+  ADMINORDERDETAIL: "/admin/order-detail",
+  ADMINUSERMANAGE: "/admin/user-manage",
 };
 
 export const languages = {

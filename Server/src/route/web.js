@@ -7,6 +7,7 @@ import billController from "../controller/billController";
 import userController from "../controller/userController";
 
 let router = express.Router();
+
 let initWebRoutes = (app) => {
   router.get("/", homeController.getHomePage);
 
@@ -46,6 +47,14 @@ let initWebRoutes = (app) => {
   router.post("/api/updateStatusBill", billController.updateStatusBill);
   router.post("/api/createBill", billController.createBill);
   router.post('/api/create_payment_url', billController.create_payment_vnpayurl );
+  // get all bills
+  router.get("/api/getAllBills", billController.getAllBills);
+
+  // update image
+  router.post("/api/updateImage", imageController.updateImage);
+  // delete image
+  router.post("/api/deleteImage", imageController.deleteImage);
   return app.use("/", router);
 };
 module.exports = initWebRoutes;
+ 

@@ -61,9 +61,70 @@ let getProductsByKeyword = async (req, res) => {
   });
 };
 
+let createProduct = async (req, res) => {
+  try {
+    let infor = req.body;
+    let data = {
+      ID_TYPE: infor.id_type,
+      NAME: infor.name,
+      SIZE: infor.size,
+      WEIGHT: infor.weight,
+      DESCRIPTION: infor.description,
+      INTRODUCTION: infor.introduction,
+      PRICE: infor.price,
+      STATUS: infor.status,
+      Images: infor.images,
+    };
+    let product = await productService.createProduct(data);
+    return res.status(200).json({
+      errCode: 0,
+      errMessage: "ok",
+      product,
+    });
+  } catch (error) {
+    console.log("Error: ", error);
+    return res.status(200).json({
+      errCode: -1,
+      errMessage: "Error from server",
+    });
+  }
+};
+
+let updateProduct = async (req, res) => {
+  try {
+    let infor = req.body;
+    let data = {
+      ID: infor.id,
+      ID_TYPE: infor.id_type,
+      NAME: infor.name,
+      SIZE: infor.size,
+      WEIGHT: infor.weight,
+      DESCRIPTION: infor.description,
+      INTRODUCTION: infor.introduction,
+      STATUS: infor.status,
+      PRICE: infor.price,
+    };
+    console.log("data update: ", data);
+    let product = await productService.updateProduct(data);
+    return res.status(200).json({
+      errCode: 0,
+      errMessage: "ok",
+      product,
+    });
+  } catch (error) {
+    console.log("Error: ", error);
+    return res.status(200).json({
+      errCode: -1,
+      errMessage: "Error from server",
+    });
+  }
+};
+
 module.exports = {
   getListProducts: getListProducts,
   getProductById: getProductById,
   getAllProductsByIdCategory: getAllProductsByIdCategory,
   getProductsByKeyword: getProductsByKeyword,
+  createProduct: createProduct,
+  updateProduct: updateProduct,
 };

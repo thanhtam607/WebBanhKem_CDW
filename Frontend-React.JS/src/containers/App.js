@@ -24,8 +24,15 @@ import SHOP from "./User/Shop/Shop";
 import Contact from "./User/Contact/Contact";
 import About from "./User/About/About";
 import Error from "./404er";
-import Orders from './User/Order/Orders';
-import Profile from './User/Profile/Profile';
+import Orders from "./User/Order/Orders";
+import Profile from "./User/Profile/Profile";
+import AdminLogin from "./System/AdminLogin";
+import ProductManage from "./System/ProductManage/ProductManage";
+import UserManage from "./System/UserManage/UserManage";
+import OrderManage from "./System/OrderManage/OrderManage";
+import CreateProduct from "./System/ProductManage/CreateProduct";
+import UpdateProduct from "./System/ProductManage/UpdateProduct";
+import OrderDetail from "./System/OrderManage/OrderDetail";
 import VNPayReturn from "./User/Payment/VNPayReturn";
 class App extends Component {
   handlePersistorState = () => {
@@ -58,7 +65,6 @@ class App extends Component {
               <CustomScrollbars style={{ height: "100vh", width: "100%" }}>
                 <Switch>
                   <Route path={path.ERROR} component={Error} />
-                  <Route path={path.VNPAYRETURN} component={VNPayReturn} />
                   <Route path={path.ORDER}  component={(Orders)} />
                   <Route path={path.ABOUT} component={About} />
                   <Route path={path.LOGIN} component={Login} />
