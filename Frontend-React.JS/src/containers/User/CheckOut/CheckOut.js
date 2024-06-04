@@ -5,7 +5,7 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import Breadcrumb from "../breadcrumb";
 import Error from "../../../components/Error/Error";
-import {createBill, getCommunes, getDistricts} from "../../../services/billService";
+import {create_payment_vnpay, createBill, getCommunes, getDistricts} from "../../../services/billService";
 import {deleteCart} from "../../../services/cartService";
 import * as actions from "../../../store/actions";
 import Swal from 'sweetalert2';
@@ -155,25 +155,41 @@ class CheckOut extends Component {
     const errorsNull = Object.values(this.state.error).every(error => error === null);
 
     if (errorsNull) {
-      console.log("gdfh")
+      if(this.state.selectedPaymentMethod === "cash"){
+        await createBill(this.state.billingInfo);
+        await this.handleDeleteCart(this.props.user.carts.filter(item => item.status === 1))
+        Swal.fire({
+          title: "Đặt hàng thành công",
+          icon: "success",
+          showCancelButton: true,
+          confirmButtonText: "Xem đơn hàng",
+          cancelButtonText: "Xem thêm sản phẩm"
+        }).then((result) => {
+          if (result.isConfirmed) {
+            this.props.history.push("/orders");
+          }
+          else {
+            this.props.history.push("/shop");
+          }
+        });
+      }
+      else if(this.state.selectedPaymentMethod === "online-payment"){
 
-      await createBill(this.state.billingInfo);
+        let idBill;
+        await createBill(this.state.billingInfo).then(response => {
+          // Extract the ID from the response data
+          idBill= response.id;
 
-      this.handleDeleteCart(this.props.user.carts.filter(item => item.status === 1))
-      Swal.fire({
-        title: "Đặt hàng thành công",
-        icon: "success",
-        showCancelButton: true,
-        confirmButtonText: "Xem đơn hàng",
-        cancelButtonText: "Xem thêm sản phẩm"
-      }).then((result) => {
-        if (result.isConfirmed) {
-          this.props.history.push("/orders");
-        }
-        else{
-          this.props.history.push("/shop");
-        }
-      });
+          // Use the ID as needed
+        })
+
+        var orderInfor = "Thanh toan thanh cong don hang ma "+ idBill;
+        console.log(this.state.billingInfo.pro_bill)
+        await this.handleDeleteCart(this.props.user.carts.filter(item => item.status === 1))
+        await create_payment_vnpay(this.state.billingInfo.pro_bill, orderInfor)
+      }
+
+
 
 
     }
@@ -358,13 +374,13 @@ class CheckOut extends Component {
                         <h4 className="text-primary-cake text-left">Phương thức thanh toán</h4>
                         <div className="form-check text-start my-3">
                           <label className="form-check-label" id="Payments-1">
-                            Thanh toán bằng thẻ nội địa
+                            Thanh toán bằng tài khoản ngân hàng
                             <input className="form-check-input bg-primary border-0" htmlFor="Payments-1"
                                    type="radio"
                                    name="paymentMethod"
                                    value="credit_card"
-                                   checked={selectedPaymentMethod === 'credit_card'}
-                                   onChange={() => this.handlePaymentMethodChange('credit_card', 1)}/>
+                                   checked={selectedPaymentMethod === 'online-payment'}
+                                   onChange={() => this.handlePaymentMethodChange('online-payment', 1)}/>
                           </label>
 
                         </div>

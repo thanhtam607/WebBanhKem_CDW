@@ -6,9 +6,6 @@ import Footer from "../Footer/Footer";
 import Breadcrumb from "../breadcrumb";
 import Empty from "../../../components/Empty";
 import {getBillByUser} from "../../../services/billService";
-import Product from "../../../components/Product/Product";
-import {getListProducts} from "../../../services/productService";
-import {getDependsOnOwnProps} from "react-redux/lib/connect/wrapMapToProps";
 
 
 class Orders extends Component {
@@ -22,12 +19,18 @@ class Orders extends Component {
     }
 
     async componentDidMount() {
-        let response = await getBillByUser(this.props.user.userInfo.id);
-        console.log(response)
-        if (response && response.errCode === 0) {
-            this.setState({
-                listOrders: response.data,
-            });
+        if (this.props.user && this.props.user.userInfo && this.props.user.userInfo.id) {
+            let response = await getBillByUser(this.props.user.userInfo.id);
+            console.log(response)
+            if (response && response.errCode === 0) {
+                this.setState({
+                    listOrders: response.data,
+                });
+            }
+        } else {
+            // Handle the case where user info is not available
+            console.error("User info not available");
+            // Optionally, you could redirect to a login page or show a message to the user
         }
     }
     render() {

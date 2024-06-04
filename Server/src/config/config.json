@@ -1,23 +1,23 @@
 {
   "development": {
-    "username": "thuy2024",
-    "password": "1234567",
+    "username": "root",
+    "password": null,
     "database": "cake_shop",
-    "host": "103.9.159.202",
+    "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
-    "username": "thuy2024",
-    "password": "1234567",
+    "username": "root",
+    "password": null,
     "database": "database_test",
-    "host": "103.9.159.202",
+    "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
-    "username": "thuy2024",
-    "password": "1234567",
+    "username": "root",
+    "password": null,
     "database": "database_production",
-    "host": "103.9.159.202",
+    "host": "127.0.0.1",
     "dialect": "mysql"
   }
 }

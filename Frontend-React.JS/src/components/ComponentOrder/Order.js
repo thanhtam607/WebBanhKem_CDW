@@ -88,10 +88,11 @@ class Order extends Component {
 
                     <div className="row mb-2 mt-2" style={{ marginTop: "0px" }}>
                         <div className="col-6 pt-2 pb-3">
-                            <div className="text-left mr-3">
-                                <button type="button" onClick={() => this.handleCancelOrder(order.id)} className="btn text-dark btn-cancel-order">Hủy đơn hàng</button>
-
-                            </div>
+                            {this.state.status !== 2 && (
+                                <div className="text-left mr-3">
+                                    <button type="button" onClick={() => this.handleCancelOrder(order.id)} className="btn text-dark btn-cancel-order">Hủy đơn hàng</button>
+                                </div>
+                            )}
                         </div>
                         <div className="col-6 my-2">
                             <div className="text-right pr-5">

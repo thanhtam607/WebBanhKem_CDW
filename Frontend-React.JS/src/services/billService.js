@@ -35,6 +35,20 @@ let getBillByUser=(id_user)=>{
 let updateStatusBill = (id, status)=>{
     return axios.post("/api/updateStatusBill", {id: id, status: status})
 }
+const create_payment_vnpay = async (amount, orderInfo) => {
+
+    try {
+        const response = await axios.post("/api/create_payment_url", {amount:amount, orderInfo:orderInfo} );
+        // Sau khi nhận được phản hồi từ server, chuyển hướng người dùng tới URL mới
+        console.log(response)
+        window.location.href = response.vnurl; // Chuyển hướng người dùng
+    } catch (error) {
+        console.error("Error creating Vnpay payment:", error);
+        // Xử lý lỗi nếu cần
+    }
+
+
+}
 export {
-    createBill, getDistricts, getCommunes, getBillByUser, updateStatusBill
+    createBill, getDistricts, getCommunes, getBillByUser, updateStatusBill,create_payment_vnpay
 };

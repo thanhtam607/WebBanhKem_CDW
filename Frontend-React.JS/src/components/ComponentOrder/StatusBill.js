@@ -15,6 +15,8 @@ class StatusBill extends Component {
             return "Đặt hàng thành công"
         }else if(status ==2){
             return "Đã hủy"
+        }else if(status ==4){
+            return "Đã thanh toán"
         }
     }
     render() {

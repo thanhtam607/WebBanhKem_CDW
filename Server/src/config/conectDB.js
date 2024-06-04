@@ -3,11 +3,17 @@
 const Sequelize = require('sequelize');
 
 // Option 1: Passing parameters separately
-const sequelize = new Sequelize('cake_shop', 'thuy2024', "1234567", {
-    host: '103.9.159.202',
+const sequelize = new Sequelize('cake_shop', 'root', null, {
+    host: 'localhost',
     dialect: 'mysql',
     logging: false
 });
+
+// const sequelize = new Sequelize('cake_shop', 'thuy2024', "1234567", {
+//     host: '103.9.159.202',
+//     dialect: 'mysql',
+//     logging: false
+// });
 
 let connectDB = async () => {
     try {
