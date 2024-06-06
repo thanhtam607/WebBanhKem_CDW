@@ -50,5 +50,5 @@ const create_payment_vnpay = async (amount, orderInfo) => {
 
 }
 export {
-    createBill, getDistricts, getCommunes, getBillByUser, updateStatusBill,create_payment_vnpay
+    createBill, getDistricts, getCommunes, getBillByUser, updateStatusBill, create_payment_vnpay
 };

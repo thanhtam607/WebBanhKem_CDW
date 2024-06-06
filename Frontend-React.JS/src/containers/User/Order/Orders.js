@@ -42,25 +42,25 @@ class Orders extends Component {
         console.log(listOrders)
         return (
             <>
-            <Header pageActive={"Trang chủ"}/>
-            <Breadcrumb items={breadcrumbItems}/>
-            <div className="container-91 mx-auto">
-                <div className="row">
-                    <div className="tab-content-order flex-sm-row mt-2">
-                        {listOrders && listOrders.length > 0 ?
-                            listOrders.map((item) => (
+                <Header pageActive={"Trang chủ"}/>
+                <Breadcrumb items={breadcrumbItems}/>
+                <div className="container-91 mx-auto">
+                    <div className="row">
+                        <div className="tab-content-order flex-sm-row mt-2">
+                            {listOrders && listOrders.length > 0 ?
+                                listOrders.map((item) => (
 
                                     <Order  order={item} />
 
-                            )):(
-                                 <Empty message={"Không có đơn hàng nào"}/>
-                            )}
+                                )):(
+                                    <Empty message={"Không có đơn hàng nào"}/>
+                                )}
 
 
 
+                        </div>
                     </div>
                 </div>
-            </div>
                 <Footer/>
             </>
         )

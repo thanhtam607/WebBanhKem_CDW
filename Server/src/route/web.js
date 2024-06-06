@@ -5,6 +5,7 @@ import cartController from "../controller/cartController";
 import categoryController from "../controller/categoryController";
 import billController from "../controller/billController";
 import userController from "../controller/userController";
+import imageController from "../controller/imageController";
 
 let router = express.Router();
 
@@ -21,12 +22,15 @@ let initWebRoutes = (app) => {
     "/api/getAllProductsByIdCategory",
     productController.getAllProductsByIdCategory
   );
-
   // get product by keyword
   router.get(
     "/api/getProductsByKeyword",
     productController.getProductsByKeyword
   );
+  // create product
+  router.post("/api/createProduct", productController.createProduct);
+  // update product
+  router.post("/api/updateProduct", productController.updateProduct);
 
   router.post("/api/createCart", cartController.createCart);
   router.get("/api/getAllCartsByIdUser", cartController.getAllCartsByIdUser);
@@ -57,4 +61,3 @@ let initWebRoutes = (app) => {
   return app.use("/", router);
 };
 module.exports = initWebRoutes;
- 

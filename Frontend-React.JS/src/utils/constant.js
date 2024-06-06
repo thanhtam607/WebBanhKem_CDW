@@ -11,9 +11,8 @@ export const path = {
   ABOUT: "/about",
   ERROR: "/error",
   REGISTER: "/register",
-  ORDER: '/orders',
-  PROFILE: '/profile',
-  VNPAYRETURN:'/vnpayreturn',
+  ORDER: "/orders",
+  PROFILE: "/profile",
   ADMINLOGIN: "/admin/login",
   ADMINHOME: "/admin",
   ADMINPRODUCTMANAGE: "/admin/product-manage",
@@ -22,6 +21,7 @@ export const path = {
   ADMINORDERMANAGE: "/admin/order-manage",
   ADMINORDERDETAIL: "/admin/order-detail",
   ADMINUSERMANAGE: "/admin/user-manage",
+  VNPAYRETURN:'/vnpayreturn'
 };
 
 export const languages = {

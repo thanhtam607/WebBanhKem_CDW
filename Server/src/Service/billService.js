@@ -1,6 +1,4 @@
 import db from "../models/index";
-import crypto from "crypto";
-import {resolve} from "sequelize-cli/lib/helpers/path-helper";
 
 let getAllBillsByIdUser = (id_user) => {
   return new Promise(async (resolve, reject) => {
@@ -15,7 +13,7 @@ let getAllBillsByIdUser = (id_user) => {
           {
             model: db.Bill_Detail,
             as: "billDetailData",
-            attributes: ["amount", "price","notes"],
+            attributes: ["amount", "price", "notes"],
             include: [
               {
                 model: db.Product,
@@ -39,7 +37,7 @@ let getAllBillsByIdUser = (id_user) => {
                   },
                 ],
               },
-            ]
+            ],
           },
         ],
         order: [["createdAt", "DESC"]],
@@ -123,11 +121,11 @@ let updateStatusBill = (data) => {
     }
   });
 };
-let createBill=(data)=>{
+let createBill = (data) => {
   return new Promise(async (resolve, reject) => {
     if (data) {
       try {
-        const bill =await db.Bill.create({
+        const bill = await db.Bill.create({
           id_user: data.id_user,
           fullname: data.fullname,
           phone_number: data.phone_number,
@@ -135,40 +133,86 @@ let createBill=(data)=>{
           pro_bill: data.pro_bill,
           fee_bill: data.fee_bill,
           payment: data.payment,
-          status:1,
-          address: data.address
-        })
-        let id = bill.id
-        console.log('billDetail is an array and has length:', data.billDetail.length);
+          status: 1,
+          address: data.address,
+        });
+        let id = bill.id;
+        console.log(
+          "billDetail is an array and has length:",
+          data.billDetail.length
+        );
         data.billDetail.map(async (item) => {
           await createBillDetail(item, id);
-        })
-        resolve(bill);
+        });
+        resolve("Update successfully");
+      } catch (e) {
+        reject(e);
       }
-    catch (e) {
-      reject(e)
     }
-    }
-  })
-}
-let createBillDetail= (data, id_bill)=>{
+  });
+};
+let createBillDetail = (data, id_bill) => {
   return new Promise(async (resolve, reject) => {
     try {
       if (data && id_bill) {
         await db.Bill_Detail.create({
-          id_product: data.id_product ,
+          id_product: data.id_product,
           id_bill: id_bill,
           amount: data.amount,
           notes: data.notes,
-          price: data.price})
-
+          price: data.price,
+        });
       }
     } catch (e) {
-      reject(e)
+      reject(e);
     }
-  })
-}
+  });
+};
 
+let getAllBills = () => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      let bills = await db.Bill.findAll({
+        include: [
+          {
+            model: db.Bill_Detail,
+            as: "billDetailData",
+            attributes: ["amount", "price"],
+            include: [
+              {
+                model: db.Product,
+                as: "ProductData",
+                attributes: [
+                  "id",
+                  "name",
+                  "size",
+                  "weight",
+                  "description",
+                  "introduction",
+                  "price",
+                  "status",
+                ],
+                include: [
+                  {
+                    model: db.Product_Img,
+                    as: "Images",
+                    attributes: ["img"],
+                    required: true,
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+        order: [["createdAt", "DESC"]],
+      });
+
+      resolve(bills);
+    } catch (e) {
+      reject(e);
+    }
+  });
+};
 let create_payment_vnpayurl =  (ipAddr ,amount, orderInfo) =>{
   var tmnCode = 'TC59NATY';
   var secretKey = 'QUKDKKNOATQJURXAADEBNAZDBMVVOSPF';
@@ -258,5 +302,6 @@ module.exports = {
   getBillById: getBillById,
   updateStatusBill: updateStatusBill,
   createBill: createBill,
-  create_payment_vnpayurl: create_payment_vnpayurl
+  getAllBills: getAllBills,
+  create_payment_vnpayurl: create_payment_vnpayurl,
 };

@@ -522,29 +522,29 @@ class CheckOut extends Component {
       errorKey = 'erAddress';
     }
 
-      if (!isValid) {
+    if (!isValid) {
 
-        this.setState(prevState => ({
-          error: {
-            ...prevState.error,
-            [errorKey]: fieldInfo.errorMsg
-          }
-        }));
-      } else {
-        // Nếu dữ liệu hợp lệ, đặt error thành null
-        this.setState(prevState => ({
-          error: {
-            ...prevState.error,
-            [errorKey]: null
-          }
-        }));
-      }
+      this.setState(prevState => ({
+        error: {
+          ...prevState.error,
+          [errorKey]: fieldInfo.errorMsg
+        }
+      }));
+    } else {
+      // Nếu dữ liệu hợp lệ, đặt error thành null
+      this.setState(prevState => ({
+        error: {
+          ...prevState.error,
+          [errorKey]: null
+        }
+      }));
+    }
   }
 
 
 
 }
-  const mapStateToProps = (state) => {
+const mapStateToProps = (state) => {
   return {
     user: state.user,
   };

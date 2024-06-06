@@ -498,7 +498,7 @@ a h4:hover {
   background: #fef987;
 }
 .bg-primary-cake {
-  background: #c11ee8;
+  background: #c11ee8!important;
 }
 .text-secondary-cake {
   color: #ffff0a;
@@ -589,62 +589,93 @@ a i,
 /*** Footer End ***/
 
 /*****Order ****/
-.tab-content-order {
-  width: 70% !important;
+/*****Order ****/
+.tab-content-order{
+  width: 70%!important;
   margin-left: 15%;
   margin-right: 15%;
 }
-.text-secondary {
+.text-secondary{
   margin-left: 30px;
 }
-.d-inline {
+.d-inline{
   margin-right: 30px;
 }
-.text-left {
+.text-left{
   margin-left: 30px;
 }
-.text-bolder {
+.text-bolder{
   font-weight: bolder;
 }
-.container-91 {
+.container-91{
   min-height: 50%;
   background: #f2edf3;
 }
-.text-dark {
-  font-size: 16px;
+.text-dark{
+  font-size:16px;
 }
-.my-2 {
+.my-2{
   background-color: white;
 }
-.btn-cancel-order {
-  font-size: 15px !important;
-  padding: 2px !important;
-  height: 40px !important;
-  border: 1px solid #ccc !important;
-  font-weight: 500 !important;
-  padding-left: 0.5rem !important;
-  padding-right: 0.5rem !important;
+.btn-cancel-order{
+  font-size: 15px!important;
+  padding: 2px!important;
+  height: 40px!important;
+  border: 1px solid #ccc!important;
+  font-weight: 500!important;
+  padding-left: .5rem !important;
+  padding-right: .5rem !important;
 }
-.btn-cancel-order:hover {
-  font-size: 15px !important;
-  padding: 2px !important;
-  height: 40px !important;
-  border: 1px solid #ccc !important;
-  font-weight: 500 !important;
-  padding-left: 0.5rem !important;
-  padding-right: 0.5rem !important;
+.btn-cancel-order:hover{
+  font-size: 15px!important;
+  padding: 2px!important;
+  height: 40px!important;
+  border: 1px solid #ccc!important;
+  font-weight: 500!important;
+  padding-left: .5rem !important;
+  padding-right: .5rem !important;
   background: #f291a3;
   text-decoration: underline;
 }
 
 /*=============*/
-.login-error {
+.login-error{
   margin-top: -7px;
   margin-left: 12px;
   font-size: 12px;
   margin-bottom: 15px;
 }
+.read-more{
+  font-size: 18px;
+  font-style: italic;
+}
+.read-more:hover{
+  font-size: 18px!important;
+  font-style: italic!important;
+  color: #d63384!important;
+  text-decoration: underline!important;
+}
+.error{
+  color: red;
+}
+.border-black {
+  border: black!important;
+}
+.no-border{
+  border: none!important;
+}
+.bg-checkout{
+  background: rgb(253, 247, 253);
+}
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20px;
+}
 
+.flex-item {
+  margin: 0;
+}
 .image-container {
   position: relative;
   width: 100px;
@@ -663,3 +694,4 @@ a i,
 .close-btn:hover {
   color: white;
 }
+

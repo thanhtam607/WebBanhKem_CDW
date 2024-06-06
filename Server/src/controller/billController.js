@@ -1,5 +1,4 @@
 import billService from "../service/billService";
-import crypto from "crypto";
 
 let getAllBillsByIdUser = async (req, res) => {
   let data = req.query;
@@ -53,9 +52,17 @@ let createBill = async (req, res) => {
   return res.status(200).json({
     errCode: data.errCode,
     message: data.message,
-    id: data.id
   });
-}
+};
+
+let getAllBills = async (req, res) => {
+  let data = req.query;
+  let bills = await billService.getAllBills(data);
+  return res.status(200).json({
+    errCode: 0,
+    data: bills,
+  });
+};
 let create_payment_vnpayurl =  async (req, res) => {
   var ipAddr = req.headers['x-forwarded-for'] ||
       req.connection.remoteAddress ||
@@ -69,11 +76,11 @@ let create_payment_vnpayurl =  async (req, res) => {
     vnurl: data,
   });
 }
-
 module.exports = {
   getAllBillsByIdUser: getAllBillsByIdUser,
   getBillById: getBillById,
   updateStatusBill: updateStatusBill,
   createBill: createBill,
-  create_payment_vnpayurl:create_payment_vnpayurl
+  getAllBills: getAllBills,
+  create_payment_vnpayurl: create_payment_vnpayurl,
 };
