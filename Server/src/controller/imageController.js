@@ -8,8 +8,12 @@ let updateImage = async (req, res) => {
 
 let deleteImage = async (req, res) => {
   let data = req.body;
+  console.log(req.body);
   let response = await imageService.deleteImage(data);
-  return res.status(200).json(response);
+  return res.status(200).json({
+    errCode: response.errCode,
+    message: response.message,
+  });
 };
 
 module.exports = {

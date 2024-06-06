@@ -4,7 +4,11 @@ import { connect } from "react-redux";
 import Menu from "../Menu/Menu";
 import NavBar from "../NavBar/NavBar";
 import TableProduct from "./TableProduct";
-import { getListProducts } from "../../../services/productService";
+import {
+  getListProducts,
+  deleteProduct,
+} from "../../../services/productService";
+import Swal from "sweetalert2";
 class ProductManage extends Component {
   constructor(props) {
     super(props);

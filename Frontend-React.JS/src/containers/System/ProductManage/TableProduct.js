@@ -3,13 +3,16 @@ import ReactPaginate from "react-paginate";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { path } from "../../../utils";
+import { deleteProduct } from "../../../services/productService";
+import Swal from "sweetalert2";
 
 class TableProduct extends Component {
   constructor(props) {
     super(props);
     this.state = {
       currentPage: 0,
-      searchKeyword: "", // Thêm trường lưu trữ từ khóa tìm kiếm
+      searchKeyword: "",
+      data: [],
     };
   }
 
@@ -26,14 +29,41 @@ class TableProduct extends Component {
     });
   };
 
-  // handle create
-  handleCreate = () => {};
-  handleEdit = () => {};
-  handleDelete = () => {};
+  handleDeleteProduct = async (id) => {
+    console.log("id", id);
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        let response = await deleteProduct(id);
+        if (response.errCode === 0) {
+          let data = this.state.data.filter((item) => item.id !== id);
+          this.setState({
+            data: data,
+          });
+          Swal.fire("Deleted!", "Your file has been deleted.", "success");
+        } else {
+          Swal.fire("Error!", "Your file has been deleted.", "error");
+        }
+      }
+    });
+  };
+
+  async componentDidMount() {
+    this.setState({
+      data: this.props.data,
+    });
+  }
 
   render() {
-    const { data, itemsPerPage } = this.props;
-    const { currentPage, searchKeyword } = this.state;
+    const { itemsPerPage } = this.props;
+    const { currentPage, searchKeyword, data } = this.state;
 
     const filteredData = data.filter((item) =>
       item.name.toLowerCase().includes(searchKeyword.toLowerCase())
@@ -130,9 +160,8 @@ class TableProduct extends Component {
                         <i className="bx bx-edit" />
                       </Link>
                       <button
-                        type="button"
                         className="btn btn-icon btn-icon-only btn-outline-danger"
-                        data-bs-toggle="tooltip"
+                        onClick={() => this.handleDeleteProduct(item.id)}
                         title="Delete"
                       >
                         <i className="bx bx-trash" />

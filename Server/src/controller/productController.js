@@ -120,6 +120,28 @@ let updateProduct = async (req, res) => {
   }
 };
 
+let deleteProduct = async (req, res) => {
+  try {
+    let infor = req.body;
+    let data = {
+      ID: infor.id,
+    };
+    console.log("data update: ", data);
+    let product = await productService.deleteProduct(data);
+    return res.status(200).json({
+      errCode: 0,
+      errMessage: "ok",
+      product,
+    });
+  } catch (error) {
+    console.log("Error: ", error);
+    return res.status(200).json({
+      errCode: -1,
+      errMessage: "Error from server",
+    });
+  }
+};
+
 module.exports = {
   getListProducts: getListProducts,
   getProductById: getProductById,
@@ -127,4 +149,5 @@ module.exports = {
   getProductsByKeyword: getProductsByKeyword,
   createProduct: createProduct,
   updateProduct: updateProduct,
+  deleteProduct: deleteProduct,
 };

@@ -33,8 +33,17 @@ let handleCreateNewUser = async (req, res) => {
   });
 };
 
+let updateRole = async (req, res) => {
+  const data = await userServicer.updateRole(req.body);
+  return res.status(200).json({
+    errCode: data.errCode,
+    message: data.message,
+  });
+};
+
 module.exports = {
   userLogin: userLogin,
   getAllUsers: getAllUsers,
   handleCreateNewUser: handleCreateNewUser,
+  updateRole: updateRole,
 };

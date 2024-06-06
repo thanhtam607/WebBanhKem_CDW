@@ -43,6 +43,10 @@ let createProduct = (
   });
 };
 
+let deleteProduct = (id) => {
+  return axios.post(`/api/deleteProduct`, { id });
+};
+
 let updateProduct = (
   id,
   id_type,
@@ -75,4 +79,5 @@ export {
   getProductsByKeyword,
   createProduct,
   updateProduct,
+  deleteProduct,
 };

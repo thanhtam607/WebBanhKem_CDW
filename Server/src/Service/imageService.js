@@ -27,6 +27,7 @@ let updateImage = (data) => {
 
 let deleteImage = (data) => {
   return new Promise(async (resolve, reject) => {
+    console.log(data);
     if (!data.id) {
       resolve("Missing required parameter");
     }
@@ -38,9 +39,15 @@ let deleteImage = (data) => {
 
       if (image) {
         image.destroy();
-        resolve("Delete image successfully");
+        resolve({
+          errCode: 0,
+          message: "Delete image successfully",
+        });
       } else {
-        resolve("Image not found");
+        resolve({
+          errCode: 1,
+          message: "Image not found",
+        });
       }
     } catch (e) {
       reject(e);
