@@ -15,6 +15,8 @@ let initWebRoutes = (app) => {
   // User
   router.post("/api/register", userController.handleCreateNewUser);
   router.post("/api/login", userController.userLogin);
+  // update role
+  router.post("/api/updateRole", userController.updateRole);
 
   router.get("/api/getListProducts", productController.getListProducts);
   router.get("/api/getProductById", productController.getProductById);
@@ -31,6 +33,8 @@ let initWebRoutes = (app) => {
   router.post("/api/createProduct", productController.createProduct);
   // update product
   router.post("/api/updateProduct", productController.updateProduct);
+  // delete product
+  router.post("/api/deleteProduct", productController.deleteProduct);
 
   router.post("/api/createCart", cartController.createCart);
   router.get("/api/getAllCartsByIdUser", cartController.getAllCartsByIdUser);

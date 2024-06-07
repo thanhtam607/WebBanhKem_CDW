@@ -11,6 +11,7 @@ import {
   updateProduct,
 } from "../../../services/productService";
 import { getAllCategories } from "../../../services/categorySerive";
+import { updateImage, deleteImage } from "../../../services/imageService";
 
 class UpdateProduct extends Component {
   constructor(props) {
@@ -29,6 +30,86 @@ class UpdateProduct extends Component {
       introduction: "",
     };
   }
+
+  handleUpdateImage = async (e, index) => {
+    await this.uploadToImbb(e, async (listLink) => {
+      await updateImage(this.state.images[index].id, listLink[0]);
+      let images = this.state.images;
+      images[index].img = listLink[0];
+      this.setState({
+        images: images,
+      });
+    });
+  };
+
+  handleDeleteImage = async (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        let response = await deleteImage(id);
+        console.log("====> ", response);
+        if (response.errCode === 0) {
+          let images = this.state.images.filter((item) => item.id !== id);
+          this.setState({
+            images: images,
+          });
+          Swal.fire("Deleted!", "Your file has been deleted.", "success");
+        } else {
+          Swal.fire("Error!", "Your file has not been deleted.", "error");
+        }
+      }
+    });
+  };
+
+  uploadToImbb = async (e, callback = false) => {
+    let files = e.target.files;
+    var listLink = [];
+    if (files) {
+      for (const file of [...files]) {
+        console.log("Đang upload hình ảnh lên imgbb...");
+        let apiUrl = "https://Hoaitin70.imgbb.com/json";
+        let auth_token = "e721864fb61ac30573759a0e9f792a9ff4e08a36";
+        let options = {
+          async: false,
+          crossDomain: true,
+          processData: false,
+          contentType: false,
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+          },
+          mimeType: "multipart/form-data",
+        };
+        let formData = new FormData();
+        formData.append("source", file);
+        formData.append("type", "file");
+        formData.append("action", "upload");
+        formData.append("timestamp", +new Date() * 1);
+        formData.append("auth_token", auth_token);
+        options.body = formData;
+        await fetch(apiUrl, options)
+          .then((response) => {
+            return response.json();
+          })
+          .then((response) => {
+            let obj = response;
+            let linkRS = obj.image.display_url;
+            console.log("Link: " + linkRS);
+            listLink.push(linkRS);
+          });
+      }
+      if (callback != false) {
+        callback(listLink);
+      }
+    }
+  };
 
   async componentDidMount() {
     let response = await getProductById(this.props.match.params.id);
@@ -311,14 +392,22 @@ class UpdateProduct extends Component {
                                                 type={"file"}
                                                 multiple
                                                 id={"sendImg"}
+                                                onChange={(e) =>
+                                                  this.handleUpdateImage(
+                                                    e,
+                                                    index
+                                                  )
+                                                }
                                               />
                                             </label>
                                           </button>
                                           <button
                                             type="button"
                                             className="btn btn-icon btn-icon-only btn-outline-danger"
-                                            data-bs-toggle="tooltip"
                                             title="Delete"
+                                            onClick={() =>
+                                              this.handleDeleteImage(item.id)
+                                            }
                                           >
                                             <i className="bx bx-trash" />
                                           </button>
@@ -343,7 +432,7 @@ class UpdateProduct extends Component {
                           className="btn btn-primary me-2 "
                           style={{ padding: "0 10px" }}
                         >
-                          Thêm Sản Phẩm
+                          Sửa sản phẩm
                         </button>
                       </div>
                     </div>

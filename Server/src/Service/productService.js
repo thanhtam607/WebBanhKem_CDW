@@ -29,7 +29,7 @@ let getListProducts = () => {
           {
             model: db.Product_Img,
             as: "Images",
-            attributes: ["img"],
+            attributes: ["id", "img"],
             required: true,
           },
         ],
@@ -66,7 +66,7 @@ let getProductById = (id) => {
           {
             model: db.Product_Img,
             as: "Images",
-            attributes: ["img"],
+            attributes: ["id", "img"],
             required: true,
           },
         ],
@@ -104,7 +104,7 @@ let getAllProductsByIdCategory = (idCategory) => {
           {
             model: db.Product_Img,
             as: "Images",
-            attributes: ["img"],
+            attributes: ["id", "img"],
             required: true,
           },
         ],
@@ -144,7 +144,7 @@ let getProductsByKeyword = (keyword) => {
           {
             model: db.Product_Img,
             as: "Images",
-            attributes: ["img"],
+            attributes: ["id", "img"],
             required: true,
           },
         ],
@@ -253,6 +253,36 @@ let updateProduct = (data) => {
   });
 };
 
+let deleteProduct = (data) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      if (!data) {
+        resolve("Missing required parameter");
+      }
+
+      let product = await db.Product.update(
+        {
+          status: 1,
+        },
+        {
+          where: {
+            id: data.ID,
+          },
+        }
+      );
+
+      if (product) {
+        resolve(product);
+      } else {
+        resolve("Delete product failed");
+      }
+      resolve(product);
+    } catch (e) {
+      reject(e);
+    }
+  });
+};
+
 module.exports = {
   getListProducts: getListProducts,
   getProductById: getProductById,
@@ -260,4 +290,5 @@ module.exports = {
   getProductsByKeyword: getProductsByKeyword,
   createProduct: createProduct,
   updateProduct: updateProduct,
+  deleteProduct: deleteProduct,
 };

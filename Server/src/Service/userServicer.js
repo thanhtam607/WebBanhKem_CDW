@@ -126,8 +126,35 @@ let hashPassword = (password) => {
     }
   });
 };
+
+let updateRole = (data) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const user = await db.User.findOne({
+        where: { id: data.id },
+      });
+      if (user) {
+        user.role = data.role;
+        user.save();
+        resolve({
+          errCode: 0,
+          message: "Update role successfully",
+        });
+      } else {
+        resolve({
+          errCode: 1,
+          message: "User not found",
+        });
+      }
+    } catch (e) {
+      reject(e);
+    }
+  });
+};
+
 module.exports = {
   userLoginServicer: userLoginServicer,
   getAllUsers: getAllUsers,
   createUser: createUser,
+  updateRole: updateRole,
 };
