@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { getListProducts } from "../../../services/productService";
 import { getAllBill } from "../../../services/billService";
 import StatusBill from "../../../components/ComponentOrder/StatusBill";
+import {Link} from "react-router-dom";
 
 class TableOrder extends Component {
   constructor(props) {
@@ -69,6 +70,7 @@ class TableOrder extends Component {
               className="d-flex justify-content-end align-items-center mb-3"
               style={{ margin: "20px 10px" }}
           >
+
             {/* Bạn có thể thêm các nút hoặc các phần tử khác tại đây */}
           </div>
           <div className="table-responsive text-nowrap" >
@@ -102,14 +104,15 @@ class TableOrder extends Component {
                       <StatusBill status={order.status}></StatusBill>
                     </td>
                     <td>
-                      <button
+                      <a
                           type="button"
                           className="btn btn-icon btn-icon-only btn-outline-primary"
                           data-bs-toggle="tooltip"
                           title="Edit"
+                          href={`/admin/order-detail/${order.id}`}
                       >
                         <i className="bx bx-edit" />
-                      </button>
+                      </a>
                       <button
                           type="button"
                           className="btn btn-icon btn-icon-only btn-outline-danger"

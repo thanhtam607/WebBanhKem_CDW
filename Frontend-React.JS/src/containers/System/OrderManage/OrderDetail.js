@@ -5,21 +5,34 @@ import Menu from "../Menu/Menu";
 import NavBar from "../NavBar/NavBar";
 import { Link } from "react-router-dom";
 import { path } from "../../../utils";
+import {getBillById} from "../../../services/billService";
 
 class OrderDetail extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      order : {},
+    };
   }
 
-  async componentDidMount() {}
+  async componentDidMount() {
+    const id = this.props.match.params.id;
+    let response = await getBillById(id);
+    if (response && response.errCode === 0) {
+      this.setState({
+        order: response.data
+      })
+    }
+
+  }
 
   render() {
+    let order = this.state.order;
     return (
       <div className="layout-wrapper layout-content-navbar">
         <div className="layout-container">
           {/* Menu */}
-          <Menu page={"Product Management"} />
+          <Menu page={"Order Management"} />
           {/* / Menu */}
           {/* Layout container */}
           <div className="layout-page">
@@ -65,73 +78,75 @@ class OrderDetail extends Component {
                         <div className="row">
                           <div className="mb-3 col-md-6">
                             <label htmlFor="fullname" className="form-label">
-                              fullname
+                              Tên khách hàng
                             </label>
                             <input
                               className="form-control"
                               type="text"
-                              value="John"
+                              value={order.fullname}
                               autoFocus
                             />
                           </div>
 
                           <div className="mb-3 col-md-6">
                             <label htmlFor="phone" className="form-label">
-                              phone
+                              Số điện thoại
                             </label>
                             <input
                               className="form-control"
                               type="text"
-                              value="John"
+                              value={order.phone_number}
                               autoFocus
                             />
                           </div>
 
                           <div className="mb-3 col-md-6">
                             <label htmlFor="address" className="form-label">
-                              address
+                              Địa chỉ
                             </label>
                             <input
                               className="form-control"
                               type="text"
-                              value="John"
+                              value={order.address}
                               autoFocus
                             />
                           </div>
                           <div className="mb-3 col-md-6">
                             <label htmlFor="price" className="form-label">
-                              Price
+                              Thành tiền
                             </label>
                             <input
                               className="form-control"
                               type="text"
                               id="price"
                               name="price"
-                              value="John"
+                              value={order.pro_bill}
                             />
                           </div>
                           {/* // status */}
                           <div className="mb-3 col-md-6">
                             <label className="form-label" htmlFor="status">
-                              Status
+                              Trạng thái
                             </label>
                             <select id="status" className="select2 form-select">
                               <option value="">Select Language</option>
-                              <option value="en">English</option>
-                              <option value="fr">French</option>
-                              <option value="de">German</option>
-                              <option value="pt">Portuguese</option>
+                              <option value="1">Chờ phê duyệt</option>
+                              <option value="2">Đã hủy</option>
+                              <option value="3">Đặt hàng thành công</option>
+                              <option value="4">Đã thanh toán</option>
+                              <option value="5">Đang giao hàng</option>
+                              <option value="6">Giao hàng thành công</option>
                             </select>
                           </div>
                           <div className="mb-3 col-md-6">
                             <label htmlFor="description" className="form-label">
-                              Note
+                              Ghi chú
                             </label>
                             <textarea
                               className="form-control"
                               id="description"
                               rows={4}
-                              defaultValue={""}
+                              defaultValue={order.notes}
                             />
                           </div>
 

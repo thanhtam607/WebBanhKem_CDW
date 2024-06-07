@@ -36,7 +36,7 @@ class OrderManage extends Component {
                   <span className="text-muted fw-light">Danh sách đơn hàng</span>
                 </h4>
                 {/* Basic Bootstrap Table */}
-                <TableOrder data={data} itemsPerPage={1} />
+                <TableOrder />
               </div>
 
               {/* / Content */}

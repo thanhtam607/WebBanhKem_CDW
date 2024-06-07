@@ -19,7 +19,7 @@ export const path = {
   ADMINCREATEPRODUCT: "/admin/create-product",
   ADMINEDITPRODUCT: "/admin/edit-product/:id",
   ADMINORDERMANAGE: "/admin/order-manage",
-  ADMINORDERDETAIL: "/admin/order-detail",
+  ADMINORDERDETAIL: "/admin/order-detail/:id",
   ADMINUSERMANAGE: "/admin/user-manage",
   VNPAYRETURN:'/vnpayreturn'
 };

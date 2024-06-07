@@ -47,10 +47,12 @@ const create_payment_vnpay = async (amount, orderInfo) => {
         // Xử lý lỗi nếu cần
     }
 }
-let getAllBill=()=>{
+let getAllBill=()=> {
     return axios.get(`/api/getAllBills`)
 }
-
+let getBillById = (id) => {
+    return axios.get(`/api/getBillById?id=${id}`);
+};
 
 
 
@@ -62,4 +64,5 @@ export {
     updateStatusBill,
     create_payment_vnpay,
     getAllBill,
+    getBillById,
 };
