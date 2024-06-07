@@ -1,0 +1,16 @@
+.bg-secondary {
+  background-color: #ff97bb !important;
+
+}
+
+.featurs .featurs-item .featurs-icon::after {
+  content: "";
+  width: 35px;
+  height: 35px;
+  background:#ff97bb !important;
+  position: absolute;
+  bottom: -10px;
+  transform: translate(-50%);
+  transform: rotate(45deg);
+  background: #ff97bb !important;
+}

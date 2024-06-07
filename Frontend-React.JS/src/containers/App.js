@@ -24,8 +24,16 @@ import SHOP from "./User/Shop/Shop";
 import Contact from "./User/Contact/Contact";
 import About from "./User/About/About";
 import Error from "./404er";
-import Orders from './User/Order/Orders';
-import Profile from './User/Profile/Profile';
+import Orders from "./User/Order/Orders";
+import Profile from "./User/Profile/Profile";
+import AdminLogin from "./System/AdminLogin";
+import ProductManage from "./System/ProductManage/ProductManage";
+import UserManage from "./System/UserManage/UserManage";
+import OrderManage from "./System/OrderManage/OrderManage";
+import CreateProduct from "./System/ProductManage/CreateProduct";
+import UpdateProduct from "./System/ProductManage/UpdateProduct";
+import OrderDetail from "./System/OrderManage/OrderDetail";
+import VNPayReturn from "./User/Payment/VNPayReturn";
 class App extends Component {
   handlePersistorState = () => {
     const { persistor } = this.props;
@@ -57,19 +65,35 @@ class App extends Component {
               <CustomScrollbars style={{ height: "100vh", width: "100%" }}>
                 <Switch>
                   <Route path={path.ERROR} component={Error} />
-                  <Route path={path.ORDER}  component={(Orders)} />
+                  <Route path={path.VNPAYRETURN} component={VNPayReturn} />
+                  <Route path={path.ORDER} component={Orders} />
                   <Route path={path.ABOUT} component={About} />
                   <Route path={path.LOGIN} component={Login} />
                   <Route path={path.REGISTER} component={Register} />
-                  <Route path={path.PROFILE}  component={(Profile)} />
+                  <Route path={path.PROFILE} component={Profile} />
                   <Route path={path.CART} component={Cart} />
                   <Route path={path.PRODUCTDETAIL} component={ProductDetail} />
                   <Route path={path.SHOP} component={SHOP} />
                   <Route path={path.CHECKOUT} component={CheckOut} />
                   <Route path={path.CONTACT} component={Contact} />
+
+                  <Route path={path.ADMINLOGIN} component={AdminLogin} />
+                  <Route
+                    path={path.ADMINPRODUCTMANAGE}
+                    component={ProductManage}
+                  />
+                  <Route
+                    path={path.ADMINCREATEPRODUCT}
+                    component={CreateProduct}
+                  />
+                  <Route
+                    path={path.ADMINEDITPRODUCT}
+                    component={UpdateProduct}
+                  />
+                  <Route path={path.ADMINUSERMANAGE} component={UserManage} />
+                  <Route path={path.ADMINORDERMANAGE} component={OrderManage} />
+                  <Route path={path.ADMINORDERDETAIL} component={OrderDetail} />
                   <Route path={path.HOME} component={Home} />
-
-
                 </Switch>
               </CustomScrollbars>
             </div>

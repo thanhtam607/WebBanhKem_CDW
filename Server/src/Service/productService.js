@@ -4,10 +4,12 @@ import db from "../models/index";
 let getListProducts = () => {
   return new Promise(async (resolve, reject) => {
     try {
+      // sort từ lớn đến nhỏ id
       const listProducts = await db.Product.findAll({
         where: {
           STATUS: 0,
         },
+        sort: [["id", "DESC"]],
         attributes: [
           "id",
           "name",
@@ -27,7 +29,7 @@ let getListProducts = () => {
           {
             model: db.Product_Img,
             as: "Images",
-            attributes: ["img"],
+            attributes: ["id", "img"],
             required: true,
           },
         ],
@@ -64,7 +66,7 @@ let getProductById = (id) => {
           {
             model: db.Product_Img,
             as: "Images",
-            attributes: ["img"],
+            attributes: ["id", "img"],
             required: true,
           },
         ],
@@ -102,7 +104,7 @@ let getAllProductsByIdCategory = (idCategory) => {
           {
             model: db.Product_Img,
             as: "Images",
-            attributes: ["img"],
+            attributes: ["id", "img"],
             required: true,
           },
         ],
@@ -142,7 +144,7 @@ let getProductsByKeyword = (keyword) => {
           {
             model: db.Product_Img,
             as: "Images",
-            attributes: ["img"],
+            attributes: ["id", "img"],
             required: true,
           },
         ],
@@ -156,9 +158,137 @@ let getProductsByKeyword = (keyword) => {
   });
 };
 
+let createProduct = (data) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      if (!data) {
+        resolve("Missing required parameter");
+      }
+
+      let product = await db.Product.create({
+        id_type: data.ID_TYPE,
+        name: data.NAME,
+        size: data.SIZE,
+        weight: data.WEIGHT,
+        description: data.DESCRIPTION,
+        introduction: data.INTRODUCTION,
+        price: data.PRICE,
+        status: 0,
+      });
+
+      if (product) {
+        for (let img of data.Images) {
+          await createImage({ id_product: product.id, img: img });
+        }
+        resolve(product);
+      } else {
+        resolve("Create product failed");
+      }
+      resolve(product);
+    } catch (e) {
+      reject(e);
+    }
+  });
+};
+
+let createImage = (data) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      if (!data) {
+        resolve("Missing required parameter");
+      }
+
+      let image = await db.Product_Img.create({
+        id_product: data.id_product,
+        img: data.img,
+        status: 0,
+      });
+
+      if (image) {
+        resolve(image);
+      } else {
+        resolve("Create image failed");
+      }
+      resolve(image);
+    } catch (e) {
+      reject(e);
+    }
+  });
+};
+
+let updateProduct = (data) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      if (!data) {
+        resolve("Missing required parameter");
+      }
+
+      let product = await db.Product.update(
+        {
+          id_type: data.ID_TYPE,
+          name: data.NAME,
+          size: data.SIZE,
+          weight: data.WEIGHT,
+          description: data.DESCRIPTION,
+          introduction: data.INTRODUCTION,
+          price: data.PRICE,
+          status: data.STATUS,
+        },
+        {
+          where: {
+            id: data.ID,
+          },
+        }
+      );
+
+      if (product) {
+        resolve(product);
+      } else {
+        resolve("Update product failed");
+      }
+      resolve(product);
+    } catch (e) {
+      reject(e);
+    }
+  });
+};
+
+let deleteProduct = (data) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      if (!data) {
+        resolve("Missing required parameter");
+      }
+
+      let product = await db.Product.update(
+        {
+          status: 1,
+        },
+        {
+          where: {
+            id: data.ID,
+          },
+        }
+      );
+
+      if (product) {
+        resolve(product);
+      } else {
+        resolve("Delete product failed");
+      }
+      resolve(product);
+    } catch (e) {
+      reject(e);
+    }
+  });
+};
+
 module.exports = {
   getListProducts: getListProducts,
   getProductById: getProductById,
   getAllProductsByIdCategory: getAllProductsByIdCategory,
   getProductsByKeyword: getProductsByKeyword,
+  createProduct: createProduct,
+  updateProduct: updateProduct,
+  deleteProduct: deleteProduct,
 };

@@ -15,17 +15,19 @@ class StatusBill extends Component {
             return "Đặt hàng thành công"
         }else if(status ==2){
             return "Đã hủy"
+        }else if(status ==4){
+            return "Đã thanh toán"
+        }else if(status ==5){
+            return "Đang giao hàng"
+        }else if(status ==6){
+            return "Giao hàng thành công"
         }
     }
     render() {
         const status = this.props.status;
-        return ( <div className="col-6 text-right  my-2 pt-2 ">
-            <small className="d-inline text-secondary">Trạng thái |</small>
-            <div id="statusName<%=r.getId()%>" className="d-inline pr-3 text-uppercase"
-                 style={{ color: "#ee4d2d", fontSize: "14px" }}>
+        return (
                 <span>{this.getStatus(status)}</span>
-            </div>
-        </div>)
+        )
     }
 
 }

@@ -59,7 +59,13 @@ class Order extends Component {
                             <small className="text-secondary d-inline-block pt-3 " style={{ padding: 0, margin: 0 }}
                             >{this.formatDate(order.createdAt)}</small>
                         </div>
+                        <div className="col-6 text-right  my-2 pt-2 ">
+                            <small className="d-inline text-secondary">Trạng thái |</small>
+                            <div  className="d-inline pr-3 text-uppercase"
+                                  style={{ color: "#ee4d2d", fontSize: "14px" }}>
                        <StatusBill status={this.state.status}/>
+                    </div>
+                </div>
                     </div>
                     <div className="card border-left-0 border-right-0 border-bottom-0 mx-3">
 
@@ -88,10 +94,11 @@ class Order extends Component {
 
                     <div className="row mb-2 mt-2" style={{ marginTop: "0px" }}>
                         <div className="col-6 pt-2 pb-3">
-                            <div className="text-left mr-3">
-                                <button type="button" onClick={() => this.handleCancelOrder(order.id)} className="btn text-dark btn-cancel-order">Hủy đơn hàng</button>
-
-                            </div>
+                            {this.state.status !== 2 && (
+                                <div className="text-left mr-3">
+                                    <button type="button" onClick={() => this.handleCancelOrder(order.id)} className="btn text-dark btn-cancel-order">Hủy đơn hàng</button>
+                                </div>
+                            )}
                         </div>
                         <div className="col-6 my-2">
                             <div className="text-right pr-5">
