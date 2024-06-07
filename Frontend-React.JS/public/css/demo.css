@@ -113,3 +113,8 @@
 .card{
   margin-left: 20px;
 }
+.column {
+  word-wrap: break-word;
+  white-space: normal;
+  min-width: 200px;
+}

@@ -39,7 +39,7 @@ class CheckOut extends Component {
       selectedPaymentMethod: null,
       error: {},
       district: '',
-      city: '',
+      city: 'TPHCM',
       ward: '',
       addDetail: '',
       billingInfo: {

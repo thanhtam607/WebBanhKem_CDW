@@ -59,7 +59,13 @@ class Order extends Component {
                             <small className="text-secondary d-inline-block pt-3 " style={{ padding: 0, margin: 0 }}
                             >{this.formatDate(order.createdAt)}</small>
                         </div>
+                        <div className="col-6 text-right  my-2 pt-2 ">
+                            <small className="d-inline text-secondary">Trạng thái |</small>
+                            <div  className="d-inline pr-3 text-uppercase"
+                                  style={{ color: "#ee4d2d", fontSize: "14px" }}>
                        <StatusBill status={this.state.status}/>
+                    </div>
+                </div>
                     </div>
                     <div className="card border-left-0 border-right-0 border-bottom-0 mx-3">
 

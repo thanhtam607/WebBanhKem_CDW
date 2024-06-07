@@ -360,10 +360,10 @@ class UpdateProduct extends Component {
                                         <td>
                                           <div className="d-flex align-items-center">
                                             <img
-                                              src={item.img}
+                                              src={"/"+item.img}
                                               alt="product"
                                               className="w-px-100 h-px-100 rounded margin-left-10"
-                                              style={{ marginLeft: "10px" }}
+                                              style={{ marginLeft: "10px" , width:"70px"}}
                                             />
                                           </div>
                                         </td>

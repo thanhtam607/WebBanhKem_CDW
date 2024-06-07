@@ -262,7 +262,7 @@ class CreateProduct extends Component {
                     Back
                   </Link>
 
-                  <span className="text-muted fw-light">Create Product</span>
+                  <span className="text-muted text-right fw-light">Create Product</span>
                 </h4>
 
                 <div className="container-xxl flex-grow-1 container-p-y">
@@ -485,10 +485,12 @@ class CreateProduct extends Component {
                                 <div className="image-container" key={index}>
                                   <img
                                     src={item}
-                                    className="w-80 h-80"
+                                    // className="w-80 h-80"
                                     alt="Image"
                                     style={{
-                                      objectFit: "cover",
+                                      width: "90px",
+                                      height: "90px",
+                                      objectFit: "contain",
                                     }}
                                   />
                                   <button

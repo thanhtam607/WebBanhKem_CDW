@@ -1,13 +1,18 @@
 import React, { Component } from "react";
 import ReactPaginate from "react-paginate";
 import { connect } from "react-redux";
+import { getListProducts } from "../../../services/productService";
+import { getAllBill } from "../../../services/billService";
+import StatusBill from "../../../components/ComponentOrder/StatusBill";
 
 class TableOrder extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
+      listOrders: [],
       currentPage: 0,
-      searchKeyword: "", // Thêm trường lưu trữ từ khóa tìm kiếm
+      itemsPerPage: 10
     };
   }
 
@@ -17,126 +22,138 @@ class TableOrder extends Component {
     });
   };
 
-  handleSearchChange = (e) => {
-    this.setState({
-      searchKeyword: e.target.value, // Cập nhật từ khóa tìm kiếm khi người dùng nhập
-      currentPage: 0, // Reset trang về 0 khi thực hiện tìm kiếm
-    });
-  };
-
   // handle create
   handleCreate = () => {};
   handleEdit = () => {};
   handleDelete = () => {};
 
+  async componentDidMount() {
+    let response = await getAllBill();
+    if (response && response.errCode === 0) {
+      this.setState({
+        listOrders: response.data,
+      });
+    }
+  }
+
+  getPayment = (payment) => {
+    return payment === 0 ? "Tiền mặt" : "Chuyển khoản";
+  };
+  formatDateTime(dateString) {
+    const options = {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hour12: false,
+      timeZone: "UTC",
+    };
+
+    return new Date(dateString)
+        .toLocaleDateString("vi-VN", options)
+        .replace(",", "");
+  }
   render() {
-    const { data, itemsPerPage } = this.props;
-    const { currentPage, searchKeyword } = this.state;
+    const { listOrders, currentPage, itemsPerPage } = this.state;
 
-    const filteredData = data.filter((item) =>
-      item.column1.toLowerCase().includes(searchKeyword.toLowerCase())
-    );
-
+    // Tính toán các đơn hàng sẽ hiển thị trên trang hiện tại
     const offset = currentPage * itemsPerPage;
-    const currentPageData = filteredData.slice(offset, offset + itemsPerPage);
+    const currentPageItems = listOrders.slice(offset, offset + itemsPerPage);
+    const pageCount = Math.ceil(listOrders.length / itemsPerPage);
 
     return (
-      <div className="card">
-        <div
-          className="d-flex justify-content-end align-items-center mb-3 "
-          style={{ margin: "20px 10px" }}
-        >
-          <div className="d-flex align-items-center">
-            <label htmlFor="search" className="me-2">
-              Search
-            </label>
-            <input
-              style={{ width: "300px", height: "35px" }}
-              type="text"
-              id="search"
-              value={searchKeyword}
-              onChange={this.handleSearchChange}
-              className="form-control"
-              placeholder="Search..."
-            />
+        <div className="card">
+          <div
+              className="d-flex justify-content-end align-items-center mb-3"
+              style={{ margin: "20px 10px" }}
+          >
+            {/* Bạn có thể thêm các nút hoặc các phần tử khác tại đây */}
           </div>
-        </div>
-        <div className="table-responsive text-nowrap">
-          <table className="table">
-            <thead>
+          <div className="table-responsive text-nowrap" >
+            <table className="table" >
+              <thead>
               <tr>
                 <th>#</th>
-                {/* bill fullname, address, phone, email, price, status */}
-                <th>Fullname</th>
-                <th>Address</th>
-                <th>Phone</th>
-                <th>Price</th>
-                <th>Status</th>
+                <th>Tên KH</th>
+                <th>Địa chỉ</th>
+                <th>SDT</th>
+                <th>Thành tiền</th>
+                <th>Ghi chú</th>
+                <th>Thanh toán</th>
+                <th>Ngày tạo</th>
+                <th>Trạng thái</th>
                 <th>Actions</th>
               </tr>
-            </thead>
-            <tbody className="table-border-bottom-0">
-              <tr>
-                <td>1</td>
-                {/* bill fullname, address, phone, price, status */}
-                <td>Nguyen Van A</td>
-                <td>123 Nguyen Luong Bang</td>
-                <td>0123456789</td>
-                <td>200.000vnđ</td>
-                <td>
-                  <span className="badge bg-label-primary me-1">Active</span>
-                </td>
-                <td>
-                  <button
-                    type="button"
-                    className="btn btn-icon btn-icon-only btn-outline-primary"
-                    data-bs-toggle="tooltip"
-                    title="Edit"
-                  >
-                    <i className="bx bx-edit" />
-                  </button>
-                  <button
-                    type="button"
-                    className="btn btn-icon btn-icon-only btn-outline-danger"
-                    data-bs-toggle="tooltip"
-                    title="Delete"
-                  >
-                    <i className="bx bx-trash" />
-                  </button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+              </thead>
+              <tbody className="table-border-bottom-0">
+              {currentPageItems.map((order, index) => (
+                  <tr key={index + offset}>
+                    <td>{index + 1 + offset}</td>
+                    <td className="column">{order.fullname}</td>
+                    <td className="column">{order.address}</td>
+                    <td>{order.phone_number}</td>
+                    <td>{order.pro_bill}</td>
+                    <td>{order.notes}</td>
+                    <td>{this.getPayment(order.payment)}</td>
+                    <td>{this.formatDateTime(order.createdAt)}</td>
+                    <td>
+                      <StatusBill status={order.status}></StatusBill>
+                    </td>
+                    <td>
+                      <button
+                          type="button"
+                          className="btn btn-icon btn-icon-only btn-outline-primary"
+                          data-bs-toggle="tooltip"
+                          title="Edit"
+                      >
+                        <i className="bx bx-edit" />
+                      </button>
+                      <button
+                          type="button"
+                          className="btn btn-icon btn-icon-only btn-outline-danger"
+                          data-bs-toggle="tooltip"
+                          title="Delete"
+                      >
+                        <i className="bx bx-trash" />
+                      </button>
+                    </td>
+                  </tr>
+              ))}
+              </tbody>
+            </table>
 
-          <div className="col-12 ">
-            <div className="pagination d-flex justify-content-end mt-5">
-              <ReactPaginate
-                nextLabel=">>"
-                onPageChange={this.handlePageChange}
-                pageRangeDisplayed={3}
-                marginPagesDisplayed={2}
-                pageCount={Math.ceil(filteredData.length / itemsPerPage)}
-                previousLabel="<<"
-                pageClassName="page-item"
-                pageLinkClassName="page-link"
-                previousClassName="page-item"
-                previousLinkClassName="page-link"
-                nextClassName="page-item"
-                nextLinkClassName="page-link"
-                breakLabel="..."
-                breakClassName="page-item"
-                breakLinkClassName="page-link"
-                containerClassName="pagination"
-                activeClassName="active"
-                renderOnZeroPageCount={null}
-              />
+            <div className="col-12">
+              <div className="pagination d-flex justify-content-end mt-5">
+                <ReactPaginate
+                    nextLabel=">>"
+                    onPageChange={this.handlePageChange}
+                    pageRangeDisplayed={3}
+                    marginPagesDisplayed={2}
+                    pageCount={pageCount}
+                    previousLabel="<<"
+                    pageClassName="page-item"
+                    pageLinkClassName="page-link"
+                    previousClassName="page-item"
+                    previousLinkClassName="page-link"
+                    nextClassName="page-item"
+                    nextLinkClassName="page-link"
+                    breakLabel="..."
+                    breakClassName="page-item"
+                    breakLinkClassName="page-link"
+                    containerClassName="pagination"
+                    activeClassName="active"
+                    renderOnZeroPageCount={null}
+                />
+              </div>
             </div>
           </div>
         </div>
-      </div>
     );
   }
 }
+
 const mapStateToProps = (state) => {
   return {};
 };
