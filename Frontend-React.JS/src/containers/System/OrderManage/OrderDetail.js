@@ -28,6 +28,7 @@ class OrderDetail extends Component {
 
   render() {
     let order = this.state.order;
+    console.log(order.billDetailData)
     return (
       <div className="layout-wrapper layout-content-navbar">
         <div className="layout-container">
@@ -128,8 +129,7 @@ class OrderDetail extends Component {
                             <label className="form-label" htmlFor="status">
                               Trạng thái
                             </label>
-                            <select id="status" className="select2 form-select">
-                              <option value="">Select Language</option>
+                            <select id="status" className="select2 form-select" value={order.status}>
                               <option value="1">Chờ phê duyệt</option>
                               <option value="2">Đã hủy</option>
                               <option value="3">Đặt hàng thành công</option>
@@ -161,36 +161,37 @@ class OrderDetail extends Component {
                                 </tr>
                               </thead>
                               <tbody className="table-border-bottom-0">
-                                <tr>
-                                  <td>1</td>
-                                  <td>
-                                    <div className="d-flex align-items-center">
-                                      <img
-                                        src="../assets/img/products/01.png"
-                                        alt="product"
-                                        className="w-px-40 h-auto rounded"
-                                      />
-                                      <div className="ms-3">
-                                        <h6 className="mb-0">Product Name</h6>
-                                        <span
-                                          className="text-muted "
-                                          style={{ marginRight: "10px" }}
-                                        >
-                                          Size: 1.5kg
-                                        </span>
-                                        <span className="text-muted">
-                                          Weight: 1.5kg
-                                        </span>
+                                {order.billDetailData.map((detail, index) => (
+                                  <tr>
+                                    <td>{index}</td>
+                                    <td>
+                                      <div className="d-flex align-items-center">
+                                        <img
+                                          src={detail.ProductData.Images[0].img}
+                                          alt="product"
+                                          className="w-px-40 h-auto rounded"
+                                        />
+                                        <div className="ms-3">
+                                          <h6 className="mb-0">{detail.ProductData.name}</h6>
+                                          <span
+                                            className="text-muted "
+                                            style={{ marginRight: "10px" }}
+                                          >
+                                            Weight: {detail.ProductData.weight}g
+                                          </span>
+                                          <span className="text-muted">
+                                            Size: {detail.ProductData.size}
+                                          </span>
+                                        </div>
                                       </div>
-                                    </div>
-                                  </td>
-                                  <td>2</td>
-                                  <td>
-                                    <span className="badge bg-label-primary me-1">
-                                      $25
-                                    </span>
-                                  </td>
-                                </tr>
+                                    </td>
+                                    <td>2</td>
+                                    <td>
+                                      <span className="badge bg-label-primary me-1">
+                                        {detail.ProductData.price}
+                                      </span>
+                                    </td>
+                                  </tr>))}
                               </tbody>
                             </table>
                           </div>
