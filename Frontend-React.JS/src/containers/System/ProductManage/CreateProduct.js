@@ -242,28 +242,28 @@ class CreateProduct extends Component {
               {/* Content */}
               <div className="container-xxl flex-grow-1 container-p-y">
                 <h4
-                  className="fw-bold py-3 mb-4 "
-                  style={{ display: "flex", justifyContent: "space-between" }}
+                  className="fw-bold"
+                  // style={{ display: "flex", justifyContent: "space-between" }}
                 >
-                  <Link
-                    to={path.productManage}
-                    className="btn"
-                    style={{
-                      height: "35px",
-                      padding: "5px 10px",
-                      color: "#c11ee8",
-                      backgroundColor: "white",
-                    }}
-                  >
-                    <i
-                      className="fas fa-chevron-left"
-                      style={{ marginRight: "10px" }}
-                    />
-                    Back
-                  </Link>
-
-                  <span className="text-muted text-right fw-light">Create Product</span>
+                  <span className="text-primary-cake text-center fw-light">Thêm sản phẩm</span>
                 </h4>
+                  {/*<Link*/}
+                  {/*  to={path.productManage}*/}
+                  {/*  className="btn"*/}
+                  {/*  style={{*/}
+                  {/*    height: "35px",*/}
+                  {/*    padding: "5px 10px",*/}
+                  {/*    color: "#c11ee8",*/}
+                  {/*    backgroundColor: "white",*/}
+                  {/*  }}*/}
+                  {/*>*/}
+                  {/*  <i*/}
+                  {/*    className="fas fa-chevron-left"*/}
+                  {/*    style={{ marginRight: "10px" }}*/}
+                  {/*  />*/}
+                  {/*  Back*/}
+                  {/*</Link>*/}
+
 
                 <div className="container-xxl flex-grow-1 container-p-y">
                   <div className="card  col-11 mb-1">

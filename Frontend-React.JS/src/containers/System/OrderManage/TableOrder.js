@@ -77,6 +77,17 @@ class TableOrder extends Component {
         return "";
     }
   }
+  isStatusDisabled(currentStatus, statusOption) {
+    const statusMap = {
+      1: [], // "Đang chờ duyệt" can change to any status
+      2: [1, 3, 4, 5, 6], // "Đã hủy" cannot change to any other status
+      3: [1], // "Đặt hàng thành công" can change to any status except "Đang chờ duyệt"
+      4: [1,2, 3], // "Đã thanh toán" can change to any status except "Đang chờ duyệt" and "Đặt hàng thành công"
+      5: [1, 2, 3, 4],    // "Đang giao hàng" can only change to "Giao hàng thành công"
+      6: [1, 2, 3, 4, 5], // "Giao hàng thành công" cannot change to any other status
+    };
+    return statusMap[currentStatus]?.includes(statusOption);
+  }
 
   render() {
     const { listOrders, currentPage, itemsPerPage } = this.state;
@@ -128,12 +139,48 @@ class TableOrder extends Component {
                             this.updateOrderStatus(order.id, newStatus);
                           }}
                       >
-                        <option className="status-1" value="1">Đang chờ duyệt</option>
-                        <option className="status-2" value="2">Đã hủy</option>
-                        <option className="status-3" value="3">Đặt hàng thành công</option>
-                        <option className="status-4" value="4">Đã thanh toán</option>
-                        <option className="status-5" value="5">Đang giao hàng</option>
-                        <option className="status-6" value="6">Giao hàng thành công</option>
+                        <option
+                            className="status-1"
+                            value={1}
+                            disabled={this.isStatusDisabled(order.status, 1)}
+                        >
+                          Đang chờ duyệt
+                        </option>
+                        <option
+                            className="status-2"
+                            value={2}
+                            disabled={this.isStatusDisabled(order.status, 2)}
+                        >
+                          Đã hủy
+                        </option>
+                        <option
+                            className="status-3"
+                            value={3}
+                            disabled={this.isStatusDisabled(order.status, 3)}
+                        >
+                          Đặt hàng thành công
+                        </option>
+                        <option
+                            className="status-4"
+                            value={4}
+                            disabled={this.isStatusDisabled(order.status, 4)}
+                        >
+                          Đã thanh toán
+                        </option>
+                        <option
+                            className="status-5"
+                            value={5}
+                            disabled={this.isStatusDisabled(order.status, 5)}
+                        >
+                          Đang giao hàng
+                        </option>
+                        <option
+                            className="status-6"
+                            value={6}
+                            disabled={this.isStatusDisabled(order.status, 6)}
+                        >
+                          Giao hàng thành công
+                        </option>
                       </select>
                     </td>
                     <td>
@@ -146,15 +193,15 @@ class TableOrder extends Component {
                       >
                         <i className="bx bx-edit" />
                       </Link>
-                      <button
-                          type="button"
-                          className="btn btn-icon btn-icon-only btn-outline-danger"
-                          data-bs-toggle="tooltip"
-                          title="Delete"
-                          onClick={() => this.handleDelete(order.id)}
-                      >
-                        <i className="bx bx-trash" />
-                      </button>
+                      {/*<button*/}
+                      {/*    type="button"*/}
+                      {/*    className="btn btn-icon btn-icon-only btn-outline-danger"*/}
+                      {/*    data-bs-toggle="tooltip"*/}
+                      {/*    title="Delete"*/}
+                      {/*    onClick={() => this.handleDelete(order.id)}*/}
+                      {/*>*/}
+                      {/*  <i className="bx bx-trash" />*/}
+                      {/*</button>*/}
                     </td>
                   </tr>
               ))}

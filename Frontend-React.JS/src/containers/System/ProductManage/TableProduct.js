@@ -88,7 +88,7 @@ class TableProduct extends Component {
             className="btn btn-danger"
             style={{ height: "35px", padding: "0 10px" }}
           >
-            Add Product
+           Thêm sản phẩm
           </Link>
           <div className="d-flex align-items-center">
             <label htmlFor="search" className="me-2">
@@ -111,8 +111,8 @@ class TableProduct extends Component {
               <tr>
                 <th>#</th>
                 <th>Sản phẩm</th>
-                <th>Price</th>
-                <th>Trạng Thí</th>
+                <th>Giá</th>
+                <th>Trạng thái</th>
                 <th>Actions</th>
               </tr>
             </thead>
