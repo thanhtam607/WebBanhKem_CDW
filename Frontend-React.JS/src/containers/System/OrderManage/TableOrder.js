@@ -1,19 +1,16 @@
 import React, { Component } from "react";
 import ReactPaginate from "react-paginate";
 import { connect } from "react-redux";
-import { getListProducts } from "../../../services/productService";
-import { getAllBill } from "../../../services/billService";
-import StatusBill from "../../../components/ComponentOrder/StatusBill";
-import {Link} from "react-router-dom";
+import { getAllBill, updateStatusBill } from "../../../services/billService";
+import { Link } from "react-router-dom";
 
 class TableOrder extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       listOrders: [],
       currentPage: 0,
-      itemsPerPage: 10
+      itemsPerPage: 10,
     };
   }
 
@@ -22,11 +19,6 @@ class TableOrder extends Component {
       currentPage: selected,
     });
   };
-
-  // handle create
-  handleCreate = () => {};
-  handleEdit = () => {};
-  handleDelete = () => {};
 
   async componentDidMount() {
     let response = await getAllBill();
@@ -40,6 +32,7 @@ class TableOrder extends Component {
   getPayment = (payment) => {
     return payment === 0 ? "Tiền mặt" : "Chuyển khoản";
   };
+
   formatDateTime(dateString) {
     const options = {
       day: "2-digit",
@@ -56,10 +49,48 @@ class TableOrder extends Component {
         .toLocaleDateString("vi-VN", options)
         .replace(",", "");
   }
+
+  async updateOrderStatus(id, newStatus) {
+    await updateStatusBill(id, newStatus);
+    this.setState((prevState) => ({
+      listOrders: prevState.listOrders.map((order) =>
+          order.id === id ? { ...order, status: newStatus } : order
+      ),
+    }));
+  }
+
+  getStatusClass(status) {
+    switch (status) {
+      case 1:
+        return "status-1";
+      case 2:
+        return "status-2";
+      case 3:
+        return "status-3";
+      case 4:
+        return "status-4";
+      case 5:
+        return "status-5";
+      case 6:
+        return "status-6";
+      default:
+        return "";
+    }
+  }
+  isStatusDisabled(currentStatus, statusOption) {
+    const statusMap = {
+      1: [], // "Đang chờ duyệt" can change to any status
+      2: [1, 3, 4, 5, 6], // "Đã hủy" cannot change to any other status
+      3: [1], // "Đặt hàng thành công" can change to any status except "Đang chờ duyệt"
+      4: [1,2, 3], // "Đã thanh toán" can change to any status except "Đang chờ duyệt" and "Đặt hàng thành công"
+      5: [1, 2, 3, 4],    // "Đang giao hàng" can only change to "Giao hàng thành công"
+      6: [1, 2, 3, 4, 5], // "Giao hàng thành công" cannot change to any other status
+    };
+    return statusMap[currentStatus]?.includes(statusOption);
+  }
+
   render() {
     const { listOrders, currentPage, itemsPerPage } = this.state;
-
-    // Tính toán các đơn hàng sẽ hiển thị trên trang hiện tại
     const offset = currentPage * itemsPerPage;
     const currentPageItems = listOrders.slice(offset, offset + itemsPerPage);
     const pageCount = Math.ceil(listOrders.length / itemsPerPage);
@@ -70,11 +101,10 @@ class TableOrder extends Component {
               className="d-flex justify-content-end align-items-center mb-3"
               style={{ margin: "20px 10px" }}
           >
-
             {/* Bạn có thể thêm các nút hoặc các phần tử khác tại đây */}
           </div>
-          <div className="table-responsive text-nowrap" >
-            <table className="table" >
+          <div className="table-responsive text-nowrap">
+            <table className="table">
               <thead>
               <tr>
                 <th>#</th>
@@ -101,26 +131,77 @@ class TableOrder extends Component {
                     <td>{this.getPayment(order.payment)}</td>
                     <td>{this.formatDateTime(order.createdAt)}</td>
                     <td>
-                      <StatusBill status={order.status}></StatusBill>
+                      <select
+                          className={`select-status ${this.getStatusClass(order.status)}`}
+                          value={order.status}
+                          onChange={(e) => {
+                            const newStatus = parseInt(e.target.value, 10);
+                            this.updateOrderStatus(order.id, newStatus);
+                          }}
+                      >
+                        <option
+                            className="status-1"
+                            value={1}
+                            disabled={this.isStatusDisabled(order.status, 1)}
+                        >
+                          Đang chờ duyệt
+                        </option>
+                        <option
+                            className="status-2"
+                            value={2}
+                            disabled={this.isStatusDisabled(order.status, 2)}
+                        >
+                          Đã hủy
+                        </option>
+                        <option
+                            className="status-3"
+                            value={3}
+                            disabled={this.isStatusDisabled(order.status, 3)}
+                        >
+                          Đặt hàng thành công
+                        </option>
+                        <option
+                            className="status-4"
+                            value={4}
+                            disabled={this.isStatusDisabled(order.status, 4)}
+                        >
+                          Đã thanh toán
+                        </option>
+                        <option
+                            className="status-5"
+                            value={5}
+                            disabled={this.isStatusDisabled(order.status, 5)}
+                        >
+                          Đang giao hàng
+                        </option>
+                        <option
+                            className="status-6"
+                            value={6}
+                            disabled={this.isStatusDisabled(order.status, 6)}
+                        >
+                          Giao hàng thành công
+                        </option>
+                      </select>
                     </td>
                     <td>
-                      <a
+                      <Link
                           type="button"
                           className="btn btn-icon btn-icon-only btn-outline-primary"
                           data-bs-toggle="tooltip"
                           title="Edit"
-                          href={`/admin/order-detail/${order.id}`}
+                          to={`/admin/order-detail/${order.id}`}
                       >
                         <i className="bx bx-edit" />
-                      </a>
-                      <button
-                          type="button"
-                          className="btn btn-icon btn-icon-only btn-outline-danger"
-                          data-bs-toggle="tooltip"
-                          title="Delete"
-                      >
-                        <i className="bx bx-trash" />
-                      </button>
+                      </Link>
+                      {/*<button*/}
+                      {/*    type="button"*/}
+                      {/*    className="btn btn-icon btn-icon-only btn-outline-danger"*/}
+                      {/*    data-bs-toggle="tooltip"*/}
+                      {/*    title="Delete"*/}
+                      {/*    onClick={() => this.handleDelete(order.id)}*/}
+                      {/*>*/}
+                      {/*  <i className="bx bx-trash" />*/}
+                      {/*</button>*/}
                     </td>
                   </tr>
               ))}

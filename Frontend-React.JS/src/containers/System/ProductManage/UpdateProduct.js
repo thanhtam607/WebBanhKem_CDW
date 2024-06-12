@@ -178,26 +178,26 @@ class UpdateProduct extends Component {
               {/* Content */}
               <div className="container-xxl flex-grow-1 container-p-y">
                 <h4
-                  className="fw-bold py-3 mb-4 "
-                  style={{ display: "flex", justifyContent: "space-between" }}
+                  className="fw-bold"
+                  // style={{ display: "flex", justifyContent: "space-between" }}
                 >
-                  <Link
-                    className="btn"
-                    style={{
-                      height: "35px",
-                      padding: "5px 10px",
-                      color: "#c11ee8",
-                      backgroundColor: "white",
-                    }}
-                  >
-                    <i
-                      className="fas fa-chevron-left"
-                      style={{ marginRight: "10px" }}
-                    />
-                    Back
-                  </Link>
+                  {/*<Link*/}
+                  {/*  className="btn"*/}
+                  {/*  style={{*/}
+                  {/*    height: "35px",*/}
+                  {/*    padding: "5px 10px",*/}
+                  {/*    color: "#c11ee8",*/}
+                  {/*    backgroundColor: "white",*/}
+                  {/*  }}*/}
+                  {/*>*/}
+                  {/*  <i*/}
+                  {/*    className="fas fa-chevron-left"*/}
+                  {/*    style={{ marginRight: "10px" }}*/}
+                  {/*  />*/}
+                  {/*  Back*/}
+                  {/*</Link>*/}
 
-                  <span className="text-muted fw-light">Update Product</span>
+                  <span className="text-primary-cake fw-light">Chi tiết sản phẩm</span>
                 </h4>
 
                 <div className="container-xxl flex-grow-1 container-p-y">
@@ -209,7 +209,7 @@ class UpdateProduct extends Component {
                       <div className="row">
                         <div className="mb-3 col-md-6">
                           <label htmlFor="firstName" className="form-label">
-                            Name
+                            Tên sản phẩm
                           </label>
                           <input
                             className="form-control"
@@ -223,7 +223,7 @@ class UpdateProduct extends Component {
                         </div>
                         <div className="mb-3 col-md-6">
                           <label className="form-label" htmlFor="category">
-                            Category
+                            Loại
                           </label>
                           <select
                             id="category"
@@ -243,7 +243,7 @@ class UpdateProduct extends Component {
                         </div>
                         <div className="mb-3 col-md-6">
                           <label className="form-label" htmlFor="size">
-                            Size
+                            Kích thước
                           </label>
                           <select
                             id="size"
@@ -260,7 +260,7 @@ class UpdateProduct extends Component {
                         </div>
                         <div className="mb-3 col-md-6">
                           <label htmlFor="weight" className="form-label">
-                            Weight
+                            Khối lượng
                           </label>
                           <select
                             id="weight"
@@ -277,7 +277,7 @@ class UpdateProduct extends Component {
                         </div>
                         <div className="mb-3 col-md-6">
                           <label htmlFor="price" className="form-label">
-                            Price
+                            Giá
                           </label>
                           <input
                             onChange={(e) =>
@@ -292,7 +292,7 @@ class UpdateProduct extends Component {
                         {/* // status */}
                         <div className="mb-3 col-md-6">
                           <label className="form-label" htmlFor="status">
-                            Status
+                            Trạng thái
                           </label>
                           <select
                             value={this.state.status}
@@ -309,7 +309,7 @@ class UpdateProduct extends Component {
                         </div>
                         <div className="mb-3 col-md-6">
                           <label htmlFor="description" className="form-label">
-                            Description
+                            Mô tả
                           </label>
                           <textarea
                             onChange={(e) =>
@@ -326,7 +326,7 @@ class UpdateProduct extends Component {
                         </div>
                         <div className="mb-3 col-md-6">
                           <label htmlFor="introduction" className="form-label">
-                            Introduction
+                            Thông tin giới thiệu
                           </label>
                           <textarea
                             onChange={(e) =>
@@ -346,7 +346,7 @@ class UpdateProduct extends Component {
                             <thead>
                               <tr>
                                 <th>#</th>
-                                <th>Image</th>
+                                <th>Hình ảnh</th>
                                 <th>Link</th>
                                 <th>Actions</th>
                               </tr>

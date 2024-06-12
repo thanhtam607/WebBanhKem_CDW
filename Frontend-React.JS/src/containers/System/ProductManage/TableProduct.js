@@ -3,7 +3,7 @@ import ReactPaginate from "react-paginate";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { path } from "../../../utils";
-import { deleteProduct } from "../../../services/productService";
+import {deleteProduct, getListProducts} from "../../../services/productService";
 import Swal from "sweetalert2";
 
 class TableProduct extends Component {
@@ -56,23 +56,24 @@ class TableProduct extends Component {
   };
 
   async componentDidMount() {
-    this.setState({
-      data: this.props.data,
-    });
+    let response = await getListProducts();
+    if (response.errCode === 0 && response.listProducts.length > 0) {
+
+      this.setState({
+        data: response.listProducts,
+      });
+    }
   }
 
   render() {
     const { itemsPerPage } = this.props;
     const { currentPage, searchKeyword, data } = this.state;
 
-    const filteredData = data.filter((item) =>
-      item.name.toLowerCase().includes(searchKeyword.toLowerCase())
-    );
-    console.log("filteredData", filteredData);
+    // console.log("filteredData", filteredData);
 
     const offset = currentPage * itemsPerPage;
 
-    const currentPageData = filteredData
+    const currentPageData = data
       .sort((a, b) => b.id - a.id)
       .slice(offset, offset + itemsPerPage);
 
@@ -87,7 +88,7 @@ class TableProduct extends Component {
             className="btn btn-danger"
             style={{ height: "35px", padding: "0 10px" }}
           >
-            Add Product
+           Thêm sản phẩm
           </Link>
           <div className="d-flex align-items-center">
             <label htmlFor="search" className="me-2">
@@ -110,8 +111,8 @@ class TableProduct extends Component {
               <tr>
                 <th>#</th>
                 <th>Sản phẩm</th>
-                <th>Price</th>
-                <th>Trạng Thí</th>
+                <th>Giá</th>
+                <th>Trạng thái</th>
                 <th>Actions</th>
               </tr>
             </thead>
@@ -123,7 +124,9 @@ class TableProduct extends Component {
                     <td>
                       <div className="d-flex align-items-center">
                         <img
-                          src={`../${item.Images[0].img}`}
+                            src={ item.Images[0].img.includes('http') ?  item.Images[0].img : `../${item.Images[0].img}`}
+
+                            
                           alt="product"
                           className="w-px-40 h-auto rounded"
                         />
@@ -180,7 +183,7 @@ class TableProduct extends Component {
                 onPageChange={this.handlePageChange}
                 pageRangeDisplayed={3}
                 marginPagesDisplayed={2}
-                pageCount={Math.ceil(filteredData.length / itemsPerPage)}
+                pageCount={Math.ceil(data.length / itemsPerPage)}
                 previousLabel="<<"
                 pageClassName="page-item"
                 pageLinkClassName="page-link"

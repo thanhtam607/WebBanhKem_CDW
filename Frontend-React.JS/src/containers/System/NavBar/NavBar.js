@@ -48,7 +48,7 @@ class navbar extends Component {
               >
                 <div className="avatar avatar-online">
                   <img
-                    src="../assets/img/avatars/1.png"
+                    src="/img/avatars/1.png"
                     alt=""
                     className="w-px-40 h-auto rounded-circle"
                   />

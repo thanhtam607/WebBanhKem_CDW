@@ -118,3 +118,13 @@
   white-space: normal;
   min-width: 200px;
 }
+
+
+.status-1 { background-color: #fcd99c !important; }
+.status-2 { background-color: #ffa3a3 !important; }
+.status-3 { background-color: #b3fdb3 !important; }
+.status-4 { background-color: #aeaeff !important; }
+.status-5 { background-color: #ffe3ff !important; }
+.status-6 { background-color: #ceffff !important; }
+
+
