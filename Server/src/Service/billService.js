@@ -297,11 +297,99 @@ function formatDateToYYYYMMDDHHMMSS( now) {
   // Combine them into the desired format
   return `${year}${month}${day}${hours}${minutes}${seconds}`;
 }
+
+
+
+
+let getBillStatisticsForCurrentMonth = () => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const currentDate = new Date();
+      const currentYear = currentDate.getFullYear();
+      const currentMonth = currentDate.getMonth() + 1;
+      const today = currentDate.getDate();
+
+      // Tạo số ngày trong tháng hiện tại
+      const daysInMonth = new Date(currentYear, currentMonth, 0).getDate();
+
+      // Khởi tạo mảng kết quả
+      let billStatistics = Array.from({ length: today+1 }, (_, index) => {
+        return index < today ? 0 : undefined;
+      });
+
+      const bills = await db.Bill.findAll({
+        attributes: [
+          [db.sequelize.fn('DAY', db.sequelize.col('createdAt')), 'day'],
+          [db.sequelize.fn('COUNT', db.sequelize.col('id')), 'bill_count']
+        ],
+        where: [
+          db.sequelize.where(
+              db.sequelize.fn('YEAR', db.sequelize.col('createdAt')),
+              currentYear
+          ),
+          db.sequelize.where(
+              db.sequelize.fn('MONTH', db.sequelize.col('createdAt')),
+              currentMonth
+          ),   { status: { [db.Sequelize.Op.ne]: 2 } }
+        ],
+        group: [db.sequelize.fn('DAY', db.sequelize.col('createdAt'))],
+        order: [[db.sequelize.fn('DAY', db.sequelize.col('createdAt')), 'ASC']]
+      });
+
+      // Đặt số lượng đơn hàng cho mỗi ngày có đơn hàng
+      bills.forEach(bill => {
+        const day = bill.get('day');
+        const count = bill.get('bill_count');
+        if (day <= today) {
+          billStatistics[day - 1] = parseInt(count, 10);
+        }
+      });
+
+      resolve(billStatistics);
+    } catch (e) {
+      reject(e);
+    }
+  });
+};
+
+let getTotalBillForCurrentMonth = (month) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const currentDate = new Date();
+      const currentYear = currentDate.getFullYear();
+
+
+      const totalBills = await db.Bill.count({
+        where: {
+          [db.Sequelize.Op.and]: [
+            db.sequelize.where(
+                db.sequelize.fn('YEAR', db.sequelize.col('createdAt')),
+                currentYear
+            ),
+            db.sequelize.where(
+                db.sequelize.fn('MONTH', db.sequelize.col('createdAt')),
+               month
+            ),
+            { status: { [db.Sequelize.Op.ne]:2 } }
+          ]
+        }
+      });
+
+      resolve(totalBills);
+    } catch (e) {
+      reject(e);
+    }
+  });
+};
+
+
 module.exports = {
-  getAllBillsByIdUser: getAllBillsByIdUser,
-  getBillById: getBillById,
-  updateStatusBill: updateStatusBill,
-  createBill: createBill,
-  getAllBills: getAllBills,
-  create_payment_vnpayurl: create_payment_vnpayurl,
+  getAllBillsByIdUser,
+  getBillById,
+  updateStatusBill,
+  createBill,
+  getAllBills,
+  create_payment_vnpayurl,
+  getBillStatisticsForCurrentMonth,
+  getTotalBillForCurrentMonth
 };

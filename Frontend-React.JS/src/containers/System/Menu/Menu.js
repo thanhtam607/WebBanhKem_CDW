@@ -31,6 +31,18 @@ class Menu extends Component {
         <div className="menu-inner-shadow" />
         <ul className="menu-inner py-1">
           {/* Forms & Tables */}
+          <li className={`menu-item ${
+              page === "Dashboard" ? "active" : ""
+          }`}>
+            <Link to={path.DASHBOARD} className="menu-link">
+              <span className="menu-icon">
+                 <i className="menu-icon tf-icons bx bx-home-circle"></i>
+              </span>
+              <span className="menu-text">Thống kê</span>
+            </Link>
+          </li>
+
+
           <li className="menu-header small text-uppercase">
             <span className="menu-header-text">Quản lý</span>
           </li>

@@ -21,7 +21,8 @@ export const path = {
   ADMINORDERMANAGE: "/admin/order-manage",
   ADMINORDERDETAIL: "/admin/order-detail/:id",
   ADMINUSERMANAGE: "/admin/user-manage",
-  VNPAYRETURN:'/vnpayreturn'
+  VNPAYRETURN:'/vnpayreturn',
+  DASHBOARD:'/admin/dashboard',
 };
 
 export const languages = {

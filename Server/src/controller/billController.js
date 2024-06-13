@@ -76,6 +76,21 @@ let create_payment_vnpayurl =  async (req, res) => {
     vnurl: data,
   });
 }
+let  getBillStatisticsForCurrentMonth = async (req, res) => {
+  let bills = await billService.getBillStatisticsForCurrentMonth();
+  return res.status(200).json({
+    errCode: 0,
+    data: bills,
+  });
+};
+let  getTotalBillForCurrentMonth= async (req, res) => {
+  let bills = await billService.getTotalBillForCurrentMonth(req.query.month);
+  return res.status(200).json({
+    errCode: 0,
+    data: bills,
+  });
+};
+
 module.exports = {
   getAllBillsByIdUser: getAllBillsByIdUser,
   getBillById: getBillById,
@@ -83,4 +98,6 @@ module.exports = {
   createBill: createBill,
   getAllBills: getAllBills,
   create_payment_vnpayurl: create_payment_vnpayurl,
+  getBillStatisticsForCurrentMonth:  getBillStatisticsForCurrentMonth,
+  getTotalBillForCurrentMonth: getTotalBillForCurrentMonth
 };

@@ -53,8 +53,13 @@ let getAllBill=()=> {
 let getBillById = (id) => {
     return axios.get(`/api/getBillById?id=${id}`);
 };
+let  getBillStatisticsForCurrentMonth = ()=>{
+    return axios.get('/api/getBillStatisticsForCurrentMonth')
+}
 
-
+let getTotalBillForCurrentMonth =(month)=>{
+    return axios.get(`/api/getTotalBillForCurrentMonth?month=${month}`)
+}
 
 export {
     createBill,
@@ -65,4 +70,6 @@ export {
     create_payment_vnpay,
     getAllBill,
     getBillById,
+    getBillStatisticsForCurrentMonth,
+    getTotalBillForCurrentMonth
 };
