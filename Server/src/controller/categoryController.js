@@ -28,10 +28,17 @@ let deleteCategory = async (req, res) => {
     message: message,
   });
 };
+let getCategoryName = async (req, res) => {
+  let message = await categoryService.getCategoryName(req.query.id);
+  return res.status(200).json({
+    data: message.data.name,
+  });
+};
 
 module.exports = {
   createCategory: createCategory,
   getAllCategories: getAllCategories,
   updateCategory: updateCategory,
   deleteCategory: deleteCategory,
+  getCategoryName: getCategoryName
 };

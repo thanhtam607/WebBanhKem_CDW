@@ -8,7 +8,7 @@ import {
   getAllProductsByIdCategory,
 } from "../../../services/productService";
 import { addCart, getAllCartsByIdUser } from "../../../services/cartService";
-import { getAllCategories } from "../../../services/categorySerive";
+import { getAllCategories } from "../../../services/categoryService";
 import * as actions from "../../../store/actions";
 import Breadcrumb from "../breadcrumb";
 import { Link } from "react-router-dom";

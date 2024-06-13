@@ -10,7 +10,7 @@ import {
   getProductById,
   updateProduct,
 } from "../../../services/productService";
-import { getAllCategories } from "../../../services/categorySerive";
+import { getAllCategories } from "../../../services/categoryService";
 import { updateImage, deleteImage } from "../../../services/imageService";
 
 class UpdateProduct extends Component {

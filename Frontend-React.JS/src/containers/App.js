@@ -34,6 +34,7 @@ import CreateProduct from "./System/ProductManage/CreateProduct";
 import UpdateProduct from "./System/ProductManage/UpdateProduct";
 import OrderDetail from "./System/OrderManage/OrderDetail";
 import VNPayReturn from "./User/Payment/VNPayReturn";
+import Dashboard from "./System/Dashboard/Dashboard";
 class App extends Component {
   handlePersistorState = () => {
     const { persistor } = this.props;
@@ -65,6 +66,7 @@ class App extends Component {
               <CustomScrollbars style={{ height: "100vh", width: "100%" }}>
                 <Switch>
                   <Route path={path.ERROR} component={Error} />
+                  <Route path={path.DASHBOARD} component={Dashboard} />
                   <Route path={path.VNPAYRETURN} component={VNPayReturn} />
                   <Route path={path.ORDER} component={Orders} />
                   <Route path={path.ABOUT} component={About} />
