@@ -5,7 +5,7 @@ import Menu from "../Menu/Menu";
 import NavBar from "../NavBar/NavBar";
 import { Link } from "react-router-dom";
 import { path } from "../../../utils";
-import { getAllCategories } from "../../../services/categorySerive";
+import { getAllCategories } from "../../../services/categoryService";
 import { createProduct } from "../../../services/productService";
 import Swal from "sweetalert2";
 class CreateProduct extends Component {

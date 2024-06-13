@@ -24,6 +24,31 @@ let getAllCategories = async (req, res) => {
     }
   });
 };
+let getCategoryName = async (id) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      let categories = await db.Category.findOne(
+        { where: { status: "1" , id :id },
+        attributes:["name"]},
+        { raw: true }
+      );
+
+      if (!categories || categories.length === 0) {
+        resolve({
+          errCode: 1,
+          message: "Không có danh mục nào",
+        });
+      }
+      resolve({
+        errCode: 0,
+        data: categories,
+      });
+    } catch (e) {
+      console.log(e);
+      reject(e);
+    }
+  });
+};
 
 let createCategory = (data) => {
   return new Promise(async (resolve, reject) => {
@@ -102,4 +127,5 @@ module.exports = {
   getAllCategories: getAllCategories,
   createCategory: createCategory,
   updateCategory: updateCategory,
+  getCategoryName: getCategoryName
 };

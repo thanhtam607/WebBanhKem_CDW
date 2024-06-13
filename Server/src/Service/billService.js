@@ -1,4 +1,5 @@
 import db from "../models/index";
+import {QueryTypes} from "sequelize";
 
 let getAllBillsByIdUser = (id_user) => {
   return new Promise(async (resolve, reject) => {
@@ -417,6 +418,68 @@ let sumProBillTotal = (month) => {
   });
 };
 
+let getSalesPercentageForCat = () => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const totalSold = await db.Bill_Detail.sum('amount', {
+        include: [
+          {
+            model: db.Product,
+            as: 'ProductData',
+            attributes: [], // không cần lấy thuộc tính của Product, chỉ cần để join
+          },
+          {
+            model: db.Bill,
+            as: 'BillData',
+            attributes: [],
+            where: {
+              status: {
+                [db.Sequelize.Op.ne]: 2 // status không bằng 2
+              }
+            }
+          }
+        ]
+      });
+      const results = await db.Bill_Detail.findAll({
+        attributes: [
+          [db.Sequelize.literal(`ProductData.id_type`), 'id_type'],
+          [
+            db.Sequelize.literal(`ROUND(SUM(amount) * 100.0 / ${totalSold}, 2)`),
+            'percentage_sold'
+          ]
+        ],
+        include: [
+          {
+            model: db.Product,
+            as: 'ProductData',
+            attributes: [], // không cần lấy thuộc tính của Product, chỉ cần để join
+          },
+          {
+            model: db.Bill,
+            as: 'BillData',
+            where: {
+              status: {
+                [db.Sequelize.Op.ne]: 2 // status không bằng 2
+              }
+            }
+          }
+        ],
+        group: ['ProductData.id_type'],
+        order: [[db.Sequelize.literal('percentage_sold'), 'DESC']]
+      });
+
+      // Chuẩn bị dữ liệu trả về
+      const formattedResults = results.map(row => ({
+        id_type: row.dataValues.id_type,
+        percentage_sold: row.dataValues.percentage_sold
+      }));
+      resolve(formattedResults); // Trả về kết quả
+    } catch (error) {
+      reject(error); // Xử lý lỗi
+    }
+  });
+};
+
 module.exports = {
   getAllBillsByIdUser,
   getBillById,
@@ -426,5 +489,7 @@ module.exports = {
   create_payment_vnpayurl,
   getBillStatisticsForCurrentMonth,
   getTotalBillForCurrentMonth,
-  sumProBillTotal
+  sumProBillTotal,
+  getSalesPercentageForCat,
+
 };

@@ -97,6 +97,13 @@ let sumProBillTotal=async (req, res) => {
     data: bills,
   });
 }
+let getSalesPercentageForCat = async (req, res) => {
+  let data = await billService.getSalesPercentageForCat();
+  return res.status(200).json({
+    errCode: 0,
+    data: data,
+  });
+}
 
 module.exports = {
   getAllBillsByIdUser: getAllBillsByIdUser,
@@ -107,5 +114,6 @@ module.exports = {
   create_payment_vnpayurl: create_payment_vnpayurl,
   getBillStatisticsForCurrentMonth:  getBillStatisticsForCurrentMonth,
   getTotalBillForCurrentMonth: getTotalBillForCurrentMonth,
-  sumProBillTotal: sumProBillTotal
+  sumProBillTotal: sumProBillTotal,
+  getSalesPercentageForCat: getSalesPercentageForCat
 };

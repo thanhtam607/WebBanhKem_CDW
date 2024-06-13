@@ -47,6 +47,7 @@ let initWebRoutes = (app) => {
   router.post("/api/createCategory", categoryController.createCategory);
   router.post("/api/updateCategory", categoryController.updateCategory);
   router.post("/api/deleteCategory", categoryController.deleteCategory);
+  router.get("/api/getCategoryName", categoryController.getCategoryName);
 
   // get bills by id user
   router.get("/api/getAllBillsByIdUser", billController.getAllBillsByIdUser);
@@ -60,6 +61,7 @@ let initWebRoutes = (app) => {
   router.get("/api/getBillStatisticsForCurrentMonth", billController.getBillStatisticsForCurrentMonth)
   router.get("/api/getTotalBillForCurrentMonth", billController.getTotalBillForCurrentMonth)
   router.get("/api/sumProBillTotal", billController.sumProBillTotal)
+  router.get("/api/getSalesPercentageForCat", billController.getSalesPercentageForCat)
 
   // update image
   router.post("/api/updateImage", imageController.updateImage);

@@ -128,5 +128,6 @@
 .status-6 { background-color: #ceffff !important; }
 
 .mgtop{
-  margin-top: 30px;
+  margin-top: 10px;
+  margin-left: -10px;
 }

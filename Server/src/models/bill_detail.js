@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "id_product",
         as: "ProductData",
       });
-      Bill_Detail.belongsTo(models.Bill, { foreignKey: "id", as: "BillData" });
+      Bill_Detail.belongsTo(models.Bill, { foreignKey: "id_bill", as: "BillData" });
     }
   }
   Bill_Detail.init(
