@@ -310,7 +310,7 @@ let getBillStatisticsForCurrentMonth = () => {
       const today = currentDate.getDate();
 
       // Tạo số ngày trong tháng hiện tại
-      const daysInMonth = new Date(currentYear, currentMonth, 0).getDate();
+
 
       // Khởi tạo mảng kết quả
       let billStatistics = Array.from({ length: today+1 }, (_, index) => {
@@ -381,7 +381,41 @@ let getTotalBillForCurrentMonth = (month) => {
     }
   });
 };
+let sumProBillTotal = (month) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      // Get the current month and year
+      const now = new Date();
+      // JavaScript months are 0-11
+      const currentYear = now.getFullYear();
 
+      // Query to get all bills with the current month and year and status different from 2
+      const bills = await db.Bill.findAll({
+        where: {
+          [db.Sequelize.Op.and]: [
+            db.sequelize.where(
+                db.sequelize.fn('YEAR', db.sequelize.col('createdAt')),
+                currentYear
+            ),
+            db.sequelize.where(
+                db.sequelize.fn('MONTH', db.sequelize.col('createdAt')),
+                month
+            ),
+            { status: { [db.Sequelize.Op.ne]:2 } }
+          ]
+        }
+      });
+
+      // Calculate the total pro_bill
+      const totalProBill = bills.reduce((sum, bill) => sum + bill.pro_bill, 0);
+
+      resolve(totalProBill);
+    } catch (error) {
+      console.error('Error calculating total pro_bill:', error);
+      reject(error);
+    }
+  });
+};
 
 module.exports = {
   getAllBillsByIdUser,
@@ -391,5 +425,6 @@ module.exports = {
   getAllBills,
   create_payment_vnpayurl,
   getBillStatisticsForCurrentMonth,
-  getTotalBillForCurrentMonth
+  getTotalBillForCurrentMonth,
+  sumProBillTotal
 };

@@ -59,6 +59,8 @@ let initWebRoutes = (app) => {
   router.get("/api/getAllBills", billController.getAllBills);
   router.get("/api/getBillStatisticsForCurrentMonth", billController.getBillStatisticsForCurrentMonth)
   router.get("/api/getTotalBillForCurrentMonth", billController.getTotalBillForCurrentMonth)
+  router.get("/api/sumProBillTotal", billController.sumProBillTotal)
+
   // update image
   router.post("/api/updateImage", imageController.updateImage);
   // delete image

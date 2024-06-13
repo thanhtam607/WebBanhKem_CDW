@@ -4,6 +4,8 @@ import Menu from "../Menu/Menu";
 import NavBar from "../NavBar/NavBar";
 import {getAllBill} from "../../../services/billService";
 import OrderChart from "./OrderChart";
+import Revenue from "./Revenue";
+import ProductStatistics from "./ProductStatistics";
 
 class Dashboard extends Component {
     constructor(props) {
@@ -49,14 +51,38 @@ class Dashboard extends Component {
                     <div className="layout-page">
                         <NavBar />
                         <div className="content-wrapper">
+
                             <div className="container-xxl flex-grow-1 container-p-y">
                                 <h4 className="text-primary-cake fw-bold">Thống kê</h4>
-                                <div className="card">
-                                    <div className="card-body">
-                                        <OrderChart/>
+                                <div className="row">
+                                    <div className="col-8">
+                                    {/*<div className="col-12 col-lg-8 order-md-3 order-lg-2 mb-4">*/}
+                                        <div className="card">
+                                            <div className="card-body">
+                                                <OrderChart/>
+                                            </div>
+                                        </div>
+                                    {/*</div>*/}
+                                    </div>
+                                    <div className="col-4 col-md-8 col-lg-4 order-md-2">
+                                    {/*<div className="col-12 ">*/}
+                                        <div className="card  col-lg-9">
+                                            <div className="card-body">
+                                                <Revenue/>
+                                            </div>
+                                        </div>
+                                    {/*</div>*/}
+                                    {/*<div className="col-md-6 col-lg-4 mb-4">*/}
+                                        <div className="card mgtop">
+                                            <div className="card-body">
+                                                 <ProductStatistics/>
+                                            </div>
+                                        </div>
+                                    {/*</div>*/}
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>

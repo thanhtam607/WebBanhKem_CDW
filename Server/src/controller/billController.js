@@ -90,6 +90,13 @@ let  getTotalBillForCurrentMonth= async (req, res) => {
     data: bills,
   });
 };
+let sumProBillTotal=async (req, res) => {
+  let bills = await billService.sumProBillTotal(req.query.month);
+  return res.status(200).json({
+    errCode: 0,
+    data: bills,
+  });
+}
 
 module.exports = {
   getAllBillsByIdUser: getAllBillsByIdUser,
@@ -99,5 +106,6 @@ module.exports = {
   getAllBills: getAllBills,
   create_payment_vnpayurl: create_payment_vnpayurl,
   getBillStatisticsForCurrentMonth:  getBillStatisticsForCurrentMonth,
-  getTotalBillForCurrentMonth: getTotalBillForCurrentMonth
+  getTotalBillForCurrentMonth: getTotalBillForCurrentMonth,
+  sumProBillTotal: sumProBillTotal
 };

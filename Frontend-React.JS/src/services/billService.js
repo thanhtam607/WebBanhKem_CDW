@@ -60,6 +60,9 @@ let  getBillStatisticsForCurrentMonth = ()=>{
 let getTotalBillForCurrentMonth =(month)=>{
     return axios.get(`/api/getTotalBillForCurrentMonth?month=${month}`)
 }
+let sumProBillTotal =(month)=>{
+    return axios.get(`/api/sumProBillTotal?month=${month}`)
+}
 
 export {
     createBill,
@@ -71,5 +74,6 @@ export {
     getAllBill,
     getBillById,
     getBillStatisticsForCurrentMonth,
-    getTotalBillForCurrentMonth
+    getTotalBillForCurrentMonth,
+    sumProBillTotal
 };

@@ -12,7 +12,10 @@ class OrderChart extends Component {
         const totalOrders = resTotalOrders.data
         var options = {
             chart: {
-                type: 'line'
+                type: 'line',
+                toolbar: {
+                    show: false, // Tắt thanh công cụ
+                },
             },
             series: [
                 {
@@ -58,11 +61,11 @@ class OrderChart extends Component {
             annotations: {
                 position: 'back',
                 texts: [{
-                    x: '90%',
-                    y: '10%',
+                    x: '80%',
+                    y: '16%',
                     text: `Tổng số lượng: ${totalOrders}`,
                     textAnchor: 'middle',
-                    fontSize: '16px',
+                    fontSize: '14px',
                     backgroundColor: 'rgba(255, 255, 255, 0.6)',
                     borderRadius: 3,
                 }]
@@ -78,7 +81,7 @@ class OrderChart extends Component {
     }
 
     render() {
-        return <div ref={(ref) => (this.chartRef = ref)} id="incomeChart"></div>;
+        return <div id="incomeChart"></div>
     }
 }
 
