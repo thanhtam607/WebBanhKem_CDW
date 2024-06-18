@@ -23,6 +23,7 @@ export const path = {
   ADMINUSERMANAGE: "/admin/user-manage",
   VNPAYRETURN:'/vnpayreturn',
   DASHBOARD:'/admin/dashboard',
+  CUSTOMERCARE:'/admin/customercare',
 };
 
 export const languages = {
