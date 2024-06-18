@@ -35,6 +35,7 @@ import UpdateProduct from "./System/ProductManage/UpdateProduct";
 import OrderDetail from "./System/OrderManage/OrderDetail";
 import VNPayReturn from "./User/Payment/VNPayReturn";
 import Dashboard from "./System/Dashboard/Dashboard";
+import CustomerCare from "./System/Chat/CustomerCare";
 class App extends Component {
   handlePersistorState = () => {
     const { persistor } = this.props;
@@ -78,6 +79,7 @@ class App extends Component {
                   <Route path={path.SHOP} component={SHOP} />
                   <Route path={path.CHECKOUT} component={CheckOut} />
                   <Route path={path.CONTACT} component={Contact} />
+                  <Route path={path.CUSTOMERCARE} component={CustomerCare} />
 
                   <Route path={path.ADMINLOGIN} component={AdminLogin} />
                   <Route

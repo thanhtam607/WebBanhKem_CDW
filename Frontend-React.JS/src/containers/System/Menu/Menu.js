@@ -85,6 +85,22 @@ class Menu extends Component {
               <span className="menu-text">Quản lý người dùng</span>
             </Link>
           </li>
+          <li className="menu-header small text-uppercase">
+            <span className="menu-header-text">Khách hàng</span>
+          </li>
+          {/* Product Management */}
+          <li
+              className={`menu-item ${
+                  page === "CustomerCare" ? "active" : ""
+              }`}
+          >
+            <Link to={path.CUSTOMERCARE} className="menu-link">
+              <span className="menu-icon">
+                <i className="bx bx-layer" />
+              </span>
+              <span className="menu-text">CSKH</span>
+            </Link>
+          </li>
         </ul>
       </aside>
     );

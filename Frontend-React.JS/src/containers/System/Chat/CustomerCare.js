@@ -3,26 +3,31 @@ import { connect } from 'react-redux';
 import { FiSend } from "react-icons/fi";
 import { over } from 'stompjs';
 import SockJS from 'sockjs-client';
-import ListMessages from "./ListMessages";
+import UserChat from "./UserChat";
+import ListMessages from "../../../components/Chat/ListMessages";
+import Menu from "../Menu/Menu";
+import NavBar from "../NavBar/NavBar";
 
 var stompClient = null;
 
-class ChatModal extends Component {
+class CustomerCare extends Component {
     constructor(props) {
         super(props);
         this.state = {
             privateChats: [],
             publicChats: [],
-            tab: 'Peace Bakery',
+            listUsers: [],
+            tab: '',
             userData: {
                 email: '',
                 connected: false,
                 message: ''
             },
             isConnected: false // Thêm trạng thái để theo dõi kết nối
-        };
-    }
 
+        };
+
+    }
     connect = () => {
         let Sock = new SockJS('http://localhost:8081/ws');
         stompClient = over(Sock);
@@ -39,24 +44,23 @@ class ChatModal extends Component {
     onConnected = () => {
         this.setState(prevState => ({
             userData: { ...prevState.userData, connected: true },
-            isConnected: true // Cập nhật trạng thái kết nối
+            isConnected: true
         }));
-        stompClient.subscribe('/chatroom/public', this.onMessageReceived);
-        stompClient.subscribe('/user/' + this.state.userData.email + '/private', this.onPrivateMessage);
-        this.userJoin();
+
+        // Kiểm tra xem stompClient đã khởi tạo và kết nối chưa
+        if (this.stompClient && this.stompClient.connected) {
+            this.stompClient.subscribe('/user/' + this.state.userData.email + '/private', this.onPrivateMessage);
+            this.userJoin();
+        } else {
+            console.error('Stomp client is not connected.');
+            // Xử lý khi kết nối không thành công
+        }
     }
-
     userJoin = () => {
-        const order = this.props.order
-        let mess = `THÔNG TIN ĐƠN HÀNG - ID: ${order.id} - Thành tiền: ${order.pro_bill} - Status: ${order.status}`;
-
         var chatMessage = {
-            senderName: this.state.userData.email,
-            status: "JOIN",
-            receiverName: this.state.tab,
-            message: mess // Gán thông tin đơn hàng vào message
+            senderName: 'Peace Bakery',
+            status: "JOIN"
         };
-
         stompClient.send("/app/message", {}, JSON.stringify(chatMessage));
     }
 
@@ -101,8 +105,8 @@ class ChatModal extends Component {
 
             // Tạo đối tượng tin nhắn
             var chatMessage = {
-                senderName: this.state.userData.email,
-                receiverName: this.state.tab,
+                senderName: 'Peace Bakery',
+                receiverName: this.state.userData.email,
                 message: this.state.userData.message,
                 status: "MESSAGE",
                 date: formattedDate // Thêm ngày giờ vào tin nhắn
@@ -127,81 +131,111 @@ class ChatModal extends Component {
 
     registerUser = () => {
         this.connect();
+        this.getUsers();
         this.startFetchingMessages();
     }
-
     fetchMessages = (email) => {
         fetch(`http://localhost:8081/message?email=${email}`)
             .then(response => response.json())
             .then(data => {
-                console.log('Messages:', data);
+
                 this.setState({ privateChats: data });
             })
             .catch(error => console.error('Error fetching messages:', error));
     }
     startFetchingMessages = () => {
-        const { user } = this.props;
-        if (user && user.userInfo && user.userInfo.email) {
-            this.fetchMessages(user.userInfo.email); // Fetch tin nhắn ban đầu
+        const { userData } = this.state;
+        if (userData  && userData.email) {
+            this.fetchMessages(userData.email); // Fetch tin nhắn ban đầu
             this.messagePolling = setInterval(() => {
-                this.fetchMessages(user.userInfo.email); // Fetch tin nhắn định kỳ
+                this.fetchMessages(userData.email); // Fetch tin nhắn định kỳ
+                this.getUsers();
             }, 1000);
         } else {
             console.error("User info not available");
         }
     }
-
-
-    componentDidMount() {
-        const { user } = this.props;
-        if (user && user.userInfo && user.userInfo.email) {
-            this.setState({
-                userData: {
-                    email: user.userInfo.email,
-                }
-            });
-            this.fetchMessages(user.userInfo.email);
-        } else {
-            console.error("User info not available");
+    getUsers = () => {
+        try {
+            fetch(`http://localhost:8081/users`)
+                .then(async response => {
+                    var data = await response.json();
+                    this.setState({
+                        listUsers: data
+                    });
+                })
+                .catch(error => console.error('Error fetching users:', error));
+        } catch (error) {
+            console.error('Error fetching users:', error);
         }
+    }
+    componentDidMount() {
+        this.registerUser();
+
+    }
+    handleTabClick = (user) => {
+        const { userData } = this.state;
+        this.setState({ tab: user });
+
+        if (userData.email) {
+            this.fetchMessages(user); // Fetch tin nhắn cho user mới
+        }
+        this.setState({
+            userData: {
+                email: user
+            }
+        });
+        this.startFetchingMessages();
     }
     componentWillUnmount() {
         this.disconnect(); // Đóng kết nối khi component bị unmount (tắt modal)
     }
 
     render() {
-        return (
-            <>
-                <button type="button" className="btn bg-primary-cake text-white pad-bottom" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal" onClick={() => this.registerUser()}>
-                    Liên hệ về đơn hàng
-                </button>
 
-                <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel"
-                     aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
-                    <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                        <div className="modal-content">
-                            <div className="modal-header bg-primary-cake">
-                                <h1 className="modal-title fs-5 text-white" id="exampleModalLabel">Liên hệ đơn hàng</h1>
-                                <button type="button" className="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
+        return (
+            <div className="layout-wrapper layout-content-navbar">
+                <div className="layout-container">
+                    <Menu page={"CustomerCare"} />
+                    <div className="layout-page">
+                        <NavBar />
+                        <div className="content-wrapper">
+                            <div className="container-xxl flex-grow-1 container-p-y">
+                                <h4 className="text-primary-cake fw-bold">Chăm sóc khách hàng</h4>
+                    <div className="chat-box">
+                        <div className="member-list">
+                            {this.state.listUsers.map((user, index) => (
+                                <UserChat
+                                    key={index}
+                                    user={user}
+                                    userActive={this.state.userData.email === user}
+                                    onClick={() => this.handleTabClick(user)}
+                                />
+                            ))}
+                        </div>
+
+                        {this.state.tab!=="CHATROOM" && <div className="chat-content">
+                            <div className="messagesAdmin">
+                                <ListMessages listMess={this.state.privateChats} isAdmin={true}/>
                             </div>
-                            <div className="modal-body">
-                                <ListMessages listMess={this.state.privateChats} isAdmin={false}/>
-                            </div>
-                            <div className="modal-footer">
-                                <div className="send-message">
-                                    <input type="text" className="input-message" placeholder="Nhập tin nhắn" value={this.state.userData.message}
-                                           onChange={(e) => this.handleMessage(e)} />
-                                    <button className="send-btn" onClick={() => this.sendPrivateValue()}>
-                                        <FiSend />
-                                    </button>
-                                </div>
+                            <div className="send-message">
+                                <input type="text" className="input-message" placeholder="Nhập tin nhắn" value={this.state.userData.message}
+                                       onChange={(e) => this.handleMessage(e)} />
+                                <button className="send-btn" onClick={() => this.sendPrivateValue()}>
+                                    <FiSend />
+                                </button>
                             </div>
                         </div>
+
+                        }
+                    </div>
+                    </div>
+
                     </div>
                 </div>
-            </>
+            </div>
+    </div>
+
         )
     }
 }
@@ -212,4 +246,4 @@ const mapStateToProps = (state) => {
     };
 };
 
-export default connect(mapStateToProps)(ChatModal);
+export default connect(mapStateToProps)(CustomerCare);

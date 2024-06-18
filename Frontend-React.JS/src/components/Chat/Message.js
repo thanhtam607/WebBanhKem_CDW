@@ -11,9 +11,11 @@ class Message extends Component {
     render() {
         const message = this.props.message;
         let isOwner = false;
-        if(message.receiverName =='Peace Bakery'){
+        let isAdmin = this.props.isAdmin;
+        if((message.receiverName =='Peace Bakery' && !isAdmin) || (message.senderName =='Peace Bakery' && isAdmin)){
             isOwner= true;
         }
+
 
         return (
             <>

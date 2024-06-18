@@ -15,11 +15,12 @@ class ListMessages extends Component {
 
     }
     render() {
-        const { listMess } = this.props;
+        const { listMess, isAdmin } = this.props;
+
         return (
             <>
                 {listMess.map((message) => (
-                    <Message message={message}/>
+                    <Message message={message} isAdmin={isAdmin}/>
                 ))}
             </>
         )
