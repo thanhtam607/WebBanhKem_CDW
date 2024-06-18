@@ -4,6 +4,7 @@ import OrderDetail from "./OrderDetail";
 import Swal from 'sweetalert2'
 import {updateStatusBill} from "../../services/billService";
 import StatusBill from "./StatusBill";
+import ChatModal from "../Chat/ChatModal";
 
 
 class Order extends Component {
@@ -93,18 +94,19 @@ class Order extends Component {
                     </div>
 
                     <div className="row mb-2 mt-2" style={{ marginTop: "0px" }}>
-                        <div className="col-6 pt-2 pb-3">
+                        <div className="col-9 pt-2 pb-3">
                             {this.state.status !== 2 && (
                                 <div className="text-left mr-3">
                                     <button type="button" onClick={() => this.handleCancelOrder(order.id)} className="btn text-dark btn-cancel-order">Hủy đơn hàng</button>
                                 </div>
                             )}
                         </div>
-                        <div className="col-6 my-2">
+                        <div className="col-3 my-2">
                             <div className="text-right pr-5">
                                 <h6 className="d-inline text-dark">Tổng thanh toán: </h6>
                                 <h3 className="d-inline" style={{ color: "#ee4d2d" }}>{order.pro_bill}</h3>
                             </div>
+                            <ChatModal order={order}/>
                         </div>
                     </div>
                     <div className="col-12 mb-2">
