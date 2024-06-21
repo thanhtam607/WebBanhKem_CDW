@@ -93,16 +93,17 @@ class Navigation extends Component {
                 {this.props.user.carts ? this.props.user.carts.length : 0}
               </span>
             </Link>
-            <div className="my-auto" style={{ position: "relative" }}>
+            <div className="my-auto text-primary-cake" style={{ position: "relative" }}>
               <div onClick={() => this.handleClickShowDropdown()}>
                 <i className="fas fa-user fa-2x"></i>
               </div>
               {/* create a dropdown menu login and register show*/}
               <div
                 style={{ position: "absolute", left: "-100px" }}
-                className={`dropdown-menu ${this.state.isShow ? "show" : ""}`}
+                className={` dropdown-menu ${this.state.isShow ? "show" : ""}`}
               >
                 {this.props.user.isLoggedIn ? (
+
                   <div>
                     <Link to="/profile" className="dropdown-item">
                       <FormattedMessage id="header.profile" />

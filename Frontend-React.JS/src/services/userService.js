@@ -3,5 +3,7 @@ import axios from "../axios";
 const userLogin = (email, pass) => {
   return axios.post("/api/login", { email: email, pass: pass });
 };
-
-export { userLogin };
+const createUser = (email, pass)=>{
+  return axios.post('/api/register',{email: email, pass: pass})
+}
+export { userLogin, createUser };
