@@ -32,13 +32,14 @@ class TableProduct extends Component {
   handleDeleteProduct = async (id) => {
     console.log("id", id);
     Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
-      icon: "warning",
+      title: "Xóa sản phẩm?",
+      text: "Bạn có chắc muốn xóa sản phẩm này!",
+      icon: "question",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
+      confirmButtonText: "Tiếp tục xóa",
+      cancelButtonText:"Thoát"
     }).then(async (result) => {
       if (result.isConfirmed) {
         let response = await deleteProduct(id);
@@ -47,9 +48,9 @@ class TableProduct extends Component {
           this.setState({
             data: data,
           });
-          Swal.fire("Deleted!", "Your file has been deleted.", "success");
+          Swal.fire("Xóa sản phẩm thành công!", "Xóa sản phẩm thành công.", "success");
         } else {
-          Swal.fire("Error!", "Your file has been deleted.", "error");
+          Swal.fire("Lỗi!", "Sản phẩm này đã bị xóa.", "error");
         }
       }
     });

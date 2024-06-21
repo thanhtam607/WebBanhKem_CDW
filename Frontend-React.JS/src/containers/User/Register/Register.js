@@ -82,12 +82,18 @@ class Register extends Component {
         const response = await createUser(this.state.email, this.state.pass);
 
         if (response.errCode === 0) {
-            this.props.addUserSuccess()
-            // this.props.history.push("/");
+            this.props.history.push("/");
         } else {
-            this.setState({
+            if(response.errCode === 1){
+                this.setState({
+                    error: response.message
+                });
+            }
+            else{
+                this.setState({
                 error: 'Đăng ký không thành công, vui lòng kiểm tra và thử lại!'
             });
+            }
         }
     }
 
