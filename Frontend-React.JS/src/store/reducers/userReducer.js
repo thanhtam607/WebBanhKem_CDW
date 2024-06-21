@@ -25,6 +25,8 @@ const appReducer = (state = initialState, action) => {
         ...state,
         carts: action.carts,
       };
+    case actionTypes.PROCESS_LOGOUT:
+      return initialState;
 
     default:
       return state;

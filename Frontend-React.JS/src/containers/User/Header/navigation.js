@@ -4,6 +4,7 @@ import { path } from "../../../utils";
 import { Link } from "react-router-dom";
 import { FormattedMessage } from "react-intl";
 import { head } from "lodash";
+import {userLogout} from "../../../store/actions";
 
 class Navigation extends Component {
   constructor(props) {
@@ -19,6 +20,9 @@ class Navigation extends Component {
       isShow: !this.state.isShow,
     });
   };
+  handleLogout=()=>{
+    this.props.userLogout();
+  }
 
   render() {
     const pageActive = this.props.pageActive;
@@ -93,16 +97,17 @@ class Navigation extends Component {
                 {this.props.user.carts ? this.props.user.carts.length : 0}
               </span>
             </Link>
-            <div className="my-auto" style={{ position: "relative" }}>
+            <div className="my-auto text-primary-cake" style={{ position: "relative" }}>
               <div onClick={() => this.handleClickShowDropdown()}>
                 <i className="fas fa-user fa-2x"></i>
               </div>
               {/* create a dropdown menu login and register show*/}
               <div
                 style={{ position: "absolute", left: "-100px" }}
-                className={`dropdown-menu ${this.state.isShow ? "show" : ""}`}
+                className={` dropdown-menu ${this.state.isShow ? "show" : ""}`}
               >
                 {this.props.user.isLoggedIn ? (
+
                   <div>
                     <Link to="/profile" className="dropdown-item">
                       <FormattedMessage id="header.profile" />
@@ -110,9 +115,9 @@ class Navigation extends Component {
                     <Link to="/orders" className="dropdown-item">
                       Đơn hàng của tôi
                     </Link>
-                    <a href="/logout" className="dropdown-item">
+                    <button onClick={this.handleLogout} className="dropdown-item">
                       <FormattedMessage id="header.logout" />
-                    </a>
+                    </button>
                   </div>
                 ) : (
                   <div>
@@ -140,7 +145,9 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return {};
+  return {
+    userLogout: () => dispatch(userLogout())
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Navigation);

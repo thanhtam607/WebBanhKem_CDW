@@ -71,7 +71,7 @@ let createUser = (data) => {
       let check = await checkEmail(data.email);
       if (check === true) {
         req.errCode = 1;
-        req.message = "email đã tồn tại";
+        req.message = "Email đã tồn tại";
       } else {
         let hash = await hashPassword(data.pass);
         await db.User.create({

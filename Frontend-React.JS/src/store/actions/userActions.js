@@ -22,3 +22,10 @@ export const updateCartSuccess = (carts) => ({
   type: actionTypes.UPDATE_CART_SUCCESS,
   carts: carts,
 });
+export const userLogout = () => {
+  localStorage.removeItem('userInfo');
+  localStorage.removeItem('carts');
+  return {
+    type: actionTypes.PROCESS_LOGOUT, // Assuming PROCESS_LOGOUT is the correct action type
+  };
+};
