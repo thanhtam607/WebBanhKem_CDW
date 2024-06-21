@@ -8,12 +8,12 @@ import ListMessages from "../../../components/Chat/ListMessages";
 import Menu from "../Menu/Menu";
 import NavBar from "../NavBar/NavBar";
 
-var stompClient = null;
-
 class CustomerCare extends Component {
     constructor(props) {
         super(props);
+
         this.state = {
+            stompClient:null,
             privateChats: [],
             publicChats: [],
             listUsers: [],
@@ -30,13 +30,13 @@ class CustomerCare extends Component {
     }
     connect = () => {
         let Sock = new SockJS('http://localhost:8081/ws');
-        stompClient = over(Sock);
-        stompClient.connect({}, this.onConnected, this.onError);
+        this.state.stompClient = over(Sock);
+        this.state.stompClient.connect({}, this.onConnected, this.onError);
     }
 
     disconnect = () => {
-        if (stompClient) {
-            stompClient.disconnect();
+        if (this.state.stompClient) {
+            this.state.stompClient.disconnect();
             this.setState({ isConnected: false }); // Cập nhật trạng thái kết nối
         }
     }
@@ -46,10 +46,10 @@ class CustomerCare extends Component {
             userData: { ...prevState.userData, connected: true },
             isConnected: true
         }));
-
+        this.getUsers();
         // Kiểm tra xem stompClient đã khởi tạo và kết nối chưa
-        if (this.stompClient && this.stompClient.connected) {
-            this.stompClient.subscribe('/user/' + this.state.userData.email + '/private', this.onPrivateMessage);
+        if (this.state.stompClient && this.state.stompClient.connected) {
+            this.state.stompClient.subscribe('/user/' + this.state.userData.email + '/private', this.onPrivateMessage);
             this.userJoin();
         } else {
             console.error('Stomp client is not connected.');
@@ -61,7 +61,7 @@ class CustomerCare extends Component {
             senderName: 'Peace Bakery',
             status: "JOIN"
         };
-        stompClient.send("/app/message", {}, JSON.stringify(chatMessage));
+        this.state.stompClient.send("/app/message", {}, JSON.stringify(chatMessage));
     }
 
     onMessageReceived = (payload) => {
@@ -99,7 +99,7 @@ class CustomerCare extends Component {
     }
 
     sendPrivateValue = () => {
-        if (stompClient) {
+        if (this.state.stompClient) {
             const currentDate = new Date();
             const formattedDate = `${currentDate.getHours()}:${currentDate.getMinutes()}:${currentDate.getSeconds()} ${currentDate.getDate()}/${currentDate.getMonth() + 1}/${currentDate.getFullYear()}`;
 
@@ -122,7 +122,7 @@ class CustomerCare extends Component {
                     privateChats: [...prevState.privateChats, newMessage]
                 }));
             }
-            stompClient.send("/app/private-message", {}, JSON.stringify(chatMessage));
+            this.state.stompClient.send("/app/private-message", {}, JSON.stringify(chatMessage));
             this.setState(prevState => ({
                 userData: { ...prevState.userData, message: "" }
             }));
@@ -131,9 +131,8 @@ class CustomerCare extends Component {
 
     registerUser = () => {
         this.connect();
-        this.getUsers();
-        this.startFetchingMessages();
     }
+
     fetchMessages = (email) => {
         fetch(`http://localhost:8081/message?email=${email}`)
             .then(response => response.json())
@@ -155,6 +154,12 @@ class CustomerCare extends Component {
             console.error("User info not available");
         }
     }
+    stopFetchingMessages = () => {
+        if (this.messagePolling) {
+            clearInterval(this.messagePolling);
+            this.messagePolling = null;
+        }
+    }
     getUsers = () => {
         try {
             fetch(`http://localhost:8081/users`)
@@ -172,20 +177,24 @@ class CustomerCare extends Component {
     componentDidMount() {
         this.registerUser();
 
+
     }
     handleTabClick = (user) => {
+        this.stopFetchingMessages();
         const { userData } = this.state;
         this.setState({ tab: user });
-
         if (userData.email) {
             this.fetchMessages(user); // Fetch tin nhắn cho user mới
         }
         this.setState({
             userData: {
+                ...userData,
                 email: user
             }
+        }, () => {
+            this.startFetchingMessages();
         });
-        this.startFetchingMessages();
+
     }
     componentWillUnmount() {
         this.disconnect(); // Đóng kết nối khi component bị unmount (tắt modal)
@@ -214,7 +223,7 @@ class CustomerCare extends Component {
                             ))}
                         </div>
 
-                        {this.state.tab!=="CHATROOM" && <div className="chat-content">
+                        <div className="chat-content">
                             <div className="messagesAdmin">
                                 <ListMessages listMess={this.state.privateChats} isAdmin={true}/>
                             </div>
@@ -227,7 +236,7 @@ class CustomerCare extends Component {
                             </div>
                         </div>
 
-                        }
+
                     </div>
                     </div>
 

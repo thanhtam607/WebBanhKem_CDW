@@ -15,8 +15,11 @@ let initWebRoutes = (app) => {
   // User
   router.post("/api/register", userController.handleCreateNewUser);
   router.post("/api/login", userController.userLogin);
+  router.post('/api/send-email', userController.sendMail);
+  router.get('/api/checkMail', userController.checkMail);
   // update role
   router.post("/api/updateRole", userController.updateRole);
+  router.post("/api/updatePass", userController.updatePass);
 
   router.get("/api/getListProducts", productController.getListProducts);
   router.get("/api/getProductById", productController.getProductById);

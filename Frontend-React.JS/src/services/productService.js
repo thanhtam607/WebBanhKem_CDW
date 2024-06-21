@@ -70,7 +70,9 @@ let updateProduct = (
     status,
   });
 };
-
+let getAllCat=()=>{
+  return axios.get('/api/getAllCategories')
+}
 export {
   getListProducts,
   getProductById,
@@ -80,4 +82,5 @@ export {
   createProduct,
   updateProduct,
   deleteProduct,
+    getAllCat
 };

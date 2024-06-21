@@ -6,13 +6,47 @@ import Header from "../Header/Header";
 import ListProduct from "./listProducts";
 import Footer from "../Footer/Footer";
 import { FormattedMessage } from "react-intl";
+import {getAllCat, getAllProductsByIdCategory, getListProducts} from "../../../services/productService";
 class Shop extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+    categories:[],
+      listProducts: [],
+    };
   }
 
-  componentDidMount() {}
+  async componentDidMount() {
+    let responsed = await getAllCat();
+    if(responsed.errCode ==0){
+      this.setState({
+        categories: responsed.data
+      })
+    }
+
+    let responsePro = await getListProducts();
+    if (responsePro && responsePro.errCode === 0) {
+      this.setState({
+        listProducts: responsePro.listProducts,
+      });
+    }
+  }
+  fillterByCat=async (cat) => {
+    if (cat!=0){
+      let res = await getAllProductsByIdCategory(cat)
+      this.setState({
+        listProducts: res.data
+      })
+    }else{
+      let responsePro = await getListProducts();
+      if (responsePro && responsePro.errCode === 0) {
+        this.setState({
+          listProducts: responsePro.listProducts,
+        });
+      }
+    }
+
+  }
   render() {
     const breadcrumbItems = [
       { title: <FormattedMessage id="page.home" />, link: "/", active: false },
@@ -76,49 +110,28 @@ class Shop extends Component {
                           <ul className="list-unstyled fruite-categorie">
                             <li>
                               <div className="d-flex justify-content-between fruite-name">
-                                <a href="#">
+                                <a onClick={() => this.fillterByCat(0)}>
                                   <i className="fas fa-apple-alt me-2" />
-                                  Apples
+                                  Tất cả
                                 </a>
-                                <span>(3)</span>
+
                               </div>
                             </li>
-                            <li>
-                              <div className="d-flex justify-content-between fruite-name">
-                                <a href="#">
-                                  <i className="fas fa-apple-alt me-2" />
-                                  Oranges
-                                </a>
-                                <span>(5)</span>
-                              </div>
-                            </li>
-                            <li>
-                              <div className="d-flex justify-content-between fruite-name">
-                                <a href="#">
-                                  <i className="fas fa-apple-alt me-2" />
-                                  Strawbery
-                                </a>
-                                <span>(2)</span>
-                              </div>
-                            </li>
-                            <li>
-                              <div className="d-flex justify-content-between fruite-name">
-                                <a href="#">
-                                  <i className="fas fa-apple-alt me-2" />
-                                  Banana
-                                </a>
-                                <span>(8)</span>
-                              </div>
-                            </li>
-                            <li>
-                              <div className="d-flex justify-content-between fruite-name">
-                                <a href="#">
-                                  <i className="fas fa-apple-alt me-2" />
-                                  Pumpkin
-                                </a>
-                                <span>(5)</span>
-                              </div>
-                            </li>
+                            {this.state.categories &&
+                                this.state.categories.map((item) => (
+                                    <li key={item.id}>
+                                      <div className="d-flex justify-content-between fruite-name">
+                                        <a onClick={() => this.fillterByCat(item.id)}>
+                                          <i className="fas fa-apple-alt me-2" />
+                                          {item.name}
+                                        </a>
+                                      </div>
+                                    </li>
+                                ))
+                            }
+
+
+
                           </ul>
                         </div>
                       </div>
@@ -201,101 +214,7 @@ class Shop extends Component {
                           </div>
                         </div>
                       </div>
-                      {/*<div className="col-lg-12">*/}
-                      {/*  <h4 className="mb-3">Top bán chạy</h4>*/}
-                      {/*  <div className="d-flex align-items-center justify-content-start">*/}
-                      {/*    <div*/}
-                      {/*      className="rounded me-4"*/}
-                      {/*      style={{ width: "100px", height: "100px" }}*/}
-                      {/*    >*/}
-                      {/*      <img*/}
-                      {/*        src="img/featur-1.jpg"*/}
-                      {/*        className="img-fluid rounded"*/}
-                      {/*        alt=""*/}
-                      {/*      />*/}
-                      {/*    </div>*/}
-                      {/*    <div>*/}
-                      {/*      <h6 className="mb-2">Big Banana</h6>*/}
-                      {/*      <div className="d-flex mb-2">*/}
-                      {/*        <i className="fa fa-star text-secondary" />*/}
-                      {/*        <i className="fa fa-star text-secondary" />*/}
-                      {/*        <i className="fa fa-star text-secondary" />*/}
-                      {/*        <i className="fa fa-star text-secondary" />*/}
-                      {/*        <i className="fa fa-star" />*/}
-                      {/*      </div>*/}
-                      {/*      <div className="d-flex mb-2">*/}
-                      {/*        <h5 className="fw-bold me-2">2.99 $</h5>*/}
-                      {/*        <h5 className="text-danger text-decoration-line-through">*/}
-                      {/*          4.11 $*/}
-                      {/*        </h5>*/}
-                      {/*      </div>*/}
-                      {/*    </div>*/}
-                      {/*  </div>*/}
-                      {/*  <div className="d-flex align-items-center justify-content-start">*/}
-                      {/*    <div*/}
-                      {/*      className="rounded me-4"*/}
-                      {/*      style={{ width: "100px", height: "100px" }}*/}
-                      {/*    >*/}
-                      {/*      <img*/}
-                      {/*        src="img/featur-2.jpg"*/}
-                      {/*        className="img-fluid rounded"*/}
-                      {/*        alt=""*/}
-                      {/*      />*/}
-                      {/*    </div>*/}
-                      {/*    <div>*/}
-                      {/*      <h6 className="mb-2">Big Banana</h6>*/}
-                      {/*      <div className="d-flex mb-2">*/}
-                      {/*        <i className="fa fa-star text-secondary" />*/}
-                      {/*        <i className="fa fa-star text-secondary" />*/}
-                      {/*        <i className="fa fa-star text-secondary" />*/}
-                      {/*        <i className="fa fa-star text-secondary" />*/}
-                      {/*        <i className="fa fa-star" />*/}
-                      {/*      </div>*/}
-                      {/*      <div className="d-flex mb-2">*/}
-                      {/*        <h5 className="fw-bold me-2">2.99 $</h5>*/}
-                      {/*        <h5 className="text-danger text-decoration-line-through">*/}
-                      {/*          4.11 $*/}
-                      {/*        </h5>*/}
-                      {/*      </div>*/}
-                      {/*    </div>*/}
-                      {/*  </div>*/}
-                      {/*  <div className="d-flex align-items-center justify-content-start">*/}
-                      {/*    <div*/}
-                      {/*      className="rounded me-4"*/}
-                      {/*      style={{ width: "100px", height: "100px" }}*/}
-                      {/*    >*/}
-                      {/*      <img*/}
-                      {/*        src="img/featur-3.jpg"*/}
-                      {/*        className="img-fluid rounded"*/}
-                      {/*        alt=""*/}
-                      {/*      />*/}
-                      {/*    </div>*/}
-                      {/*    <div>*/}
-                      {/*      <h6 className="mb-2">Big Banana</h6>*/}
-                      {/*      <div className="d-flex mb-2">*/}
-                      {/*        <i className="fa fa-star text-secondary" />*/}
-                      {/*        <i className="fa fa-star text-secondary" />*/}
-                      {/*        <i className="fa fa-star text-secondary" />*/}
-                      {/*        <i className="fa fa-star text-secondary" />*/}
-                      {/*        <i className="fa fa-star" />*/}
-                      {/*      </div>*/}
-                      {/*      <div className="d-flex mb-2">*/}
-                      {/*        <h5 className="fw-bold me-2">2.99 $</h5>*/}
-                      {/*        <h5 className="text-danger text-decoration-line-through">*/}
-                      {/*          4.11 $*/}
-                      {/*        </h5>*/}
-                      {/*      </div>*/}
-                      {/*    </div>*/}
-                      {/*  </div>*/}
-                      {/*  <div className="d-flex justify-content-center my-4">*/}
-                      {/*    <a*/}
-                      {/*      href="#"*/}
-                      {/*      className="btn border border-secondary px-4 py-3 rounded-pill text-primary w-100"*/}
-                      {/*    >*/}
-                      {/*      Vew More*/}
-                      {/*    </a>*/}
-                      {/*  </div>*/}
-                      {/*</div>*/}
+
                       <div className="col-lg-12">
                         <div className="position-relative">
                           <img
@@ -322,7 +241,7 @@ class Shop extends Component {
                       </div>
                     </div>
                   </div>
-                  <ListProduct />
+                  <ListProduct listProducts={this.state.listProducts}/>
                 </div>
               </div>
             </div>
