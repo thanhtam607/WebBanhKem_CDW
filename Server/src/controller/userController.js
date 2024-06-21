@@ -40,10 +40,44 @@ let updateRole = async (req, res) => {
     message: data.message,
   });
 };
+let updatePass = async (req, res) => {
+  const data = await userServicer.updatePass(req.body);
+  return res.status(200).json({
+    errCode: data.errCode,
+    message: data.message,
+  });
+};
 
+/**
+ * Created by trungquandev.com's author on 18/02/2020.
+ * emailController.js
+ */
+const mailer = require('../Service/mailer')
+
+let sendMail = async (req, res) => {
+  try {
+    const { to, subject, body } = req.body
+    console.log(req.body)
+    await mailer.sendMail(to, subject, body)
+  } catch (error) {
+    console.log(error)
+    res.send(error)
+  }
+}
+let checkMail=async (req, res) => {
+  const email = req.query.email;
+  const data = await userServicer.checkEmail(email);
+  return res.status(200).json({
+    errCode: 0,
+    message: data,
+  });
+}
 module.exports = {
   userLogin: userLogin,
   getAllUsers: getAllUsers,
   handleCreateNewUser: handleCreateNewUser,
   updateRole: updateRole,
+  sendMail: sendMail,
+  checkMail: checkMail,
+  updatePass:updatePass
 };

@@ -12,23 +12,19 @@ class ListProduct extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      listProducts: [],
+
     };
   }
 
   async componentDidMount() {
-    let response = await getListProducts();
-    if (response && response.errCode === 0) {
-      this.setState({
-        listProducts: response.listProducts,
-      });
-    }
+
   }
 
   render() {
+    let listProducts = this.props.listProducts;
     return (
       <div className="col-lg-9">
-        <PaginatedItems items={this.state.listProducts} itemsPerPage={12} />
+        <PaginatedItems items={listProducts} itemsPerPage={12} />
       </div>
     );
   }

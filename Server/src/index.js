@@ -10,7 +10,7 @@ require('dotenv').config();   // giup chayj dc dong process.env
 
 let app = express();
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: 'http://localhost:3000', //chỉ cho phép http://localhost:3000 truy cập vào api
     credentials: true // Cho phép sử dụng credentials
 }));
 

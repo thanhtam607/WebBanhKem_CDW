@@ -24,6 +24,7 @@ export const path = {
   VNPAYRETURN:'/vnpayreturn',
   DASHBOARD:'/admin/dashboard',
   CUSTOMERCARE:'/admin/customercare',
+  RESETPASSWORD:'/resetpassword/:token'
 };
 
 export const languages = {

@@ -32,7 +32,6 @@ let getCategoryName = async (id) => {
         attributes:["name"]},
         { raw: true }
       );
-
       if (!categories || categories.length === 0) {
         resolve({
           errCode: 1,
