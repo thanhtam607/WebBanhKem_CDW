@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createUser } from '../../../services/userService';
+import {addUserSuccess} from "../../../store/actions";
 
 class Register extends Component {
 
@@ -81,7 +82,8 @@ class Register extends Component {
         const response = await createUser(this.state.email, this.state.pass);
 
         if (response.errCode === 0) {
-            this.props.history.push("/");
+            this.props.addUserSuccess()
+            // this.props.history.push("/");
         } else {
             this.setState({
                 error: 'Đăng ký không thành công, vui lòng kiểm tra và thử lại!'

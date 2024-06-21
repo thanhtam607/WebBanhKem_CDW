@@ -4,6 +4,7 @@ import { path } from "../../../utils";
 import { Link } from "react-router-dom";
 import { FormattedMessage } from "react-intl";
 import { head } from "lodash";
+import {userLogout} from "../../../store/actions";
 
 class Navigation extends Component {
   constructor(props) {
@@ -19,6 +20,9 @@ class Navigation extends Component {
       isShow: !this.state.isShow,
     });
   };
+  handleLogout=()=>{
+    this.props.userLogout();
+  }
 
   render() {
     const pageActive = this.props.pageActive;
@@ -111,9 +115,9 @@ class Navigation extends Component {
                     <Link to="/orders" className="dropdown-item">
                       Đơn hàng của tôi
                     </Link>
-                    <a href="/logout" className="dropdown-item">
+                    <button onClick={this.handleLogout} className="dropdown-item">
                       <FormattedMessage id="header.logout" />
-                    </a>
+                    </button>
                   </div>
                 ) : (
                   <div>
@@ -141,7 +145,9 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return {};
+  return {
+    userLogout: () => dispatch(userLogout())
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Navigation);
